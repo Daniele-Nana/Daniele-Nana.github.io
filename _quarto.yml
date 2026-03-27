@@ -5,6 +5,7 @@ project:
 website:
   title: "Daniele Nana Portfolio"
   navbar:
+    background: primary
     left:
       - text: "Accueil"
         href: index.qmd
