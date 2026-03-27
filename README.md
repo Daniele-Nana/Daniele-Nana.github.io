@@ -11,9 +11,8 @@ Bienvenue sur le dépôt de mon portfolio. Ce site présente mon parcours, mes c
 - `index.qmd` – page d’accueil  
 - `about.qmd` – mon parcours, compétences, expériences  
 - `projects.qmd` – liste des projets (avec lien vers les pages individuelles)  
-- `travaux.qmd` – mes travaux de recherche (apprentissage parcimonieux, problème du scrutin)  
+- `works.qmd` – mes travaux de recherche (apprentissage parcimonieux, problème du scrutin)  
 - `projects/` – contient les pages détaillées de chaque projet (ex: `enron-discovery.qmd`)  
-- `files/` – documents téléchargeables (CV, etc.)  
 - `_quarto.yml` – configuration du site  
 - `styles.css` – personnalisation CSS  
 

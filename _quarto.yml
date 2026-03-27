@@ -14,7 +14,7 @@ website:
       - text: "Projets"
         href: projects.qmd
       - text: "Travaux de recherche"
-        href: travaux.qmd
+        href: works.qmd
     right:
       - icon: github
         href: https://github.com/Daniele-Nana
