@@ -2,4 +2,57 @@
 title: "Travaux de recherche"
 ---
 
-Ici, vous pourrez présenter vos travaux de recherche (mémoire, projets académiques, etc.).
+## Apprentissage statistique parcimonieux
+
+**Encadrant** : Fabien Panloup  
+**Période** : Master 1 (2025 – 2026) – en cours de rédaction
+
+### Contexte et objectifs
+Les méthodes de régression linéaire classiques sont conçues pour un nombre d’observations suffisamment grand par rapport au nombre de variables. Lorsque la dimension est élevée, il est souvent crucial d’identifier un sous‑ensemble de variables pertinentes. Ce travail explore les méthodes de régression parcimonieuse, qui intègrent une pénalisation favorisant des solutions avec peu de coefficients non nuls.
+
+### Travail réalisé
+- Étude théorique de la méthode **Lasso** (Least Absolute Shrinkage and Selection Operator) et des bornes de prédiction associées sous la condition de “Restricted Eigenvalue”.
+- Implémentation en Python (scikit-learn) sur données simulées et réelles.
+- Comparaison avec d’autres approches pénalisées (Ridge, ElasticNet) et extension vers la méthode **SLOPE**.
+
+### Résultats et perspectives
+- Mise en évidence de l’intérêt de la parcimonie pour l’interprétabilité et la réduction de dimension.
+- Développement d’un notebook de validation croisée pour évaluer les performances.
+- Rédaction en cours d’un mémoire détaillant les fondements théoriques et les résultats numériques.
+
+### Compétences acquises
+- **Régularisation en haute dimension** : maîtrise des méthodes Lasso, Ridge, ElasticNet pour la sélection de variables et la réduction de dimension.
+- **Validation croisée et optimisation** : mise en œuvre de stratégies de validation pour choisir les hyperparamètres (CV, grille de recherche).
+- **Implémentation Python** : utilisation avancée de `scikit-learn` (modèles, pipelines, métriques) et de `numpy`/`pandas` pour la manipulation de données réelles et simulées.
+- **Analyse théorique** : compréhension des conditions d’identification (Restricted Eigenvalue) et des bornes d’estimation/prédiction.
+- **Évaluation de modèles** : comparaison de performances entre modèles parcimonieux et non parcimonieux, interprétation des coefficients.
+- **Rédaction scientifique** et **synthèse bibliographique** : lecture d’articles de référence, autonomie dans la recherche de solutions numériques.
+
+---
+
+## Problème du scrutin et nombres de Catalan
+
+**Encadrant** : Loïc Chaumont  
+**Période** : Licence 3 (2024 – 2025) – mémoire rédigé
+
+### Contexte et objectifs
+Lors d’une élection, le candidat A obtient *p* voix et le candidat B en obtient *q* (*q < p*). Quelle est la probabilité que tout au long du dépouillement, le candidat A soit toujours en tête ? Ce problème historique, connu sous le nom de **problème du scrutin**, admet une solution combinatoire élégante faisant intervenir les nombres de Catalan.
+
+### Travail réalisé
+- Modélisation du dépouillement par une marche aléatoire unidimensionnelle.
+- Calcul du nombre de trajectoires positives à *p+q* pas (valeurs +1 pour A, -1 pour B) partant de 0 et atteignant le niveau *p−q*.
+- Lien avec les nombres de Catalan et applications à la loi du premier temps de passage.
+- Étude d’autres problèmes combinatoires (chemins de Dyck, triangulations de polygones) faisant intervenir ces mêmes nombres.
+
+### Résultats
+- Rédaction d’un mémoire complet détaillant la démonstration et les prolongements.
+- Simulations stochastiques en Python et R pour illustrer les résultats théoriques.
+- Mise en évidence du lien entre combinatoire, probabilités et théorie des marches aléatoires.
+
+### Compétences acquises
+- **Modélisation probabiliste** : formalisation d’un problème concret (dépouillement électoral) en termes de marche aléatoire et de chaîne de Markov.
+- **Combinatoire et dénombrement** : manipulation des nombres de Catalan, chemins de Dyck, lien avec des structures discrètes.
+- **Simulation stochastique** : développement de simulations en Python et R pour illustrer les résultats théoriques (loi du premier temps de passage).
+- **Preuve mathématique** : construction rigoureuse d’une démonstration combinatoire.
+- **Rédaction scientifique** : mémoire complet, soutenance orale.
+- **Capacité à relier mathématiques fondamentales et applications concrètes**.

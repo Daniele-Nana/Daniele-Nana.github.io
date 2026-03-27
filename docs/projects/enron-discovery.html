@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Your Name">
-<meta name="dcterms.date" content="2025-01-01">
 
-<title>EDA Project – Daniele Nana Portfolio</title>
+<title>Enron Discovery – Plateforme d’investigation numérique – Daniele Nana Portfolio</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -163,34 +161,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#contexte-et-objectif" id="toc-contexte-et-objectif" class="nav-link active" data-scroll-target="#contexte-et-objectif">Contexte et objectif</a></li>
+  <li><a href="#données-utilisées" id="toc-données-utilisées" class="nav-link" data-scroll-target="#données-utilisées">Données utilisées</a></li>
+  <li><a href="#méthodologie" id="toc-méthodologie" class="nav-link" data-scroll-target="#méthodologie">Méthodologie</a>
+  <ul class="collapse">
+  <li><a href="#ingestion-et-parsing" id="toc-ingestion-et-parsing" class="nav-link" data-scroll-target="#ingestion-et-parsing">Ingestion et parsing</a></li>
+  <li><a href="#modélisation-sql" id="toc-modélisation-sql" class="nav-link" data-scroll-target="#modélisation-sql">Modélisation SQL</a></li>
+  <li><a href="#backend-django" id="toc-backend-django" class="nav-link" data-scroll-target="#backend-django">Backend Django</a></li>
+  <li><a href="#interface-web" id="toc-interface-web" class="nav-link" data-scroll-target="#interface-web">Interface web</a></li>
+  <li><a href="#optimisation-et-déploiement" id="toc-optimisation-et-déploiement" class="nav-link" data-scroll-target="#optimisation-et-déploiement">Optimisation et déploiement</a></li>
+  </ul></li>
+  <li><a href="#résultats-et-visualisations" id="toc-résultats-et-visualisations" class="nav-link" data-scroll-target="#résultats-et-visualisations">Résultats et visualisations</a></li>
+  <li><a href="#compétences-mises-en-œuvre" id="toc-compétences-mises-en-œuvre" class="nav-link" data-scroll-target="#compétences-mises-en-œuvre">Compétences mises en œuvre</a></li>
+  <li><a href="#lien-vers-le-code" id="toc-lien-vers-le-code" class="nav-link" data-scroll-target="#lien-vers-le-code">Lien vers le code</a></li>
+  <li><a href="#améliorations-possibles" id="toc-améliorations-possibles" class="nav-link" data-scroll-target="#améliorations-possibles">Améliorations possibles</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">EDA Project</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Enron Discovery – Plateforme d’investigation numérique</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Your Name </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 1, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -200,11 +205,108 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>This is coming down the pipeline. Check again later.</p>
+<section id="contexte-et-objectif" class="level2">
+<h2 class="anchored" data-anchor-id="contexte-et-objectif">Contexte et objectif</h2>
+<p>Dans le cadre de l’UE <em>Structuration des données</em>, nous avons développé une application web d’<strong>e‑Discovery</strong> (investigation numérique) permettant d’explorer le célèbre corpus Enron. Ce jeu de données contient plus de <strong>500 000 emails</strong> authentiques issus d’une entreprise américaine impliquée dans un scandale financier.</p>
+<p>L’objectif était de concevoir un outil fonctionnel pour des journalistes ou auditeurs, capable de : - naviguer dans les échanges, - identifier les acteurs clés, - reconstruire des fils de discussion, - effectuer des recherches avancées.</p>
+</section>
+<section id="données-utilisées" class="level2">
+<h2 class="anchored" data-anchor-id="données-utilisées">Données utilisées</h2>
+<ul>
+<li><strong>Source</strong> : <a href="https://www.cs.cmu.edu/~enron/">Enron Email Dataset</a></li>
+<li><strong>Format</strong> : fichiers <code>.eml</code> organisés par utilisateur et dossier</li>
+<li><strong>Volume</strong> : plus de 500 000 messages bruts</li>
+<li><strong>Structure</strong> : arborescence complexe avec en‑têtes (expéditeur, destinataires, date, objet, In‑Reply‑To) et corps de message</li>
+</ul>
+</section>
+<section id="méthodologie" class="level2">
+<h2 class="anchored" data-anchor-id="méthodologie">Méthodologie</h2>
+<section id="ingestion-et-parsing" class="level3">
+<h3 class="anchored" data-anchor-id="ingestion-et-parsing">Ingestion et parsing</h3>
+<ul>
+<li>Parcours récursif de l’arborescence avec <code>pathlib</code></li>
+<li>Décodage MIME via le module <code>email.parser</code> de Python</li>
+<li>Nettoyage avancé avec <strong>expressions régulières</strong> (normalisation des adresses, suppression des signatures)</li>
+<li>Validation intermédiaire avec <strong>pandas</strong> (distribution des dates, détection de doublons)</li>
+</ul>
+</section>
+<section id="modélisation-sql" class="level3">
+<h3 class="anchored" data-anchor-id="modélisation-sql">Modélisation SQL</h3>
+<ul>
+<li>Schéma relationnel normalisé (3NF) : <strong>Collaborateur</strong>, <strong>Message</strong>, <strong>Folder</strong>, tables de liaison ManyToMany</li>
+<li>Contraintes d’intégrité référentielle, clés primaires auto‑incrémentées</li>
+<li><strong>Optimisation</strong> : index B-tree sur les colonnes fréquemment interrogées (expéditeur, date)</li>
+<li><strong>Recherche plein texte</strong> : champ <code>search_vector</code> (SearchVectorField) alimenté par trigger PostgreSQL, index GIN pour des performances élevées</li>
+</ul>
+</section>
+<section id="backend-django" class="level3">
+<h3 class="anchored" data-anchor-id="backend-django">Backend Django</h3>
+<ul>
+<li>Modèles ORM personnalisés avec managers dédiés pour centraliser la logique de recherche</li>
+<li>Requêtes avancées : <code>Count</code>, <code>TruncMonth</code>, <code>ExtractHour</code>, <code>annotate</code>, <code>Q</code> objects</li>
+<li><strong>SQL brut</strong> : utilisation de <code>WITH RECURSIVE</code> pour reconstruire les fils de discussion complets en une seule requête</li>
+<li>Transactions atomiques et insertion en masse (<code>bulk_create</code>) pour l’import</li>
+</ul>
+</section>
+<section id="interface-web" class="level3">
+<h3 class="anchored" data-anchor-id="interface-web">Interface web</h3>
+<ul>
+<li><strong>Dashboard</strong> : cartes KPI, évolution mensuelle (Chart.js), top 10 expéditeurs/destinataires, mots fréquents, horaires d’activité</li>
+<li><strong>Recherche avancée</strong> : combinaison de la recherche plein texte avec filtres date/expéditeur/destinataire, surbrillance des mots‑clés</li>
+<li><strong>Explorateur de threads</strong> : deux modes (récursif Python et CTE SQL) pour afficher les conversations sous forme d’arborescence</li>
+<li><strong>Graphe d’influence</strong> : visualisation interactive (vis.js) des connexions entre collaborateurs, avec paramétrage du seuil et du nombre de nœuds</li>
+<li><strong>Navigation contextuelle</strong> : URLs paramétrées (<code>folder_id</code>, <code>thread_id</code>) pour un retour fluide entre les pages</li>
+</ul>
+</section>
+<section id="optimisation-et-déploiement" class="level3">
+<h3 class="anchored" data-anchor-id="optimisation-et-déploiement">Optimisation et déploiement</h3>
+<ul>
+<li>Cache Django (1h) pour les données lourdes (dashboard, JSON du graphe)</li>
+<li><code>select_related</code> / <code>prefetch_related</code> pour éviter les requêtes N+1</li>
+<li>Pagination (20 éléments par page) sur toutes les listes</li>
+<li>Conteneurisation avec <strong>Docker</strong> (PostgreSQL 15) et fichier <code>docker-compose.yml</code></li>
+<li>Gestion de versions avec <strong>Git</strong> (commits atomiques, README détaillé, migrations versionnées)</li>
+</ul>
+</section>
+</section>
+<section id="résultats-et-visualisations" class="level2">
+<h2 class="anchored" data-anchor-id="résultats-et-visualisations">Résultats et visualisations</h2>
+<ul>
+<li><strong>Interface fonctionnelle</strong> : démonstration en ligne (ou locale via Docker)</li>
+<li><strong>Dashboard</strong> : visualisation des volumes d’échanges, des périodes d’activité et des acteurs majeurs</li>
+<li><strong>Moteur de recherche</strong> : réponse en quelques secondes sur 500 000 messages</li>
+<li><strong>Graphe d’influence</strong> : identification des liaisons fortes entre collaborateurs</li>
+</ul>
+</section>
+<section id="compétences-mises-en-œuvre" class="level2">
+<h2 class="anchored" data-anchor-id="compétences-mises-en-œuvre">Compétences mises en œuvre</h2>
+<ul>
+<li><strong>Ingestion de données massives</strong> : parsing, nettoyage, validation avec pandas</li>
+<li><strong>Modélisation SQL avancée</strong> : normalisation, index, recherche plein texte, CTE récursives</li>
+<li><strong>Django</strong> : ORM, managers, requêtes complexes, templates, intégration front‑end (Bootstrap, Chart.js, vis.js)</li>
+<li><strong>Optimisation des performances</strong> : cache, <code>select_related</code>, pagination, index</li>
+<li><strong>Docker &amp; déploiement</strong> : environnement reproductible avec docker‑compose</li>
+<li><strong>Gestion de projet</strong> : binôme, versionnage Git, documentation (README, schéma MLD)</li>
+</ul>
+</section>
+<section id="lien-vers-le-code" class="level2">
+<h2 class="anchored" data-anchor-id="lien-vers-le-code">Lien vers le code</h2>
+<p><a href="https://github.com/Daniele-Nana/enron-discovery">Dépôt GitHub – enron-discovery</a></p>
+</section>
+<section id="améliorations-possibles" class="level2">
+<h2 class="anchored" data-anchor-id="améliorations-possibles">Améliorations possibles</h2>
+<ul>
+<li>Intégration d’une API REST (Django REST Framework) pour alimenter des clients externes</li>
+<li>Ajout de la gestion des pièces jointes</li>
+<li>Visualisation du graphe d’influence en temps réel avec filtres interactifs</li>
+</ul>
+<hr>
+<p><em>Ce projet a été réalisé en binôme dans le cadre du Master Data Science (Université d’Angers).</em></p>
 
 
 <!-- -->
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -659,16 +761,89 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "EDA Project"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Your Name"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2025-01-01"</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>This is coming down the pipeline. Check again later.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Enron Discovery – Plateforme d’investigation numérique"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Contexte et objectif</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>Dans le cadre de l’UE *Structuration des données*, nous avons développé une application web d’**e‑Discovery** (investigation numérique) permettant d’explorer le célèbre corpus Enron. Ce jeu de données contient plus de **500 000 emails** authentiques issus d’une entreprise américaine impliquée dans un scandale financier.</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>L’objectif était de concevoir un outil fonctionnel pour des journalistes ou auditeurs, capable de :</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>naviguer dans les échanges,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>identifier les acteurs clés,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>reconstruire des fils de discussion,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>effectuer des recherches avancées.</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Données utilisées</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Source** : <span class="co">[</span><span class="ot">Enron Email Dataset</span><span class="co">](https://www.cs.cmu.edu/~enron/)</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Format** : fichiers <span class="in">`.eml`</span> organisés par utilisateur et dossier</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Volume** : plus de 500 000 messages bruts</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Structure** : arborescence complexe avec en‑têtes (expéditeur, destinataires, date, objet, In‑Reply‑To) et corps de message</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## Méthodologie</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">### Ingestion et parsing</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Parcours récursif de l’arborescence avec <span class="in">`pathlib`</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Décodage MIME via le module <span class="in">`email.parser`</span> de Python</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Nettoyage avancé avec **expressions régulières** (normalisation des adresses, suppression des signatures)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Validation intermédiaire avec **pandas** (distribution des dates, détection de doublons)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="fu">### Modélisation SQL</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Schéma relationnel normalisé (3NF) : **Collaborateur**, **Message**, **Folder**, tables de liaison ManyToMany</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Contraintes d’intégrité référentielle, clés primaires auto‑incrémentées</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Optimisation** : index B-tree sur les colonnes fréquemment interrogées (expéditeur, date)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Recherche plein texte** : champ <span class="in">`search_vector`</span> (SearchVectorField) alimenté par trigger PostgreSQL, index GIN pour des performances élevées</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu">### Backend Django</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Modèles ORM personnalisés avec managers dédiés pour centraliser la logique de recherche</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Requêtes avancées : <span class="in">`Count`</span>, <span class="in">`TruncMonth`</span>, <span class="in">`ExtractHour`</span>, <span class="in">`annotate`</span>, <span class="in">`Q`</span> objects</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**SQL brut** : utilisation de <span class="in">`WITH RECURSIVE`</span> pour reconstruire les fils de discussion complets en une seule requête</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Transactions atomiques et insertion en masse (<span class="in">`bulk_create`</span>) pour l’import</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="fu">### Interface web</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Dashboard** : cartes KPI, évolution mensuelle (Chart.js), top 10 expéditeurs/destinataires, mots fréquents, horaires d’activité</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Recherche avancée** : combinaison de la recherche plein texte avec filtres date/expéditeur/destinataire, surbrillance des mots‑clés</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Explorateur de threads** : deux modes (récursif Python et CTE SQL) pour afficher les conversations sous forme d’arborescence</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Graphe d’influence** : visualisation interactive (vis.js) des connexions entre collaborateurs, avec paramétrage du seuil et du nombre de nœuds</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Navigation contextuelle** : URLs paramétrées (<span class="in">`folder_id`</span>, <span class="in">`thread_id`</span>) pour un retour fluide entre les pages</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="fu">### Optimisation et déploiement</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Cache Django (1h) pour les données lourdes (dashboard, JSON du graphe)</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`select_related`</span> / <span class="in">`prefetch_related`</span> pour éviter les requêtes N+1</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Pagination (20 éléments par page) sur toutes les listes</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Conteneurisation avec **Docker** (PostgreSQL 15) et fichier <span class="in">`docker-compose.yml`</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Gestion de versions avec **Git** (commits atomiques, README détaillé, migrations versionnées)</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="fu">## Résultats et visualisations</span></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Interface fonctionnelle** : démonstration en ligne (ou locale via Docker)</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Dashboard** : visualisation des volumes d’échanges, des périodes d’activité et des acteurs majeurs</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Moteur de recherche** : réponse en quelques secondes sur 500 000 messages</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Graphe d’influence** : identification des liaisons fortes entre collaborateurs</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="fu">## Compétences mises en œuvre</span></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Ingestion de données massives** : parsing, nettoyage, validation avec pandas</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Modélisation SQL avancée** : normalisation, index, recherche plein texte, CTE récursives</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Django** : ORM, managers, requêtes complexes, templates, intégration front‑end (Bootstrap, Chart.js, vis.js)</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Optimisation des performances** : cache, <span class="in">`select_related`</span>, pagination, index</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Docker &amp; déploiement** : environnement reproductible avec docker‑compose</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Gestion de projet** : binôme, versionnage Git, documentation (README, schéma MLD)</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="fu">## Lien vers le code</span></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Dépôt GitHub – enron-discovery</span><span class="co">](https://github.com/Daniele-Nana/enron-discovery)</span></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="fu">## Améliorations possibles</span></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Intégration d’une API REST (Django REST Framework) pour alimenter des clients externes</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ajout de la gestion des pièces jointes</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Visualisation du graphe d’influence en temps réel avec filtres interactifs</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>*Ce projet a été réalisé en binôme dans le cadre du Master Data Science (Université d’Angers).*</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

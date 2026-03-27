@@ -161,8 +161,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#apprentissage-statistique-parcimonieux" id="toc-apprentissage-statistique-parcimonieux" class="nav-link active" data-scroll-target="#apprentissage-statistique-parcimonieux">Apprentissage statistique parcimonieux</a>
+  <ul class="collapse">
+  <li><a href="#contexte-et-objectifs" id="toc-contexte-et-objectifs" class="nav-link" data-scroll-target="#contexte-et-objectifs">Contexte et objectifs</a></li>
+  <li><a href="#travail-réalisé" id="toc-travail-réalisé" class="nav-link" data-scroll-target="#travail-réalisé">Travail réalisé</a></li>
+  <li><a href="#résultats-et-perspectives" id="toc-résultats-et-perspectives" class="nav-link" data-scroll-target="#résultats-et-perspectives">Résultats et perspectives</a></li>
+  <li><a href="#compétences-acquises" id="toc-compétences-acquises" class="nav-link" data-scroll-target="#compétences-acquises">Compétences acquises</a></li>
+  </ul></li>
+  <li><a href="#problème-du-scrutin-et-nombres-de-catalan" id="toc-problème-du-scrutin-et-nombres-de-catalan" class="nav-link" data-scroll-target="#problème-du-scrutin-et-nombres-de-catalan">Problème du scrutin et nombres de Catalan</a>
+  <ul class="collapse">
+  <li><a href="#contexte-et-objectifs-1" id="toc-contexte-et-objectifs-1" class="nav-link" data-scroll-target="#contexte-et-objectifs-1">Contexte et objectifs</a></li>
+  <li><a href="#travail-réalisé-1" id="toc-travail-réalisé-1" class="nav-link" data-scroll-target="#travail-réalisé-1">Travail réalisé</a></li>
+  <li><a href="#résultats" id="toc-résultats" class="nav-link" data-scroll-target="#résultats">Résultats</a></li>
+  <li><a href="#compétences-acquises-1" id="toc-compétences-acquises-1" class="nav-link" data-scroll-target="#compétences-acquises-1">Compétences acquises</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -186,11 +205,84 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Ici, vous pourrez présenter vos travaux de recherche (mémoire, projets académiques, etc.).</p>
+<section id="apprentissage-statistique-parcimonieux" class="level2">
+<h2 class="anchored" data-anchor-id="apprentissage-statistique-parcimonieux">Apprentissage statistique parcimonieux</h2>
+<p><strong>Encadrant</strong> : Fabien Panloup<br>
+<strong>Période</strong> : Master 1 (2025 – 2026) – en cours de rédaction</p>
+<section id="contexte-et-objectifs" class="level3">
+<h3 class="anchored" data-anchor-id="contexte-et-objectifs">Contexte et objectifs</h3>
+<p>Les méthodes de régression linéaire classiques sont conçues pour un nombre d’observations suffisamment grand par rapport au nombre de variables. Lorsque la dimension est élevée, il est souvent crucial d’identifier un sous‑ensemble de variables pertinentes. Ce travail explore les méthodes de régression parcimonieuse, qui intègrent une pénalisation favorisant des solutions avec peu de coefficients non nuls.</p>
+</section>
+<section id="travail-réalisé" class="level3">
+<h3 class="anchored" data-anchor-id="travail-réalisé">Travail réalisé</h3>
+<ul>
+<li>Étude théorique de la méthode <strong>Lasso</strong> (Least Absolute Shrinkage and Selection Operator) et des bornes de prédiction associées sous la condition de “Restricted Eigenvalue”.</li>
+<li>Implémentation en Python (scikit-learn) sur données simulées et réelles.</li>
+<li>Comparaison avec d’autres approches pénalisées (Ridge, ElasticNet) et extension vers la méthode <strong>SLOPE</strong>.</li>
+</ul>
+</section>
+<section id="résultats-et-perspectives" class="level3">
+<h3 class="anchored" data-anchor-id="résultats-et-perspectives">Résultats et perspectives</h3>
+<ul>
+<li>Mise en évidence de l’intérêt de la parcimonie pour l’interprétabilité et la réduction de dimension.</li>
+<li>Développement d’un notebook de validation croisée pour évaluer les performances.</li>
+<li>Rédaction en cours d’un mémoire détaillant les fondements théoriques et les résultats numériques.</li>
+</ul>
+</section>
+<section id="compétences-acquises" class="level3">
+<h3 class="anchored" data-anchor-id="compétences-acquises">Compétences acquises</h3>
+<ul>
+<li><strong>Régularisation en haute dimension</strong> : maîtrise des méthodes Lasso, Ridge, ElasticNet pour la sélection de variables et la réduction de dimension.</li>
+<li><strong>Validation croisée et optimisation</strong> : mise en œuvre de stratégies de validation pour choisir les hyperparamètres (CV, grille de recherche).</li>
+<li><strong>Implémentation Python</strong> : utilisation avancée de <code>scikit-learn</code> (modèles, pipelines, métriques) et de <code>numpy</code>/<code>pandas</code> pour la manipulation de données réelles et simulées.</li>
+<li><strong>Analyse théorique</strong> : compréhension des conditions d’identification (Restricted Eigenvalue) et des bornes d’estimation/prédiction.</li>
+<li><strong>Évaluation de modèles</strong> : comparaison de performances entre modèles parcimonieux et non parcimonieux, interprétation des coefficients.</li>
+<li><strong>Rédaction scientifique</strong> et <strong>synthèse bibliographique</strong> : lecture d’articles de référence, autonomie dans la recherche de solutions numériques.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="problème-du-scrutin-et-nombres-de-catalan" class="level2">
+<h2 class="anchored" data-anchor-id="problème-du-scrutin-et-nombres-de-catalan">Problème du scrutin et nombres de Catalan</h2>
+<p><strong>Encadrant</strong> : Loïc Chaumont<br>
+<strong>Période</strong> : Licence 3 (2024 – 2025) – mémoire rédigé</p>
+<section id="contexte-et-objectifs-1" class="level3">
+<h3 class="anchored" data-anchor-id="contexte-et-objectifs-1">Contexte et objectifs</h3>
+<p>Lors d’une élection, le candidat A obtient <em>p</em> voix et le candidat B en obtient <em>q</em> (<em>q &lt; p</em>). Quelle est la probabilité que tout au long du dépouillement, le candidat A soit toujours en tête ? Ce problème historique, connu sous le nom de <strong>problème du scrutin</strong>, admet une solution combinatoire élégante faisant intervenir les nombres de Catalan.</p>
+</section>
+<section id="travail-réalisé-1" class="level3">
+<h3 class="anchored" data-anchor-id="travail-réalisé-1">Travail réalisé</h3>
+<ul>
+<li>Modélisation du dépouillement par une marche aléatoire unidimensionnelle.</li>
+<li>Calcul du nombre de trajectoires positives à <em>p+q</em> pas (valeurs +1 pour A, -1 pour B) partant de 0 et atteignant le niveau <em>p−q</em>.</li>
+<li>Lien avec les nombres de Catalan et applications à la loi du premier temps de passage.</li>
+<li>Étude d’autres problèmes combinatoires (chemins de Dyck, triangulations de polygones) faisant intervenir ces mêmes nombres.</li>
+</ul>
+</section>
+<section id="résultats" class="level3">
+<h3 class="anchored" data-anchor-id="résultats">Résultats</h3>
+<ul>
+<li>Rédaction d’un mémoire complet détaillant la démonstration et les prolongements.</li>
+<li>Simulations stochastiques en Python et R pour illustrer les résultats théoriques.</li>
+<li>Mise en évidence du lien entre combinatoire, probabilités et théorie des marches aléatoires.</li>
+</ul>
+</section>
+<section id="compétences-acquises-1" class="level3">
+<h3 class="anchored" data-anchor-id="compétences-acquises-1">Compétences acquises</h3>
+<ul>
+<li><strong>Modélisation probabiliste</strong> : formalisation d’un problème concret (dépouillement électoral) en termes de marche aléatoire et de chaîne de Markov.</li>
+<li><strong>Combinatoire et dénombrement</strong> : manipulation des nombres de Catalan, chemins de Dyck, lien avec des structures discrètes.</li>
+<li><strong>Simulation stochastique</strong> : développement de simulations en Python et R pour illustrer les résultats théoriques (loi du premier temps de passage).</li>
+<li><strong>Preuve mathématique</strong> : construction rigoureuse d’une démonstration combinatoire.</li>
+<li><strong>Rédaction scientifique</strong> : mémoire complet, soutenance orale.</li>
+<li><strong>Capacité à relier mathématiques fondamentales et applications concrètes</strong>.</li>
+</ul>
 
 
 <!-- -->
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -648,7 +740,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Travaux de recherche"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Ici, vous pourrez présenter vos travaux de recherche (mémoire, projets académiques, etc.).</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Apprentissage statistique parcimonieux</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>**Encadrant** : Fabien Panloup  </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>**Période** : Master 1 (2025 – 2026) – en cours de rédaction</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">### Contexte et objectifs</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Les méthodes de régression linéaire classiques sont conçues pour un nombre d’observations suffisamment grand par rapport au nombre de variables. Lorsque la dimension est élevée, il est souvent crucial d’identifier un sous‑ensemble de variables pertinentes. Ce travail explore les méthodes de régression parcimonieuse, qui intègrent une pénalisation favorisant des solutions avec peu de coefficients non nuls.</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">### Travail réalisé</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Étude théorique de la méthode **Lasso** (Least Absolute Shrinkage and Selection Operator) et des bornes de prédiction associées sous la condition de “Restricted Eigenvalue”.</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Implémentation en Python (scikit-learn) sur données simulées et réelles.</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Comparaison avec d’autres approches pénalisées (Ridge, ElasticNet) et extension vers la méthode **SLOPE**.</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">### Résultats et perspectives</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Mise en évidence de l’intérêt de la parcimonie pour l’interprétabilité et la réduction de dimension.</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Développement d’un notebook de validation croisée pour évaluer les performances.</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Rédaction en cours d’un mémoire détaillant les fondements théoriques et les résultats numériques.</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">### Compétences acquises</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Régularisation en haute dimension** : maîtrise des méthodes Lasso, Ridge, ElasticNet pour la sélection de variables et la réduction de dimension.</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Validation croisée et optimisation** : mise en œuvre de stratégies de validation pour choisir les hyperparamètres (CV, grille de recherche).</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Implémentation Python** : utilisation avancée de <span class="in">`scikit-learn`</span> (modèles, pipelines, métriques) et de <span class="in">`numpy`</span>/<span class="in">`pandas`</span> pour la manipulation de données réelles et simulées.</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Analyse théorique** : compréhension des conditions d’identification (Restricted Eigenvalue) et des bornes d’estimation/prédiction.</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Évaluation de modèles** : comparaison de performances entre modèles parcimonieux et non parcimonieux, interprétation des coefficients.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Rédaction scientifique** et **synthèse bibliographique** : lecture d’articles de référence, autonomie dans la recherche de solutions numériques.</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="fu">## Problème du scrutin et nombres de Catalan</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>**Encadrant** : Loïc Chaumont  </span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>**Période** : Licence 3 (2024 – 2025) – mémoire rédigé</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="fu">### Contexte et objectifs</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>Lors d’une élection, le candidat A obtient *p* voix et le candidat B en obtient *q* (*q &lt; p*). Quelle est la probabilité que tout au long du dépouillement, le candidat A soit toujours en tête ? Ce problème historique, connu sous le nom de **problème du scrutin**, admet une solution combinatoire élégante faisant intervenir les nombres de Catalan.</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="fu">### Travail réalisé</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Modélisation du dépouillement par une marche aléatoire unidimensionnelle.</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Calcul du nombre de trajectoires positives à *p+q* pas (valeurs +1 pour A, -1 pour B) partant de 0 et atteignant le niveau *p−q*.</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Lien avec les nombres de Catalan et applications à la loi du premier temps de passage.</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Étude d’autres problèmes combinatoires (chemins de Dyck, triangulations de polygones) faisant intervenir ces mêmes nombres.</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="fu">### Résultats</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Rédaction d’un mémoire complet détaillant la démonstration et les prolongements.</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Simulations stochastiques en Python et R pour illustrer les résultats théoriques.</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Mise en évidence du lien entre combinatoire, probabilités et théorie des marches aléatoires.</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="fu">### Compétences acquises</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Modélisation probabiliste** : formalisation d’un problème concret (dépouillement électoral) en termes de marche aléatoire et de chaîne de Markov.</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Combinatoire et dénombrement** : manipulation des nombres de Catalan, chemins de Dyck, lien avec des structures discrètes.</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Simulation stochastique** : développement de simulations en Python et R pour illustrer les résultats théoriques (loi du premier temps de passage).</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Preuve mathématique** : construction rigoureuse d’une démonstration combinatoire.</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Rédaction scientifique** : mémoire complet, soutenance orale.</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Capacité à relier mathématiques fondamentales et applications concrètes**.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

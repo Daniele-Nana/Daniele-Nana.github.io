@@ -7,20 +7,20 @@
 
 Je recherche une **alternance** pour contribuer à des projets concrets et innovants.
 
-Ce portfolio regroupe des projets concrets qui illustrent ma capacité à traiter des données, à en extraire des insights et à communiquer mes résultats.
+---
+
+### Ce que vous trouverez ici
+
+- **Mon parcours** – formation, expériences, compétences techniques et atouts (page « À propos »).
+- **Mes travaux de recherche** – deux projets encadrés en apprentissage statistique parcimonieux et en combinatoire probabiliste (page « Travaux de recherche »).
+- **Mes projets** – analyses de données, modélisations, visualisations (page « Projets »).
 
 ---
 
 ### À propos de ce portfolio
 
-Chaque projet présenté inclut :
-
-- du code source commenté (Python, Pandas, scikit-learn),
-- des visualisations de données (Matplotlib, Seaborn, Plotly),
-- une synthèse des enseignements tirés.
-
 Le site est construit avec [Quarto](https://quarto.org/) et hébergé sur [GitHub Pages](https://pages.github.com/).
 
 ---
 
-*Merci de votre visite ! N’hésitez pas à explorer mes projets et à me contacter pour échanger sur une opportunité d’alternance.*
+*Merci de votre visite ! N’hésitez pas à explorer les différentes sections et à me contacter pour échanger sur une opportunité d’alternance.*

@@ -1,15 +1,8 @@
-
-### Projets de recherche en Data Science
-
-#### Apprentissage statistique parcimonieux  
-Encadré par Fabien Panloup – Master 1 (2025 – 2026)  
-- Développement de modèles prédictifs interprétables en haute dimension (régression Lasso, Ridge).  
-- Optimisation des performances via validation croisée et sélection de variables.  
-- Implémentation sous Python (scikit-learn) sur données simulées et réelles.
-
-#### Problème du scrutin et nombres de Catalan  
-Encadré par Loïc Chaumont – Licence 3 (2024 – 2025)  
-- Modélisation de processus électoraux à l’aide de marches aléatoires et de chaînes de Markov.  
-- Analyse combinatoire et simulations stochastiques (Python, R).
-
 ---
+title: "Projets"
+---
+
+### [Enron Discovery – Plateforme d’investigation numérique](projects/enron-discovery.qmd)
+*Application web d’e‑Discovery sur plus de 500 000 emails. Dashboard interactif, recherche plein texte, graphe d’influence, reconstruction des fils de discussion.*
+
+**Technologies** : Django, PostgreSQL, pandas, Docker, Bootstrap, Chart.js, vis.js

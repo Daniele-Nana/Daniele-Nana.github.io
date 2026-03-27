@@ -1,0 +1,84 @@
+---
+title: "Enron Discovery – Plateforme d’investigation numérique"
+---
+
+## Contexte et objectif
+
+Dans le cadre de l’UE *Structuration des données*, nous avons développé une application web d’**e‑Discovery** (investigation numérique) permettant d’explorer le célèbre corpus Enron. Ce jeu de données contient plus de **500 000 emails** authentiques issus d’une entreprise américaine impliquée dans un scandale financier.
+
+L’objectif était de concevoir un outil fonctionnel pour des journalistes ou auditeurs, capable de :
+- naviguer dans les échanges,
+- identifier les acteurs clés,
+- reconstruire des fils de discussion,
+- effectuer des recherches avancées.
+
+## Données utilisées
+
+- **Source** : [Enron Email Dataset](https://www.cs.cmu.edu/~enron/)
+- **Format** : fichiers `.eml` organisés par utilisateur et dossier
+- **Volume** : plus de 500 000 messages bruts
+- **Structure** : arborescence complexe avec en‑têtes (expéditeur, destinataires, date, objet, In‑Reply‑To) et corps de message
+
+## Méthodologie
+
+### Ingestion et parsing
+- Parcours récursif de l’arborescence avec `pathlib`
+- Décodage MIME via le module `email.parser` de Python
+- Nettoyage avancé avec **expressions régulières** (normalisation des adresses, suppression des signatures)
+- Validation intermédiaire avec **pandas** (distribution des dates, détection de doublons)
+
+### Modélisation SQL
+- Schéma relationnel normalisé (3NF) : **Collaborateur**, **Message**, **Folder**, tables de liaison ManyToMany
+- Contraintes d’intégrité référentielle, clés primaires auto‑incrémentées
+- **Optimisation** : index B-tree sur les colonnes fréquemment interrogées (expéditeur, date)
+- **Recherche plein texte** : champ `search_vector` (SearchVectorField) alimenté par trigger PostgreSQL, index GIN pour des performances élevées
+
+### Backend Django
+- Modèles ORM personnalisés avec managers dédiés pour centraliser la logique de recherche
+- Requêtes avancées : `Count`, `TruncMonth`, `ExtractHour`, `annotate`, `Q` objects
+- **SQL brut** : utilisation de `WITH RECURSIVE` pour reconstruire les fils de discussion complets en une seule requête
+- Transactions atomiques et insertion en masse (`bulk_create`) pour l’import
+
+### Interface web
+- **Dashboard** : cartes KPI, évolution mensuelle (Chart.js), top 10 expéditeurs/destinataires, mots fréquents, horaires d’activité
+- **Recherche avancée** : combinaison de la recherche plein texte avec filtres date/expéditeur/destinataire, surbrillance des mots‑clés
+- **Explorateur de threads** : deux modes (récursif Python et CTE SQL) pour afficher les conversations sous forme d’arborescence
+- **Graphe d’influence** : visualisation interactive (vis.js) des connexions entre collaborateurs, avec paramétrage du seuil et du nombre de nœuds
+- **Navigation contextuelle** : URLs paramétrées (`folder_id`, `thread_id`) pour un retour fluide entre les pages
+
+### Optimisation et déploiement
+- Cache Django (1h) pour les données lourdes (dashboard, JSON du graphe)
+- `select_related` / `prefetch_related` pour éviter les requêtes N+1
+- Pagination (20 éléments par page) sur toutes les listes
+- Conteneurisation avec **Docker** (PostgreSQL 15) et fichier `docker-compose.yml`
+- Gestion de versions avec **Git** (commits atomiques, README détaillé, migrations versionnées)
+
+## Résultats et visualisations
+
+- **Interface fonctionnelle** : démonstration en ligne (ou locale via Docker)
+- **Dashboard** : visualisation des volumes d’échanges, des périodes d’activité et des acteurs majeurs
+- **Moteur de recherche** : réponse en quelques secondes sur 500 000 messages
+- **Graphe d’influence** : identification des liaisons fortes entre collaborateurs
+
+## Compétences mises en œuvre
+
+- **Ingestion de données massives** : parsing, nettoyage, validation avec pandas
+- **Modélisation SQL avancée** : normalisation, index, recherche plein texte, CTE récursives
+- **Django** : ORM, managers, requêtes complexes, templates, intégration front‑end (Bootstrap, Chart.js, vis.js)
+- **Optimisation des performances** : cache, `select_related`, pagination, index
+- **Docker & déploiement** : environnement reproductible avec docker‑compose
+- **Gestion de projet** : binôme, versionnage Git, documentation (README, schéma MLD)
+
+## Lien vers le code
+
+[Dépôt GitHub – enron-discovery](https://github.com/Daniele-Nana/enron-discovery)
+
+## Améliorations possibles
+
+- Intégration d’une API REST (Django REST Framework) pour alimenter des clients externes
+- Ajout de la gestion des pièces jointes
+- Visualisation du graphe d’influence en temps réel avec filtres interactifs
+
+---
+
+*Ce projet a été réalisé en binôme dans le cadre du Master Data Science (Université d’Angers).*

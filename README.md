@@ -1,70 +1,32 @@
-# Student Portfolio Template
+# Portfolio Data Science – Daniele Nana
 
-This repository provides a simple template for creating a personal data science portfolio website using [Quarto](https://quarto.org/) and [GitHub Pages](https://pages.github.com/). Students will use this template to showcase their projects and learning journey.
+Bienvenue sur le dépôt de mon portfolio. Ce site présente mon parcours, mes compétences, mes travaux de recherche et mes projets.
 
-## 🚀 Getting Started
+## 🌐 Accéder au site
 
-### Prerequisites
-- [Quarto](https://quarto.org/docs/get-started/) installed
-- A GitHub account
-- Basic knowledge of Markdown
+👉 [https://daniele-nana.github.io/](https://daniele-nana.github.io/)
 
-### Quick Setup
+## 📁 Contenu du dépôt
 
-1. **Create your repository**
-   - Use this template to create your own repository
-   - Name it `your-username.github.io` or any name you prefer
-   - Make sure it's **Public**
+- `index.qmd` – page d’accueil  
+- `about.qmd` – mon parcours, compétences, expériences  
+- `projects.qmd` – liste des projets (avec lien vers les pages individuelles)  
+- `travaux.qmd` – mes travaux de recherche (apprentissage parcimonieux, problème du scrutin)  
+- `projects/` – contient les pages détaillées de chaque projet (ex: `enron-discovery.qmd`)  
+- `files/` – documents téléchargeables (CV, etc.)  
+- `_quarto.yml` – configuration du site  
+- `styles.css` – personnalisation CSS  
 
-2. **Customize your site**
-   - Replace "Your Name" with your actual name in all files
-   - Update your GitHub and LinkedIn links in `_quarto.yml` if you want them.
-   - Edit the About Me page with your information
+## 🛠️ Construction du site
 
-3. **Deploy to GitHub Pages**
-   - Run `quarto render` to build your site and `quarto preview` to check it locally
-   - Commit and push your changes
-   - Enable GitHub Pages: Settings → Pages → Source: Deploy from a branch → Branch: main → Folder: /docs
+Ce site est généré avec [Quarto](https://quarto.org/) et hébergé sur [GitHub Pages](https://pages.github.com/).  
+Le dossier `docs/` contient le site statique généré et est servi par GitHub Pages.
 
-## 📁 What's Included
+## 🚀 Modifier le site
 
-```
-├── _quarto.yml          # Site configuration
-├── index.md             # Your homepage
-├── about.md             # About me page
-├── projects/            # Your project files
-│   ├── eda.qmd          # Data exploration template
-│   ├── data-acquisition.qmd  # Data collection template
-│   └── final-project.qmd     # Final project template
-└── styles.css           # Custom styling
-```
-
-## 🛠️ Customization
-
-### Change the Look
-- Edit `styles.css` to change colors and fonts
-- Modify `_quarto.yml` to change the theme
-- Add your own logo or images
-
-### Add Extra Projects
-1. Copy files to `projects/`
-2. Add it to the navigation in `_quarto.yml`
-
-## 🆘 Need Help?
-
-### Common Issues
-- **Site not building**: Make sure all file extensions are correct (.qmd for code, .md for text only)
-- **GitHub Pages not updating**: Check that Pages is enabled and pointing to /docs folder
-- **Code not running**: Ensure you have Python and required packages installed
-
-### Resources
-- [Quarto Documentation](https://https://quarto.org/docs/guide/)
-- [Markdown Guide](https://www.markdownguide.org/)
-- [GitHub Pages Help](https://docs.github.com/en/pages)
+- **Édition en ligne** : vous pouvez modifier les fichiers `.qmd` directement sur GitHub. Les changements sont automatiquement pris en compte après quelques minutes.  
+- **Travail local** : clonez le dépôt, installez Quarto, puis utilisez `quarto preview` pour un aperçu ou `quarto render` pour regénérer le site. 
 
 ---
 
-**Ready to start building your data science portfolio? 🎉**
-
-*This template is designed to be simple enough for beginners while still creating professional-looking results.*
-
+*Ce portfolio est en constante évolution. N’hésitez pas à me contacter pour toute question ou opportunité.*
