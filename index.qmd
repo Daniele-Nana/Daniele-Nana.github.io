@@ -1,0 +1,26 @@
+
+## Bonjour, je suis Daniele Nana
+
+### Profil
+
+Étudiante en Data Science, spécialisée en machine learning et modélisation statistique, avec une expérience en analyse de données et en développement de modèles prédictifs.  
+
+Je recherche une **alternance** pour contribuer à des projets concrets et innovants.
+
+Ce portfolio regroupe des projets concrets qui illustrent ma capacité à traiter des données, à en extraire des insights et à communiquer mes résultats.
+
+---
+
+### À propos de ce portfolio
+
+Chaque projet présenté inclut :
+
+- du code source commenté (Python, Pandas, scikit-learn),
+- des visualisations de données (Matplotlib, Seaborn, Plotly),
+- une synthèse des enseignements tirés.
+
+Le site est construit avec [Quarto](https://quarto.org/) et hébergé sur [GitHub Pages](https://pages.github.com/).
+
+---
+
+*Merci de votre visite ! N’hésitez pas à explorer mes projets et à me contacter pour échanger sur une opportunité d’alternance.*

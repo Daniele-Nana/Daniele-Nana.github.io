@@ -1,0 +1,74 @@
+
+### Coordonnées
+
+- **Téléphone** : +33 6 52 43 33 42  
+- **Email** : [danisanana@gmail.com](mailto:danisanana@gmail.com)  
+- **GitHub** : [github.com/Daniele-Nana](https://github.com/Daniele-Nana)  
+
+---
+
+### Formation
+
+**Master Data Science** – Université d’Angers (2025 – présent)  
+*Matières principales :*  
+- **Analyse numérique & optimisation** : analyse numérique matricielle, optimisation non linéaire, modélisation stochastique  
+- **Statistique & apprentissage** : statistiques, modèles de régression, data mining et classification, statistique en grande dimension, séries chronologiques  
+- **IA avancée** : apprentissage par renforcement des modèles génératifs, traitement d’images  
+- **Programmation & data** : programmation orientée objet, traitement des données en Python, structuration des données, informatique pour le Big Data  
+- **Économétrie & applications** : datamining et économie, économétrie de l’évaluation  
+- **Transversal** : droit et données numériques, communication scientifique, analyse du signal
+
+**Licence Mathématiques Appliquées** – Université d’Angers (2022 – 2025)  
+*Matières principales :* algèbre linéaire, probabilités, statistiques inférentielles, calcul différentiel, optimisation, programmation Python, algorithmique, économétrie
+
+---
+
+### Expériences
+
+#### Assistante en Analyse et Gestion de Données  
+**SOCAPRES – Cameroun** (juillet 2025 – août 2025)  
+- Traitement et analyse de données logistiques et commerciales (+15 000 enregistrements) pour optimiser les flux et réduire les ruptures de stock.  
+- Automatisation des rapports de suivi sous Python (pandas, openpyxl) et Excel, permettant un gain de temps de 30 % pour l’équipe.  
+- Création de tableaux de bord dynamiques pour visualiser les plannings de production et les indicateurs clés.
+
+#### Assistante de vente  
+**Carrefour Angers Grand Maine** (2023 – 2025)  
+- Gestion des opérations en magasin : encaissement, étiquetage, mise en rayon et préparation des commandes.  
+- Suivi rigoureux des stocks et inventaires, garantissant une disponibilité des produits supérieure à 95 %.  
+- Contribution à l’amélioration de la qualité de service client (enquêtes de satisfaction internes).
+
+---
+
+### Compétences techniques
+
+| Catégorie | Détails |
+|-----------|--------|
+| **Programmation** | Python (Pandas, NumPy, Scikit-learn, TensorFlow), R, SQL, SAS, , VBA |
+| **Bases de données** | PostgreSQL, MariaDB, SQLAlchemy, JSON/XML, Hadoop/MapReduce |
+| **Machine Learning** | Apprentissage supervisé et non supervisé, régressions, classification, clustering, feature engineering, validation croisée, évaluation de modèles, deep learning |
+| **Statistiques** | Modélisation probabiliste, chaînes de Markov, simulation de processus stochastiques |
+| **IA générative** | Modèles de langage (LLM), prompt engineering, fine-tuning, frameworks, API et intégration, développement d’applications |
+| **Visualisation** | Matplotlib, Seaborn, Tableau, Excel avancé, dashboards, LaTeX/Markdown, Power BI, Qlik |
+| **Outillage** | Git, Unix/Linux, analyse exploratoire des données (EDA), datamining, génie logiciel, développement web (Django), Docker |
+
+
+### Atouts
+
+Rigueur analytique, esprit d’équipe et autonomie, organisation, gestion des priorités et initiative, communication technique, veille technologique et conformité RGPD.
+
+---
+
+### Centres d’intérêt
+
+Cinéma, lecture, musique, voyages, cuisine, énigmes, humanisme et écologie.
+
+---
+
+### Langues
+
+- **Français** : langue maternelle  
+- **Anglais** : niveau C1 (VTest)
+
+---
+
+*Merci de votre intérêt ! N’hésitez pas à me contacter pour échanger sur une opportunité d’alternance.*
