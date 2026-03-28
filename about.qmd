@@ -1,5 +1,6 @@
-
-## Curriculum Vitae
+---
+title: "Curriculum Vitae"
+---
 
 ### Coordonnées
 

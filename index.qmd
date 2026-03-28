@@ -1,5 +1,6 @@
-
-## Bonjour, je suis Daniele Nana ! Bienvenue sur mon portfolio !
+---
+title: "Bonjour, je suis Daniele Nana ! Bienvenue sur mon portfolio !"
+---
 
 ### Profil
 
