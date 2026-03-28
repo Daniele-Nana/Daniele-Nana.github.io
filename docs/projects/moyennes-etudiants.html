@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Enron Discovery – Plateforme d’investigation numérique – Daniele Nana Portfolio</title>
+<title>Analyse des déterminants de la moyenne générale des étudiants – Daniele Nana Portfolio</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -135,13 +135,15 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#données-utilisées" id="toc-données-utilisées" class="nav-link" data-scroll-target="#données-utilisées">Données utilisées</a></li>
   <li><a href="#méthodologie" id="toc-méthodologie" class="nav-link" data-scroll-target="#méthodologie">Méthodologie</a>
   <ul class="collapse">
-  <li><a href="#ingestion-et-parsing" id="toc-ingestion-et-parsing" class="nav-link" data-scroll-target="#ingestion-et-parsing">Ingestion et parsing</a></li>
-  <li><a href="#modélisation-sql" id="toc-modélisation-sql" class="nav-link" data-scroll-target="#modélisation-sql">Modélisation SQL</a></li>
-  <li><a href="#backend-django" id="toc-backend-django" class="nav-link" data-scroll-target="#backend-django">Backend Django</a></li>
-  <li><a href="#interface-web" id="toc-interface-web" class="nav-link" data-scroll-target="#interface-web">Interface web</a></li>
-  <li><a href="#optimisation-et-déploiement" id="toc-optimisation-et-déploiement" class="nav-link" data-scroll-target="#optimisation-et-déploiement">Optimisation et déploiement</a></li>
+  <li><a href="#analyse-exploratoire-eda" id="toc-analyse-exploratoire-eda" class="nav-link" data-scroll-target="#analyse-exploratoire-eda">Analyse exploratoire (EDA)</a></li>
+  <li><a href="#régression-linéaire-multiple-mco" id="toc-régression-linéaire-multiple-mco" class="nav-link" data-scroll-target="#régression-linéaire-multiple-mco">Régression linéaire multiple (MCO)</a></li>
+  <li><a href="#sélection-de-variables" id="toc-sélection-de-variables" class="nav-link" data-scroll-target="#sélection-de-variables">Sélection de variables</a></li>
+  <li><a href="#analyse-en-composantes-principales-acp" id="toc-analyse-en-composantes-principales-acp" class="nav-link" data-scroll-target="#analyse-en-composantes-principales-acp">Analyse en composantes principales (ACP)</a></li>
+  <li><a href="#régression-sur-composantes-principales-pcr" id="toc-régression-sur-composantes-principales-pcr" class="nav-link" data-scroll-target="#régression-sur-composantes-principales-pcr">Régression sur composantes principales (PCR)</a></li>
+  <li><a href="#régression-pls-partial-least-squares" id="toc-régression-pls-partial-least-squares" class="nav-link" data-scroll-target="#régression-pls-partial-least-squares">Régression PLS (Partial Least Squares)</a></li>
+  <li><a href="#bootstrap" id="toc-bootstrap" class="nav-link" data-scroll-target="#bootstrap">Bootstrap</a></li>
   </ul></li>
-  <li><a href="#résultats-et-visualisations" id="toc-résultats-et-visualisations" class="nav-link" data-scroll-target="#résultats-et-visualisations">Résultats et visualisations</a></li>
+  <li><a href="#résultats-principaux" id="toc-résultats-principaux" class="nav-link" data-scroll-target="#résultats-principaux">Résultats principaux</a></li>
   <li><a href="#compétences-mises-en-œuvre" id="toc-compétences-mises-en-œuvre" class="nav-link" data-scroll-target="#compétences-mises-en-œuvre">Compétences mises en œuvre</a></li>
   <li><a href="#lien-vers-le-code" id="toc-lien-vers-le-code" class="nav-link" data-scroll-target="#lien-vers-le-code">Lien vers le code</a></li>
   <li><a href="#améliorations-possibles" id="toc-améliorations-possibles" class="nav-link" data-scroll-target="#améliorations-possibles">Améliorations possibles</a></li>
@@ -153,7 +155,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Enron Discovery – Plateforme d’investigation numérique</h1>
+<h1 class="title">Analyse des déterminants de la moyenne générale des étudiants</h1>
 </div>
 
 
@@ -172,101 +174,111 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="contexte-et-objectif" class="level2">
 <h2 class="anchored" data-anchor-id="contexte-et-objectif">Contexte et objectif</h2>
-<p>Dans le cadre de l’UE <em>Structuration des données</em>, nous avons développé une application web d’<strong>e‑Discovery</strong> (investigation numérique) permettant d’explorer le célèbre corpus Enron. Ce jeu de données contient plus de <strong>500 000 emails</strong> authentiques issus d’une entreprise américaine impliquée dans un scandale financier.</p>
-<p>L’objectif était de concevoir un outil fonctionnel pour des journalistes ou auditeurs, capable de : - naviguer dans les échanges, - identifier les acteurs clés, - reconstruire des fils de discussion, - effectuer des recherches avancées.</p>
+<p>Dans le cadre de l’UE <em>Data Mining et Économie</em> (Master 1), j’ai réalisé une analyse approfondie d’un jeu de données de 100 000 étudiants afin d’identifier les facteurs influençant leur performance académique (moyenne générale sur 20). L’objectif était de construire des modèles prédictifs et d’interpréter l’impact de variables comme le temps d’étude, l’usage des réseaux sociaux, le sommeil, l’activité physique, le stress et la dépression.</p>
 </section>
 <section id="données-utilisées" class="level2">
 <h2 class="anchored" data-anchor-id="données-utilisées">Données utilisées</h2>
 <ul>
-<li><strong>Source</strong> : <a href="https://www.cs.cmu.edu/~enron/">Enron Email Dataset</a></li>
-<li><strong>Format</strong> : fichiers <code>.eml</code> organisés par utilisateur et dossier</li>
-<li><strong>Volume</strong> : plus de 500 000 messages bruts</li>
-<li><strong>Structure</strong> : arborescence complexe avec en‑têtes (expéditeur, destinataires, date, objet, In‑Reply‑To) et corps de message</li>
+<li><strong>Source</strong> : base de données fictive (simulation réaliste) fournie dans le cadre du cours.</li>
+<li><strong>Volume</strong> : 100 000 observations, 11 variables.</li>
+<li><strong>Variables clés</strong> :
+<ul>
+<li><em>Quantitatives</em> : âge, sommeil (h/j), études (h/j), réseaux sociaux (h/j), activité physique (min/sem), stress (/10), moyenne générale (/20)<br>
+</li>
+<li><em>Qualitatives</em> : genre (F/M), département (5 filières), dépression (TRUE/FALSE)</li>
+</ul></li>
 </ul>
 </section>
 <section id="méthodologie" class="level2">
 <h2 class="anchored" data-anchor-id="méthodologie">Méthodologie</h2>
-<section id="ingestion-et-parsing" class="level3">
-<h3 class="anchored" data-anchor-id="ingestion-et-parsing">Ingestion et parsing</h3>
+<p>L’analyse a suivi une chaîne complète de traitement statistique :</p>
+<section id="analyse-exploratoire-eda" class="level3">
+<h3 class="anchored" data-anchor-id="analyse-exploratoire-eda">Analyse exploratoire (EDA)</h3>
 <ul>
-<li>Parcours récursif de l’arborescence avec <code>pathlib</code></li>
-<li>Décodage MIME via le module <code>email.parser</code> de Python</li>
-<li>Nettoyage avancé avec <strong>expressions régulières</strong> (normalisation des adresses, suppression des signatures)</li>
-<li>Validation intermédiaire avec <strong>pandas</strong> (distribution des dates, détection de doublons)</li>
+<li>Statistiques descriptives, histogrammes, boîtes à moustaches.</li>
+<li>Matrice de corrélation et tests préliminaires (t‑test, ANOVA) pour évaluer les différences entre groupes.</li>
 </ul>
 </section>
-<section id="modélisation-sql" class="level3">
-<h3 class="anchored" data-anchor-id="modélisation-sql">Modélisation SQL</h3>
+<section id="régression-linéaire-multiple-mco" class="level3">
+<h3 class="anchored" data-anchor-id="régression-linéaire-multiple-mco">Régression linéaire multiple (MCO)</h3>
 <ul>
-<li>Schéma relationnel normalisé (3NF) : <strong>Collaborateur</strong>, <strong>Message</strong>, <strong>Folder</strong>, tables de liaison ManyToMany</li>
-<li>Contraintes d’intégrité référentielle, clés primaires auto‑incrémentées</li>
-<li><strong>Optimisation</strong> : index B-tree sur les colonnes fréquemment interrogées (expéditeur, date)</li>
-<li><strong>Recherche plein texte</strong> : champ <code>search_vector</code> (SearchVectorField) alimenté par trigger PostgreSQL, index GIN pour des performances élevées</li>
+<li>Estimation du modèle complet avec toutes les variables.</li>
+<li>Vérification des hypothèses : normalité des résidus (Shapiro‑Wilk), homoscédasticité (Breusch‑Pagan), indépendance (Durbin‑Watson), multicolinéarité (VIF).</li>
 </ul>
 </section>
-<section id="backend-django" class="level3">
-<h3 class="anchored" data-anchor-id="backend-django">Backend Django</h3>
+<section id="sélection-de-variables" class="level3">
+<h3 class="anchored" data-anchor-id="sélection-de-variables">Sélection de variables</h3>
 <ul>
-<li>Modèles ORM personnalisés avec managers dédiés pour centraliser la logique de recherche</li>
-<li>Requêtes avancées : <code>Count</code>, <code>TruncMonth</code>, <code>ExtractHour</code>, <code>annotate</code>, <code>Q</code> objects</li>
-<li><strong>SQL brut</strong> : utilisation de <code>WITH RECURSIVE</code> pour reconstruire les fils de discussion complets en une seule requête</li>
-<li>Transactions atomiques et insertion en masse (<code>bulk_create</code>) pour l’import</li>
+<li><strong>Stepwise</strong> (AIC) pour obtenir un modèle parcimonieux.</li>
+<li><strong>Meilleurs sous‑ensembles</strong> (Best Subset) avec critères R² ajusté, Cp de Mallows et BIC.</li>
 </ul>
 </section>
-<section id="interface-web" class="level3">
-<h3 class="anchored" data-anchor-id="interface-web">Interface web</h3>
+<section id="analyse-en-composantes-principales-acp" class="level3">
+<h3 class="anchored" data-anchor-id="analyse-en-composantes-principales-acp">Analyse en composantes principales (ACP)</h3>
 <ul>
-<li><strong>Dashboard</strong> : cartes KPI, évolution mensuelle (Chart.js), top 10 expéditeurs/destinataires, mots fréquents, horaires d’activité</li>
-<li><strong>Recherche avancée</strong> : combinaison de la recherche plein texte avec filtres date/expéditeur/destinataire, surbrillance des mots‑clés</li>
-<li><strong>Explorateur de threads</strong> : deux modes (récursif Python et CTE SQL) pour afficher les conversations sous forme d’arborescence</li>
-<li><strong>Graphe d’influence</strong> : visualisation interactive (vis.js) des connexions entre collaborateurs, avec paramétrage du seuil et du nombre de nœuds</li>
-<li><strong>Navigation contextuelle</strong> : URLs paramétrées (<code>folder_id</code>, <code>thread_id</code>) pour un retour fluide entre les pages</li>
+<li>Réduction de dimensionnalité et interprétation des axes principaux.</li>
 </ul>
 </section>
-<section id="optimisation-et-déploiement" class="level3">
-<h3 class="anchored" data-anchor-id="optimisation-et-déploiement">Optimisation et déploiement</h3>
+<section id="régression-sur-composantes-principales-pcr" class="level3">
+<h3 class="anchored" data-anchor-id="régression-sur-composantes-principales-pcr">Régression sur composantes principales (PCR)</h3>
 <ul>
-<li>Cache Django (1h) pour les données lourdes (dashboard, JSON du graphe)</li>
-<li><code>select_related</code> / <code>prefetch_related</code> pour éviter les requêtes N+1</li>
-<li>Pagination (20 éléments par page) sur toutes les listes</li>
-<li>Conteneurisation avec <strong>Docker</strong> (PostgreSQL 15) et fichier <code>docker-compose.yml</code></li>
-<li>Gestion de versions avec <strong>Git</strong> (commits atomiques, README détaillé, migrations versionnées)</li>
+<li>Utilisation des composantes principales comme prédicteurs pour éviter la multicolinéarité.</li>
+<li>Choix du nombre optimal de composantes par validation croisée.</li>
+</ul>
+</section>
+<section id="régression-pls-partial-least-squares" class="level3">
+<h3 class="anchored" data-anchor-id="régression-pls-partial-least-squares">Régression PLS (Partial Least Squares)</h3>
+<ul>
+<li>Construction de composantes latentes orientées vers la prédiction de la moyenne.</li>
+<li>Comparaison des performances avec PCR et MCO.</li>
+</ul>
+</section>
+<section id="bootstrap" class="level3">
+<h3 class="anchored" data-anchor-id="bootstrap">Bootstrap</h3>
+<ul>
+<li>Estimation de la précision des coefficients (intervalles de confiance à 95 %) pour chaque modèle.</li>
 </ul>
 </section>
 </section>
-<section id="résultats-et-visualisations" class="level2">
-<h2 class="anchored" data-anchor-id="résultats-et-visualisations">Résultats et visualisations</h2>
+<section id="résultats-principaux" class="level2">
+<h2 class="anchored" data-anchor-id="résultats-principaux">Résultats principaux</h2>
 <ul>
-<li><strong>Interface fonctionnelle</strong> : démonstration en ligne (ou locale via Docker)</li>
-<li><strong>Dashboard</strong> : visualisation des volumes d’échanges, des périodes d’activité et des acteurs majeurs</li>
-<li><strong>Moteur de recherche</strong> : réponse en quelques secondes sur 500 000 messages</li>
-<li><strong>Graphe d’influence</strong> : identification des liaisons fortes entre collaborateurs</li>
+<li><strong>Dépression</strong> : facteur le plus impactant (−1,56 point en moyenne, p &lt; 2e‑16). Les étudiants dépressifs ont une performance nettement inférieure.</li>
+<li><strong>Études</strong> : effet positif significatif (+0,13 point par heure d’étude supplémentaire).</li>
+<li><strong>Réseaux sociaux</strong> : effet négatif significatif (−0,15 point par heure supplémentaire).</li>
+<li><strong>Sommeil, stress, activité physique, genre, département, âge</strong> : non significatifs après contrôle.</li>
+<li><strong>Performances des modèles</strong> :
+<ul>
+<li>RMSE ~ 2,59, R² ~ 4,9 % pour tous les modèles (MCO, Stepwise, PCR, PLS).<br>
+</li>
+<li><strong>Modèle le plus parcimonieux</strong> : PLS avec 3 composantes (ou Stepwise avec 4 variables) conserve le même pouvoir prédictif que le modèle complet.</li>
+</ul></li>
 </ul>
 </section>
 <section id="compétences-mises-en-œuvre" class="level2">
 <h2 class="anchored" data-anchor-id="compétences-mises-en-œuvre">Compétences mises en œuvre</h2>
 <ul>
-<li><strong>Ingestion de données massives</strong> : parsing, nettoyage, validation avec pandas</li>
-<li><strong>Modélisation SQL avancée</strong> : normalisation, index, recherche plein texte, CTE récursives</li>
-<li><strong>Django</strong> : ORM, managers, requêtes complexes, templates, intégration front‑end (Bootstrap, Chart.js, vis.js)</li>
-<li><strong>Optimisation des performances</strong> : cache, <code>select_related</code>, pagination, index</li>
-<li><strong>Docker &amp; déploiement</strong> : environnement reproductible avec docker‑compose</li>
-<li><strong>Gestion de projet</strong> : binôme, versionnage Git, documentation (README, schéma MLD)</li>
+<li><strong>Analyse exploratoire de données</strong> : statistiques descriptives, tests d’hypothèses (t, ANOVA), visualisations avancées.</li>
+<li><strong>Modélisation statistique</strong> : régression linéaire multiple, validation des hypothèses, sélection de variables (stepwise, best subset).</li>
+<li><strong>Réduction de dimension</strong> : ACP, PCR, PLS.</li>
+<li><strong>Évaluation de modèles</strong> : validation croisée, RMSE, R², MAE, MAPE.</li>
+<li><strong>Inférence robuste</strong> : bootstrap pour les intervalles de confiance.</li>
+<li><strong>Programmation</strong> : R (tidyverse, caret, pls, leaps, boot, etc.) – <em>code complet disponible sur demande</em>.</li>
 </ul>
 </section>
 <section id="lien-vers-le-code" class="level2">
 <h2 class="anchored" data-anchor-id="lien-vers-le-code">Lien vers le code</h2>
-<p><a href="https://github.com/Daniele-Nana/enron-discovery">Dépôt GitHub – enron-discovery</a></p>
+<p>Le code R complet (rapport R Markdown) est disponible dans mon dépôt GitHub :<br>
+<a href="https://github.com/Daniele-Nana/analyse-moyennes-etudiants">Dépôt GitHub – analyse-moyennes-etudiants</a></p>
 </section>
 <section id="améliorations-possibles" class="level2">
 <h2 class="anchored" data-anchor-id="améliorations-possibles">Améliorations possibles</h2>
 <ul>
-<li>Intégration d’une API REST (Django REST Framework) pour alimenter des clients externes</li>
-<li>Ajout de la gestion des pièces jointes</li>
-<li>Visualisation du graphe d’influence en temps réel avec filtres interactifs</li>
+<li>Intégrer des variables supplémentaires (qualité de l’enseignement, ressources familiales) pour améliorer le pouvoir explicatif.</li>
+<li>Tester des modèles non linéaires (arbres de décision, forêts aléatoires) pour capturer des interactions complexes.</li>
 </ul>
 <hr>
-<p><em>Ce projet a été réalisé en binôme dans le cadre du Master Data Science (Université d’Angers).</em></p>
+<p><em>Ce projet illustre ma capacité à mener une analyse statistique complète, de l’exploration à la modélisation prédictive, en passant par la validation rigoureuse des résultats.</em></p>
 
 
 </section>

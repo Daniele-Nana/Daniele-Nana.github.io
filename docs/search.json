@@ -1,0 +1,338 @@
+[
+  {
+    "objectID": "works.html",
+    "href": "works.html",
+    "title": "Travaux de recherche",
+    "section": "",
+    "text": "Encadrant : Fabien Panloup\nPériode : Master 1 (2025 – 2026) – en cours de rédaction\n\n\nLes méthodes de régression linéaire classiques sont conçues pour un nombre d’observations suffisamment grand par rapport au nombre de variables. Lorsque la dimension est élevée, il est souvent crucial d’identifier un sous‑ensemble de variables pertinentes. Ce travail explore les méthodes de régression parcimonieuse, qui intègrent une pénalisation favorisant des solutions avec peu de coefficients non nuls.\n\n\n\n\nÉtude théorique de la méthode Lasso (Least Absolute Shrinkage and Selection Operator) et des bornes de prédiction associées sous la condition de “Restricted Eigenvalue”.\nImplémentation en Python (scikit-learn) sur données simulées et réelles.\nComparaison avec d’autres approches pénalisées (Ridge, ElasticNet) et extension vers la méthode SLOPE.\n\n\n\n\n\nMise en évidence de l’intérêt de la parcimonie pour l’interprétabilité et la réduction de dimension.\nDéveloppement d’un notebook de validation croisée pour évaluer les performances.\nRédaction en cours d’un mémoire détaillant les fondements théoriques et les résultats numériques.\n\n\n\n\n\nRégularisation en haute dimension : maîtrise des méthodes Lasso, Ridge, ElasticNet pour la sélection de variables et la réduction de dimension.\nValidation croisée et optimisation : mise en œuvre de stratégies de validation pour choisir les hyperparamètres (CV, grille de recherche).\nImplémentation Python : utilisation avancée de scikit-learn (modèles, pipelines, métriques) et de numpy/pandas pour la manipulation de données réelles et simulées.\nAnalyse théorique : compréhension des conditions d’identification (Restricted Eigenvalue) et des bornes d’estimation/prédiction.\nÉvaluation de modèles : comparaison de performances entre modèles parcimonieux et non parcimonieux, interprétation des coefficients.\nRédaction scientifique et synthèse bibliographique : lecture d’articles de référence, autonomie dans la recherche de solutions numériques."
+  },
+  {
+    "objectID": "works.html#apprentissage-statistique-parcimonieux",
+    "href": "works.html#apprentissage-statistique-parcimonieux",
+    "title": "Travaux de recherche",
+    "section": "",
+    "text": "Encadrant : Fabien Panloup\nPériode : Master 1 (2025 – 2026) – en cours de rédaction\n\n\nLes méthodes de régression linéaire classiques sont conçues pour un nombre d’observations suffisamment grand par rapport au nombre de variables. Lorsque la dimension est élevée, il est souvent crucial d’identifier un sous‑ensemble de variables pertinentes. Ce travail explore les méthodes de régression parcimonieuse, qui intègrent une pénalisation favorisant des solutions avec peu de coefficients non nuls.\n\n\n\n\nÉtude théorique de la méthode Lasso (Least Absolute Shrinkage and Selection Operator) et des bornes de prédiction associées sous la condition de “Restricted Eigenvalue”.\nImplémentation en Python (scikit-learn) sur données simulées et réelles.\nComparaison avec d’autres approches pénalisées (Ridge, ElasticNet) et extension vers la méthode SLOPE.\n\n\n\n\n\nMise en évidence de l’intérêt de la parcimonie pour l’interprétabilité et la réduction de dimension.\nDéveloppement d’un notebook de validation croisée pour évaluer les performances.\nRédaction en cours d’un mémoire détaillant les fondements théoriques et les résultats numériques.\n\n\n\n\n\nRégularisation en haute dimension : maîtrise des méthodes Lasso, Ridge, ElasticNet pour la sélection de variables et la réduction de dimension.\nValidation croisée et optimisation : mise en œuvre de stratégies de validation pour choisir les hyperparamètres (CV, grille de recherche).\nImplémentation Python : utilisation avancée de scikit-learn (modèles, pipelines, métriques) et de numpy/pandas pour la manipulation de données réelles et simulées.\nAnalyse théorique : compréhension des conditions d’identification (Restricted Eigenvalue) et des bornes d’estimation/prédiction.\nÉvaluation de modèles : comparaison de performances entre modèles parcimonieux et non parcimonieux, interprétation des coefficients.\nRédaction scientifique et synthèse bibliographique : lecture d’articles de référence, autonomie dans la recherche de solutions numériques."
+  },
+  {
+    "objectID": "works.html#problème-du-scrutin-et-nombres-de-catalan",
+    "href": "works.html#problème-du-scrutin-et-nombres-de-catalan",
+    "title": "Travaux de recherche",
+    "section": "Problème du scrutin et nombres de Catalan",
+    "text": "Problème du scrutin et nombres de Catalan\nEncadrant : Loïc Chaumont\nPériode : Licence 3 (2024 – 2025) – mémoire rédigé\n\nContexte et objectifs\nLors d’une élection, le candidat A obtient p voix et le candidat B en obtient q (q &lt; p). Quelle est la probabilité que tout au long du dépouillement, le candidat A soit toujours en tête ? Ce problème historique, connu sous le nom de problème du scrutin, admet une solution combinatoire élégante faisant intervenir les nombres de Catalan.\n\n\nTravail réalisé\n\nModélisation du dépouillement par une marche aléatoire unidimensionnelle.\nCalcul du nombre de trajectoires positives à p+q pas (valeurs +1 pour A, -1 pour B) partant de 0 et atteignant le niveau p−q.\nLien avec les nombres de Catalan et applications à la loi du premier temps de passage.\nÉtude d’autres problèmes combinatoires (chemins de Dyck, triangulations de polygones) faisant intervenir ces mêmes nombres.\n\n\n\nRésultats\n\nRédaction d’un mémoire complet détaillant la démonstration et les prolongements.\nSimulations stochastiques en Python et R pour illustrer les résultats théoriques.\nMise en évidence du lien entre combinatoire, probabilités et théorie des marches aléatoires.\n\n\n\nCompétences acquises\n\nModélisation probabiliste : formalisation d’un problème concret (dépouillement électoral) en termes de marche aléatoire et de chaîne de Markov.\nCombinatoire et dénombrement : manipulation des nombres de Catalan, chemins de Dyck, lien avec des structures discrètes.\nSimulation stochastique : développement de simulations en Python et R pour illustrer les résultats théoriques (loi du premier temps de passage).\nPreuve mathématique : construction rigoureuse d’une démonstration combinatoire.\nRédaction scientifique : mémoire complet, soutenance orale.\nCapacité à relier mathématiques fondamentales et applications concrètes."
+  },
+  {
+    "objectID": "projects/pommes.html",
+    "href": "projects/pommes.html",
+    "title": "Respect du cahier des charges : les pommes ont‑elles un diamètre moyen de 10 cm ?",
+    "section": "",
+    "text": "Un producteur de pommes doit garantir que le diamètre moyen des pommes de chaque lot est de 10 cm. Un contrôleur prélève 8 pommes dans un lot et mesure leur diamètre (en cm) :\n9.35, 10.14, 11.31, 8.97, 8.51, 9.92, 9.43, 10.81\nL’objectif est de déterminer, au seuil de risque de 1 %, si le lot respecte la clause du cahier des charges."
+  },
+  {
+    "objectID": "projects/pommes.html#contexte",
+    "href": "projects/pommes.html#contexte",
+    "title": "Respect du cahier des charges : les pommes ont‑elles un diamètre moyen de 10 cm ?",
+    "section": "",
+    "text": "Un producteur de pommes doit garantir que le diamètre moyen des pommes de chaque lot est de 10 cm. Un contrôleur prélève 8 pommes dans un lot et mesure leur diamètre (en cm) :\n9.35, 10.14, 11.31, 8.97, 8.51, 9.92, 9.43, 10.81\nL’objectif est de déterminer, au seuil de risque de 1 %, si le lot respecte la clause du cahier des charges."
+  },
+  {
+    "objectID": "projects/pommes.html#données",
+    "href": "projects/pommes.html#données",
+    "title": "Respect du cahier des charges : les pommes ont‑elles un diamètre moyen de 10 cm ?",
+    "section": "Données",
+    "text": "Données\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy import stats\n\ndiametres = np.array([9.35, 10.14, 11.31, 8.97, 8.51, 9.92, 9.43, 10.81])\nn = len(diametres)\nprint(\"Échantillon :\", diametres)"
+  },
+  {
+    "objectID": "projects/pommes.html#statistiques-descriptives",
+    "href": "projects/pommes.html#statistiques-descriptives",
+    "title": "Respect du cahier des charges : les pommes ont‑elles un diamètre moyen de 10 cm ?",
+    "section": "1. Statistiques descriptives",
+    "text": "1. Statistiques descriptives\nmoyenne = np.mean(diametres)\necart_type = np.std(diametres, ddof=1)   # écart-type corrigé (ddof=1)\nprint(f\"Moyenne = {moyenne:.3f} cm\")\nprint(f\"Écart-type (corrigé) = {ecart_type:.3f} cm\")\nprint(f\"Effectif = {n}\")\nRésultats :\n\nMoyenne : ≈ 9.93 cm\nÉcart-type : ≈ 0.97 cm\nEffectif : 8\n\n\nGraphiques\nfig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 4))\n\n# Boîte à moustaches\nax1.boxplot(diametres)\nax1.set_title(\"Boîte à moustaches\")\nax1.set_ylabel(\"Diamètre (cm)\")\n\n# Histogramme avec densité normale\nax2.hist(diametres, bins=5, density=True, alpha=0.6, color='g', edgecolor='black')\nx = np.linspace(min(diametres), max(diametres), 100)\nax2.plot(x, stats.norm.pdf(x, moyenne, ecart_type), 'r-', label='Loi normale ajustée')\nax2.set_title(\"Histogramme + densité normale\")\nax2.legend()\nplt.show()"
+  },
+  {
+    "objectID": "projects/pommes.html#test-de-normalité-shapirowilk",
+    "href": "projects/pommes.html#test-de-normalité-shapirowilk",
+    "title": "Respect du cahier des charges : les pommes ont‑elles un diamètre moyen de 10 cm ?",
+    "section": "2. Test de normalité (Shapiro‑Wilk)",
+    "text": "2. Test de normalité (Shapiro‑Wilk)\nAvant d’utiliser un test paramétrique (t de Student), on vérifie si l’échantillon peut être considéré comme issu d’une loi normale (hypothèse requise pour le test t).\nstat, p_norm = stats.shapiro(diametres)\nprint(f\"Statistique de Shapiro-Wilk = {stat:.4f}\")\nprint(f\"p-valeur = {p_norm:.4f}\")\nInterprétation :\n\nSi p‑valeur &gt; 0.05, on ne rejette pas l’hypothèse de normalité.\nIci p‑valeur ≈ … (généralement &gt; 0.05 pour cet échantillon) → la loi normale est plausible."
+  },
+  {
+    "objectID": "projects/pommes.html#test-t-de-student-pour-une-moyenne-test-bilatéral",
+    "href": "projects/pommes.html#test-t-de-student-pour-une-moyenne-test-bilatéral",
+    "title": "Respect du cahier des charges : les pommes ont‑elles un diamètre moyen de 10 cm ?",
+    "section": "3. Test t de Student pour une moyenne (test bilatéral)",
+    "text": "3. Test t de Student pour une moyenne (test bilatéral)\nOn teste si la moyenne de la population est égale à 10 cm.\n\nH₀ : μ = 10\nH₁ : μ ≠ 10\nSeuil de risque : α = 0.01\n\nt_stat, p_val = stats.ttest_1samp(diametres, 10)\nprint(f\"Statistique t = {t_stat:.4f}\")\nprint(f\"p-valeur = {p_val:.6f}\")\nRésultat :\n\nt ≈ −0.214\np‑valeur ≈ 0.836"
+  },
+  {
+    "objectID": "projects/pommes.html#décision-et-conclusion",
+    "href": "projects/pommes.html#décision-et-conclusion",
+    "title": "Respect du cahier des charges : les pommes ont‑elles un diamètre moyen de 10 cm ?",
+    "section": "4. Décision et conclusion",
+    "text": "4. Décision et conclusion\nAu seuil α = 0.01, la p‑valeur (0.836) est très supérieure à 0.01. On ne rejette donc pas H₀ : les données ne fournissent pas de preuve suffisante pour affirmer que le diamètre moyen du lot est différent de 10 cm.\n\nConclusion : le cahier des charges est respecté (au risque de 1 %)."
+  },
+  {
+    "objectID": "projects/pommes.html#compétences-mises-en-œuvre",
+    "href": "projects/pommes.html#compétences-mises-en-œuvre",
+    "title": "Respect du cahier des charges : les pommes ont‑elles un diamètre moyen de 10 cm ?",
+    "section": "Compétences mises en œuvre",
+    "text": "Compétences mises en œuvre\n\nStatistiques descriptives : calcul de moyenne, écart‑type, représentation graphique (boxplot, histogramme)\nTest de normalité : mise en œuvre du test de Shapiro‑Wilk et interprétation\nTest d’hypothèse : test t de Student pour une moyenne, choix du seuil de signification\nProgrammation Python : utilisation de numpy, scipy.stats, matplotlib\nRédaction scientifique : présentation claire des hypothèses, résultats et conclusion"
+  },
+  {
+    "objectID": "projects/pommes.html#améliorations-possibles",
+    "href": "projects/pommes.html#améliorations-possibles",
+    "title": "Respect du cahier des charges : les pommes ont‑elles un diamètre moyen de 10 cm ?",
+    "section": "Améliorations possibles",
+    "text": "Améliorations possibles\n\nCalculer un intervalle de confiance à 99 % pour la moyenne\nAjouter un test non paramétrique (Wilcoxon) en cas de doute sur la normalité\nAutomatiser la vérification des conditions d’application du test t\n\n\nCe projet illustre ma capacité à réaliser une analyse statistique complète, de l’exploration des données à la prise de décision."
+  },
+  {
+    "objectID": "projects/markov-ballon.html",
+    "href": "projects/markov-ballon.html",
+    "title": "Chaîne de Markov : le jeu du ballon",
+    "section": "",
+    "text": "Alice, Bob et Clara se passent un ballon selon des probabilités fixes. Ce système est une chaîne de Markov homogène à trois états (1 = Alice, 2 = Bob, 3 = Clara). Aucun enfant ne garde la balle (pas de boucle). L’objectif est d’étudier la distribution des détenteurs après un grand nombre de passes, par simulation et par calcul matriciel.\n\n\n\n\n\n\n\n\n\n\n\nDe \\ À\nAlice (1)\nBob (2)\nClara (3)\n\n\n\n\nAlice\n0\n1/3\n2/3\n\n\nBob\n1/2\n0\n1/2\n\n\nClara\n1/4\n3/4\n0\n\n\n\nSoit :\n\\[\nP = \\begin{pmatrix} 0 & 1/3 & 2/3 \\\\ 1/2 & 0 & 1/2 \\\\ 1/4 & 3/4 & 0 \\end{pmatrix}\n\\]"
+  },
+  {
+    "objectID": "projects/markov-ballon.html#contexte",
+    "href": "projects/markov-ballon.html#contexte",
+    "title": "Chaîne de Markov : le jeu du ballon",
+    "section": "",
+    "text": "Alice, Bob et Clara se passent un ballon selon des probabilités fixes. Ce système est une chaîne de Markov homogène à trois états (1 = Alice, 2 = Bob, 3 = Clara). Aucun enfant ne garde la balle (pas de boucle). L’objectif est d’étudier la distribution des détenteurs après un grand nombre de passes, par simulation et par calcul matriciel.\n\n\n\n\n\n\n\n\n\n\n\nDe \\ À\nAlice (1)\nBob (2)\nClara (3)\n\n\n\n\nAlice\n0\n1/3\n2/3\n\n\nBob\n1/2\n0\n1/2\n\n\nClara\n1/4\n3/4\n0\n\n\n\nSoit :\n\\[\nP = \\begin{pmatrix} 0 & 1/3 & 2/3 \\\\ 1/2 & 0 & 1/2 \\\\ 1/4 & 3/4 & 0 \\end{pmatrix}\n\\]"
+  },
+  {
+    "objectID": "projects/markov-ballon.html#simulation-dune-marche-aléatoire",
+    "href": "projects/markov-ballon.html#simulation-dune-marche-aléatoire",
+    "title": "Chaîne de Markov : le jeu du ballon",
+    "section": "1. Simulation d’une marche aléatoire",
+    "text": "1. Simulation d’une marche aléatoire\nFonction marche(n, X0) : génère une séquence de n états (détenteurs) à partir de l’état initial X0 (1, 2 ou 3).\nimport numpy as np\nimport matplotlib.pyplot as plt\n\ndef marche(n, X0, P):\n    \"\"\"\n    Simule une marche de longueur n sur la chaîne de Markov définie par P.\n    Retourne la liste des états [X0, X1, ..., Xn].\n    \"\"\"\n    etats = [X0]\n    for _ in range(n):\n        etat_courant = etats[-1]\n        prochain = np.random.choice([1, 2, 3], p=P[etat_courant-1])\n        etats.append(prochain)\n    return etats\nExemple d’utilisation :\nP = [[0, 1/3, 2/3],\n     [1/2, 0, 1/2],\n     [1/4, 3/4, 0]]\n\ntrajectoire = marche(50, 1, P)\nprint(trajectoire[:10])  # premiers états"
+  },
+  {
+    "objectID": "projects/markov-ballon.html#visualisation-dune-marche",
+    "href": "projects/markov-ballon.html#visualisation-dune-marche",
+    "title": "Chaîne de Markov : le jeu du ballon",
+    "section": "2. Visualisation d’une marche",
+    "text": "2. Visualisation d’une marche\nOn représente les états (1, 2, 3) en fonction du temps.\nplt.figure(figsize=(10, 4))\nplt.plot(trajectoire, marker='o', linestyle='-')\nplt.yticks([1, 2, 3], ['Alice', 'Bob', 'Clara'])\nplt.xlabel('Numéro de passe')\nplt.ylabel('Détenteur')\nplt.title('Trajectoire du ballon (50 passes)')\nplt.grid(True)\nplt.show()"
+  },
+  {
+    "objectID": "projects/markov-ballon.html#distribution-après-50-passes-à-partir-de-différents-états-initiaux",
+    "href": "projects/markov-ballon.html#distribution-après-50-passes-à-partir-de-différents-états-initiaux",
+    "title": "Chaîne de Markov : le jeu du ballon",
+    "section": "3. Distribution après 50 passes à partir de différents états initiaux",
+    "text": "3. Distribution après 50 passes à partir de différents états initiaux\nOn simule 100 marches de longueur 50 à partir de chaque état initial, et on observe la fréquence de l’état final (\\(X_{50}\\)).\ndef distribution_finale(n, X0, P, n_sim=100):\n    finales = []\n    for _ in range(n_sim):\n        traj = marche(n, X0, P)\n        finales.append(traj[-1])\n    unique, counts = np.unique(finales, return_counts=True)\n    return dict(zip(unique, counts / n_sim))\n\ndist1 = distribution_finale(50, 1, P)\ndist2 = distribution_finale(50, 2, P)\ndist3 = distribution_finale(50, 3, P)\n\nprint(\"Distribution après 50 passes depuis Alice :\", dist1)\nprint(\"Distribution depuis Bob :\", dist2)\nprint(\"Distribution depuis Clara :\", dist3)\nRésultats typiques (avec 100 simulations) :\n\nDepuis Alice : {1: ~0.32, 2: ~0.34, 3: ~0.34}\nDepuis Bob : {1: ~0.34, 2: ~0.32, 3: ~0.34}\nDepuis Clara : {1: ~0.33, 2: ~0.33, 3: ~0.34}\n\n\nConclusion : quelle que soit la condition initiale, après 50 passes, la distribution est proche de l’équilibre (1/3 chacun). La chaîne semble converger vers la distribution stationnaire."
+  },
+  {
+    "objectID": "projects/markov-ballon.html#calcul-de-la-distribution-stationnaire-par-le-calcul-matriciel",
+    "href": "projects/markov-ballon.html#calcul-de-la-distribution-stationnaire-par-le-calcul-matriciel",
+    "title": "Chaîne de Markov : le jeu du ballon",
+    "section": "4. Calcul de la distribution stationnaire par le calcul matriciel",
+    "text": "4. Calcul de la distribution stationnaire par le calcul matriciel\nLa matrice de transition \\(P\\) étant irréductible et apériodique, elle admet une distribution stationnaire unique \\(\\pi\\) vérifiant \\(\\pi P = \\pi\\).\ndef puissance_matrice(P, n):\n    \"\"\"Calcule P^n par multiplication matricielle (pour n entier).\"\"\"\n    Pn = np.array(P)\n    for _ in range(1, n):\n        Pn = Pn @ P\n    return Pn\n\nP50 = puissance_matrice(P, 50)\nprint(\"P^50 :\")\nprint(P50)\n\n# La distribution stationnaire est une ligne de P^50 (toutes identiques)\npi = P50[0]\nprint(\"Distribution stationnaire :\", pi)\nRésultat : chaque ligne de \\(P^{50}\\) converge vers \\([1/3,\\ 1/3,\\ 1/3]\\). Cela confirme les simulations : après un grand nombre de passes, chaque enfant a une chance sur trois d’avoir la balle."
+  },
+  {
+    "objectID": "projects/markov-ballon.html#interprétation-et-conclusion",
+    "href": "projects/markov-ballon.html#interprétation-et-conclusion",
+    "title": "Chaîne de Markov : le jeu du ballon",
+    "section": "5. Interprétation et conclusion",
+    "text": "5. Interprétation et conclusion\n\nLa chaîne de Markov modélise un processus aléatoire sans mémoire.\nLes simulations montrent que l’état initial est vite oublié.\nLe calcul matriciel confirme l’existence d’une distribution stationnaire uniforme.\nCe modèle a des applications en file d’attente, propagation de rumeurs, etc."
+  },
+  {
+    "objectID": "projects/markov-ballon.html#compétences-mises-en-œuvre",
+    "href": "projects/markov-ballon.html#compétences-mises-en-œuvre",
+    "title": "Chaîne de Markov : le jeu du ballon",
+    "section": "Compétences mises en œuvre",
+    "text": "Compétences mises en œuvre\n\nModélisation stochastique : chaînes de Markov, matrices de transition\nSimulation : génération de trajectoires aléatoires avec numpy.random.choice\nAnalyse statistique : estimation de distributions par Monte Carlo\nCalcul matriciel : multiplication, puissance, convergence vers la distribution stationnaire\nVisualisation : tracé de trajectoires\nInterprétation : convergence, oubli de l’état initial"
+  },
+  {
+    "objectID": "projects/markov-ballon.html#améliorations-possibles",
+    "href": "projects/markov-ballon.html#améliorations-possibles",
+    "title": "Chaîne de Markov : le jeu du ballon",
+    "section": "Améliorations possibles",
+    "text": "Améliorations possibles\n\nAjouter une animation de la propagation du ballon\nCalculer le temps de mélange (mixage)\nComparer avec un modèle théorique de chaîne de Markov à 3 états\n\n\nCe projet illustre ma capacité à implémenter et analyser des chaînes de Markov en Python, une compétence clé en modélisation stochastique et en simulation."
+  },
+  {
+    "objectID": "projects/chi2-de.html",
+    "href": "projects/chi2-de.html",
+    "title": "Test du chi‑2 d’adéquation : le dé est‑il équilibré ?",
+    "section": "",
+    "text": "Lorsqu’on lance un dé, on s’attend à ce que chaque face sorte avec une probabilité de 1/6.\nNous disposons d’observations sur 726 lancers. L’objectif est de déterminer si le dé utilisé est équilibré (i.e. suit une loi uniforme) ou non.\nDonnées :\n\n\n\nFace\n1\n2\n3\n4\n5\n6\n\n\n\n\nEffectif\n127\n108\n123\n118\n115\n135"
+  },
+  {
+    "objectID": "projects/chi2-de.html#contexte",
+    "href": "projects/chi2-de.html#contexte",
+    "title": "Test du chi‑2 d’adéquation : le dé est‑il équilibré ?",
+    "section": "",
+    "text": "Lorsqu’on lance un dé, on s’attend à ce que chaque face sorte avec une probabilité de 1/6.\nNous disposons d’observations sur 726 lancers. L’objectif est de déterminer si le dé utilisé est équilibré (i.e. suit une loi uniforme) ou non.\nDonnées :\n\n\n\nFace\n1\n2\n3\n4\n5\n6\n\n\n\n\nEffectif\n127\n108\n123\n118\n115\n135"
+  },
+  {
+    "objectID": "projects/chi2-de.html#méthodologie",
+    "href": "projects/chi2-de.html#méthodologie",
+    "title": "Test du chi‑2 d’adéquation : le dé est‑il équilibré ?",
+    "section": "Méthodologie",
+    "text": "Méthodologie\nLe test du χ² d’adéquation (ou test du χ² de conformité) compare les effectifs observés aux effectifs théoriques attendus sous l’hypothèse nulle.\n\nHypothèses\n\nH₀ : le dé est équilibré (p₁ = p₂ = … = p₆ = 1/6)\nH₁ : le dé n’est pas équilibré\n\n\n\nFonction Python implémentée\nLa fonction chi2_ad(x, p) :\n\nVérifie que p est un vecteur de probabilités (somme = 1, valeurs entre 0 et 1)\nVérifie que les effectifs observés sont suffisants (&gt;5) – condition d’application du test\nCalcule la statistique de test χ², les degrés de liberté et la p‑valeur\nRetourne ces trois valeurs dans une liste\n\nimport numpy as np\nfrom scipy.stats import chi2\n\ndef chi2_ad(x, p):\n    # Vérification des probabilités\n    if not np.isclose(sum(p), 1) or any(pi &lt; 0 for pi in p):\n        raise ValueError(\"p doit être un vecteur de probabilités (somme = 1, valeurs &gt;= 0).\")\n    # Vérification des effectifs\n    if any(obs &lt;= 5 for obs in x):\n        raise ValueError(\"Les effectifs observés doivent tous être &gt; 5.\")\n    \n    n = sum(x)\n    ef = n * np.array(p)               # effectifs théoriques\n    stat = sum((x - ef)**2 / ef)       # statistique du chi2\n    ddl = len(x) - 1\n    p_val = 1 - chi2.cdf(stat, ddl)\n    return [stat, ddl, p_val]\n\n\nApplication\nobs = [127, 108, 123, 118, 115, 135]\np_unif = [1/6] * 6\n\nstat, ddl, p_val = chi2_ad(obs, p_unif)\nprint(f\"Statistique χ² = {stat:.3f}\")\nprint(f\"Degrés de liberté = {ddl}\")\nprint(f\"p‑valeur = {p_val:.4f}\")\nRésultat :\n\nStatistique χ² = 4,284\nd.d.l. = 5\np‑valeur = 0,509"
+  },
+  {
+    "objectID": "projects/chi2-de.html#interprétation",
+    "href": "projects/chi2-de.html#interprétation",
+    "title": "Test du chi‑2 d’adéquation : le dé est‑il équilibré ?",
+    "section": "Interprétation",
+    "text": "Interprétation\nLa p‑valeur (0,509) est très supérieure au seuil usuel de 5 % (0,05). On ne rejette donc pas H₀ : au seuil de signification 5 %, on considère que le dé est équilibré. Les écarts entre les effectifs observés et les effectifs théoriques peuvent être attribués au hasard."
+  },
+  {
+    "objectID": "projects/chi2-de.html#compétences-mises-en-œuvre",
+    "href": "projects/chi2-de.html#compétences-mises-en-œuvre",
+    "title": "Test du chi‑2 d’adéquation : le dé est‑il équilibré ?",
+    "section": "Compétences mises en œuvre",
+    "text": "Compétences mises en œuvre\n\nTest statistique : mise en œuvre du χ² d’adéquation, interprétation de la p‑valeur\nProgrammation Python : gestion des exceptions, manipulation de listes, utilisation de numpy et scipy.stats\nValidation des données : contrôle des prérequis du test (effectifs &gt;5, vecteur de probabilités)\nRédaction scientifique : description claire du problème, des hypothèses et de la conclusion"
+  },
+  {
+    "objectID": "projects/chi2-de.html#améliorations-possibles",
+    "href": "projects/chi2-de.html#améliorations-possibles",
+    "title": "Test du chi‑2 d’adéquation : le dé est‑il équilibré ?",
+    "section": "Améliorations possibles",
+    "text": "Améliorations possibles\n\nAjouter un graphique comparant les effectifs observés et théoriques (barplot)\nGénéraliser la fonction pour accepter des probabilités non uniformes\nCréer une version interactive avec Streamlit\n\n\nCe projet illustre ma capacité à appliquer des méthodes statistiques rigoureuses et à les implémenter en Python."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Daniele Nana Portfolio",
+    "section": "",
+    "text": "Téléphone : +33 6 52 43 33 42\nEmail : danisanana@gmail.com\n\nGitHub : github.com/Daniele-Nana\n\n\n\n\n\nMaster Data Science – Université d’Angers (2025 – présent)\nMatières principales :\n- Analyse numérique & optimisation : analyse numérique matricielle, optimisation non linéaire, modélisation stochastique\n- Statistique & apprentissage : statistiques, modèles de régression, data mining et classification, statistique en grande dimension, séries chronologiques\n- IA avancée : apprentissage par renforcement des modèles génératifs, traitement d’images\n- Programmation & data : programmation orientée objet, traitement des données en Python, structuration des données, informatique pour le Big Data\n- Économétrie & applications : datamining et économie, économétrie de l’évaluation\n- Transversal : droit et données numériques, communication scientifique, analyse du signal\nLicence Mathématiques Appliquées – Université d’Angers (2022 – 2025)\nMatières principales : algèbre linéaire, probabilités, statistiques inférentielles, calcul différentiel, optimisation, programmation Python, algorithmique, économétrie\n\n\n\n\n\n\nSOCAPRES – Cameroun (juillet 2025 – août 2025)\n- Traitement et analyse de données logistiques et commerciales (+15 000 enregistrements) pour optimiser les flux et réduire les ruptures de stock.\n- Automatisation des rapports de suivi sous Python (pandas, openpyxl) et Excel, permettant un gain de temps de 30 % pour l’équipe.\n- Création de tableaux de bord dynamiques pour visualiser les plannings de production et les indicateurs clés.\n\n\n\nCarrefour Angers Grand Maine (2023 – 2025)\n- Gestion des opérations en magasin : encaissement, étiquetage, mise en rayon et préparation des commandes.\n- Suivi rigoureux des stocks et inventaires, garantissant une disponibilité des produits supérieure à 95 %.\n- Contribution à l’amélioration de la qualité de service client (enquêtes de satisfaction internes).\n\n\n\n\n\n\n\n\n\n\n\n\nCatégorie\nDétails\n\n\n\n\nProgrammation\nPython (Pandas, NumPy, Scikit-learn, TensorFlow), R, SQL, SAS, , VBA\n\n\nBases de données\nPostgreSQL, MariaDB, SQLAlchemy, JSON/XML, Hadoop/MapReduce\n\n\nMachine Learning\nApprentissage supervisé et non supervisé, régressions, classification, clustering, feature engineering, validation croisée, évaluation de modèles, deep learning\n\n\nStatistiques\nModélisation probabiliste, chaînes de Markov, simulation de processus stochastiques\n\n\nIA générative\nModèles de langage (LLM), prompt engineering, fine-tuning, frameworks, API et intégration, développement d’applications\n\n\nVisualisation\nMatplotlib, Seaborn, Tableau, Excel avancé, dashboards, LaTeX/Markdown, Power BI, Qlik\n\n\nOutillage\nGit, Unix/Linux, analyse exploratoire des données (EDA), datamining, génie logiciel, développement web (Django), Docker\n\n\n\n\n\n\nRigueur analytique, esprit d’équipe et autonomie, organisation, gestion des priorités et initiative, communication technique, veille technologique et conformité RGPD.\n\n\n\n\nCinéma, lecture, musique, voyages, cuisine, énigmes, humanisme et écologie.\n\n\n\n\n\nFrançais : langue maternelle\n\nAnglais : niveau C1 (VTest)\n\n\nMerci de votre intérêt ! N’hésitez pas à me contacter pour échanger sur une opportunité d’alternance."
+  },
+  {
+    "objectID": "about.html#curriculum-vitae",
+    "href": "about.html#curriculum-vitae",
+    "title": "Daniele Nana Portfolio",
+    "section": "",
+    "text": "Téléphone : +33 6 52 43 33 42\nEmail : danisanana@gmail.com\n\nGitHub : github.com/Daniele-Nana\n\n\n\n\n\nMaster Data Science – Université d’Angers (2025 – présent)\nMatières principales :\n- Analyse numérique & optimisation : analyse numérique matricielle, optimisation non linéaire, modélisation stochastique\n- Statistique & apprentissage : statistiques, modèles de régression, data mining et classification, statistique en grande dimension, séries chronologiques\n- IA avancée : apprentissage par renforcement des modèles génératifs, traitement d’images\n- Programmation & data : programmation orientée objet, traitement des données en Python, structuration des données, informatique pour le Big Data\n- Économétrie & applications : datamining et économie, économétrie de l’évaluation\n- Transversal : droit et données numériques, communication scientifique, analyse du signal\nLicence Mathématiques Appliquées – Université d’Angers (2022 – 2025)\nMatières principales : algèbre linéaire, probabilités, statistiques inférentielles, calcul différentiel, optimisation, programmation Python, algorithmique, économétrie\n\n\n\n\n\n\nSOCAPRES – Cameroun (juillet 2025 – août 2025)\n- Traitement et analyse de données logistiques et commerciales (+15 000 enregistrements) pour optimiser les flux et réduire les ruptures de stock.\n- Automatisation des rapports de suivi sous Python (pandas, openpyxl) et Excel, permettant un gain de temps de 30 % pour l’équipe.\n- Création de tableaux de bord dynamiques pour visualiser les plannings de production et les indicateurs clés.\n\n\n\nCarrefour Angers Grand Maine (2023 – 2025)\n- Gestion des opérations en magasin : encaissement, étiquetage, mise en rayon et préparation des commandes.\n- Suivi rigoureux des stocks et inventaires, garantissant une disponibilité des produits supérieure à 95 %.\n- Contribution à l’amélioration de la qualité de service client (enquêtes de satisfaction internes).\n\n\n\n\n\n\n\n\n\n\n\n\nCatégorie\nDétails\n\n\n\n\nProgrammation\nPython (Pandas, NumPy, Scikit-learn, TensorFlow), R, SQL, SAS, , VBA\n\n\nBases de données\nPostgreSQL, MariaDB, SQLAlchemy, JSON/XML, Hadoop/MapReduce\n\n\nMachine Learning\nApprentissage supervisé et non supervisé, régressions, classification, clustering, feature engineering, validation croisée, évaluation de modèles, deep learning\n\n\nStatistiques\nModélisation probabiliste, chaînes de Markov, simulation de processus stochastiques\n\n\nIA générative\nModèles de langage (LLM), prompt engineering, fine-tuning, frameworks, API et intégration, développement d’applications\n\n\nVisualisation\nMatplotlib, Seaborn, Tableau, Excel avancé, dashboards, LaTeX/Markdown, Power BI, Qlik\n\n\nOutillage\nGit, Unix/Linux, analyse exploratoire des données (EDA), datamining, génie logiciel, développement web (Django), Docker\n\n\n\n\n\n\nRigueur analytique, esprit d’équipe et autonomie, organisation, gestion des priorités et initiative, communication technique, veille technologique et conformité RGPD.\n\n\n\n\nCinéma, lecture, musique, voyages, cuisine, énigmes, humanisme et écologie.\n\n\n\n\n\nFrançais : langue maternelle\n\nAnglais : niveau C1 (VTest)\n\n\nMerci de votre intérêt ! N’hésitez pas à me contacter pour échanger sur une opportunité d’alternance."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Daniele Nana Portfolio",
+    "section": "",
+    "text": "Étudiante en Data Science, spécialisée en machine learning et modélisation statistique, avec une expérience en analyse de données et en développement de modèles prédictifs.\nJe recherche une alternance pour contribuer à des projets concrets et innovants.\n\n\n\n\n\nMon parcours – formation, expériences, compétences techniques et atouts (page « À propos »).\nMes travaux de recherche – deux projets encadrés en apprentissage statistique parcimonieux et en combinatoire probabiliste (page « Travaux de recherche »).\nMes projets – analyses de données, modélisations, visualisations (page « Projets »).\n\n\n\n\n\nLe site est construit avec Quarto et hébergé sur GitHub Pages.\n\nMerci de votre visite ! N’hésitez pas à explorer les différentes sections et à me contacter pour échanger sur une opportunité d’alternance."
+  },
+  {
+    "objectID": "index.html#bonjour-je-suis-daniele-nana",
+    "href": "index.html#bonjour-je-suis-daniele-nana",
+    "title": "Daniele Nana Portfolio",
+    "section": "",
+    "text": "Étudiante en Data Science, spécialisée en machine learning et modélisation statistique, avec une expérience en analyse de données et en développement de modèles prédictifs.\nJe recherche une alternance pour contribuer à des projets concrets et innovants.\n\n\n\n\n\nMon parcours – formation, expériences, compétences techniques et atouts (page « À propos »).\nMes travaux de recherche – deux projets encadrés en apprentissage statistique parcimonieux et en combinatoire probabiliste (page « Travaux de recherche »).\nMes projets – analyses de données, modélisations, visualisations (page « Projets »).\n\n\n\n\n\nLe site est construit avec Quarto et hébergé sur GitHub Pages.\n\nMerci de votre visite ! N’hésitez pas à explorer les différentes sections et à me contacter pour échanger sur une opportunité d’alternance."
+  },
+  {
+    "objectID": "projects/enron-discovery.html",
+    "href": "projects/enron-discovery.html",
+    "title": "Enron Discovery – Plateforme d’investigation numérique",
+    "section": "",
+    "text": "Dans le cadre de l’UE Structuration des données, nous avons développé une application web d’e‑Discovery (investigation numérique) permettant d’explorer le célèbre corpus Enron. Ce jeu de données contient plus de 500 000 emails authentiques issus d’une entreprise américaine impliquée dans un scandale financier.\nL’objectif était de concevoir un outil fonctionnel pour des journalistes ou auditeurs, capable de : - naviguer dans les échanges, - identifier les acteurs clés, - reconstruire des fils de discussion, - effectuer des recherches avancées."
+  },
+  {
+    "objectID": "projects/enron-discovery.html#contexte-et-objectif",
+    "href": "projects/enron-discovery.html#contexte-et-objectif",
+    "title": "Enron Discovery – Plateforme d’investigation numérique",
+    "section": "",
+    "text": "Dans le cadre de l’UE Structuration des données, nous avons développé une application web d’e‑Discovery (investigation numérique) permettant d’explorer le célèbre corpus Enron. Ce jeu de données contient plus de 500 000 emails authentiques issus d’une entreprise américaine impliquée dans un scandale financier.\nL’objectif était de concevoir un outil fonctionnel pour des journalistes ou auditeurs, capable de : - naviguer dans les échanges, - identifier les acteurs clés, - reconstruire des fils de discussion, - effectuer des recherches avancées."
+  },
+  {
+    "objectID": "projects/enron-discovery.html#données-utilisées",
+    "href": "projects/enron-discovery.html#données-utilisées",
+    "title": "Enron Discovery – Plateforme d’investigation numérique",
+    "section": "Données utilisées",
+    "text": "Données utilisées\n\nSource : Enron Email Dataset\nFormat : fichiers .eml organisés par utilisateur et dossier\nVolume : plus de 500 000 messages bruts\nStructure : arborescence complexe avec en‑têtes (expéditeur, destinataires, date, objet, In‑Reply‑To) et corps de message"
+  },
+  {
+    "objectID": "projects/enron-discovery.html#méthodologie",
+    "href": "projects/enron-discovery.html#méthodologie",
+    "title": "Enron Discovery – Plateforme d’investigation numérique",
+    "section": "Méthodologie",
+    "text": "Méthodologie\n\nIngestion et parsing\n\nParcours récursif de l’arborescence avec pathlib\nDécodage MIME via le module email.parser de Python\nNettoyage avancé avec expressions régulières (normalisation des adresses, suppression des signatures)\nValidation intermédiaire avec pandas (distribution des dates, détection de doublons)\n\n\n\nModélisation SQL\n\nSchéma relationnel normalisé (3NF) : Collaborateur, Message, Folder, tables de liaison ManyToMany\nContraintes d’intégrité référentielle, clés primaires auto‑incrémentées\nOptimisation : index B-tree sur les colonnes fréquemment interrogées (expéditeur, date)\nRecherche plein texte : champ search_vector (SearchVectorField) alimenté par trigger PostgreSQL, index GIN pour des performances élevées\n\n\n\nBackend Django\n\nModèles ORM personnalisés avec managers dédiés pour centraliser la logique de recherche\nRequêtes avancées : Count, TruncMonth, ExtractHour, annotate, Q objects\nSQL brut : utilisation de WITH RECURSIVE pour reconstruire les fils de discussion complets en une seule requête\nTransactions atomiques et insertion en masse (bulk_create) pour l’import\n\n\n\nInterface web\n\nDashboard : cartes KPI, évolution mensuelle (Chart.js), top 10 expéditeurs/destinataires, mots fréquents, horaires d’activité\nRecherche avancée : combinaison de la recherche plein texte avec filtres date/expéditeur/destinataire, surbrillance des mots‑clés\nExplorateur de threads : deux modes (récursif Python et CTE SQL) pour afficher les conversations sous forme d’arborescence\nGraphe d’influence : visualisation interactive (vis.js) des connexions entre collaborateurs, avec paramétrage du seuil et du nombre de nœuds\nNavigation contextuelle : URLs paramétrées (folder_id, thread_id) pour un retour fluide entre les pages\n\n\n\nOptimisation et déploiement\n\nCache Django (1h) pour les données lourdes (dashboard, JSON du graphe)\nselect_related / prefetch_related pour éviter les requêtes N+1\nPagination (20 éléments par page) sur toutes les listes\nConteneurisation avec Docker (PostgreSQL 15) et fichier docker-compose.yml\nGestion de versions avec Git (commits atomiques, README détaillé, migrations versionnées)"
+  },
+  {
+    "objectID": "projects/enron-discovery.html#résultats-et-visualisations",
+    "href": "projects/enron-discovery.html#résultats-et-visualisations",
+    "title": "Enron Discovery – Plateforme d’investigation numérique",
+    "section": "Résultats et visualisations",
+    "text": "Résultats et visualisations\n\nInterface fonctionnelle : démonstration en ligne (ou locale via Docker)\nDashboard : visualisation des volumes d’échanges, des périodes d’activité et des acteurs majeurs\nMoteur de recherche : réponse en quelques secondes sur 500 000 messages\nGraphe d’influence : identification des liaisons fortes entre collaborateurs"
+  },
+  {
+    "objectID": "projects/enron-discovery.html#compétences-mises-en-œuvre",
+    "href": "projects/enron-discovery.html#compétences-mises-en-œuvre",
+    "title": "Enron Discovery – Plateforme d’investigation numérique",
+    "section": "Compétences mises en œuvre",
+    "text": "Compétences mises en œuvre\n\nIngestion de données massives : parsing, nettoyage, validation avec pandas\nModélisation SQL avancée : normalisation, index, recherche plein texte, CTE récursives\nDjango : ORM, managers, requêtes complexes, templates, intégration front‑end (Bootstrap, Chart.js, vis.js)\nOptimisation des performances : cache, select_related, pagination, index\nDocker & déploiement : environnement reproductible avec docker‑compose\nGestion de projet : binôme, versionnage Git, documentation (README, schéma MLD)"
+  },
+  {
+    "objectID": "projects/enron-discovery.html#lien-vers-le-code",
+    "href": "projects/enron-discovery.html#lien-vers-le-code",
+    "title": "Enron Discovery – Plateforme d’investigation numérique",
+    "section": "Lien vers le code",
+    "text": "Lien vers le code\nDépôt GitHub – enron-discovery"
+  },
+  {
+    "objectID": "projects/enron-discovery.html#améliorations-possibles",
+    "href": "projects/enron-discovery.html#améliorations-possibles",
+    "title": "Enron Discovery – Plateforme d’investigation numérique",
+    "section": "Améliorations possibles",
+    "text": "Améliorations possibles\n\nIntégration d’une API REST (Django REST Framework) pour alimenter des clients externes\nAjout de la gestion des pièces jointes\nVisualisation du graphe d’influence en temps réel avec filtres interactifs\n\n\nCe projet a été réalisé en binôme dans le cadre du Master Data Science (Université d’Angers)."
+  },
+  {
+    "objectID": "projects/moyennes-etudiants.html",
+    "href": "projects/moyennes-etudiants.html",
+    "title": "Analyse des déterminants de la moyenne générale des étudiants",
+    "section": "",
+    "text": "Dans le cadre de l’UE Data Mining et Économie (Master 1), j’ai réalisé une analyse approfondie d’un jeu de données de 100 000 étudiants afin d’identifier les facteurs influençant leur performance académique (moyenne générale sur 20). L’objectif était de construire des modèles prédictifs et d’interpréter l’impact de variables comme le temps d’étude, l’usage des réseaux sociaux, le sommeil, l’activité physique, le stress et la dépression."
+  },
+  {
+    "objectID": "projects/moyennes-etudiants.html#contexte-et-objectif",
+    "href": "projects/moyennes-etudiants.html#contexte-et-objectif",
+    "title": "Analyse des déterminants de la moyenne générale des étudiants",
+    "section": "",
+    "text": "Dans le cadre de l’UE Data Mining et Économie (Master 1), j’ai réalisé une analyse approfondie d’un jeu de données de 100 000 étudiants afin d’identifier les facteurs influençant leur performance académique (moyenne générale sur 20). L’objectif était de construire des modèles prédictifs et d’interpréter l’impact de variables comme le temps d’étude, l’usage des réseaux sociaux, le sommeil, l’activité physique, le stress et la dépression."
+  },
+  {
+    "objectID": "projects/moyennes-etudiants.html#données-utilisées",
+    "href": "projects/moyennes-etudiants.html#données-utilisées",
+    "title": "Analyse des déterminants de la moyenne générale des étudiants",
+    "section": "Données utilisées",
+    "text": "Données utilisées\n\nSource : base de données fictive (simulation réaliste) fournie dans le cadre du cours.\nVolume : 100 000 observations, 11 variables.\nVariables clés :\n\nQuantitatives : âge, sommeil (h/j), études (h/j), réseaux sociaux (h/j), activité physique (min/sem), stress (/10), moyenne générale (/20)\n\nQualitatives : genre (F/M), département (5 filières), dépression (TRUE/FALSE)"
+  },
+  {
+    "objectID": "projects/moyennes-etudiants.html#méthodologie",
+    "href": "projects/moyennes-etudiants.html#méthodologie",
+    "title": "Analyse des déterminants de la moyenne générale des étudiants",
+    "section": "Méthodologie",
+    "text": "Méthodologie\nL’analyse a suivi une chaîne complète de traitement statistique :\n\nAnalyse exploratoire (EDA)\n\nStatistiques descriptives, histogrammes, boîtes à moustaches.\nMatrice de corrélation et tests préliminaires (t‑test, ANOVA) pour évaluer les différences entre groupes.\n\n\n\nRégression linéaire multiple (MCO)\n\nEstimation du modèle complet avec toutes les variables.\nVérification des hypothèses : normalité des résidus (Shapiro‑Wilk), homoscédasticité (Breusch‑Pagan), indépendance (Durbin‑Watson), multicolinéarité (VIF).\n\n\n\nSélection de variables\n\nStepwise (AIC) pour obtenir un modèle parcimonieux.\nMeilleurs sous‑ensembles (Best Subset) avec critères R² ajusté, Cp de Mallows et BIC.\n\n\n\nAnalyse en composantes principales (ACP)\n\nRéduction de dimensionnalité et interprétation des axes principaux.\n\n\n\nRégression sur composantes principales (PCR)\n\nUtilisation des composantes principales comme prédicteurs pour éviter la multicolinéarité.\nChoix du nombre optimal de composantes par validation croisée.\n\n\n\nRégression PLS (Partial Least Squares)\n\nConstruction de composantes latentes orientées vers la prédiction de la moyenne.\nComparaison des performances avec PCR et MCO.\n\n\n\nBootstrap\n\nEstimation de la précision des coefficients (intervalles de confiance à 95 %) pour chaque modèle."
+  },
+  {
+    "objectID": "projects/moyennes-etudiants.html#résultats-principaux",
+    "href": "projects/moyennes-etudiants.html#résultats-principaux",
+    "title": "Analyse des déterminants de la moyenne générale des étudiants",
+    "section": "Résultats principaux",
+    "text": "Résultats principaux\n\nDépression : facteur le plus impactant (−1,56 point en moyenne, p &lt; 2e‑16). Les étudiants dépressifs ont une performance nettement inférieure.\nÉtudes : effet positif significatif (+0,13 point par heure d’étude supplémentaire).\nRéseaux sociaux : effet négatif significatif (−0,15 point par heure supplémentaire).\nSommeil, stress, activité physique, genre, département, âge : non significatifs après contrôle.\nPerformances des modèles :\n\nRMSE ~ 2,59, R² ~ 4,9 % pour tous les modèles (MCO, Stepwise, PCR, PLS).\n\nModèle le plus parcimonieux : PLS avec 3 composantes (ou Stepwise avec 4 variables) conserve le même pouvoir prédictif que le modèle complet."
+  },
+  {
+    "objectID": "projects/moyennes-etudiants.html#compétences-mises-en-œuvre",
+    "href": "projects/moyennes-etudiants.html#compétences-mises-en-œuvre",
+    "title": "Analyse des déterminants de la moyenne générale des étudiants",
+    "section": "Compétences mises en œuvre",
+    "text": "Compétences mises en œuvre\n\nAnalyse exploratoire de données : statistiques descriptives, tests d’hypothèses (t, ANOVA), visualisations avancées.\nModélisation statistique : régression linéaire multiple, validation des hypothèses, sélection de variables (stepwise, best subset).\nRéduction de dimension : ACP, PCR, PLS.\nÉvaluation de modèles : validation croisée, RMSE, R², MAE, MAPE.\nInférence robuste : bootstrap pour les intervalles de confiance.\nProgrammation : R (tidyverse, caret, pls, leaps, boot, etc.) – code complet disponible sur demande."
+  },
+  {
+    "objectID": "projects/moyennes-etudiants.html#lien-vers-le-code",
+    "href": "projects/moyennes-etudiants.html#lien-vers-le-code",
+    "title": "Analyse des déterminants de la moyenne générale des étudiants",
+    "section": "Lien vers le code",
+    "text": "Lien vers le code\nLe code R complet (rapport R Markdown) est disponible dans mon dépôt GitHub :\nDépôt GitHub – analyse-moyennes-etudiants"
+  },
+  {
+    "objectID": "projects/moyennes-etudiants.html#améliorations-possibles",
+    "href": "projects/moyennes-etudiants.html#améliorations-possibles",
+    "title": "Analyse des déterminants de la moyenne générale des étudiants",
+    "section": "Améliorations possibles",
+    "text": "Améliorations possibles\n\nIntégrer des variables supplémentaires (qualité de l’enseignement, ressources familiales) pour améliorer le pouvoir explicatif.\nTester des modèles non linéaires (arbres de décision, forêts aléatoires) pour capturer des interactions complexes.\n\n\nCe projet illustre ma capacité à mener une analyse statistique complète, de l’exploration à la modélisation prédictive, en passant par la validation rigoureuse des résultats."
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projets",
+    "section": "",
+    "text": "Enron Discovery – Plateforme d’investigation numérique\nApplication web d’e‑Discovery sur plus de 500 000 emails. Dashboard interactif, recherche plein texte, graphe d’influence, reconstruction des fils de discussion.\nTechnologies : Django, PostgreSQL, pandas, Docker, Bootstrap, Chart.js, vis.js\n\n\nAnalyse des déterminants de la moyenne générale des étudiants\nModélisation prédictive de la performance académique à partir de 100 000 observations. Régression linéaire, sélection de variables, ACP, PCR, PLS, bootstrap.\n\n\nTest du chi‑2 d’adéquation : le dé est‑il équilibré ?\nMise en œuvre d’un test statistique complet en Python, avec validation des conditions d’application et interprétation des résultats.\n\n\nChaîne de Markov : le jeu du ballon\nSimulation et analyse d’une chaîne de Markov à 3 états, calcul de la distribution stationnaire, visualisation.\n\n\nContrôle qualité des pommes : respect du cahier des charges ?\nAnalyse statistique complète (descriptive, test de normalité, test t) pour vérifier si le diamètre moyen d’un lot est conforme à la norme de 10 cm."
+  }
+]
