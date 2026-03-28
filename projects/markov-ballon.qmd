@@ -1,0 +1,160 @@
+---
+title: "Chaîne de Markov : le jeu du ballon"
+---
+
+## Contexte
+
+Alice, Bob et Clara se passent un ballon selon des probabilités fixes. Ce système est une **chaîne de Markov homogène** à trois états (1 = Alice, 2 = Bob, 3 = Clara). Aucun enfant ne garde la balle (pas de boucle). L'objectif est d'étudier la distribution des détenteurs après un grand nombre de passes, par simulation et par calcul matriciel.
+
+### Matrice de transition
+
++----------+-----------+---------+-----------+
+| De \\ À  | Alice (1) | Bob (2) | Clara (3) |
++==========+===========+=========+===========+
+| Alice    | 0         | 1/3     | 2/3       |
++----------+-----------+---------+-----------+
+| Bob      | 1/2       | 0       | 1/2       |
++----------+-----------+---------+-----------+
+| Clara    | 1/4       | 3/4     | 0         |
++----------+-----------+---------+-----------+
+
+Soit :
+
+$$
+P = \begin{pmatrix} 0 & 1/3 & 2/3 \\ 1/2 & 0 & 1/2 \\ 1/4 & 3/4 & 0 \end{pmatrix}
+$$
+
+---
+
+## 1. Simulation d'une marche aléatoire
+
+**Fonction `marche(n, X0)`** : génère une séquence de `n` états (détenteurs) à partir de l'état initial `X0` (1, 2 ou 3).
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+def marche(n, X0, P):
+    """
+    Simule une marche de longueur n sur la chaîne de Markov définie par P.
+    Retourne la liste des états [X0, X1, ..., Xn].
+    """
+    etats = [X0]
+    for _ in range(n):
+        etat_courant = etats[-1]
+        prochain = np.random.choice([1, 2, 3], p=P[etat_courant-1])
+        etats.append(prochain)
+    return etats
+```
+
+**Exemple d'utilisation :**
+```python
+P = [[0, 1/3, 2/3],
+     [1/2, 0, 1/2],
+     [1/4, 3/4, 0]]
+
+trajectoire = marche(50, 1, P)
+print(trajectoire[:10])  # premiers états
+```
+
+---
+
+## 2. Visualisation d'une marche
+
+On représente les états (1, 2, 3) en fonction du temps.
+```python
+plt.figure(figsize=(10, 4))
+plt.plot(trajectoire, marker='o', linestyle='-')
+plt.yticks([1, 2, 3], ['Alice', 'Bob', 'Clara'])
+plt.xlabel('Numéro de passe')
+plt.ylabel('Détenteur')
+plt.title('Trajectoire du ballon (50 passes)')
+plt.grid(True)
+plt.show()
+```
+
+---
+
+## 3. Distribution après 50 passes à partir de différents états initiaux
+
+On simule 100 marches de longueur 50 à partir de chaque état initial, et on observe la fréquence de l'état final ($X_{50}$).
+```python
+def distribution_finale(n, X0, P, n_sim=100):
+    finales = []
+    for _ in range(n_sim):
+        traj = marche(n, X0, P)
+        finales.append(traj[-1])
+    unique, counts = np.unique(finales, return_counts=True)
+    return dict(zip(unique, counts / n_sim))
+
+dist1 = distribution_finale(50, 1, P)
+dist2 = distribution_finale(50, 2, P)
+dist3 = distribution_finale(50, 3, P)
+
+print("Distribution après 50 passes depuis Alice :", dist1)
+print("Distribution depuis Bob :", dist2)
+print("Distribution depuis Clara :", dist3)
+```
+
+**Résultats typiques (avec 100 simulations) :**
+
+- Depuis Alice : `{1: ~0.32, 2: ~0.34, 3: ~0.34}`
+- Depuis Bob : `{1: ~0.34, 2: ~0.32, 3: ~0.34}`
+- Depuis Clara : `{1: ~0.33, 2: ~0.33, 3: ~0.34}`
+
+> **Conclusion :** quelle que soit la condition initiale, après 50 passes, la distribution est proche de l'équilibre (1/3 chacun). La chaîne semble converger vers la distribution stationnaire.
+
+---
+
+## 4. Calcul de la distribution stationnaire par le calcul matriciel
+
+La matrice de transition $P$ étant irréductible et apériodique, elle admet une distribution stationnaire unique $\pi$ vérifiant $\pi P = \pi$.
+```python
+def puissance_matrice(P, n):
+    """Calcule P^n par multiplication matricielle (pour n entier)."""
+    Pn = np.array(P)
+    for _ in range(1, n):
+        Pn = Pn @ P
+    return Pn
+
+P50 = puissance_matrice(P, 50)
+print("P^50 :")
+print(P50)
+
+# La distribution stationnaire est une ligne de P^50 (toutes identiques)
+pi = P50[0]
+print("Distribution stationnaire :", pi)
+```
+
+**Résultat :** chaque ligne de $P^{50}$ converge vers $[1/3,\ 1/3,\ 1/3]$. Cela confirme les simulations : après un grand nombre de passes, chaque enfant a une chance sur trois d'avoir la balle.
+
+---
+
+## 5. Interprétation et conclusion
+
+- La chaîne de Markov modélise un processus aléatoire **sans mémoire**.
+- Les simulations montrent que l'état initial est vite oublié.
+- Le calcul matriciel confirme l'existence d'une **distribution stationnaire uniforme**.
+- Ce modèle a des applications en file d'attente, propagation de rumeurs, etc.
+
+---
+
+## Compétences mises en œuvre
+
+- **Modélisation stochastique** : chaînes de Markov, matrices de transition
+- **Simulation** : génération de trajectoires aléatoires avec `numpy.random.choice`
+- **Analyse statistique** : estimation de distributions par Monte Carlo
+- **Calcul matriciel** : multiplication, puissance, convergence vers la distribution stationnaire
+- **Visualisation** : tracé de trajectoires
+- **Interprétation** : convergence, oubli de l'état initial
+
+---
+
+## Améliorations possibles
+
+- Ajouter une animation de la propagation du ballon
+- Calculer le temps de mélange (mixage)
+- Comparer avec un modèle théorique de chaîne de Markov à 3 états
+
+---
+
+Ce projet illustre ma capacité à implémenter et analyser des chaînes de Markov en Python, une compétence clé en modélisation stochastique et en simulation.

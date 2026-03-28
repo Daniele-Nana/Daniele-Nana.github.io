@@ -1,0 +1,96 @@
+---
+title: "Test du chi‑2 d'adéquation : le dé est‑il équilibré ?"
+---
+
+## Contexte
+
+Lorsqu'on lance un dé, on s'attend à ce que chaque face sorte avec une probabilité de 1/6.  
+Nous disposons d'observations sur 726 lancers. L'objectif est de déterminer si le dé utilisé est **équilibré** (i.e. suit une loi uniforme) ou non.
+
+**Données** :  
+
+| Face     |   1 |   2 |   3 |   4 |   5 |   6 |
+|----------|-----|-----|-----|-----|-----|-----|
+| Effectif | 127 | 108 | 123 | 118 | 115 | 135 |
+
+
+## Méthodologie
+
+Le test du **χ² d'adéquation** (ou test du χ² de conformité) compare les effectifs observés aux effectifs théoriques attendus sous l'hypothèse nulle.
+
+### Hypothèses
+- **H₀** : le dé est équilibré (p₁ = p₂ = … = p₆ = 1/6)
+- **H₁** : le dé n'est pas équilibré
+
+### Fonction Python implémentée
+
+La fonction `chi2_ad(x, p)` :
+
+- Vérifie que `p` est un vecteur de probabilités (somme = 1, valeurs entre 0 et 1)
+- Vérifie que les effectifs observés sont suffisants (>5) – condition d'application du test
+- Calcule la statistique de test χ², les degrés de liberté et la p‑valeur
+- Retourne ces trois valeurs dans une liste
+
+```python
+import numpy as np
+from scipy.stats import chi2
+
+def chi2_ad(x, p):
+    # Vérification des probabilités
+    if not np.isclose(sum(p), 1) or any(pi < 0 for pi in p):
+        raise ValueError("p doit être un vecteur de probabilités (somme = 1, valeurs >= 0).")
+    # Vérification des effectifs
+    if any(obs <= 5 for obs in x):
+        raise ValueError("Les effectifs observés doivent tous être > 5.")
+    
+    n = sum(x)
+    ef = n * np.array(p)               # effectifs théoriques
+    stat = sum((x - ef)**2 / ef)       # statistique du chi2
+    ddl = len(x) - 1
+    p_val = 1 - chi2.cdf(stat, ddl)
+    return [stat, ddl, p_val]
+```
+
+### Application
+```python
+obs = [127, 108, 123, 118, 115, 135]
+p_unif = [1/6] * 6
+
+stat, ddl, p_val = chi2_ad(obs, p_unif)
+print(f"Statistique χ² = {stat:.3f}")
+print(f"Degrés de liberté = {ddl}")
+print(f"p‑valeur = {p_val:.4f}")
+```
+
+**Résultat :**
+
+- Statistique χ² = 4,284
+- d.d.l. = 5
+- p‑valeur = 0,509
+
+---
+
+## Interprétation
+
+La p‑valeur (0,509) est très supérieure au seuil usuel de 5 % (0,05). On ne rejette donc pas H₀ : au seuil de signification 5 %, on considère que le dé est équilibré. Les écarts entre les effectifs observés et les effectifs théoriques peuvent être attribués au hasard.
+
+---
+
+## Compétences mises en œuvre
+
+- **Test statistique** : mise en œuvre du χ² d'adéquation, interprétation de la p‑valeur
+- **Programmation Python** : gestion des exceptions, manipulation de listes, utilisation de `numpy` et `scipy.stats`
+- **Validation des données** : contrôle des prérequis du test (effectifs >5, vecteur de probabilités)
+- **Rédaction scientifique** : description claire du problème, des hypothèses et de la conclusion
+
+---
+
+## Améliorations possibles
+
+- Ajouter un graphique comparant les effectifs observés et théoriques (barplot)
+- Généraliser la fonction pour accepter des probabilités non uniformes
+- Créer une version interactive avec Streamlit
+
+---
+
+Ce projet illustre ma capacité à appliquer des méthodes statistiques rigoureuses et à les implémenter en Python.

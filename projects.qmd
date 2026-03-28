@@ -6,3 +6,15 @@ title: "Projets"
 *Application web d’e‑Discovery sur plus de 500 000 emails. Dashboard interactif, recherche plein texte, graphe d’influence, reconstruction des fils de discussion.*
 
 **Technologies** : Django, PostgreSQL, pandas, Docker, Bootstrap, Chart.js, vis.js
+
+### [Analyse des déterminants de la moyenne générale des étudiants](projects/moyennes-etudiants.qmd)
+*Modélisation prédictive de la performance académique à partir de 100 000 observations. Régression linéaire, sélection de variables, ACP, PCR, PLS, bootstrap.*
+
+### [Test du chi‑2 d’adéquation : le dé est‑il équilibré ?](projects/chi2-de.qmd)
+*Mise en œuvre d’un test statistique complet en Python, avec validation des conditions d’application et interprétation des résultats.*
+
+### [Chaîne de Markov : le jeu du ballon](projects/markov-ballon.qmd)
+*Simulation et analyse d’une chaîne de Markov à 3 états, calcul de la distribution stationnaire, visualisation.*
+
+### [Contrôle qualité des pommes : respect du cahier des charges ?](projects/pommes.qmd)
+*Analyse statistique complète (descriptive, test de normalité, test t) pour vérifier si le diamètre moyen d’un lot est conforme à la norme de 10 cm.*

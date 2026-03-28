@@ -1,0 +1,77 @@
+---
+title: "Analyse des déterminants de la moyenne générale des étudiants"
+---
+
+## Contexte et objectif
+
+Dans le cadre de l’UE *Data Mining et Économie* (Master 1), j’ai réalisé une analyse approfondie d’un jeu de données de 100 000 étudiants afin d’identifier les facteurs influençant leur performance académique (moyenne générale sur 20). L’objectif était de construire des modèles prédictifs et d’interpréter l’impact de variables comme le temps d’étude, l’usage des réseaux sociaux, le sommeil, l’activité physique, le stress et la dépression.
+
+## Données utilisées
+
+- **Source** : base de données fictive (simulation réaliste) fournie dans le cadre du cours.
+- **Volume** : 100 000 observations, 11 variables.
+- **Variables clés** :  
+  - *Quantitatives* : âge, sommeil (h/j), études (h/j), réseaux sociaux (h/j), activité physique (min/sem), stress (/10), moyenne générale (/20)  
+  - *Qualitatives* : genre (F/M), département (5 filières), dépression (TRUE/FALSE)
+
+## Méthodologie
+
+L’analyse a suivi une chaîne complète de traitement statistique :
+
+### Analyse exploratoire (EDA)
+- Statistiques descriptives, histogrammes, boîtes à moustaches.
+- Matrice de corrélation et tests préliminaires (t‑test, ANOVA) pour évaluer les différences entre groupes.
+
+### Régression linéaire multiple (MCO)
+- Estimation du modèle complet avec toutes les variables.
+- Vérification des hypothèses : normalité des résidus (Shapiro‑Wilk), homoscédasticité (Breusch‑Pagan), indépendance (Durbin‑Watson), multicolinéarité (VIF).
+
+### Sélection de variables
+- **Stepwise** (AIC) pour obtenir un modèle parcimonieux.
+- **Meilleurs sous‑ensembles** (Best Subset) avec critères R² ajusté, Cp de Mallows et BIC.
+
+### Analyse en composantes principales (ACP)
+- Réduction de dimensionnalité et interprétation des axes principaux.
+
+### Régression sur composantes principales (PCR)
+- Utilisation des composantes principales comme prédicteurs pour éviter la multicolinéarité.
+- Choix du nombre optimal de composantes par validation croisée.
+
+### Régression PLS (Partial Least Squares)
+- Construction de composantes latentes orientées vers la prédiction de la moyenne.
+- Comparaison des performances avec PCR et MCO.
+
+### Bootstrap
+- Estimation de la précision des coefficients (intervalles de confiance à 95 %) pour chaque modèle.
+
+## Résultats principaux
+
+- **Dépression** : facteur le plus impactant (−1,56 point en moyenne, p < 2e‑16). Les étudiants dépressifs ont une performance nettement inférieure.
+- **Études** : effet positif significatif (+0,13 point par heure d’étude supplémentaire).
+- **Réseaux sociaux** : effet négatif significatif (−0,15 point par heure supplémentaire).
+- **Sommeil, stress, activité physique, genre, département, âge** : non significatifs après contrôle.
+- **Performances des modèles** :  
+  - RMSE ~ 2,59, R² ~ 4,9 % pour tous les modèles (MCO, Stepwise, PCR, PLS).  
+  - **Modèle le plus parcimonieux** : PLS avec 3 composantes (ou Stepwise avec 4 variables) conserve le même pouvoir prédictif que le modèle complet.
+
+## Compétences mises en œuvre
+
+- **Analyse exploratoire de données** : statistiques descriptives, tests d’hypothèses (t, ANOVA), visualisations avancées.
+- **Modélisation statistique** : régression linéaire multiple, validation des hypothèses, sélection de variables (stepwise, best subset).
+- **Réduction de dimension** : ACP, PCR, PLS.
+- **Évaluation de modèles** : validation croisée, RMSE, R², MAE, MAPE.
+- **Inférence robuste** : bootstrap pour les intervalles de confiance.
+- **Programmation** : R (tidyverse, caret, pls, leaps, boot, etc.) – *code complet disponible sur demande*.
+
+## Lien vers le code
+
+Le code R complet (rapport R Markdown) est disponible dans mon dépôt GitHub :  
+[Dépôt GitHub – analyse-moyennes-etudiants](https://github.com/Daniele-Nana/analyse-moyennes-etudiants)
+
+## Améliorations possibles
+
+- Intégrer des variables supplémentaires (qualité de l’enseignement, ressources familiales) pour améliorer le pouvoir explicatif.
+- Tester des modèles non linéaires (arbres de décision, forêts aléatoires) pour capturer des interactions complexes.
+
+---
+*Ce projet illustre ma capacité à mener une analyse statistique complète, de l’exploration à la modélisation prédictive, en passant par la validation rigoureuse des résultats.*

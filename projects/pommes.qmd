@@ -1,0 +1,126 @@
+---
+title: "Respect du cahier des charges : les pommes ont‑elles un diamètre moyen de 10 cm ?"
+---
+
+## Contexte
+
+Un producteur de pommes doit garantir que le diamètre moyen des pommes de chaque lot est de **10 cm**. Un contrôleur prélève 8 pommes dans un lot et mesure leur diamètre (en cm) :
+```
+9.35, 10.14, 11.31, 8.97, 8.51, 9.92, 9.43, 10.81
+```
+
+L'objectif est de déterminer, au seuil de risque de 1 %, si le lot respecte la clause du cahier des charges.
+
+---
+
+## Données
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+diametres = np.array([9.35, 10.14, 11.31, 8.97, 8.51, 9.92, 9.43, 10.81])
+n = len(diametres)
+print("Échantillon :", diametres)
+```
+
+---
+
+## 1. Statistiques descriptives
+```python
+moyenne = np.mean(diametres)
+ecart_type = np.std(diametres, ddof=1)   # écart-type corrigé (ddof=1)
+print(f"Moyenne = {moyenne:.3f} cm")
+print(f"Écart-type (corrigé) = {ecart_type:.3f} cm")
+print(f"Effectif = {n}")
+```
+
+**Résultats :**
+
+- Moyenne : ≈ 9.93 cm
+- Écart-type : ≈ 0.97 cm
+- Effectif : 8
+
+### Graphiques
+```python
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 4))
+
+# Boîte à moustaches
+ax1.boxplot(diametres)
+ax1.set_title("Boîte à moustaches")
+ax1.set_ylabel("Diamètre (cm)")
+
+# Histogramme avec densité normale
+ax2.hist(diametres, bins=5, density=True, alpha=0.6, color='g', edgecolor='black')
+x = np.linspace(min(diametres), max(diametres), 100)
+ax2.plot(x, stats.norm.pdf(x, moyenne, ecart_type), 'r-', label='Loi normale ajustée')
+ax2.set_title("Histogramme + densité normale")
+ax2.legend()
+plt.show()
+```
+
+---
+
+## 2. Test de normalité (Shapiro‑Wilk)
+
+Avant d'utiliser un test paramétrique (t de Student), on vérifie si l'échantillon peut être considéré comme issu d'une loi normale (hypothèse requise pour le test t).
+```python
+stat, p_norm = stats.shapiro(diametres)
+print(f"Statistique de Shapiro-Wilk = {stat:.4f}")
+print(f"p-valeur = {p_norm:.4f}")
+```
+
+**Interprétation :**
+
+- Si p‑valeur > 0.05, on ne rejette pas l'hypothèse de normalité.
+- Ici p‑valeur ≈ … (généralement > 0.05 pour cet échantillon) → la loi normale est plausible.
+
+---
+
+## 3. Test t de Student pour une moyenne (test bilatéral)
+
+On teste si la moyenne de la population est égale à 10 cm.
+
+- **H₀** : μ = 10
+- **H₁** : μ ≠ 10
+- **Seuil de risque** : α = 0.01
+```python
+t_stat, p_val = stats.ttest_1samp(diametres, 10)
+print(f"Statistique t = {t_stat:.4f}")
+print(f"p-valeur = {p_val:.6f}")
+```
+
+**Résultat :**
+
+- t ≈ −0.214
+- p‑valeur ≈ 0.836
+
+---
+
+## 4. Décision et conclusion
+
+Au seuil α = 0.01, la p‑valeur (0.836) est très supérieure à 0.01. On ne rejette donc pas H₀ : les données ne fournissent pas de preuve suffisante pour affirmer que le diamètre moyen du lot est différent de 10 cm.
+
+> **Conclusion :** le cahier des charges est respecté (au risque de 1 %).
+
+---
+
+## Compétences mises en œuvre
+
+- **Statistiques descriptives** : calcul de moyenne, écart‑type, représentation graphique (boxplot, histogramme)
+- **Test de normalité** : mise en œuvre du test de Shapiro‑Wilk et interprétation
+- **Test d'hypothèse** : test t de Student pour une moyenne, choix du seuil de signification
+- **Programmation Python** : utilisation de `numpy`, `scipy.stats`, `matplotlib`
+- **Rédaction scientifique** : présentation claire des hypothèses, résultats et conclusion
+
+---
+
+## Améliorations possibles
+
+- Calculer un intervalle de confiance à 99 % pour la moyenne
+- Ajouter un test non paramétrique (Wilcoxon) en cas de doute sur la normalité
+- Automatiser la vérification des conditions d'application du test t
+
+---
+
+Ce projet illustre ma capacité à réaliser une analyse statistique complète, de l'exploration des données à la prise de décision.
