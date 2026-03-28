@@ -334,5 +334,12 @@
     "title": "Mes projets",
     "section": "",
     "text": "Enron Discovery – Plateforme d’investigation numérique\nApplication web d’e‑Discovery sur plus de 500 000 emails. Dashboard interactif, recherche plein texte, graphe d’influence, reconstruction des fils de discussion.\nTechnologies : Django, PostgreSQL, pandas, Docker, Bootstrap, Chart.js, vis.js\n\n\n\nAnalyse des déterminants de la moyenne générale des étudiants\nModélisation prédictive de la performance académique à partir de 100 000 observations. Régression linéaire, sélection de variables, ACP, PCR, PLS, bootstrap.\nOutils & méthodes : R (tidyverse, caret, pls, leaps), validation croisée, bootstrap, réduction de dimension\n\n\n\nTest du chi‑2 d’adéquation : le dé est‑il équilibré ?\nMise en œuvre d’un test statistique complet en Python, avec validation des conditions d’application et interprétation des résultats.\nTechnologies : Python (scipy, numpy), test statistique, gestion d’erreurs\n\n\n\nChaîne de Markov : le jeu du ballon\nSimulation et analyse d’une chaîne de Markov à 3 états, calcul de la distribution stationnaire, visualisation.\nTechnologies : Python, numpy, matplotlib, simulation stochastique\n\n\n\nContrôle qualité des pommes : respect du cahier des charges ?\nAnalyse statistique complète (descriptive, test de normalité, test t) pour vérifier si le diamètre moyen d’un lot est conforme à la norme de 10 cm.\nOutils : Python (scipy, matplotlib), tests d’hypothèses, visualisation"
+  },
+  {
+    "objectID": "index.html#bonjour-je-suis-daniele-nana-bienvenue-sur-mon-portfolio",
+    "href": "index.html#bonjour-je-suis-daniele-nana-bienvenue-sur-mon-portfolio",
+    "title": "Daniele Nana Portfolio",
+    "section": "",
+    "text": "Étudiante en Data Science, spécialisée en machine learning et modélisation statistique, avec une expérience en analyse de données et en développement de modèles prédictifs.\nJe recherche une alternance pour contribuer à des projets concrets et innovants.\n\n\n\n\n\nMon parcours – formation, expériences, compétences techniques et atouts (page « À propos »).\nMes travaux de recherche – deux projets encadrés en apprentissage statistique parcimonieux et en combinatoire probabiliste (page « Travaux de recherche »).\nMes projets – analyses de données, modélisations, visualisations (page « Projets »).\n\n\n\n\n\nLe site est construit avec Quarto et hébergé sur GitHub Pages.\n\nMerci de votre visite ! N’hésitez pas à explorer les différentes sections et à me contacter pour échanger sur une opportunité d’alternance."
   }
 ]
