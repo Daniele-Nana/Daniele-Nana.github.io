@@ -1,5 +1,5 @@
 ---
-title: "Projets"
+title: "Mes projets"
 ---
 
 ### [Enron Discovery – Plateforme d’investigation numérique](projects/enron-discovery.qmd)
@@ -7,14 +7,30 @@ title: "Projets"
 
 **Technologies** : Django, PostgreSQL, pandas, Docker, Bootstrap, Chart.js, vis.js
 
+---
+
 ### [Analyse des déterminants de la moyenne générale des étudiants](projects/moyennes-etudiants.qmd)
 *Modélisation prédictive de la performance académique à partir de 100 000 observations. Régression linéaire, sélection de variables, ACP, PCR, PLS, bootstrap.*
+
+**Outils & méthodes** : R (tidyverse, caret, pls, leaps), validation croisée, bootstrap, réduction de dimension
+
+---
 
 ### [Test du chi‑2 d’adéquation : le dé est‑il équilibré ?](projects/chi2-de.qmd)
 *Mise en œuvre d’un test statistique complet en Python, avec validation des conditions d’application et interprétation des résultats.*
 
+**Technologies** : Python (scipy, numpy), test statistique, gestion d’erreurs
+
+---
+
 ### [Chaîne de Markov : le jeu du ballon](projects/markov-ballon.qmd)
 *Simulation et analyse d’une chaîne de Markov à 3 états, calcul de la distribution stationnaire, visualisation.*
 
+**Technologies** : Python, numpy, matplotlib, simulation stochastique
+
+---
+
 ### [Contrôle qualité des pommes : respect du cahier des charges ?](projects/pommes.qmd)
 *Analyse statistique complète (descriptive, test de normalité, test t) pour vérifier si le diamètre moyen d’un lot est conforme à la norme de 10 cm.*
+
+**Outils** : Python (scipy, matplotlib), tests d’hypothèses, visualisation
