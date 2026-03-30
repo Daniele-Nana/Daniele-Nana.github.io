@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mes projets – Daniele Nana Portfolio</title>
+<title>Détection de fraude bancaire – Analyse exploratoire des transactions – Daniele Nana Portfolio</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,23 +26,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ff38ca5759cea8d2b4e40dc1c167d4da.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-ff38ca5759cea8d2b4e40dc1c167d4da.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Daniele Nana Portfolio</span>
     </a>
   </div>
@@ -93,19 +93,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Accueil</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">À propos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./projects.html" aria-current="page"> 
+    <a class="nav-link" href="../projects.html"> 
 <span class="menu-text">Projets</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./works.html"> 
+    <a class="nav-link" href="../works.html"> 
 <span class="menu-text">Travaux de recherche</span></a>
   </li>  
 </ul>
@@ -131,13 +131,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#enron-discovery-plateforme-dinvestigation-numérique" id="toc-enron-discovery-plateforme-dinvestigation-numérique" class="nav-link active" data-scroll-target="#enron-discovery-plateforme-dinvestigation-numérique">Enron Discovery – Plateforme d’investigation numérique</a></li>
-  <li><a href="#deep-sea-adventure-implémentation-du-jeu-de-société" id="toc-deep-sea-adventure-implémentation-du-jeu-de-société" class="nav-link" data-scroll-target="#deep-sea-adventure-implémentation-du-jeu-de-société">Deep Sea Adventure – Implémentation du jeu de société</a></li>
-  <li><a href="#détection-de-fraude-bancaire-analyse-exploratoire-des-transactions" id="toc-détection-de-fraude-bancaire-analyse-exploratoire-des-transactions" class="nav-link" data-scroll-target="#détection-de-fraude-bancaire-analyse-exploratoire-des-transactions">Détection de fraude bancaire – Analyse exploratoire des transactions</a></li>
-  <li><a href="#analyse-des-déterminants-de-la-moyenne-générale-des-étudiants" id="toc-analyse-des-déterminants-de-la-moyenne-générale-des-étudiants" class="nav-link" data-scroll-target="#analyse-des-déterminants-de-la-moyenne-générale-des-étudiants">Analyse des déterminants de la moyenne générale des étudiants</a></li>
-  <li><a href="#test-du-chi2-dadéquation-le-dé-estil-équilibré" id="toc-test-du-chi2-dadéquation-le-dé-estil-équilibré" class="nav-link" data-scroll-target="#test-du-chi2-dadéquation-le-dé-estil-équilibré">Test du chi‑2 d’adéquation : le dé est‑il équilibré ?</a></li>
-  <li><a href="#chaîne-de-markov-le-jeu-du-ballon" id="toc-chaîne-de-markov-le-jeu-du-ballon" class="nav-link" data-scroll-target="#chaîne-de-markov-le-jeu-du-ballon">Chaîne de Markov : le jeu du ballon</a></li>
-  <li><a href="#contrôle-qualité-des-pommes-respect-du-cahier-des-charges" id="toc-contrôle-qualité-des-pommes-respect-du-cahier-des-charges" class="nav-link" data-scroll-target="#contrôle-qualité-des-pommes-respect-du-cahier-des-charges">Contrôle qualité des pommes : respect du cahier des charges ?</a></li>
+  <li><a href="#contexte" id="toc-contexte" class="nav-link active" data-scroll-target="#contexte">Contexte</a></li>
+  <li><a href="#objectifs" id="toc-objectifs" class="nav-link" data-scroll-target="#objectifs">Objectifs</a></li>
+  <li><a href="#problématique" id="toc-problématique" class="nav-link" data-scroll-target="#problématique">Problématique</a></li>
+  <li><a href="#analyse-exploratoire-eda" id="toc-analyse-exploratoire-eda" class="nav-link" data-scroll-target="#analyse-exploratoire-eda">Analyse exploratoire (EDA)</a></li>
+  <li><a href="#recommandations-pour-la-modélisation" id="toc-recommandations-pour-la-modélisation" class="nav-link" data-scroll-target="#recommandations-pour-la-modélisation">Recommandations pour la modélisation</a></li>
+  <li><a href="#pistes-de-déploiement" id="toc-pistes-de-déploiement" class="nav-link" data-scroll-target="#pistes-de-déploiement">Pistes de déploiement</a></li>
+  <li><a href="#compétences-et-technologies" id="toc-compétences-et-technologies" class="nav-link" data-scroll-target="#compétences-et-technologies">Compétences et technologies</a></li>
+  <li><a href="#lien-vers-le-code" id="toc-lien-vers-le-code" class="nav-link" data-scroll-target="#lien-vers-le-code">Lien vers le code</a></li>
   </ul>
 </nav>
     </div>
@@ -146,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Mes projets</h1>
+<h1 class="title">Détection de fraude bancaire – Analyse exploratoire des transactions</h1>
 </div>
 
 
@@ -163,45 +164,64 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="enron-discovery-plateforme-dinvestigation-numérique" class="level3">
-<h3 class="anchored" data-anchor-id="enron-discovery-plateforme-dinvestigation-numérique"><a href="./projects/enron-discovery.html">Enron Discovery – Plateforme d’investigation numérique</a></h3>
-<p><em>Application web d’e‑Discovery sur plus de 500 000 emails. Dashboard interactif, recherche plein texte, graphe d’influence, reconstruction des fils de discussion.</em></p>
-<p><strong>Technologies</strong> : Django, PostgreSQL, pandas, Docker, Bootstrap, Chart.js, vis.js</p>
-<hr>
+<section id="contexte" class="level2">
+<h2 class="anchored" data-anchor-id="contexte">Contexte</h2>
+<p>Les sociétés émettrices de cartes de crédit doivent identifier les transactions frauduleuses afin d’éviter que les clients ne soient facturés pour des achats qu’ils n’ont pas réalisés. Ce jeu de données, issu de transactions bancaires européennes sur deux jours (septembre 2013), contient 284 807 transactions, dont seulement 492 fraudes (0,172 %). En raison de la confidentialité, les variables originales ont été transformées par analyse en composantes principales (PCA) ; seules les variables <code>Time</code> (temps écoulé depuis la première transaction) et <code>Amount</code> (montant) sont conservées en l’état. La variable cible <code>Class</code> indique si la transaction est frauduleuse (1) ou non (0).</p>
 </section>
-<section id="deep-sea-adventure-implémentation-du-jeu-de-société" class="level3">
-<h3 class="anchored" data-anchor-id="deep-sea-adventure-implémentation-du-jeu-de-société"><a href="./projects/deep-sea-adventure.html">Deep Sea Adventure – Implémentation du jeu de société</a></h3>
-<p><em>Simulation complète du jeu avec moteur de jeu, interface graphique (Tkinter) et console, intelligences artificielles (3 stratégies), sauvegarde/chargement, tests unitaires.</em></p>
-<p><strong>Technologies</strong> : Python, POO, Tkinter, pickle, unittest</p>
-<hr>
+<section id="objectifs" class="level2">
+<h2 class="anchored" data-anchor-id="objectifs">Objectifs</h2>
+<ul>
+<li>Comprendre la structure et la distribution des données.</li>
+<li>Identifier les variables discriminantes pour la détection de fraude.</li>
+<li>Produire des visualisations claires pour présenter les résultats.</li>
+<li>Proposer une stratégie de modélisation adaptée au fort déséquilibre des classes.</li>
+<li>Déployer un tableau de bord interactif permettant d’explorer les données et d’obtenir des prédictions.</li>
+</ul>
 </section>
-<section id="détection-de-fraude-bancaire-analyse-exploratoire-des-transactions" class="level3">
-<h3 class="anchored" data-anchor-id="détection-de-fraude-bancaire-analyse-exploratoire-des-transactions"><a href="./projects/credit-card-eda.html">Détection de fraude bancaire – Analyse exploratoire des transactions</a></h3>
-<p><em>Analyse exploratoire d’un jeu de données bancaires extrêmement déséquilibré, avec recommandations de modélisation et déploiement d’un tableau de bord Streamlit.</em></p>
-<p><strong>Technologies</strong> : Python, pandas, scikit-learn, XGBoost, Streamlit, Docker</p>
+<section id="problématique" class="level2">
+<h2 class="anchored" data-anchor-id="problématique">Problématique</h2>
+<p>Comment analyser les transactions bancaires pour identifier des schémas de fraude et construire un modèle prédictif performant malgré un déséquilibre extrême des classes ?</p>
 </section>
-<section id="analyse-des-déterminants-de-la-moyenne-générale-des-étudiants" class="level3">
-<h3 class="anchored" data-anchor-id="analyse-des-déterminants-de-la-moyenne-générale-des-étudiants"><a href="./projects/moyennes-etudiants.html">Analyse des déterminants de la moyenne générale des étudiants</a></h3>
-<p><em>Modélisation prédictive de la performance académique à partir de 100 000 observations. Régression linéaire, sélection de variables, ACP, PCR, PLS, bootstrap.</em></p>
-<p><strong>Outils &amp; méthodes</strong> : R (tidyverse, caret, pls, leaps), validation croisée, bootstrap, réduction de dimension</p>
-<hr>
+<section id="analyse-exploratoire-eda" class="level2">
+<h2 class="anchored" data-anchor-id="analyse-exploratoire-eda">Analyse exploratoire (EDA)</h2>
+<ul>
+<li><strong>Structure</strong> : 284 807 lignes, 31 colonnes, aucune valeur manquante.</li>
+<li><strong>Variables PCA</strong> : les 28 variables <code>V1…V28</code> sont centrées‑réduites.</li>
+<li><strong>Déséquilibre</strong> : 0,172 % de fraudes → l’exactitude (accuracy) n’est pas une métrique pertinente ; on privilégie le rappel, la précision, le F1‑score et l’AUPRC.</li>
+<li><strong>Montants</strong> : les fraudes ont tendance à être de montants plus élevés et plus dispersés.</li>
+<li><strong>Corrélations</strong> : les variables les plus corrélées avec la classe sont <code>V17</code> (−0,326), <code>V14</code> (−0,303) et <code>V11</code> (+0,155).</li>
+<li><strong>Visualisation</strong> : une projection PCA 2D ne sépare pas nettement les fraudes, confirmant la nécessité d’un modèle non linéaire.</li>
+</ul>
 </section>
-<section id="test-du-chi2-dadéquation-le-dé-estil-équilibré" class="level3">
-<h3 class="anchored" data-anchor-id="test-du-chi2-dadéquation-le-dé-estil-équilibré"><a href="./projects/chi2-de.html">Test du chi‑2 d’adéquation : le dé est‑il équilibré ?</a></h3>
-<p><em>Mise en œuvre d’un test statistique complet en Python, avec validation des conditions d’application et interprétation des résultats.</em></p>
-<p><strong>Technologies</strong> : Python (scipy, numpy), test statistique, gestion d’erreurs</p>
-<hr>
+<section id="recommandations-pour-la-modélisation" class="level2">
+<h2 class="anchored" data-anchor-id="recommandations-pour-la-modélisation">Recommandations pour la modélisation</h2>
+<ul>
+<li><strong>Prétraitement</strong> : normaliser <code>Amount</code> et <code>Time</code> (StandardScaler) car leurs échelles diffèrent des variables PCA.</li>
+<li><strong>Gestion du déséquilibre</strong> : validation croisée stratifiée, expérimenter SMOTE ou undersampling, ajuster <code>class_weight</code> (ou <code>scale_pos_weight</code> pour XGBoost).</li>
+<li><strong>Modèles</strong> : régression logistique (baseline), Random Forest, XGBoost / LightGBM.</li>
+<li><strong>Métriques</strong> : rappel, précision, F1‑score, AUPRC (plus adaptée que l’AUC‑ROC).</li>
+</ul>
 </section>
-<section id="chaîne-de-markov-le-jeu-du-ballon" class="level3">
-<h3 class="anchored" data-anchor-id="chaîne-de-markov-le-jeu-du-ballon"><a href="./projects/markov-ballon.html">Chaîne de Markov : le jeu du ballon</a></h3>
-<p><em>Simulation et analyse d’une chaîne de Markov à 3 états, calcul de la distribution stationnaire, visualisation.</em></p>
-<p><strong>Technologies</strong> : Python, numpy, matplotlib, simulation stochastique</p>
-<hr>
+<section id="pistes-de-déploiement" class="level2">
+<h2 class="anchored" data-anchor-id="pistes-de-déploiement">Pistes de déploiement</h2>
+<ul>
+<li>Tableau de bord interactif avec <strong>Streamlit</strong> (déployé sur Streamlit Cloud).</li>
+<li>API REST avec Flask/FastAPI pour intégration dans un système plus large.</li>
+<li>Conteneurisation avec <strong>Docker</strong> et orchestration Kubernetes pour la scalabilité.</li>
+</ul>
 </section>
-<section id="contrôle-qualité-des-pommes-respect-du-cahier-des-charges" class="level3">
-<h3 class="anchored" data-anchor-id="contrôle-qualité-des-pommes-respect-du-cahier-des-charges"><a href="./projects/pommes.html">Contrôle qualité des pommes : respect du cahier des charges ?</a></h3>
-<p><em>Analyse statistique complète (descriptive, test de normalité, test t) pour vérifier si le diamètre moyen d’un lot est conforme à la norme de 10 cm.</em></p>
-<p><strong>Outils</strong> : Python (scipy, matplotlib), tests d’hypothèses, visualisation</p>
+<section id="compétences-et-technologies" class="level2">
+<h2 class="anchored" data-anchor-id="compétences-et-technologies">Compétences et technologies</h2>
+<ul>
+<li><strong>Python</strong> : Pandas, NumPy, Matplotlib, Seaborn, Scikit‑learn.</li>
+<li><strong>Visualisation interactive</strong> : Streamlit.</li>
+<li><strong>Modélisation</strong> : régression logistique, Random Forest, XGBoost, SMOTE.</li>
+<li><strong>Déploiement</strong> : Streamlit Cloud, Docker, Kubernetes.</li>
+</ul>
+</section>
+<section id="lien-vers-le-code" class="level2">
+<h2 class="anchored" data-anchor-id="lien-vers-le-code">Lien vers le code</h2>
+<p><a href="https://github.com/Daniele-Nana/credit-card-eda">GitHub – credit-card-fraud-detection</a></p>
 
 
 </section>

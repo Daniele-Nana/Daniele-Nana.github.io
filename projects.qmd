@@ -16,6 +16,11 @@ title: "Mes projets"
 
 ---
 
+### [Détection de fraude bancaire – Analyse exploratoire des transactions](projects/credit-card-eda.qmd)
+*Analyse exploratoire d’un jeu de données bancaires extrêmement déséquilibré, avec recommandations de modélisation et déploiement d’un tableau de bord Streamlit.*
+
+**Technologies** : Python, pandas, scikit-learn, XGBoost, Streamlit, Docker
+
 ### [Analyse des déterminants de la moyenne générale des étudiants](projects/moyennes-etudiants.qmd)
 *Modélisation prédictive de la performance académique à partir de 100 000 observations. Régression linéaire, sélection de variables, ACP, PCR, PLS, bootstrap.*
 

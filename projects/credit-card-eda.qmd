@@ -1,0 +1,52 @@
+---
+title: "Détection de fraude bancaire – Analyse exploratoire des transactions"
+---
+
+## Contexte
+
+Les sociétés émettrices de cartes de crédit doivent identifier les transactions frauduleuses afin d’éviter que les clients ne soient facturés pour des achats qu’ils n’ont pas réalisés. Ce jeu de données, issu de transactions bancaires européennes sur deux jours (septembre 2013), contient 284 807 transactions, dont seulement 492 fraudes (0,172 %). En raison de la confidentialité, les variables originales ont été transformées par analyse en composantes principales (PCA) ; seules les variables `Time` (temps écoulé depuis la première transaction) et `Amount` (montant) sont conservées en l’état. La variable cible `Class` indique si la transaction est frauduleuse (1) ou non (0).
+
+## Objectifs
+
+- Comprendre la structure et la distribution des données.
+- Identifier les variables discriminantes pour la détection de fraude.
+- Produire des visualisations claires pour présenter les résultats.
+- Proposer une stratégie de modélisation adaptée au fort déséquilibre des classes.
+- Déployer un tableau de bord interactif permettant d’explorer les données et d’obtenir des prédictions.
+
+## Problématique
+
+Comment analyser les transactions bancaires pour identifier des schémas de fraude et construire un modèle prédictif performant malgré un déséquilibre extrême des classes ?
+
+## Analyse exploratoire (EDA)
+
+- **Structure** : 284 807 lignes, 31 colonnes, aucune valeur manquante.
+- **Variables PCA** : les 28 variables `V1…V28` sont centrées‑réduites.
+- **Déséquilibre** : 0,172 % de fraudes → l’exactitude (accuracy) n’est pas une métrique pertinente ; on privilégie le rappel, la précision, le F1‑score et l’AUPRC.
+- **Montants** : les fraudes ont tendance à être de montants plus élevés et plus dispersés.
+- **Corrélations** : les variables les plus corrélées avec la classe sont `V17` (−0,326), `V14` (−0,303) et `V11` (+0,155).
+- **Visualisation** : une projection PCA 2D ne sépare pas nettement les fraudes, confirmant la nécessité d’un modèle non linéaire.
+
+## Recommandations pour la modélisation
+
+- **Prétraitement** : normaliser `Amount` et `Time` (StandardScaler) car leurs échelles diffèrent des variables PCA.
+- **Gestion du déséquilibre** : validation croisée stratifiée, expérimenter SMOTE ou undersampling, ajuster `class_weight` (ou `scale_pos_weight` pour XGBoost).
+- **Modèles** : régression logistique (baseline), Random Forest, XGBoost / LightGBM.
+- **Métriques** : rappel, précision, F1‑score, AUPRC (plus adaptée que l’AUC‑ROC).
+
+## Pistes de déploiement
+
+- Tableau de bord interactif avec **Streamlit** (déployé sur Streamlit Cloud).
+- API REST avec Flask/FastAPI pour intégration dans un système plus large.
+- Conteneurisation avec **Docker** et orchestration Kubernetes pour la scalabilité.
+
+## Compétences et technologies
+
+- **Python** : Pandas, NumPy, Matplotlib, Seaborn, Scikit‑learn.
+- **Visualisation interactive** : Streamlit.
+- **Modélisation** : régression logistique, Random Forest, XGBoost, SMOTE.
+- **Déploiement** : Streamlit Cloud, Docker, Kubernetes.
+
+## Lien vers le code
+
+[GitHub – credit-card-fraud-detection](https://github.com/Daniele-Nana/credit-card-eda)

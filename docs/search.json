@@ -175,11 +175,11 @@
     "text": "Structure du code\nLe projet est organisé en modules séparés (un fichier par classe) :\n\n\n\n\n\n\n\nFichier\nRôle\n\n\n\n\nmain.py\nPoint d’entrée, menu principal (console/graphique)\n\n\njeu.py\nClasse Jeu : orchestration des manches, tours, fin de partie\n\n\nplateau.py\nGestion du plateau (32 cases, initialisation, tassement)\n\n\njoueur.py\nClasse Joueur (position, jetons tenus, direction, score)\n\n\njeton.py\nClasse Jeton (ruine/blanc, piles)\n\n\nia.py\nClasses IA (aléatoire, prudente, courageuse)\n\n\nde.py\nSimulateur de deux dés\n\n\naffichage_console.py\nAffichage en mode console\n\n\naffichage_graphique.py\nInterface Tkinter, configuration des joueurs\n\n\ntests/\nTests unitaires\n\n\n\nL’architecture sépare clairement le moteur de jeu (indépendant de l’affichage) des interfaces. Les IA utilisent un design pattern Strategy (héritage polymorphique). La persistance est gérée via pickle avec une adaptation (__getstate__ / __setstate__) pour exclure les objets non sérialisables (fenêtre graphique)."
   },
   {
-    "objectID": "projects/deep-sea-adventure.html#résultats-et-visualisations",
-    "href": "projects/deep-sea-adventure.html#résultats-et-visualisations",
+    "objectID": "projects/deep-sea-adventure.html#résultats",
+    "href": "projects/deep-sea-adventure.html#résultats",
     "title": "Deep Sea Adventure – Implémentation complète du jeu de société en Python",
-    "section": "Résultats et visualisations",
-    "text": "Résultats et visualisations\nLe jeu est entièrement jouable en mode console ou graphique.\nLes deux affichages sont fonctionnels et permettent de suivre l’évolution de la partie."
+    "section": "Résultats",
+    "text": "Résultats\nLe jeu est entièrement jouable en mode console ou graphique.\nLes deux affichages sont fonctionnels et permettent de suivre l’évolution de la partie."
   },
   {
     "objectID": "projects/deep-sea-adventure.html#compétences-mises-en-œuvre",
@@ -201,20 +201,6 @@
     "title": "Deep Sea Adventure – Implémentation complète du jeu de société en Python",
     "section": "Améliorations possibles",
     "text": "Améliorations possibles\n\nAjouter des IA plus stratégiques (prise en compte du positionnement, blocage des adversaires).\nAnimer les déplacements des pions dans l’interface graphique.\nPermettre un mode multijoueur en réseau.\nAjouter des jetons spéciaux ou des règles optionnelles.\n\n\nCe projet illustre ma capacité à concevoir une application logicielle complète, modulaire et testable, en Python, avec une approche orientée objet et une attention particulière à l’expérience utilisateur."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Bonjour, je suis Daniele Nana ! Bienvenue sur mon portfolio !",
-    "section": "",
-    "text": "Profil\nÉtudiante en Data Science, spécialisée en machine learning et modélisation statistique, avec une expérience en analyse de données et en développement de modèles prédictifs.\nJe recherche une alternance pour contribuer à des projets concrets et innovants.\n\n\n\nCe que vous trouverez ici\n\nMon parcours – formation, expériences, compétences techniques et atouts (page « À propos »).\nMes travaux de recherche – deux projets encadrés en apprentissage statistique parcimonieux et en combinatoire probabiliste (page « Travaux de recherche »).\nMes projets – analyses de données, modélisations, visualisations (page « Projets »).\n\n\n\n\nÀ propos de ce portfolio\nLe site est construit avec Quarto et hébergé sur GitHub Pages.\n\nMerci de votre visite ! N’hésitez pas à explorer les différentes sections et à me contacter pour échanger sur une opportunité d’alternance."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Coordonnées\n\nTéléphone : +33 6 52 43 33 42\nEmail : danisanana@gmail.com\n\nGitHub : github.com/Daniele-Nana\n\n\n\n\nFormation\nMaster Data Science – Université d’Angers (2025 – présent)\nMatières principales :\n- Analyse numérique & optimisation : analyse numérique matricielle, optimisation non linéaire, modélisation stochastique\n- Statistique & apprentissage : statistiques, modèles de régression, data mining et classification, statistique en grande dimension, séries chronologiques\n- IA avancée : apprentissage par renforcement des modèles génératifs, traitement d’images\n- Programmation & data : programmation orientée objet, traitement des données en Python, structuration des données, informatique pour le Big Data\n- Économétrie & applications : datamining et économie, économétrie de l’évaluation\n- Transversal : droit et données numériques, communication scientifique, analyse du signal\nLicence Mathématiques Appliquées – Université d’Angers (2022 – 2025)\nMatières principales : algèbre linéaire, probabilités, statistiques inférentielles, calcul différentiel, optimisation, programmation Python, algorithmique, économétrie\n\n\n\nExpériences\n\nAssistante en Analyse et Gestion de Données\nSOCAPRES – Cameroun (juillet 2025 – août 2025)\n- Traitement et analyse de données logistiques et commerciales (+15 000 enregistrements) pour optimiser les flux et réduire les ruptures de stock.\n- Automatisation des rapports de suivi sous Python (pandas, openpyxl) et Excel, permettant un gain de temps de 30 % pour l’équipe.\n- Création de tableaux de bord dynamiques pour visualiser les plannings de production et les indicateurs clés.\n\n\nAssistante de vente\nCarrefour Angers Grand Maine (2023 – 2025)\n- Gestion des opérations en magasin : encaissement, étiquetage, mise en rayon et préparation des commandes.\n- Suivi rigoureux des stocks et inventaires, garantissant une disponibilité des produits supérieure à 95 %.\n- Contribution à l’amélioration de la qualité de service client (enquêtes de satisfaction internes).\n\n\n\n\nCompétences techniques\n\n\n\n\n\n\n\nCatégorie\nDétails\n\n\n\n\nProgrammation\nPython (Pandas, NumPy, Scikit-learn, TensorFlow), R, SQL, SAS, VBA\n\n\nBases de données\nPostgreSQL, MariaDB, SQLAlchemy, JSON/XML, Hadoop/MapReduce\n\n\nMachine Learning\nApprentissage supervisé et non supervisé, régressions, classification, clustering, feature engineering, validation croisée, évaluation de modèles, deep learning\n\n\nStatistiques\nModélisation probabiliste, chaînes de Markov, simulation de processus stochastiques\n\n\nIA générative\nModèles de langage (LLM), prompt engineering, fine-tuning, frameworks, API et intégration, développement d’applications\n\n\nVisualisation\nMatplotlib, Seaborn, Tableau, Excel avancé, dashboards, LaTeX/Markdown, Power BI, Qlik\n\n\nOutillage\nGit, Unix/Linux, analyse exploratoire des données (EDA), datamining, génie logiciel, développement web (Django), Docker\n\n\n\n\n\nAtouts\nRigueur analytique, esprit d’équipe et autonomie, organisation, gestion des priorités et initiative, communication technique, veille technologique et conformité RGPD.\n\n\n\nCentres d’intérêt\nCinéma, lecture, musique, voyages, cuisine, énigmes, humanisme et écologie.\n\n\n\nLangues\n\nFrançais : langue maternelle\n\nAnglais : niveau C1 (VTest)\n\n\nMerci de votre intérêt ! N’hésitez pas à me contacter pour échanger sur une opportunité d’alternance."
   },
   {
     "objectID": "projects/chi2-de.html",
@@ -257,6 +243,83 @@
     "title": "Test du chi‑2 d’adéquation : le dé est‑il équilibré ?",
     "section": "Améliorations possibles",
     "text": "Améliorations possibles\n\nAjouter un graphique comparant les effectifs observés et théoriques (barplot)\nGénéraliser la fonction pour accepter des probabilités non uniformes\nCréer une version interactive avec Streamlit\n\n\nCe projet illustre ma capacité à appliquer des méthodes statistiques rigoureuses et à les implémenter en Python."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Coordonnées\n\nTéléphone : +33 6 52 43 33 42\nEmail : danisanana@gmail.com\n\nGitHub : github.com/Daniele-Nana\n\n\n\n\nFormation\nMaster Data Science – Université d’Angers (2025 – présent)\nMatières principales :\n- Analyse numérique & optimisation : analyse numérique matricielle, optimisation non linéaire, modélisation stochastique\n- Statistique & apprentissage : statistiques, modèles de régression, data mining et classification, statistique en grande dimension, séries chronologiques\n- IA avancée : apprentissage par renforcement des modèles génératifs, traitement d’images\n- Programmation & data : programmation orientée objet, traitement des données en Python, structuration des données, informatique pour le Big Data\n- Économétrie & applications : datamining et économie, économétrie de l’évaluation\n- Transversal : droit et données numériques, communication scientifique, analyse du signal\nLicence Mathématiques Appliquées – Université d’Angers (2022 – 2025)\nMatières principales : algèbre linéaire, probabilités, statistiques inférentielles, calcul différentiel, optimisation, programmation Python, algorithmique, économétrie\n\n\n\nExpériences\n\nAssistante en Analyse et Gestion de Données\nSOCAPRES – Cameroun (juillet 2025 – août 2025)\n- Traitement et analyse de données logistiques et commerciales (+15 000 enregistrements) pour optimiser les flux et réduire les ruptures de stock.\n- Automatisation des rapports de suivi sous Python (pandas, openpyxl) et Excel, permettant un gain de temps de 30 % pour l’équipe.\n- Création de tableaux de bord dynamiques pour visualiser les plannings de production et les indicateurs clés.\n\n\nAssistante de vente\nCarrefour Angers Grand Maine (2023 – 2025)\n- Gestion des opérations en magasin : encaissement, étiquetage, mise en rayon et préparation des commandes.\n- Suivi rigoureux des stocks et inventaires, garantissant une disponibilité des produits supérieure à 95 %.\n- Contribution à l’amélioration de la qualité de service client (enquêtes de satisfaction internes).\n\n\n\n\nCompétences techniques\n\n\n\n\n\n\n\nCatégorie\nDétails\n\n\n\n\nProgrammation\nPython (Pandas, NumPy, Scikit-learn, TensorFlow), R, SQL, SAS, VBA\n\n\nBases de données\nPostgreSQL, MariaDB, SQLAlchemy, JSON/XML, Hadoop/MapReduce\n\n\nMachine Learning\nApprentissage supervisé et non supervisé, régressions, classification, clustering, feature engineering, validation croisée, évaluation de modèles, deep learning\n\n\nStatistiques\nModélisation probabiliste, chaînes de Markov, simulation de processus stochastiques\n\n\nIA générative\nModèles de langage (LLM), prompt engineering, fine-tuning, frameworks, API et intégration, développement d’applications\n\n\nVisualisation\nMatplotlib, Seaborn, Tableau, Excel avancé, dashboards, LaTeX/Markdown, Power BI, Qlik\n\n\nOutillage\nGit, Unix/Linux, analyse exploratoire des données (EDA), datamining, génie logiciel, développement web (Django), Docker\n\n\n\n\n\nAtouts\nRigueur analytique, esprit d’équipe et autonomie, organisation, gestion des priorités et initiative, communication technique, veille technologique et conformité RGPD.\n\n\n\nCentres d’intérêt\nCinéma, lecture, musique, voyages, cuisine, énigmes, humanisme et écologie.\n\n\n\nLangues\n\nFrançais : langue maternelle\n\nAnglais : niveau C1 (VTest)\n\n\nMerci de votre intérêt ! N’hésitez pas à me contacter pour échanger sur une opportunité d’alternance."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Bonjour, je suis Daniele Nana ! Bienvenue sur mon portfolio !",
+    "section": "",
+    "text": "Profil\nÉtudiante en Data Science, spécialisée en machine learning et modélisation statistique, avec une expérience en analyse de données et en développement de modèles prédictifs.\nJe recherche une alternance pour contribuer à des projets concrets et innovants.\n\n\n\nCe que vous trouverez ici\n\nMon parcours – formation, expériences, compétences techniques et atouts (page « À propos »).\nMes travaux de recherche – deux projets encadrés en apprentissage statistique parcimonieux et en combinatoire probabiliste (page « Travaux de recherche »).\nMes projets – analyses de données, modélisations, visualisations (page « Projets »).\n\n\n\n\nÀ propos de ce portfolio\nLe site est construit avec Quarto et hébergé sur GitHub Pages.\n\nMerci de votre visite ! N’hésitez pas à explorer les différentes sections et à me contacter pour échanger sur une opportunité d’alternance."
+  },
+  {
+    "objectID": "projects/credit-card-eda.html",
+    "href": "projects/credit-card-eda.html",
+    "title": "Détection de fraude bancaire – Analyse exploratoire des transactions",
+    "section": "",
+    "text": "Les sociétés émettrices de cartes de crédit doivent identifier les transactions frauduleuses afin d’éviter que les clients ne soient facturés pour des achats qu’ils n’ont pas réalisés. Ce jeu de données, issu de transactions bancaires européennes sur deux jours (septembre 2013), contient 284 807 transactions, dont seulement 492 fraudes (0,172 %). En raison de la confidentialité, les variables originales ont été transformées par analyse en composantes principales (PCA) ; seules les variables Time (temps écoulé depuis la première transaction) et Amount (montant) sont conservées en l’état. La variable cible Class indique si la transaction est frauduleuse (1) ou non (0)."
+  },
+  {
+    "objectID": "projects/credit-card-eda.html#contexte",
+    "href": "projects/credit-card-eda.html#contexte",
+    "title": "Détection de fraude bancaire – Analyse exploratoire des transactions",
+    "section": "",
+    "text": "Les sociétés émettrices de cartes de crédit doivent identifier les transactions frauduleuses afin d’éviter que les clients ne soient facturés pour des achats qu’ils n’ont pas réalisés. Ce jeu de données, issu de transactions bancaires européennes sur deux jours (septembre 2013), contient 284 807 transactions, dont seulement 492 fraudes (0,172 %). En raison de la confidentialité, les variables originales ont été transformées par analyse en composantes principales (PCA) ; seules les variables Time (temps écoulé depuis la première transaction) et Amount (montant) sont conservées en l’état. La variable cible Class indique si la transaction est frauduleuse (1) ou non (0)."
+  },
+  {
+    "objectID": "projects/credit-card-eda.html#objectifs",
+    "href": "projects/credit-card-eda.html#objectifs",
+    "title": "Détection de fraude bancaire – Analyse exploratoire des transactions",
+    "section": "Objectifs",
+    "text": "Objectifs\n\nComprendre la structure et la distribution des données.\nIdentifier les variables discriminantes pour la détection de fraude.\nProduire des visualisations claires pour présenter les résultats.\nProposer une stratégie de modélisation adaptée au fort déséquilibre des classes.\nDéployer un tableau de bord interactif permettant d’explorer les données et d’obtenir des prédictions."
+  },
+  {
+    "objectID": "projects/credit-card-eda.html#problématique",
+    "href": "projects/credit-card-eda.html#problématique",
+    "title": "Détection de fraude bancaire – Analyse exploratoire des transactions",
+    "section": "Problématique",
+    "text": "Problématique\nComment analyser les transactions bancaires pour identifier des schémas de fraude et construire un modèle prédictif performant malgré un déséquilibre extrême des classes ?"
+  },
+  {
+    "objectID": "projects/credit-card-eda.html#analyse-exploratoire-eda",
+    "href": "projects/credit-card-eda.html#analyse-exploratoire-eda",
+    "title": "Détection de fraude bancaire – Analyse exploratoire des transactions",
+    "section": "Analyse exploratoire (EDA)",
+    "text": "Analyse exploratoire (EDA)\n\nStructure : 284 807 lignes, 31 colonnes, aucune valeur manquante.\nVariables PCA : les 28 variables V1…V28 sont centrées‑réduites.\nDéséquilibre : 0,172 % de fraudes → l’exactitude (accuracy) n’est pas une métrique pertinente ; on privilégie le rappel, la précision, le F1‑score et l’AUPRC.\nMontants : les fraudes ont tendance à être de montants plus élevés et plus dispersés.\nCorrélations : les variables les plus corrélées avec la classe sont V17 (−0,326), V14 (−0,303) et V11 (+0,155).\nVisualisation : une projection PCA 2D ne sépare pas nettement les fraudes, confirmant la nécessité d’un modèle non linéaire."
+  },
+  {
+    "objectID": "projects/credit-card-eda.html#recommandations-pour-la-modélisation",
+    "href": "projects/credit-card-eda.html#recommandations-pour-la-modélisation",
+    "title": "Détection de fraude bancaire – Analyse exploratoire des transactions",
+    "section": "Recommandations pour la modélisation",
+    "text": "Recommandations pour la modélisation\n\nPrétraitement : normaliser Amount et Time (StandardScaler) car leurs échelles diffèrent des variables PCA.\nGestion du déséquilibre : validation croisée stratifiée, expérimenter SMOTE ou undersampling, ajuster class_weight (ou scale_pos_weight pour XGBoost).\nModèles : régression logistique (baseline), Random Forest, XGBoost / LightGBM.\nMétriques : rappel, précision, F1‑score, AUPRC (plus adaptée que l’AUC‑ROC)."
+  },
+  {
+    "objectID": "projects/credit-card-eda.html#pistes-de-déploiement",
+    "href": "projects/credit-card-eda.html#pistes-de-déploiement",
+    "title": "Détection de fraude bancaire – Analyse exploratoire des transactions",
+    "section": "Pistes de déploiement",
+    "text": "Pistes de déploiement\n\nTableau de bord interactif avec Streamlit (déployé sur Streamlit Cloud).\nAPI REST avec Flask/FastAPI pour intégration dans un système plus large.\nConteneurisation avec Docker et orchestration Kubernetes pour la scalabilité."
+  },
+  {
+    "objectID": "projects/credit-card-eda.html#compétences-et-technologies",
+    "href": "projects/credit-card-eda.html#compétences-et-technologies",
+    "title": "Détection de fraude bancaire – Analyse exploratoire des transactions",
+    "section": "Compétences et technologies",
+    "text": "Compétences et technologies\n\nPython : Pandas, NumPy, Matplotlib, Seaborn, Scikit‑learn.\nVisualisation interactive : Streamlit.\nModélisation : régression logistique, Random Forest, XGBoost, SMOTE.\nDéploiement : Streamlit Cloud, Docker, Kubernetes."
+  },
+  {
+    "objectID": "projects/credit-card-eda.html#lien-vers-le-code",
+    "href": "projects/credit-card-eda.html#lien-vers-le-code",
+    "title": "Détection de fraude bancaire – Analyse exploratoire des transactions",
+    "section": "Lien vers le code",
+    "text": "Lien vers le code\nGitHub – credit-card-fraud-detection"
   },
   {
     "objectID": "projects/enron-discovery.html",
@@ -375,13 +438,6 @@
     "href": "projects.html",
     "title": "Mes projets",
     "section": "",
-    "text": "Enron Discovery – Plateforme d’investigation numérique\nApplication web d’e‑Discovery sur plus de 500 000 emails. Dashboard interactif, recherche plein texte, graphe d’influence, reconstruction des fils de discussion.\nTechnologies : Django, PostgreSQL, pandas, Docker, Bootstrap, Chart.js, vis.js\n\n\n\nDeep Sea Adventure – Implémentation du jeu de société\nSimulation complète du jeu avec moteur de jeu, interface graphique (Tkinter) et console, intelligences artificielles (3 stratégies), sauvegarde/chargement, tests unitaires.\nTechnologies : Python, POO, Tkinter, pickle, unittest\n\n\n\nAnalyse des déterminants de la moyenne générale des étudiants\nModélisation prédictive de la performance académique à partir de 100 000 observations. Régression linéaire, sélection de variables, ACP, PCR, PLS, bootstrap.\nOutils & méthodes : R (tidyverse, caret, pls, leaps), validation croisée, bootstrap, réduction de dimension\n\n\n\nTest du chi‑2 d’adéquation : le dé est‑il équilibré ?\nMise en œuvre d’un test statistique complet en Python, avec validation des conditions d’application et interprétation des résultats.\nTechnologies : Python (scipy, numpy), test statistique, gestion d’erreurs\n\n\n\nChaîne de Markov : le jeu du ballon\nSimulation et analyse d’une chaîne de Markov à 3 états, calcul de la distribution stationnaire, visualisation.\nTechnologies : Python, numpy, matplotlib, simulation stochastique\n\n\n\nContrôle qualité des pommes : respect du cahier des charges ?\nAnalyse statistique complète (descriptive, test de normalité, test t) pour vérifier si le diamètre moyen d’un lot est conforme à la norme de 10 cm.\nOutils : Python (scipy, matplotlib), tests d’hypothèses, visualisation"
-  },
-  {
-    "objectID": "projects/deep-sea-adventure.html#résultats",
-    "href": "projects/deep-sea-adventure.html#résultats",
-    "title": "Deep Sea Adventure – Implémentation complète du jeu de société en Python",
-    "section": "Résultats",
-    "text": "Résultats\nLe jeu est entièrement jouable en mode console ou graphique.\nLes deux affichages sont fonctionnels et permettent de suivre l’évolution de la partie."
+    "text": "Enron Discovery – Plateforme d’investigation numérique\nApplication web d’e‑Discovery sur plus de 500 000 emails. Dashboard interactif, recherche plein texte, graphe d’influence, reconstruction des fils de discussion.\nTechnologies : Django, PostgreSQL, pandas, Docker, Bootstrap, Chart.js, vis.js\n\n\n\nDeep Sea Adventure – Implémentation du jeu de société\nSimulation complète du jeu avec moteur de jeu, interface graphique (Tkinter) et console, intelligences artificielles (3 stratégies), sauvegarde/chargement, tests unitaires.\nTechnologies : Python, POO, Tkinter, pickle, unittest\n\n\n\nDétection de fraude bancaire – Analyse exploratoire des transactions\nAnalyse exploratoire d’un jeu de données bancaires extrêmement déséquilibré, avec recommandations de modélisation et déploiement d’un tableau de bord Streamlit.\nTechnologies : Python, pandas, scikit-learn, XGBoost, Streamlit, Docker\n\n\nAnalyse des déterminants de la moyenne générale des étudiants\nModélisation prédictive de la performance académique à partir de 100 000 observations. Régression linéaire, sélection de variables, ACP, PCR, PLS, bootstrap.\nOutils & méthodes : R (tidyverse, caret, pls, leaps), validation croisée, bootstrap, réduction de dimension\n\n\n\nTest du chi‑2 d’adéquation : le dé est‑il équilibré ?\nMise en œuvre d’un test statistique complet en Python, avec validation des conditions d’application et interprétation des résultats.\nTechnologies : Python (scipy, numpy), test statistique, gestion d’erreurs\n\n\n\nChaîne de Markov : le jeu du ballon\nSimulation et analyse d’une chaîne de Markov à 3 états, calcul de la distribution stationnaire, visualisation.\nTechnologies : Python, numpy, matplotlib, simulation stochastique\n\n\n\nContrôle qualité des pommes : respect du cahier des charges ?\nAnalyse statistique complète (descriptive, test de normalité, test t) pour vérifier si le diamètre moyen d’un lot est conforme à la norme de 10 cm.\nOutils : Python (scipy, matplotlib), tests d’hypothèses, visualisation"
   }
 ]
