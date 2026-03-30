@@ -9,6 +9,13 @@ title: "Mes projets"
 
 ---
 
+### [Deep Sea Adventure – Implémentation du jeu de société](projects/deep-sea-adventure.qmd)
+*Simulation complète du jeu avec moteur de jeu, interface graphique (Tkinter) et console, intelligences artificielles (3 stratégies), sauvegarde/chargement, tests unitaires.*
+
+**Technologies** : Python, POO, Tkinter, pickle, unittest
+
+---
+
 ### [Analyse des déterminants de la moyenne générale des étudiants](projects/moyennes-etudiants.qmd)
 *Modélisation prédictive de la performance académique à partir de 100 000 observations. Régression linéaire, sélection de variables, ACP, PCR, PLS, bootstrap.*
 

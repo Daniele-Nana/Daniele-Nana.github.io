@@ -1,0 +1,92 @@
+---
+title: "Deep Sea Adventure – Implémentation complète du jeu de société en Python"
+---
+
+## Contexte et objectif
+
+Dans le cadre de l’UE *Programmation Orientée Objet*, j’ai développé en binôme une implémentation complète du jeu de société **Deep Sea Adventure** (Oink Games). Le jeu oppose 2 à 6 explorateurs qui plongent pour ramasser des trésors sous-marins, mais doivent gérer leur réserve d’air commune. Le projet devait respecter les règles officielles, proposer une interface (console et graphique), des intelligences artificielles, ainsi que des fonctionnalités avancées (sauvegarde/chargement, recommencer, etc.).
+
+## Fonctionnalités implémentées
+
+### Moteur de jeu complet
+- Plateau de 32 jetons répartis en 4 niveaux (valeurs de 0 à 15, deux de chaque valeur).
+- Règles officielles respectées :
+  - Réduction de l’air en fonction du nombre de jetons tenus.
+  - Déplacement : lancer de deux dés, soustraction du nombre de jetons tenus, saut des cases occupées.
+  - Actions possibles : ramasser un trésor, poser un trésor (sur une case blanche), ne rien faire.
+  - Fin de manche : les joueurs rentrés marquent la somme des valeurs de leurs jetons ; les autres laissent tomber leurs jetons, qui s’empilent (3 jetons empilés valent 3 points mais comptent comme un seul jeton pour le déplacement).
+  - Trois manches, détermination du vainqueur.
+
+### Interfaces utilisateur
+- **Console** : affichage ASCII avec indices, valeurs des jetons, pions, air et scores.
+- **Graphique (Tkinter)** : fenêtre redimensionnable, fond marin, cases colorées selon le niveau, pions représentés par des cercles avec l’initiale du joueur, barre de menu pour sauvegarder/recommencer/quitter.
+
+### Intelligences artificielles
+Trois stratégies (héritage d’une classe abstraite) :
+- **Aléatoire** : choix aléatoire de rentrer et d’action.
+- **Prudente** : rentre quand elle a au moins 2 jetons ou que l’air est bas (< 10), ramasse si elle a moins de 3 jetons.
+- **Courageuse** : rentre tard (≥ 5 jetons ou air < 5), ramasse systématiquement.
+
+### Sauvegarde / Chargement
+- Plusieurs sauvegardes nommées (fichiers .pkl), stockées dans un dossier `saves/`.
+- Menu principal (console ou graphique) pour créer, charger ou supprimer une sauvegarde.
+- Sauvegarde possible en cours de partie via le menu.
+
+### Autres fonctionnalités
+- **Recommencer** : relance une nouvelle partie avec les mêmes joueurs.
+- **Affichage des scores** : scores finaux et somme temporaire des jetons tenus.
+- **Robustesse** : gestion de l’interruption (Ctrl+C) avec sauvegarde optionnelle, suppression automatique des sauvegardes après fin de partie.
+- **Tests unitaires** : 14 tests couvrant les classes principales (jeton, plateau, joueur, jeu).
+
+## Structure du code
+
+Le projet est organisé en modules séparés (un fichier par classe) :
+
+| Fichier | Rôle |
+|---------|------|
+| `main.py` | Point d’entrée, menu principal (console/graphique) |
+| `jeu.py` | Classe Jeu : orchestration des manches, tours, fin de partie |
+| `plateau.py` | Gestion du plateau (32 cases, initialisation, tassement) |
+| `joueur.py` | Classe Joueur (position, jetons tenus, direction, score) |
+| `jeton.py` | Classe Jeton (ruine/blanc, piles) |
+| `ia.py` | Classes IA (aléatoire, prudente, courageuse) |
+| `de.py` | Simulateur de deux dés |
+| `affichage_console.py` | Affichage en mode console |
+| `affichage_graphique.py` | Interface Tkinter, configuration des joueurs |
+| `tests/` | Tests unitaires |
+
+L’architecture sépare clairement le **moteur de jeu** (indépendant de l’affichage) des **interfaces**. Les IA utilisent un **design pattern Strategy** (héritage polymorphique). La **persistance** est gérée via `pickle` avec une adaptation (`__getstate__` / `__setstate__`) pour exclure les objets non sérialisables (fenêtre graphique).
+
+## Résultats et visualisations
+
+Le jeu est entièrement jouable en mode console ou graphique. Voici un aperçu de l’interface graphique (Tkinter) :
+
+![Interface graphique de Deep Sea Adventure](images/deep-sea-gui.png)  
+*(Ajoutez une capture d’écran de votre interface dans le dossier `images/`)*
+
+L’affichage console est également fonctionnel et permet de suivre l’évolution de la partie.
+
+## Compétences mises en œuvre
+
+- **Programmation orientée objet** : héritage, polymorphisme, encapsulation, séparation des responsabilités.
+- **Développement logiciel** : architecture modulaire, gestion des exceptions, tests unitaires.
+- **Interfaces utilisateur** : développement d’une interface graphique avec Tkinter (personnalisation, redimensionnement, menus).
+- **Persistance des données** : sérialisation avec `pickle` pour sauvegarder l’état du jeu.
+- **Algorithmique** : simulation de déplacements, gestion des piles de jetons.
+- **Gestion de projet** : développement itératif, travail en binôme, versionnage Git.
+
+## Lien vers le code
+
+Le code source complet est disponible sur GitHub :  
+[GitHub – Deep Sea Adventure](https://github.com/Daniele-Nana/deep-sea-adventure)
+
+## Améliorations possibles
+
+- Ajouter des IA plus stratégiques (prise en compte du positionnement, blocage des adversaires).
+- Animer les déplacements des pions dans l’interface graphique.
+- Permettre un mode multijoueur en réseau.
+- Ajouter des jetons spéciaux ou des règles optionnelles.
+
+---
+
+*Ce projet illustre ma capacité à concevoir une application logicielle complète, modulaire et testable, en Python, avec une approche orientée objet et une attention particulière à l’expérience utilisateur.*
