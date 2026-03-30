@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mes projets – Daniele Nana Portfolio</title>
+<title>Deep Sea Adventure – Implémentation complète du jeu de société en Python – Daniele Nana Portfolio</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,23 +26,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ff38ca5759cea8d2b4e40dc1c167d4da.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-ff38ca5759cea8d2b4e40dc1c167d4da.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Daniele Nana Portfolio</span>
     </a>
   </div>
@@ -93,19 +93,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Accueil</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">À propos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./projects.html" aria-current="page"> 
+    <a class="nav-link" href="../projects.html"> 
 <span class="menu-text">Projets</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./works.html"> 
+    <a class="nav-link" href="../works.html"> 
 <span class="menu-text">Travaux de recherche</span></a>
   </li>  
 </ul>
@@ -131,12 +131,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#enron-discovery-plateforme-dinvestigation-numérique" id="toc-enron-discovery-plateforme-dinvestigation-numérique" class="nav-link active" data-scroll-target="#enron-discovery-plateforme-dinvestigation-numérique">Enron Discovery – Plateforme d’investigation numérique</a></li>
-  <li><a href="#deep-sea-adventure-implémentation-du-jeu-de-société" id="toc-deep-sea-adventure-implémentation-du-jeu-de-société" class="nav-link" data-scroll-target="#deep-sea-adventure-implémentation-du-jeu-de-société">Deep Sea Adventure – Implémentation du jeu de société</a></li>
-  <li><a href="#analyse-des-déterminants-de-la-moyenne-générale-des-étudiants" id="toc-analyse-des-déterminants-de-la-moyenne-générale-des-étudiants" class="nav-link" data-scroll-target="#analyse-des-déterminants-de-la-moyenne-générale-des-étudiants">Analyse des déterminants de la moyenne générale des étudiants</a></li>
-  <li><a href="#test-du-chi2-dadéquation-le-dé-estil-équilibré" id="toc-test-du-chi2-dadéquation-le-dé-estil-équilibré" class="nav-link" data-scroll-target="#test-du-chi2-dadéquation-le-dé-estil-équilibré">Test du chi‑2 d’adéquation : le dé est‑il équilibré ?</a></li>
-  <li><a href="#chaîne-de-markov-le-jeu-du-ballon" id="toc-chaîne-de-markov-le-jeu-du-ballon" class="nav-link" data-scroll-target="#chaîne-de-markov-le-jeu-du-ballon">Chaîne de Markov : le jeu du ballon</a></li>
-  <li><a href="#contrôle-qualité-des-pommes-respect-du-cahier-des-charges" id="toc-contrôle-qualité-des-pommes-respect-du-cahier-des-charges" class="nav-link" data-scroll-target="#contrôle-qualité-des-pommes-respect-du-cahier-des-charges">Contrôle qualité des pommes : respect du cahier des charges ?</a></li>
+  <li><a href="#contexte-et-objectif" id="toc-contexte-et-objectif" class="nav-link active" data-scroll-target="#contexte-et-objectif">Contexte et objectif</a></li>
+  <li><a href="#fonctionnalités-implémentées" id="toc-fonctionnalités-implémentées" class="nav-link" data-scroll-target="#fonctionnalités-implémentées">Fonctionnalités implémentées</a>
+  <ul class="collapse">
+  <li><a href="#moteur-de-jeu-complet" id="toc-moteur-de-jeu-complet" class="nav-link" data-scroll-target="#moteur-de-jeu-complet">Moteur de jeu complet</a></li>
+  <li><a href="#interfaces-utilisateur" id="toc-interfaces-utilisateur" class="nav-link" data-scroll-target="#interfaces-utilisateur">Interfaces utilisateur</a></li>
+  <li><a href="#intelligences-artificielles" id="toc-intelligences-artificielles" class="nav-link" data-scroll-target="#intelligences-artificielles">Intelligences artificielles</a></li>
+  <li><a href="#sauvegarde-chargement" id="toc-sauvegarde-chargement" class="nav-link" data-scroll-target="#sauvegarde-chargement">Sauvegarde / Chargement</a></li>
+  <li><a href="#autres-fonctionnalités" id="toc-autres-fonctionnalités" class="nav-link" data-scroll-target="#autres-fonctionnalités">Autres fonctionnalités</a></li>
+  </ul></li>
+  <li><a href="#structure-du-code" id="toc-structure-du-code" class="nav-link" data-scroll-target="#structure-du-code">Structure du code</a></li>
+  <li><a href="#résultats-et-visualisations" id="toc-résultats-et-visualisations" class="nav-link" data-scroll-target="#résultats-et-visualisations">Résultats et visualisations</a></li>
+  <li><a href="#compétences-mises-en-œuvre" id="toc-compétences-mises-en-œuvre" class="nav-link" data-scroll-target="#compétences-mises-en-œuvre">Compétences mises en œuvre</a></li>
+  <li><a href="#lien-vers-le-code" id="toc-lien-vers-le-code" class="nav-link" data-scroll-target="#lien-vers-le-code">Lien vers le code</a></li>
+  <li><a href="#améliorations-possibles" id="toc-améliorations-possibles" class="nav-link" data-scroll-target="#améliorations-possibles">Améliorations possibles</a></li>
   </ul>
 </nav>
     </div>
@@ -145,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Mes projets</h1>
+<h1 class="title">Deep Sea Adventure – Implémentation complète du jeu de société en Python</h1>
 </div>
 
 
@@ -162,40 +170,147 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="enron-discovery-plateforme-dinvestigation-numérique" class="level3">
-<h3 class="anchored" data-anchor-id="enron-discovery-plateforme-dinvestigation-numérique"><a href="./projects/enron-discovery.html">Enron Discovery – Plateforme d’investigation numérique</a></h3>
-<p><em>Application web d’e‑Discovery sur plus de 500 000 emails. Dashboard interactif, recherche plein texte, graphe d’influence, reconstruction des fils de discussion.</em></p>
-<p><strong>Technologies</strong> : Django, PostgreSQL, pandas, Docker, Bootstrap, Chart.js, vis.js</p>
-<hr>
+<section id="contexte-et-objectif" class="level2">
+<h2 class="anchored" data-anchor-id="contexte-et-objectif">Contexte et objectif</h2>
+<p>Dans le cadre de l’UE <em>Programmation Orientée Objet</em>, j’ai développé en binôme une implémentation complète du jeu de société <strong>Deep Sea Adventure</strong> (Oink Games). Le jeu oppose 2 à 6 explorateurs qui plongent pour ramasser des trésors sous-marins, mais doivent gérer leur réserve d’air commune. Le projet devait respecter les règles officielles, proposer une interface (console et graphique), des intelligences artificielles, ainsi que des fonctionnalités avancées (sauvegarde/chargement, recommencer, etc.).</p>
 </section>
-<section id="deep-sea-adventure-implémentation-du-jeu-de-société" class="level3">
-<h3 class="anchored" data-anchor-id="deep-sea-adventure-implémentation-du-jeu-de-société"><a href="./projects/deep-sea-adventure.html">Deep Sea Adventure – Implémentation du jeu de société</a></h3>
-<p><em>Simulation complète du jeu avec moteur de jeu, interface graphique (Tkinter) et console, intelligences artificielles (3 stratégies), sauvegarde/chargement, tests unitaires.</em></p>
-<p><strong>Technologies</strong> : Python, POO, Tkinter, pickle, unittest</p>
-<hr>
+<section id="fonctionnalités-implémentées" class="level2">
+<h2 class="anchored" data-anchor-id="fonctionnalités-implémentées">Fonctionnalités implémentées</h2>
+<section id="moteur-de-jeu-complet" class="level3">
+<h3 class="anchored" data-anchor-id="moteur-de-jeu-complet">Moteur de jeu complet</h3>
+<ul>
+<li>Plateau de 32 jetons répartis en 4 niveaux (valeurs de 0 à 15, deux de chaque valeur).</li>
+<li>Règles officielles respectées :
+<ul>
+<li>Réduction de l’air en fonction du nombre de jetons tenus.</li>
+<li>Déplacement : lancer de deux dés, soustraction du nombre de jetons tenus, saut des cases occupées.</li>
+<li>Actions possibles : ramasser un trésor, poser un trésor (sur une case blanche), ne rien faire.</li>
+<li>Fin de manche : les joueurs rentrés marquent la somme des valeurs de leurs jetons ; les autres laissent tomber leurs jetons, qui s’empilent (3 jetons empilés valent 3 points mais comptent comme un seul jeton pour le déplacement).</li>
+<li>Trois manches, détermination du vainqueur.</li>
+</ul></li>
+</ul>
 </section>
-<section id="analyse-des-déterminants-de-la-moyenne-générale-des-étudiants" class="level3">
-<h3 class="anchored" data-anchor-id="analyse-des-déterminants-de-la-moyenne-générale-des-étudiants"><a href="./projects/moyennes-etudiants.html">Analyse des déterminants de la moyenne générale des étudiants</a></h3>
-<p><em>Modélisation prédictive de la performance académique à partir de 100 000 observations. Régression linéaire, sélection de variables, ACP, PCR, PLS, bootstrap.</em></p>
-<p><strong>Outils &amp; méthodes</strong> : R (tidyverse, caret, pls, leaps), validation croisée, bootstrap, réduction de dimension</p>
-<hr>
+<section id="interfaces-utilisateur" class="level3">
+<h3 class="anchored" data-anchor-id="interfaces-utilisateur">Interfaces utilisateur</h3>
+<ul>
+<li><strong>Console</strong> : affichage ASCII avec indices, valeurs des jetons, pions, air et scores.</li>
+<li><strong>Graphique (Tkinter)</strong> : fenêtre redimensionnable, fond marin, cases colorées selon le niveau, pions représentés par des cercles avec l’initiale du joueur, barre de menu pour sauvegarder/recommencer/quitter.</li>
+</ul>
 </section>
-<section id="test-du-chi2-dadéquation-le-dé-estil-équilibré" class="level3">
-<h3 class="anchored" data-anchor-id="test-du-chi2-dadéquation-le-dé-estil-équilibré"><a href="./projects/chi2-de.html">Test du chi‑2 d’adéquation : le dé est‑il équilibré ?</a></h3>
-<p><em>Mise en œuvre d’un test statistique complet en Python, avec validation des conditions d’application et interprétation des résultats.</em></p>
-<p><strong>Technologies</strong> : Python (scipy, numpy), test statistique, gestion d’erreurs</p>
-<hr>
+<section id="intelligences-artificielles" class="level3">
+<h3 class="anchored" data-anchor-id="intelligences-artificielles">Intelligences artificielles</h3>
+<p>Trois stratégies (héritage d’une classe abstraite) : - <strong>Aléatoire</strong> : choix aléatoire de rentrer et d’action. - <strong>Prudente</strong> : rentre quand elle a au moins 2 jetons ou que l’air est bas (&lt; 10), ramasse si elle a moins de 3 jetons. - <strong>Courageuse</strong> : rentre tard (≥ 5 jetons ou air &lt; 5), ramasse systématiquement.</p>
 </section>
-<section id="chaîne-de-markov-le-jeu-du-ballon" class="level3">
-<h3 class="anchored" data-anchor-id="chaîne-de-markov-le-jeu-du-ballon"><a href="./projects/markov-ballon.html">Chaîne de Markov : le jeu du ballon</a></h3>
-<p><em>Simulation et analyse d’une chaîne de Markov à 3 états, calcul de la distribution stationnaire, visualisation.</em></p>
-<p><strong>Technologies</strong> : Python, numpy, matplotlib, simulation stochastique</p>
-<hr>
+<section id="sauvegarde-chargement" class="level3">
+<h3 class="anchored" data-anchor-id="sauvegarde-chargement">Sauvegarde / Chargement</h3>
+<ul>
+<li>Plusieurs sauvegardes nommées (fichiers .pkl), stockées dans un dossier <code>saves/</code>.</li>
+<li>Menu principal (console ou graphique) pour créer, charger ou supprimer une sauvegarde.</li>
+<li>Sauvegarde possible en cours de partie via le menu.</li>
+</ul>
 </section>
-<section id="contrôle-qualité-des-pommes-respect-du-cahier-des-charges" class="level3">
-<h3 class="anchored" data-anchor-id="contrôle-qualité-des-pommes-respect-du-cahier-des-charges"><a href="./projects/pommes.html">Contrôle qualité des pommes : respect du cahier des charges ?</a></h3>
-<p><em>Analyse statistique complète (descriptive, test de normalité, test t) pour vérifier si le diamètre moyen d’un lot est conforme à la norme de 10 cm.</em></p>
-<p><strong>Outils</strong> : Python (scipy, matplotlib), tests d’hypothèses, visualisation</p>
+<section id="autres-fonctionnalités" class="level3">
+<h3 class="anchored" data-anchor-id="autres-fonctionnalités">Autres fonctionnalités</h3>
+<ul>
+<li><strong>Recommencer</strong> : relance une nouvelle partie avec les mêmes joueurs.</li>
+<li><strong>Affichage des scores</strong> : scores finaux et somme temporaire des jetons tenus.</li>
+<li><strong>Robustesse</strong> : gestion de l’interruption (Ctrl+C) avec sauvegarde optionnelle, suppression automatique des sauvegardes après fin de partie.</li>
+<li><strong>Tests unitaires</strong> : 14 tests couvrant les classes principales (jeton, plateau, joueur, jeu).</li>
+</ul>
+</section>
+</section>
+<section id="structure-du-code" class="level2">
+<h2 class="anchored" data-anchor-id="structure-du-code">Structure du code</h2>
+<p>Le projet est organisé en modules séparés (un fichier par classe) :</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 60%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Fichier</th>
+<th>Rôle</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>main.py</code></td>
+<td>Point d’entrée, menu principal (console/graphique)</td>
+</tr>
+<tr class="even">
+<td><code>jeu.py</code></td>
+<td>Classe Jeu : orchestration des manches, tours, fin de partie</td>
+</tr>
+<tr class="odd">
+<td><code>plateau.py</code></td>
+<td>Gestion du plateau (32 cases, initialisation, tassement)</td>
+</tr>
+<tr class="even">
+<td><code>joueur.py</code></td>
+<td>Classe Joueur (position, jetons tenus, direction, score)</td>
+</tr>
+<tr class="odd">
+<td><code>jeton.py</code></td>
+<td>Classe Jeton (ruine/blanc, piles)</td>
+</tr>
+<tr class="even">
+<td><code>ia.py</code></td>
+<td>Classes IA (aléatoire, prudente, courageuse)</td>
+</tr>
+<tr class="odd">
+<td><code>de.py</code></td>
+<td>Simulateur de deux dés</td>
+</tr>
+<tr class="even">
+<td><code>affichage_console.py</code></td>
+<td>Affichage en mode console</td>
+</tr>
+<tr class="odd">
+<td><code>affichage_graphique.py</code></td>
+<td>Interface Tkinter, configuration des joueurs</td>
+</tr>
+<tr class="even">
+<td><code>tests/</code></td>
+<td>Tests unitaires</td>
+</tr>
+</tbody>
+</table>
+<p>L’architecture sépare clairement le <strong>moteur de jeu</strong> (indépendant de l’affichage) des <strong>interfaces</strong>. Les IA utilisent un <strong>design pattern Strategy</strong> (héritage polymorphique). La <strong>persistance</strong> est gérée via <code>pickle</code> avec une adaptation (<code>__getstate__</code> / <code>__setstate__</code>) pour exclure les objets non sérialisables (fenêtre graphique).</p>
+</section>
+<section id="résultats-et-visualisations" class="level2">
+<h2 class="anchored" data-anchor-id="résultats-et-visualisations">Résultats et visualisations</h2>
+<p>Le jeu est entièrement jouable en mode console ou graphique. Voici un aperçu de l’interface graphique (Tkinter) :</p>
+<p><img src="images/deep-sea-gui.png" class="img-fluid" alt="Interface graphique de Deep Sea Adventure"><br>
+<em>(Ajoutez une capture d’écran de votre interface dans le dossier <code>images/</code>)</em></p>
+<p>L’affichage console est également fonctionnel et permet de suivre l’évolution de la partie.</p>
+</section>
+<section id="compétences-mises-en-œuvre" class="level2">
+<h2 class="anchored" data-anchor-id="compétences-mises-en-œuvre">Compétences mises en œuvre</h2>
+<ul>
+<li><strong>Programmation orientée objet</strong> : héritage, polymorphisme, encapsulation, séparation des responsabilités.</li>
+<li><strong>Développement logiciel</strong> : architecture modulaire, gestion des exceptions, tests unitaires.</li>
+<li><strong>Interfaces utilisateur</strong> : développement d’une interface graphique avec Tkinter (personnalisation, redimensionnement, menus).</li>
+<li><strong>Persistance des données</strong> : sérialisation avec <code>pickle</code> pour sauvegarder l’état du jeu.</li>
+<li><strong>Algorithmique</strong> : simulation de déplacements, gestion des piles de jetons.</li>
+<li><strong>Gestion de projet</strong> : développement itératif, travail en binôme, versionnage Git.</li>
+</ul>
+</section>
+<section id="lien-vers-le-code" class="level2">
+<h2 class="anchored" data-anchor-id="lien-vers-le-code">Lien vers le code</h2>
+<p>Le code source complet est disponible sur GitHub :<br>
+<a href="https://github.com/Daniele-Nana/deep-sea-adventure">GitHub – Deep Sea Adventure</a></p>
+</section>
+<section id="améliorations-possibles" class="level2">
+<h2 class="anchored" data-anchor-id="améliorations-possibles">Améliorations possibles</h2>
+<ul>
+<li>Ajouter des IA plus stratégiques (prise en compte du positionnement, blocage des adversaires).</li>
+<li>Animer les déplacements des pions dans l’interface graphique.</li>
+<li>Permettre un mode multijoueur en réseau.</li>
+<li>Ajouter des jetons spéciaux ou des règles optionnelles.</li>
+</ul>
+<hr>
+<p><em>Ce projet illustre ma capacité à concevoir une application logicielle complète, modulaire et testable, en Python, avec une approche orientée objet et une attention particulière à l’expérience utilisateur.</em></p>
 
 
 </section>
