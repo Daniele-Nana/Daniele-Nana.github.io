@@ -46,7 +46,7 @@ title: "Curriculum Vitae"
 
 | Catégorie | Détails |
 |-----------|--------|
-| **Programmation** | Python (Pandas, NumPy, Scikit-learn, TensorFlow), R, SQL, SAS, , VBA |
+| **Programmation** | Python (Pandas, NumPy, Scikit-learn, TensorFlow), R, SQL, SAS, VBA |
 | **Bases de données** | PostgreSQL, MariaDB, SQLAlchemy, JSON/XML, Hadoop/MapReduce |
 | **Machine Learning** | Apprentissage supervisé et non supervisé, régressions, classification, clustering, feature engineering, validation croisée, évaluation de modèles, deep learning |
 | **Statistiques** | Modélisation probabiliste, chaînes de Markov, simulation de processus stochastiques |
