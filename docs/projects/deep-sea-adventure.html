@@ -141,7 +141,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#autres-fonctionnalités" id="toc-autres-fonctionnalités" class="nav-link" data-scroll-target="#autres-fonctionnalités">Autres fonctionnalités</a></li>
   </ul></li>
   <li><a href="#structure-du-code" id="toc-structure-du-code" class="nav-link" data-scroll-target="#structure-du-code">Structure du code</a></li>
-  <li><a href="#résultats-et-visualisations" id="toc-résultats-et-visualisations" class="nav-link" data-scroll-target="#résultats-et-visualisations">Résultats et visualisations</a></li>
+  <li><a href="#résultats" id="toc-résultats" class="nav-link" data-scroll-target="#résultats">Résultats</a></li>
   <li><a href="#compétences-mises-en-œuvre" id="toc-compétences-mises-en-œuvre" class="nav-link" data-scroll-target="#compétences-mises-en-œuvre">Compétences mises en œuvre</a></li>
   <li><a href="#lien-vers-le-code" id="toc-lien-vers-le-code" class="nav-link" data-scroll-target="#lien-vers-le-code">Lien vers le code</a></li>
   <li><a href="#améliorations-possibles" id="toc-améliorations-possibles" class="nav-link" data-scroll-target="#améliorations-possibles">Améliorations possibles</a></li>
@@ -199,7 +199,12 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="intelligences-artificielles" class="level3">
 <h3 class="anchored" data-anchor-id="intelligences-artificielles">Intelligences artificielles</h3>
-<p>Trois stratégies (héritage d’une classe abstraite) : - <strong>Aléatoire</strong> : choix aléatoire de rentrer et d’action. - <strong>Prudente</strong> : rentre quand elle a au moins 2 jetons ou que l’air est bas (&lt; 10), ramasse si elle a moins de 3 jetons. - <strong>Courageuse</strong> : rentre tard (≥ 5 jetons ou air &lt; 5), ramasse systématiquement.</p>
+<p>Trois stratégies (héritage d’une classe abstraite) :</p>
+<ul>
+<li><strong>Aléatoire</strong> : choix aléatoire de rentrer et d’action.</li>
+<li><strong>Prudente</strong> : rentre quand elle a au moins 2 jetons ou que l’air est bas (&lt; 10), ramasse si elle a moins de 3 jetons.</li>
+<li><strong>Courageuse</strong> : rentre tard (≥ 5 jetons ou air &lt; 5), ramasse systématiquement.</li>
+</ul>
 </section>
 <section id="sauvegarde-chargement" class="level3">
 <h3 class="anchored" data-anchor-id="sauvegarde-chargement">Sauvegarde / Chargement</h3>
@@ -278,12 +283,10 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <p>L’architecture sépare clairement le <strong>moteur de jeu</strong> (indépendant de l’affichage) des <strong>interfaces</strong>. Les IA utilisent un <strong>design pattern Strategy</strong> (héritage polymorphique). La <strong>persistance</strong> est gérée via <code>pickle</code> avec une adaptation (<code>__getstate__</code> / <code>__setstate__</code>) pour exclure les objets non sérialisables (fenêtre graphique).</p>
 </section>
-<section id="résultats-et-visualisations" class="level2">
-<h2 class="anchored" data-anchor-id="résultats-et-visualisations">Résultats et visualisations</h2>
-<p>Le jeu est entièrement jouable en mode console ou graphique. Voici un aperçu de l’interface graphique (Tkinter) :</p>
-<p><img src="images/deep-sea-gui.png" class="img-fluid" alt="Interface graphique de Deep Sea Adventure"><br>
-<em>(Ajoutez une capture d’écran de votre interface dans le dossier <code>images/</code>)</em></p>
-<p>L’affichage console est également fonctionnel et permet de suivre l’évolution de la partie.</p>
+<section id="résultats" class="level2">
+<h2 class="anchored" data-anchor-id="résultats">Résultats</h2>
+<p>Le jeu est entièrement jouable en mode console ou graphique.</p>
+<p>Les deux affichages sont fonctionnels et permettent de suivre l’évolution de la partie.</p>
 </section>
 <section id="compétences-mises-en-œuvre" class="level2">
 <h2 class="anchored" data-anchor-id="compétences-mises-en-œuvre">Compétences mises en œuvre</h2>

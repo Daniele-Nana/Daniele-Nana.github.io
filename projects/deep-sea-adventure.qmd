@@ -23,6 +23,7 @@ Dans le cadre de l’UE *Programmation Orientée Objet*, j’ai développé en g
 
 ### Intelligences artificielles
 Trois stratégies (héritage d’une classe abstraite) :
+
 - **Aléatoire** : choix aléatoire de rentrer et d’action.
 - **Prudente** : rentre quand elle a au moins 2 jetons ou que l’air est bas (< 10), ramasse si elle a moins de 3 jetons.
 - **Courageuse** : rentre tard (≥ 5 jetons ou air < 5), ramasse systématiquement.
@@ -57,14 +58,11 @@ Le projet est organisé en modules séparés (un fichier par classe) :
 
 L’architecture sépare clairement le **moteur de jeu** (indépendant de l’affichage) des **interfaces**. Les IA utilisent un **design pattern Strategy** (héritage polymorphique). La **persistance** est gérée via `pickle` avec une adaptation (`__getstate__` / `__setstate__`) pour exclure les objets non sérialisables (fenêtre graphique).
 
-## Résultats et visualisations
+## Résultats
 
-Le jeu est entièrement jouable en mode console ou graphique. Voici un aperçu de l’interface graphique (Tkinter) :
+Le jeu est entièrement jouable en mode console ou graphique. 
 
-![Interface graphique de Deep Sea Adventure](images/deep-sea-gui.png)  
-*(Ajoutez une capture d’écran de votre interface dans le dossier `images/`)*
-
-L’affichage console est également fonctionnel et permet de suivre l’évolution de la partie.
+Les deux affichages sont fonctionnels et permettent de suivre l’évolution de la partie.
 
 ## Compétences mises en œuvre
 
