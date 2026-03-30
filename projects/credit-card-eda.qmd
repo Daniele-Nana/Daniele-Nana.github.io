@@ -49,4 +49,4 @@ Comment analyser les transactions bancaires pour identifier des schémas de frau
 
 ## Lien vers le code
 
-[GitHub – credit-card-fraud-detection](https://github.com/Daniele-Nana/credit-card-eda)
+[GitHub – credit-card-eda](https://github.com/Daniele-Nana/credit-card-eda)
