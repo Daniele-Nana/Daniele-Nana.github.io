@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mes projets – Daniele Nana Portfolio</title>
+<title>Prédiction de réponse à une campagne marketing – Analyse exploratoire – Daniele Nana Portfolio</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,23 +26,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ff38ca5759cea8d2b4e40dc1c167d4da.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-ff38ca5759cea8d2b4e40dc1c167d4da.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Daniele Nana Portfolio</span>
     </a>
   </div>
@@ -93,19 +93,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Accueil</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">À propos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./projects.html" aria-current="page"> 
+    <a class="nav-link" href="../projects.html"> 
 <span class="menu-text">Projets</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./works.html"> 
+    <a class="nav-link" href="../works.html"> 
 <span class="menu-text">Travaux de recherche</span></a>
   </li>  
 </ul>
@@ -131,14 +131,29 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#enron-discovery-plateforme-dinvestigation-numérique" id="toc-enron-discovery-plateforme-dinvestigation-numérique" class="nav-link active" data-scroll-target="#enron-discovery-plateforme-dinvestigation-numérique">Enron Discovery – Plateforme d’investigation numérique</a></li>
-  <li><a href="#deep-sea-adventure-implémentation-du-jeu-de-société" id="toc-deep-sea-adventure-implémentation-du-jeu-de-société" class="nav-link" data-scroll-target="#deep-sea-adventure-implémentation-du-jeu-de-société">Deep Sea Adventure – Implémentation du jeu de société</a></li>
-  <li><a href="#détection-de-fraude-bancaire-analyse-exploratoire-des-transactions" id="toc-détection-de-fraude-bancaire-analyse-exploratoire-des-transactions" class="nav-link" data-scroll-target="#détection-de-fraude-bancaire-analyse-exploratoire-des-transactions">Détection de fraude bancaire – Analyse exploratoire des transactions</a></li>
-  <li><a href="#prédiction-de-réponse-à-une-campagne-marketing-analyse-exploratoire" id="toc-prédiction-de-réponse-à-une-campagne-marketing-analyse-exploratoire" class="nav-link" data-scroll-target="#prédiction-de-réponse-à-une-campagne-marketing-analyse-exploratoire">Prédiction de réponse à une campagne marketing – Analyse exploratoire</a></li>
-  <li><a href="#analyse-des-déterminants-de-la-moyenne-générale-des-étudiants" id="toc-analyse-des-déterminants-de-la-moyenne-générale-des-étudiants" class="nav-link" data-scroll-target="#analyse-des-déterminants-de-la-moyenne-générale-des-étudiants">Analyse des déterminants de la moyenne générale des étudiants</a></li>
-  <li><a href="#test-du-chi2-dadéquation-le-dé-estil-équilibré" id="toc-test-du-chi2-dadéquation-le-dé-estil-équilibré" class="nav-link" data-scroll-target="#test-du-chi2-dadéquation-le-dé-estil-équilibré">Test du chi‑2 d’adéquation : le dé est‑il équilibré ?</a></li>
-  <li><a href="#chaîne-de-markov-le-jeu-du-ballon" id="toc-chaîne-de-markov-le-jeu-du-ballon" class="nav-link" data-scroll-target="#chaîne-de-markov-le-jeu-du-ballon">Chaîne de Markov : le jeu du ballon</a></li>
-  <li><a href="#contrôle-qualité-des-pommes-respect-du-cahier-des-charges" id="toc-contrôle-qualité-des-pommes-respect-du-cahier-des-charges" class="nav-link" data-scroll-target="#contrôle-qualité-des-pommes-respect-du-cahier-des-charges">Contrôle qualité des pommes : respect du cahier des charges ?</a></li>
+  <li><a href="#contexte" id="toc-contexte" class="nav-link active" data-scroll-target="#contexte">Contexte</a></li>
+  <li><a href="#objectifs" id="toc-objectifs" class="nav-link" data-scroll-target="#objectifs">Objectifs</a></li>
+  <li><a href="#problématique" id="toc-problématique" class="nav-link" data-scroll-target="#problématique">Problématique</a></li>
+  <li><a href="#analyse-exploratoire-des-données-eda" id="toc-analyse-exploratoire-des-données-eda" class="nav-link" data-scroll-target="#analyse-exploratoire-des-données-eda">Analyse exploratoire des données (EDA)</a>
+  <ul class="collapse">
+  <li><a href="#structure-et-qualité-des-données" id="toc-structure-et-qualité-des-données" class="nav-link" data-scroll-target="#structure-et-qualité-des-données">1. Structure et qualité des données</a></li>
+  <li><a href="#distribution-de-la-cible" id="toc-distribution-de-la-cible" class="nav-link" data-scroll-target="#distribution-de-la-cible">2. Distribution de la cible</a></li>
+  <li><a href="#profil-comparatif-des-répondants-classe-1-et-nonrépondants-classe-0" id="toc-profil-comparatif-des-répondants-classe-1-et-nonrépondants-classe-0" class="nav-link" data-scroll-target="#profil-comparatif-des-répondants-classe-1-et-nonrépondants-classe-0">3. Profil comparatif des répondants (classe 1) et non‑répondants (classe 0)</a></li>
+  <li><a href="#variables-catégorielles" id="toc-variables-catégorielles" class="nav-link" data-scroll-target="#variables-catégorielles">4. Variables catégorielles</a></li>
+  <li><a href="#dépenses-par-catégorie" id="toc-dépenses-par-catégorie" class="nav-link" data-scroll-target="#dépenses-par-catégorie">5. Dépenses par catégorie</a></li>
+  <li><a href="#segmentation-revenu-dépenses" id="toc-segmentation-revenu-dépenses" class="nav-link" data-scroll-target="#segmentation-revenu-dépenses">6. Segmentation revenu × dépenses</a></li>
+  <li><a href="#historique-des-campagnes-précédentes" id="toc-historique-des-campagnes-précédentes" class="nav-link" data-scroll-target="#historique-des-campagnes-précédentes">7. Historique des campagnes précédentes</a></li>
+  </ul></li>
+  <li><a href="#hypothèses-exploitables" id="toc-hypothèses-exploitables" class="nav-link" data-scroll-target="#hypothèses-exploitables">Hypothèses exploitables</a></li>
+  <li><a href="#recommandations-pour-la-modélisation" id="toc-recommandations-pour-la-modélisation" class="nav-link" data-scroll-target="#recommandations-pour-la-modélisation">Recommandations pour la modélisation</a>
+  <ul class="collapse">
+  <li><a href="#prétraitement" id="toc-prétraitement" class="nav-link" data-scroll-target="#prétraitement">Prétraitement</a></li>
+  <li><a href="#gestion-du-déséquilibre" id="toc-gestion-du-déséquilibre" class="nav-link" data-scroll-target="#gestion-du-déséquilibre">Gestion du déséquilibre</a></li>
+  <li><a href="#modèles-à-tester" id="toc-modèles-à-tester" class="nav-link" data-scroll-target="#modèles-à-tester">Modèles à tester</a></li>
+  <li><a href="#évaluation" id="toc-évaluation" class="nav-link" data-scroll-target="#évaluation">Évaluation</a></li>
+  </ul></li>
+  <li><a href="#compétences-et-technologies" id="toc-compétences-et-technologies" class="nav-link" data-scroll-target="#compétences-et-technologies">Compétences et technologies</a></li>
+  <li><a href="#lien-vers-le-code" id="toc-lien-vers-le-code" class="nav-link" data-scroll-target="#lien-vers-le-code">Lien vers le code</a></li>
   </ul>
 </nav>
     </div>
@@ -147,7 +162,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Mes projets</h1>
+<h1 class="title">Prédiction de réponse à une campagne marketing – Analyse exploratoire</h1>
 </div>
 
 
@@ -164,52 +179,220 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="enron-discovery-plateforme-dinvestigation-numérique" class="level3">
-<h3 class="anchored" data-anchor-id="enron-discovery-plateforme-dinvestigation-numérique"><a href="./projects/enron-discovery.html">Enron Discovery – Plateforme d’investigation numérique</a></h3>
-<p><em>Application web d’e‑Discovery sur plus de 500 000 emails. Dashboard interactif, recherche plein texte, graphe d’influence, reconstruction des fils de discussion.</em></p>
-<p><strong>Technologies</strong> : Django, PostgreSQL, pandas, Docker, Bootstrap, Chart.js, vis.js</p>
-<hr>
+<section id="contexte" class="level2">
+<h2 class="anchored" data-anchor-id="contexte">Contexte</h2>
+<p>L’entreprise souhaite améliorer l’efficacité de ses campagnes marketing en ciblant les clients les plus susceptibles de répondre à une offre. Le jeu de données contient 2 240 clients avec des informations démographiques, d’achat et d’historique de campagnes. La variable cible <code>Response</code> indique si le client a accepté la dernière campagne.</p>
 </section>
-<section id="deep-sea-adventure-implémentation-du-jeu-de-société" class="level3">
-<h3 class="anchored" data-anchor-id="deep-sea-adventure-implémentation-du-jeu-de-société"><a href="./projects/deep-sea-adventure.html">Deep Sea Adventure – Implémentation du jeu de société</a></h3>
-<p><em>Simulation complète du jeu avec moteur de jeu, interface graphique (Tkinter) et console, intelligences artificielles (3 stratégies), sauvegarde/chargement, tests unitaires.</em></p>
-<p><strong>Technologies</strong> : Python, POO, Tkinter, pickle, unittest</p>
-<hr>
+<section id="objectifs" class="level2">
+<h2 class="anchored" data-anchor-id="objectifs">Objectifs</h2>
+<ul>
+<li>Comprendre le profil des répondants.</li>
+<li>Identifier les variables discriminantes.</li>
+<li>Proposer des pistes pour la modélisation prédictive.</li>
+</ul>
 </section>
-<section id="détection-de-fraude-bancaire-analyse-exploratoire-des-transactions" class="level3">
-<h3 class="anchored" data-anchor-id="détection-de-fraude-bancaire-analyse-exploratoire-des-transactions"><a href="./projects/credit-card-eda.html">Détection de fraude bancaire – Analyse exploratoire des transactions</a></h3>
-<p><em>Analyse exploratoire d’un jeu de données bancaires extrêmement déséquilibré, avec recommandations de modélisation et déploiement d’un tableau de bord Streamlit.</em></p>
-<p><strong>Technologies</strong> : Python, pandas, scikit-learn, XGBoost, Streamlit, Docker</p>
-<hr>
+<section id="problématique" class="level2">
+<h2 class="anchored" data-anchor-id="problématique">Problématique</h2>
+<p>Comment prédire quels clients répondront à une campagne marketing à partir de leurs caractéristiques et de leur historique ?</p>
 </section>
-<section id="prédiction-de-réponse-à-une-campagne-marketing-analyse-exploratoire" class="level3">
-<h3 class="anchored" data-anchor-id="prédiction-de-réponse-à-une-campagne-marketing-analyse-exploratoire"><a href="./projects/marketing-campaign-eda.html">Prédiction de réponse à une campagne marketing – Analyse exploratoire</a></h3>
-<p><em>Analyse du profil des répondants, segmentation revenu/dépenses, identification des variables clés et recommandations pour la modélisation prédictive.</em></p>
-<p><strong>Technologies</strong> : Python, pandas, scikit-learn, Streamlit</p>
-<hr>
+<section id="analyse-exploratoire-des-données-eda" class="level2">
+<h2 class="anchored" data-anchor-id="analyse-exploratoire-des-données-eda">Analyse exploratoire des données (EDA)</h2>
+<section id="structure-et-qualité-des-données" class="level3">
+<h3 class="anchored" data-anchor-id="structure-et-qualité-des-données">1. Structure et qualité des données</h3>
+<ul>
+<li>2 240 clients, 29 colonnes.</li>
+<li>24 valeurs manquantes dans la colonne <code>Income</code> (imputées par la médiane).</li>
+<li>Colonnes constantes sans intérêt (<code>Z_CostContact</code>, <code>Z_Revenue</code>) supprimées.</li>
+<li>Variables catégorielles : <code>Education</code> (5 niveaux), <code>Marital_Status</code> (8 niveaux, catégories rares regroupées dans « Other »).</li>
+<li>Variable cible : <code>Response</code> (1 = acceptation, 0 = refus).</li>
+</ul>
 </section>
-<section id="analyse-des-déterminants-de-la-moyenne-générale-des-étudiants" class="level3">
-<h3 class="anchored" data-anchor-id="analyse-des-déterminants-de-la-moyenne-générale-des-étudiants"><a href="./projects/moyennes-etudiants.html">Analyse des déterminants de la moyenne générale des étudiants</a></h3>
-<p><em>Modélisation prédictive de la performance académique à partir de 100 000 observations. Régression linéaire, sélection de variables, ACP, PCR, PLS, bootstrap.</em></p>
-<p><strong>Outils &amp; méthodes</strong> : R (tidyverse, caret, pls, leaps), validation croisée, bootstrap, réduction de dimension</p>
-<hr>
+<section id="distribution-de-la-cible" class="level3">
+<h3 class="anchored" data-anchor-id="distribution-de-la-cible">2. Distribution de la cible</h3>
+<ul>
+<li>Taux de réponse : <strong>14,9 %</strong> (déséquilibre modéré).</li>
+<li>Métriques adaptées : précision, rappel, F1-score, AUC‑ROC.</li>
+</ul>
 </section>
-<section id="test-du-chi2-dadéquation-le-dé-estil-équilibré" class="level3">
-<h3 class="anchored" data-anchor-id="test-du-chi2-dadéquation-le-dé-estil-équilibré"><a href="./projects/chi2-de.html">Test du chi‑2 d’adéquation : le dé est‑il équilibré ?</a></h3>
-<p><em>Mise en œuvre d’un test statistique complet en Python, avec validation des conditions d’application et interprétation des résultats.</em></p>
-<p><strong>Technologies</strong> : Python (scipy, numpy), test statistique, gestion d’erreurs</p>
-<hr>
+<section id="profil-comparatif-des-répondants-classe-1-et-nonrépondants-classe-0" class="level3">
+<h3 class="anchored" data-anchor-id="profil-comparatif-des-répondants-classe-1-et-nonrépondants-classe-0">3. Profil comparatif des répondants (classe 1) et non‑répondants (classe 0)</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 29%">
+<col style="width: 22%">
+<col style="width: 29%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Non‑répondants</th>
+<th>Répondants</th>
+<th>Interprétation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Revenu moyen</td>
+<td>50 846 €</td>
+<td>60 183 €</td>
+<td>+18 %</td>
+</tr>
+<tr class="even">
+<td>Dépenses totales (6 catégories)</td>
+<td>539 €</td>
+<td>987 €</td>
+<td>+83 %</td>
+</tr>
+<tr class="odd">
+<td>Récence (jours depuis dernier achat)</td>
+<td>51,5 j</td>
+<td>35,4 j</td>
+<td>plus récents</td>
+</tr>
+<tr class="even">
+<td>Achats web (nombre)</td>
+<td>3,9</td>
+<td>5,1</td>
+<td>+31 %</td>
+</tr>
+<tr class="odd">
+<td>Achats catalogue</td>
+<td>2,4</td>
+<td>4,2</td>
+<td>+75 %</td>
+</tr>
+<tr class="even">
+<td>Achats magasin</td>
+<td>5,7</td>
+<td>6,1</td>
+<td>+7 %</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Conclusion</strong> : les répondants sont plus aisés, dépensent davantage, sont plus actifs sur les canaux web et catalogue, et ont acheté plus récemment.</p>
 </section>
-<section id="chaîne-de-markov-le-jeu-du-ballon" class="level3">
-<h3 class="anchored" data-anchor-id="chaîne-de-markov-le-jeu-du-ballon"><a href="./projects/markov-ballon.html">Chaîne de Markov : le jeu du ballon</a></h3>
-<p><em>Simulation et analyse d’une chaîne de Markov à 3 états, calcul de la distribution stationnaire, visualisation.</em></p>
-<p><strong>Technologies</strong> : Python, numpy, matplotlib, simulation stochastique</p>
-<hr>
+<section id="variables-catégorielles" class="level3">
+<h3 class="anchored" data-anchor-id="variables-catégorielles">4. Variables catégorielles</h3>
+<ul>
+<li><strong>Éducation</strong> : les titulaires d’un PhD ou d’un Master répondent mieux.</li>
+<li><strong>État civil</strong> : les clients en couple (Together) ou mariés présentent un taux de réponse plus élevé.</li>
+</ul>
 </section>
-<section id="contrôle-qualité-des-pommes-respect-du-cahier-des-charges" class="level3">
-<h3 class="anchored" data-anchor-id="contrôle-qualité-des-pommes-respect-du-cahier-des-charges"><a href="./projects/pommes.html">Contrôle qualité des pommes : respect du cahier des charges ?</a></h3>
-<p><em>Analyse statistique complète (descriptive, test de normalité, test t) pour vérifier si le diamètre moyen d’un lot est conforme à la norme de 10 cm.</em></p>
-<p><strong>Outils</strong> : Python (scipy, matplotlib), tests d’hypothèses, visualisation</p>
+<section id="dépenses-par-catégorie" class="level3">
+<h3 class="anchored" data-anchor-id="dépenses-par-catégorie">5. Dépenses par catégorie</h3>
+<p>Les plus fortes différences entre répondants et non‑répondants concernent : - <code>MntWines</code> (vins) - <code>MntMeatProducts</code> (viande) - <code>MntGoldProds</code> (produits en or)</p>
+</section>
+<section id="segmentation-revenu-dépenses" class="level3">
+<h3 class="anchored" data-anchor-id="segmentation-revenu-dépenses">6. Segmentation revenu × dépenses</h3>
+<p>Tableau des taux de réponse selon les quartiles de revenu et de dépenses totales :</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Revenu &nbsp;Dépenses</th>
+<th>Faible</th>
+<th>Moyen</th>
+<th>Élevé</th>
+<th>Très élevé</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Faible</td>
+<td>6,8 %</td>
+<td>17,3 %</td>
+<td>16,7 %</td>
+<td>0,0 %</td>
+</tr>
+<tr class="even">
+<td>Moyen</td>
+<td>3,5 %</td>
+<td>13,0 %</td>
+<td>21,4 %</td>
+<td>36,4 %</td>
+</tr>
+<tr class="odd">
+<td>Élevé</td>
+<td>0,0 %</td>
+<td>2,0 %</td>
+<td>8,3 %</td>
+<td>22,7 %</td>
+</tr>
+<tr class="even">
+<td>Très élevé</td>
+<td>0,0 %</td>
+<td>0,0 %</td>
+<td>11,4 %</td>
+<td>32,2 %</td>
+</tr>
+</tbody>
+</table>
+<p>Les meilleurs taux de réponse se situent dans les segments <strong>« revenu moyen – dépenses très élevées »</strong> (36,4 %) et <strong>« revenu très élevé – dépenses très élevées »</strong> (32,2 %).</p>
+</section>
+<section id="historique-des-campagnes-précédentes" class="level3">
+<h3 class="anchored" data-anchor-id="historique-des-campagnes-précédentes">7. Historique des campagnes précédentes</h3>
+<p>Le nombre de campagnes acceptées parmi les cinq premières est fortement corrélé à la réponse. Les clients ayant déjà accepté une campagne ont un taux de réponse supérieur à 50 %.</p>
+</section>
+</section>
+<section id="hypothèses-exploitables" class="level2">
+<h2 class="anchored" data-anchor-id="hypothèses-exploitables">Hypothèses exploitables</h2>
+<ol type="1">
+<li><strong>Dépenses et récence</strong> : les dépenses totales et la récence sont des prédicteurs majeurs.</li>
+<li><strong>Canaux</strong> : les achats web et catalogue distinguent fortement les répondants.</li>
+<li><strong>Historique des campagnes</strong> : le nombre d’acceptations passées est un excellent indicateur de réponse future.</li>
+<li><strong>Segmentation revenu × dépenses</strong> : cibler les segments à fort taux de réponse (revenu moyen/élevé + dépenses élevées) maximise le retour sur investissement.</li>
+</ol>
+</section>
+<section id="recommandations-pour-la-modélisation" class="level2">
+<h2 class="anchored" data-anchor-id="recommandations-pour-la-modélisation">Recommandations pour la modélisation</h2>
+<section id="prétraitement" class="level3">
+<h3 class="anchored" data-anchor-id="prétraitement">Prétraitement</h3>
+<ul>
+<li>Encoder les variables catégorielles (OneHotEncoder).</li>
+<li>Normaliser les variables numériques (StandardScaler) sauf les indicateurs binaires.</li>
+<li>Créer des variables composées :
+<ul>
+<li><code>num_accepted_cmp</code> : somme des campagnes acceptées</li>
+<li><code>total_spending</code> : somme des 6 catégories de produits</li>
+<li><code>omnichannel_score</code> : moyenne des achats par canal</li>
+</ul></li>
+</ul>
+</section>
+<section id="gestion-du-déséquilibre" class="level3">
+<h3 class="anchored" data-anchor-id="gestion-du-déséquilibre">Gestion du déséquilibre</h3>
+<ul>
+<li>Utiliser des métriques adaptées : précision, rappel, F1‑score, AUC‑ROC.</li>
+<li>Envisager SMOTE ou <code>class_weight='balanced'</code> si le déséquilibre est marqué.</li>
+</ul>
+</section>
+<section id="modèles-à-tester" class="level3">
+<h3 class="anchored" data-anchor-id="modèles-à-tester">Modèles à tester</h3>
+<ul>
+<li>Régression logistique (baseline)</li>
+<li>Random Forest</li>
+<li>XGBoost / LightGBM</li>
+</ul>
+</section>
+<section id="évaluation" class="level3">
+<h3 class="anchored" data-anchor-id="évaluation">Évaluation</h3>
+<ul>
+<li>Validation croisée stratifiée (5 folds)</li>
+<li>Comparaison des modèles sur le F1‑score et l’AUC‑ROC</li>
+</ul>
+</section>
+</section>
+<section id="compétences-et-technologies" class="level2">
+<h2 class="anchored" data-anchor-id="compétences-et-technologies">Compétences et technologies</h2>
+<ul>
+<li><strong>Python</strong> : Pandas, NumPy, Matplotlib, Seaborn, Scikit‑learn.</li>
+<li><strong>Visualisation interactive</strong> : Streamlit.</li>
+<li><strong>Modélisation</strong> : régression logistique, Random Forest, XGBoost.</li>
+<li><strong>Déploiement</strong> : Streamlit Cloud, Docker.</li>
+</ul>
+</section>
+<section id="lien-vers-le-code" class="level2">
+<h2 class="anchored" data-anchor-id="lien-vers-le-code">Lien vers le code</h2>
+<p><a href="https://github.com/Daniele-Nana/marketing-campaign-eda">GitHub – marketing-campaign-response</a></p>
 
 
 </section>

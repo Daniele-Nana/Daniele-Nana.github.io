@@ -1,0 +1,115 @@
+---
+title: "Prédiction de réponse à une campagne marketing – Analyse exploratoire"
+---
+
+## Contexte
+
+L’entreprise souhaite améliorer l’efficacité de ses campagnes marketing en ciblant les clients les plus susceptibles de répondre à une offre. Le jeu de données contient 2 240 clients avec des informations démographiques, d’achat et d’historique de campagnes. La variable cible `Response` indique si le client a accepté la dernière campagne.
+
+## Objectifs
+
+- Comprendre le profil des répondants.
+- Identifier les variables discriminantes.
+- Proposer des pistes pour la modélisation prédictive.
+
+## Problématique
+
+Comment prédire quels clients répondront à une campagne marketing à partir de leurs caractéristiques et de leur historique ?
+
+## Analyse exploratoire des données (EDA)
+
+### 1. Structure et qualité des données
+
+- 2 240 clients, 29 colonnes.
+- 24 valeurs manquantes dans la colonne `Income` (imputées par la médiane).
+- Colonnes constantes sans intérêt (`Z_CostContact`, `Z_Revenue`) supprimées.
+- Variables catégorielles : `Education` (5 niveaux), `Marital_Status` (8 niveaux, catégories rares regroupées dans « Other »).
+- Variable cible : `Response` (1 = acceptation, 0 = refus).
+
+### 2. Distribution de la cible
+
+- Taux de réponse : **14,9 %** (déséquilibre modéré).
+- Métriques adaptées : précision, rappel, F1-score, AUC‑ROC.
+
+### 3. Profil comparatif des répondants (classe 1) et non‑répondants (classe 0)
+
+| Variable | Non‑répondants | Répondants | Interprétation |
+|----------|----------------|------------|----------------|
+| Revenu moyen | 50 846 € | 60 183 € | +18 % |
+| Dépenses totales (6 catégories) | 539 € | 987 € | +83 % |
+| Récence (jours depuis dernier achat) | 51,5 j | 35,4 j | plus récents |
+| Achats web (nombre) | 3,9 | 5,1 | +31 % |
+| Achats catalogue | 2,4 | 4,2 | +75 % |
+| Achats magasin | 5,7 | 6,1 | +7 % |
+
+**Conclusion** : les répondants sont plus aisés, dépensent davantage, sont plus actifs sur les canaux web et catalogue, et ont acheté plus récemment.
+
+### 4. Variables catégorielles
+
+- **Éducation** : les titulaires d’un PhD ou d’un Master répondent mieux.
+- **État civil** : les clients en couple (Together) ou mariés présentent un taux de réponse plus élevé.
+
+### 5. Dépenses par catégorie
+
+Les plus fortes différences entre répondants et non‑répondants concernent :
+- `MntWines` (vins)
+- `MntMeatProducts` (viande)
+- `MntGoldProds` (produits en or)
+
+### 6. Segmentation revenu × dépenses
+
+Tableau des taux de réponse selon les quartiles de revenu et de dépenses totales :
+
+| Revenu \ Dépenses | Faible | Moyen | Élevé | Très élevé |
+|-------------------|--------|-------|-------|------------|
+| Faible | 6,8 % | 17,3 % | 16,7 % | 0,0 % |
+| Moyen | 3,5 % | 13,0 % | 21,4 % | 36,4 % |
+| Élevé | 0,0 % | 2,0 % | 8,3 % | 22,7 % |
+| Très élevé | 0,0 % | 0,0 % | 11,4 % | 32,2 % |
+
+Les meilleurs taux de réponse se situent dans les segments **« revenu moyen – dépenses très élevées »** (36,4 %) et **« revenu très élevé – dépenses très élevées »** (32,2 %).
+
+### 7. Historique des campagnes précédentes
+
+Le nombre de campagnes acceptées parmi les cinq premières est fortement corrélé à la réponse. Les clients ayant déjà accepté une campagne ont un taux de réponse supérieur à 50 %.
+
+## Hypothèses exploitables
+
+1. **Dépenses et récence** : les dépenses totales et la récence sont des prédicteurs majeurs.
+2. **Canaux** : les achats web et catalogue distinguent fortement les répondants.
+3. **Historique des campagnes** : le nombre d’acceptations passées est un excellent indicateur de réponse future.
+4. **Segmentation revenu × dépenses** : cibler les segments à fort taux de réponse (revenu moyen/élevé + dépenses élevées) maximise le retour sur investissement.
+
+## Recommandations pour la modélisation
+
+### Prétraitement
+- Encoder les variables catégorielles (OneHotEncoder).
+- Normaliser les variables numériques (StandardScaler) sauf les indicateurs binaires.
+- Créer des variables composées :
+  - `num_accepted_cmp` : somme des campagnes acceptées
+  - `total_spending` : somme des 6 catégories de produits
+  - `omnichannel_score` : moyenne des achats par canal
+
+### Gestion du déséquilibre
+- Utiliser des métriques adaptées : précision, rappel, F1‑score, AUC‑ROC.
+- Envisager SMOTE ou `class_weight='balanced'` si le déséquilibre est marqué.
+
+### Modèles à tester
+- Régression logistique (baseline)
+- Random Forest
+- XGBoost / LightGBM
+
+### Évaluation
+- Validation croisée stratifiée (5 folds)
+- Comparaison des modèles sur le F1‑score et l’AUC‑ROC
+
+## Compétences et technologies
+
+- **Python** : Pandas, NumPy, Matplotlib, Seaborn, Scikit‑learn.
+- **Visualisation interactive** : Streamlit.
+- **Modélisation** : régression logistique, Random Forest, XGBoost.
+- **Déploiement** : Streamlit Cloud, Docker.
+
+## Lien vers le code
+
+[GitHub – marketing-campaign-response](https://github.com/Daniele-Nana/marketing-campaign-eda)

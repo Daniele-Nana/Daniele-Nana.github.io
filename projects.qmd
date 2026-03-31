@@ -21,6 +21,15 @@ title: "Mes projets"
 
 **Technologies** : Python, pandas, scikit-learn, XGBoost, Streamlit, Docker
 
+---
+
+### [Prédiction de réponse à une campagne marketing – Analyse exploratoire](projects/marketing-campaign-eda.qmd)
+*Analyse du profil des répondants, segmentation revenu/dépenses, identification des variables clés et recommandations pour la modélisation prédictive.*
+
+**Technologies** : Python, pandas, scikit-learn, Streamlit
+
+---
+
 ### [Analyse des déterminants de la moyenne générale des étudiants](projects/moyennes-etudiants.qmd)
 *Modélisation prédictive de la performance académique à partir de 100 000 observations. Régression linéaire, sélection de variables, ACP, PCR, PLS, bootstrap.*
 

@@ -147,116 +147,60 @@
     "text": "Améliorations possibles\n\nAjouter une animation de la propagation du ballon\nCalculer le temps de mélange (mixage)\nComparer avec un modèle théorique de chaîne de Markov à 3 états\n\n\nCe projet illustre ma capacité à implémenter et analyser des chaînes de Markov en Python, une compétence clé en modélisation stochastique et en simulation."
   },
   {
-    "objectID": "projects/deep-sea-adventure.html",
-    "href": "projects/deep-sea-adventure.html",
-    "title": "Deep Sea Adventure – Implémentation complète du jeu de société en Python",
+    "objectID": "projects/enron-discovery.html",
+    "href": "projects/enron-discovery.html",
+    "title": "Enron Discovery – Plateforme d’investigation numérique",
     "section": "",
-    "text": "Dans le cadre de l’UE Programmation Orientée Objet, j’ai développé en groupe une implémentation complète du jeu de société Deep Sea Adventure (Oink Games). Le jeu oppose 2 à 6 explorateurs qui plongent pour ramasser des trésors sous-marins, mais doivent gérer leur réserve d’air commune. Le projet devait respecter les règles officielles, proposer une interface (console et graphique), des intelligences artificielles, ainsi que des fonctionnalités avancées (sauvegarde/chargement, recommencer, etc.)."
+    "text": "Dans le cadre de l’UE Structuration des données, nous avons développé une application web d’e‑Discovery (investigation numérique) permettant d’explorer le célèbre corpus Enron. Ce jeu de données contient plus de 500 000 emails authentiques issus d’une entreprise américaine impliquée dans un scandale financier.\nL’objectif était de concevoir un outil fonctionnel pour des journalistes ou auditeurs, capable de : - naviguer dans les échanges, - identifier les acteurs clés, - reconstruire des fils de discussion, - effectuer des recherches avancées."
   },
   {
-    "objectID": "projects/deep-sea-adventure.html#contexte-et-objectif",
-    "href": "projects/deep-sea-adventure.html#contexte-et-objectif",
-    "title": "Deep Sea Adventure – Implémentation complète du jeu de société en Python",
+    "objectID": "projects/enron-discovery.html#contexte-et-objectif",
+    "href": "projects/enron-discovery.html#contexte-et-objectif",
+    "title": "Enron Discovery – Plateforme d’investigation numérique",
     "section": "",
-    "text": "Dans le cadre de l’UE Programmation Orientée Objet, j’ai développé en groupe une implémentation complète du jeu de société Deep Sea Adventure (Oink Games). Le jeu oppose 2 à 6 explorateurs qui plongent pour ramasser des trésors sous-marins, mais doivent gérer leur réserve d’air commune. Le projet devait respecter les règles officielles, proposer une interface (console et graphique), des intelligences artificielles, ainsi que des fonctionnalités avancées (sauvegarde/chargement, recommencer, etc.)."
+    "text": "Dans le cadre de l’UE Structuration des données, nous avons développé une application web d’e‑Discovery (investigation numérique) permettant d’explorer le célèbre corpus Enron. Ce jeu de données contient plus de 500 000 emails authentiques issus d’une entreprise américaine impliquée dans un scandale financier.\nL’objectif était de concevoir un outil fonctionnel pour des journalistes ou auditeurs, capable de : - naviguer dans les échanges, - identifier les acteurs clés, - reconstruire des fils de discussion, - effectuer des recherches avancées."
   },
   {
-    "objectID": "projects/deep-sea-adventure.html#fonctionnalités-implémentées",
-    "href": "projects/deep-sea-adventure.html#fonctionnalités-implémentées",
-    "title": "Deep Sea Adventure – Implémentation complète du jeu de société en Python",
-    "section": "Fonctionnalités implémentées",
-    "text": "Fonctionnalités implémentées\n\nMoteur de jeu complet\n\nPlateau de 32 jetons répartis en 4 niveaux (valeurs de 0 à 15, deux de chaque valeur).\nRègles officielles respectées :\n\nRéduction de l’air en fonction du nombre de jetons tenus.\nDéplacement : lancer de deux dés, soustraction du nombre de jetons tenus, saut des cases occupées.\nActions possibles : ramasser un trésor, poser un trésor (sur une case blanche), ne rien faire.\nFin de manche : les joueurs rentrés marquent la somme des valeurs de leurs jetons ; les autres laissent tomber leurs jetons, qui s’empilent (3 jetons empilés valent 3 points mais comptent comme un seul jeton pour le déplacement).\nTrois manches, détermination du vainqueur.\n\n\n\n\nInterfaces utilisateur\n\nConsole : affichage ASCII avec indices, valeurs des jetons, pions, air et scores.\nGraphique (Tkinter) : fenêtre redimensionnable, fond marin, cases colorées selon le niveau, pions représentés par des cercles avec l’initiale du joueur, barre de menu pour sauvegarder/recommencer/quitter.\n\n\n\nIntelligences artificielles\nTrois stratégies (héritage d’une classe abstraite) :\n\nAléatoire : choix aléatoire de rentrer et d’action.\nPrudente : rentre quand elle a au moins 2 jetons ou que l’air est bas (&lt; 10), ramasse si elle a moins de 3 jetons.\nCourageuse : rentre tard (≥ 5 jetons ou air &lt; 5), ramasse systématiquement.\n\n\n\nSauvegarde / Chargement\n\nPlusieurs sauvegardes nommées (fichiers .pkl), stockées dans un dossier saves/.\nMenu principal (console ou graphique) pour créer, charger ou supprimer une sauvegarde.\nSauvegarde possible en cours de partie via le menu.\n\n\n\nAutres fonctionnalités\n\nRecommencer : relance une nouvelle partie avec les mêmes joueurs.\nAffichage des scores : scores finaux et somme temporaire des jetons tenus.\nRobustesse : gestion de l’interruption (Ctrl+C) avec sauvegarde optionnelle, suppression automatique des sauvegardes après fin de partie.\nTests unitaires : 14 tests couvrant les classes principales (jeton, plateau, joueur, jeu)."
+    "objectID": "projects/enron-discovery.html#données-utilisées",
+    "href": "projects/enron-discovery.html#données-utilisées",
+    "title": "Enron Discovery – Plateforme d’investigation numérique",
+    "section": "Données utilisées",
+    "text": "Données utilisées\n\nSource : Enron Email Dataset\nFormat : fichiers .eml organisés par utilisateur et dossier\nVolume : plus de 500 000 messages bruts\nStructure : arborescence complexe avec en‑têtes (expéditeur, destinataires, date, objet, In‑Reply‑To) et corps de message"
   },
   {
-    "objectID": "projects/deep-sea-adventure.html#structure-du-code",
-    "href": "projects/deep-sea-adventure.html#structure-du-code",
-    "title": "Deep Sea Adventure – Implémentation complète du jeu de société en Python",
-    "section": "Structure du code",
-    "text": "Structure du code\nLe projet est organisé en modules séparés (un fichier par classe) :\n\n\n\n\n\n\n\nFichier\nRôle\n\n\n\n\nmain.py\nPoint d’entrée, menu principal (console/graphique)\n\n\njeu.py\nClasse Jeu : orchestration des manches, tours, fin de partie\n\n\nplateau.py\nGestion du plateau (32 cases, initialisation, tassement)\n\n\njoueur.py\nClasse Joueur (position, jetons tenus, direction, score)\n\n\njeton.py\nClasse Jeton (ruine/blanc, piles)\n\n\nia.py\nClasses IA (aléatoire, prudente, courageuse)\n\n\nde.py\nSimulateur de deux dés\n\n\naffichage_console.py\nAffichage en mode console\n\n\naffichage_graphique.py\nInterface Tkinter, configuration des joueurs\n\n\ntests/\nTests unitaires\n\n\n\nL’architecture sépare clairement le moteur de jeu (indépendant de l’affichage) des interfaces. Les IA utilisent un design pattern Strategy (héritage polymorphique). La persistance est gérée via pickle avec une adaptation (__getstate__ / __setstate__) pour exclure les objets non sérialisables (fenêtre graphique)."
-  },
-  {
-    "objectID": "projects/deep-sea-adventure.html#résultats",
-    "href": "projects/deep-sea-adventure.html#résultats",
-    "title": "Deep Sea Adventure – Implémentation complète du jeu de société en Python",
-    "section": "Résultats",
-    "text": "Résultats\nLe jeu est entièrement jouable en mode console ou graphique.\nLes deux affichages sont fonctionnels et permettent de suivre l’évolution de la partie."
-  },
-  {
-    "objectID": "projects/deep-sea-adventure.html#compétences-mises-en-œuvre",
-    "href": "projects/deep-sea-adventure.html#compétences-mises-en-œuvre",
-    "title": "Deep Sea Adventure – Implémentation complète du jeu de société en Python",
-    "section": "Compétences mises en œuvre",
-    "text": "Compétences mises en œuvre\n\nProgrammation orientée objet : héritage, polymorphisme, encapsulation, séparation des responsabilités.\nDéveloppement logiciel : architecture modulaire, gestion des exceptions, tests unitaires.\nInterfaces utilisateur : développement d’une interface graphique avec Tkinter (personnalisation, redimensionnement, menus).\nPersistance des données : sérialisation avec pickle pour sauvegarder l’état du jeu.\nAlgorithmique : simulation de déplacements, gestion des piles de jetons.\nGestion de projet : développement itératif, travail en binôme, versionnage Git."
-  },
-  {
-    "objectID": "projects/deep-sea-adventure.html#lien-vers-le-code",
-    "href": "projects/deep-sea-adventure.html#lien-vers-le-code",
-    "title": "Deep Sea Adventure – Implémentation complète du jeu de société en Python",
-    "section": "Lien vers le code",
-    "text": "Lien vers le code\nLe code source complet est disponible sur GitHub :\nGitHub – Deep Sea Adventure"
-  },
-  {
-    "objectID": "projects/deep-sea-adventure.html#améliorations-possibles",
-    "href": "projects/deep-sea-adventure.html#améliorations-possibles",
-    "title": "Deep Sea Adventure – Implémentation complète du jeu de société en Python",
-    "section": "Améliorations possibles",
-    "text": "Améliorations possibles\n\nAjouter des IA plus stratégiques (prise en compte du positionnement, blocage des adversaires).\nAnimer les déplacements des pions dans l’interface graphique.\nPermettre un mode multijoueur en réseau.\nAjouter des jetons spéciaux ou des règles optionnelles.\n\n\nCe projet illustre ma capacité à concevoir une application logicielle complète, modulaire et testable, en Python, avec une approche orientée objet et une attention particulière à l’expérience utilisateur."
-  },
-  {
-    "objectID": "projects/chi2-de.html",
-    "href": "projects/chi2-de.html",
-    "title": "Test du chi‑2 d’adéquation : le dé est‑il équilibré ?",
-    "section": "",
-    "text": "Lorsqu’on lance un dé, on s’attend à ce que chaque face sorte avec une probabilité de 1/6.\nNous disposons d’observations sur 726 lancers. L’objectif est de déterminer si le dé utilisé est équilibré (i.e. suit une loi uniforme) ou non.\nDonnées :\n\n\n\nFace\n1\n2\n3\n4\n5\n6\n\n\n\n\nEffectif\n127\n108\n123\n118\n115\n135"
-  },
-  {
-    "objectID": "projects/chi2-de.html#contexte",
-    "href": "projects/chi2-de.html#contexte",
-    "title": "Test du chi‑2 d’adéquation : le dé est‑il équilibré ?",
-    "section": "",
-    "text": "Lorsqu’on lance un dé, on s’attend à ce que chaque face sorte avec une probabilité de 1/6.\nNous disposons d’observations sur 726 lancers. L’objectif est de déterminer si le dé utilisé est équilibré (i.e. suit une loi uniforme) ou non.\nDonnées :\n\n\n\nFace\n1\n2\n3\n4\n5\n6\n\n\n\n\nEffectif\n127\n108\n123\n118\n115\n135"
-  },
-  {
-    "objectID": "projects/chi2-de.html#méthodologie",
-    "href": "projects/chi2-de.html#méthodologie",
-    "title": "Test du chi‑2 d’adéquation : le dé est‑il équilibré ?",
+    "objectID": "projects/enron-discovery.html#méthodologie",
+    "href": "projects/enron-discovery.html#méthodologie",
+    "title": "Enron Discovery – Plateforme d’investigation numérique",
     "section": "Méthodologie",
-    "text": "Méthodologie\nLe test du χ² d’adéquation (ou test du χ² de conformité) compare les effectifs observés aux effectifs théoriques attendus sous l’hypothèse nulle.\n\nHypothèses\n\nH₀ : le dé est équilibré (p₁ = p₂ = … = p₆ = 1/6)\nH₁ : le dé n’est pas équilibré\n\n\n\nFonction Python implémentée\nLa fonction chi2_ad(x, p) :\n\nVérifie que p est un vecteur de probabilités (somme = 1, valeurs entre 0 et 1)\nVérifie que les effectifs observés sont suffisants (&gt;5) – condition d’application du test\nCalcule la statistique de test χ², les degrés de liberté et la p‑valeur\nRetourne ces trois valeurs dans une liste\n\nimport numpy as np\nfrom scipy.stats import chi2\n\ndef chi2_ad(x, p):\n    # Vérification des probabilités\n    if not np.isclose(sum(p), 1) or any(pi &lt; 0 for pi in p):\n        raise ValueError(\"p doit être un vecteur de probabilités (somme = 1, valeurs &gt;= 0).\")\n    # Vérification des effectifs\n    if any(obs &lt;= 5 for obs in x):\n        raise ValueError(\"Les effectifs observés doivent tous être &gt; 5.\")\n    \n    n = sum(x)\n    ef = n * np.array(p)               # effectifs théoriques\n    stat = sum((x - ef)**2 / ef)       # statistique du chi2\n    ddl = len(x) - 1\n    p_val = 1 - chi2.cdf(stat, ddl)\n    return [stat, ddl, p_val]\n\n\nApplication\nobs = [127, 108, 123, 118, 115, 135]\np_unif = [1/6] * 6\n\nstat, ddl, p_val = chi2_ad(obs, p_unif)\nprint(f\"Statistique χ² = {stat:.3f}\")\nprint(f\"Degrés de liberté = {ddl}\")\nprint(f\"p‑valeur = {p_val:.4f}\")\nRésultat :\n\nStatistique χ² = 4,284\nd.d.l. = 5\np‑valeur = 0,509"
+    "text": "Méthodologie\n\nIngestion et parsing\n\nParcours récursif de l’arborescence avec pathlib\nDécodage MIME via le module email.parser de Python\nNettoyage avancé avec expressions régulières (normalisation des adresses, suppression des signatures)\nValidation intermédiaire avec pandas (distribution des dates, détection de doublons)\n\n\n\nModélisation SQL\n\nSchéma relationnel normalisé (3NF) : Collaborateur, Message, Folder, tables de liaison ManyToMany\nContraintes d’intégrité référentielle, clés primaires auto‑incrémentées\nOptimisation : index B-tree sur les colonnes fréquemment interrogées (expéditeur, date)\nRecherche plein texte : champ search_vector (SearchVectorField) alimenté par trigger PostgreSQL, index GIN pour des performances élevées\n\n\n\nBackend Django\n\nModèles ORM personnalisés avec managers dédiés pour centraliser la logique de recherche\nRequêtes avancées : Count, TruncMonth, ExtractHour, annotate, Q objects\nSQL brut : utilisation de WITH RECURSIVE pour reconstruire les fils de discussion complets en une seule requête\nTransactions atomiques et insertion en masse (bulk_create) pour l’import\n\n\n\nInterface web\n\nDashboard : cartes KPI, évolution mensuelle (Chart.js), top 10 expéditeurs/destinataires, mots fréquents, horaires d’activité\nRecherche avancée : combinaison de la recherche plein texte avec filtres date/expéditeur/destinataire, surbrillance des mots‑clés\nExplorateur de threads : deux modes (récursif Python et CTE SQL) pour afficher les conversations sous forme d’arborescence\nGraphe d’influence : visualisation interactive (vis.js) des connexions entre collaborateurs, avec paramétrage du seuil et du nombre de nœuds\nNavigation contextuelle : URLs paramétrées (folder_id, thread_id) pour un retour fluide entre les pages\n\n\n\nOptimisation et déploiement\n\nCache Django (1h) pour les données lourdes (dashboard, JSON du graphe)\nselect_related / prefetch_related pour éviter les requêtes N+1\nPagination (20 éléments par page) sur toutes les listes\nConteneurisation avec Docker (PostgreSQL 15) et fichier docker-compose.yml\nGestion de versions avec Git (commits atomiques, README détaillé, migrations versionnées)"
   },
   {
-    "objectID": "projects/chi2-de.html#interprétation",
-    "href": "projects/chi2-de.html#interprétation",
-    "title": "Test du chi‑2 d’adéquation : le dé est‑il équilibré ?",
-    "section": "Interprétation",
-    "text": "Interprétation\nLa p‑valeur (0,509) est très supérieure au seuil usuel de 5 % (0,05). On ne rejette donc pas H₀ : au seuil de signification 5 %, on considère que le dé est équilibré. Les écarts entre les effectifs observés et les effectifs théoriques peuvent être attribués au hasard."
+    "objectID": "projects/enron-discovery.html#résultats-et-visualisations",
+    "href": "projects/enron-discovery.html#résultats-et-visualisations",
+    "title": "Enron Discovery – Plateforme d’investigation numérique",
+    "section": "Résultats et visualisations",
+    "text": "Résultats et visualisations\n\nInterface fonctionnelle : démonstration en ligne (ou locale via Docker)\nDashboard : visualisation des volumes d’échanges, des périodes d’activité et des acteurs majeurs\nMoteur de recherche : réponse en quelques secondes sur 500 000 messages\nGraphe d’influence : identification des liaisons fortes entre collaborateurs"
   },
   {
-    "objectID": "projects/chi2-de.html#compétences-mises-en-œuvre",
-    "href": "projects/chi2-de.html#compétences-mises-en-œuvre",
-    "title": "Test du chi‑2 d’adéquation : le dé est‑il équilibré ?",
+    "objectID": "projects/enron-discovery.html#compétences-mises-en-œuvre",
+    "href": "projects/enron-discovery.html#compétences-mises-en-œuvre",
+    "title": "Enron Discovery – Plateforme d’investigation numérique",
     "section": "Compétences mises en œuvre",
-    "text": "Compétences mises en œuvre\n\nTest statistique : mise en œuvre du χ² d’adéquation, interprétation de la p‑valeur\nProgrammation Python : gestion des exceptions, manipulation de listes, utilisation de numpy et scipy.stats\nValidation des données : contrôle des prérequis du test (effectifs &gt;5, vecteur de probabilités)\nRédaction scientifique : description claire du problème, des hypothèses et de la conclusion"
+    "text": "Compétences mises en œuvre\n\nIngestion de données massives : parsing, nettoyage, validation avec pandas\nModélisation SQL avancée : normalisation, index, recherche plein texte, CTE récursives\nDjango : ORM, managers, requêtes complexes, templates, intégration front‑end (Bootstrap, Chart.js, vis.js)\nOptimisation des performances : cache, select_related, pagination, index\nDocker & déploiement : environnement reproductible avec docker‑compose\nGestion de projet : binôme, versionnage Git, documentation (README, schéma MLD)"
   },
   {
-    "objectID": "projects/chi2-de.html#améliorations-possibles",
-    "href": "projects/chi2-de.html#améliorations-possibles",
-    "title": "Test du chi‑2 d’adéquation : le dé est‑il équilibré ?",
+    "objectID": "projects/enron-discovery.html#lien-vers-le-code",
+    "href": "projects/enron-discovery.html#lien-vers-le-code",
+    "title": "Enron Discovery – Plateforme d’investigation numérique",
+    "section": "Lien vers le code",
+    "text": "Lien vers le code\nDépôt GitHub – enron-discovery"
+  },
+  {
+    "objectID": "projects/enron-discovery.html#améliorations-possibles",
+    "href": "projects/enron-discovery.html#améliorations-possibles",
+    "title": "Enron Discovery – Plateforme d’investigation numérique",
     "section": "Améliorations possibles",
-    "text": "Améliorations possibles\n\nAjouter un graphique comparant les effectifs observés et théoriques (barplot)\nGénéraliser la fonction pour accepter des probabilités non uniformes\nCréer une version interactive avec Streamlit\n\n\nCe projet illustre ma capacité à appliquer des méthodes statistiques rigoureuses et à les implémenter en Python."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Coordonnées\n\nTéléphone : +33 6 52 43 33 42\nEmail : danisanana@gmail.com\n\nGitHub : github.com/Daniele-Nana\n\n\n\n\nFormation\nMaster Data Science – Université d’Angers (2025 – présent)\nMatières principales :\n- Analyse numérique & optimisation : analyse numérique matricielle, optimisation non linéaire, modélisation stochastique\n- Statistique & apprentissage : statistiques, modèles de régression, data mining et classification, statistique en grande dimension, séries chronologiques\n- IA avancée : apprentissage par renforcement des modèles génératifs, traitement d’images\n- Programmation & data : programmation orientée objet, traitement des données en Python, structuration des données, informatique pour le Big Data\n- Économétrie & applications : datamining et économie, économétrie de l’évaluation\n- Transversal : droit et données numériques, communication scientifique, analyse du signal\nLicence Mathématiques Appliquées – Université d’Angers (2022 – 2025)\nMatières principales : algèbre linéaire, probabilités, statistiques inférentielles, calcul différentiel, optimisation, programmation Python, algorithmique, économétrie\n\n\n\nExpériences\n\nAssistante en Analyse et Gestion de Données\nSOCAPRES – Cameroun (juillet 2025 – août 2025)\n- Traitement et analyse de données logistiques et commerciales (+15 000 enregistrements) pour optimiser les flux et réduire les ruptures de stock.\n- Automatisation des rapports de suivi sous Python (pandas, openpyxl) et Excel, permettant un gain de temps de 30 % pour l’équipe.\n- Création de tableaux de bord dynamiques pour visualiser les plannings de production et les indicateurs clés.\n\n\nAssistante de vente\nCarrefour Angers Grand Maine (2023 – 2025)\n- Gestion des opérations en magasin : encaissement, étiquetage, mise en rayon et préparation des commandes.\n- Suivi rigoureux des stocks et inventaires, garantissant une disponibilité des produits supérieure à 95 %.\n- Contribution à l’amélioration de la qualité de service client (enquêtes de satisfaction internes).\n\n\n\n\nCompétences techniques\n\n\n\n\n\n\n\nCatégorie\nDétails\n\n\n\n\nProgrammation\nPython (Pandas, NumPy, Scikit-learn, TensorFlow), R, SQL, SAS, VBA\n\n\nBases de données\nPostgreSQL, MariaDB, SQLAlchemy, JSON/XML, Hadoop/MapReduce\n\n\nMachine Learning\nApprentissage supervisé et non supervisé, régressions, classification, clustering, feature engineering, validation croisée, évaluation de modèles, deep learning\n\n\nStatistiques\nModélisation probabiliste, chaînes de Markov, simulation de processus stochastiques\n\n\nIA générative\nModèles de langage (LLM), prompt engineering, fine-tuning, frameworks, API et intégration, développement d’applications\n\n\nVisualisation\nMatplotlib, Seaborn, Tableau, Excel avancé, dashboards, LaTeX/Markdown, Power BI, Qlik\n\n\nOutillage\nGit, Unix/Linux, analyse exploratoire des données (EDA), datamining, génie logiciel, développement web (Django), Docker\n\n\n\n\n\nAtouts\nRigueur analytique, esprit d’équipe et autonomie, organisation, gestion des priorités et initiative, communication technique, veille technologique et conformité RGPD.\n\n\n\nCentres d’intérêt\nCinéma, lecture, musique, voyages, cuisine, énigmes, humanisme et écologie.\n\n\n\nLangues\n\nFrançais : langue maternelle\n\nAnglais : niveau C1 (VTest)\n\n\nMerci de votre intérêt ! N’hésitez pas à me contacter pour échanger sur une opportunité d’alternance."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Bonjour, je suis Daniele Nana ! Bienvenue sur mon portfolio !",
-    "section": "",
-    "text": "Profil\nÉtudiante en Data Science, spécialisée en machine learning et modélisation statistique, avec une expérience en analyse de données et en développement de modèles prédictifs.\nJe recherche une alternance pour contribuer à des projets concrets et innovants.\n\n\n\nCe que vous trouverez ici\n\nMon parcours – formation, expériences, compétences techniques et atouts (page « À propos »).\nMes travaux de recherche – deux projets encadrés en apprentissage statistique parcimonieux et en combinatoire probabiliste (page « Travaux de recherche »).\nMes projets – analyses de données, modélisations, visualisations (page « Projets »).\n\n\n\n\nÀ propos de ce portfolio\nLe site est construit avec Quarto et hébergé sur GitHub Pages.\n\nMerci de votre visite ! N’hésitez pas à explorer les différentes sections et à me contacter pour échanger sur une opportunité d’alternance."
+    "text": "Améliorations possibles\n\nIntégration d’une API REST (Django REST Framework) pour alimenter des clients externes\nAjout de la gestion des pièces jointes\nVisualisation du graphe d’influence en temps réel avec filtres interactifs\n\n\nCe projet a été réalisé en binôme dans le cadre du Master Data Science (Université d’Angers)."
   },
   {
     "objectID": "projects/credit-card-eda.html",
@@ -322,60 +266,179 @@
     "text": "Lien vers le code\nGitHub – credit-card-eda"
   },
   {
-    "objectID": "projects/enron-discovery.html",
-    "href": "projects/enron-discovery.html",
-    "title": "Enron Discovery – Plateforme d’investigation numérique",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Bonjour, je suis Daniele Nana ! Bienvenue sur mon portfolio !",
     "section": "",
-    "text": "Dans le cadre de l’UE Structuration des données, nous avons développé une application web d’e‑Discovery (investigation numérique) permettant d’explorer le célèbre corpus Enron. Ce jeu de données contient plus de 500 000 emails authentiques issus d’une entreprise américaine impliquée dans un scandale financier.\nL’objectif était de concevoir un outil fonctionnel pour des journalistes ou auditeurs, capable de : - naviguer dans les échanges, - identifier les acteurs clés, - reconstruire des fils de discussion, - effectuer des recherches avancées."
+    "text": "Profil\nÉtudiante en Data Science, spécialisée en machine learning et modélisation statistique, avec une expérience en analyse de données et en développement de modèles prédictifs.\nJe recherche une alternance pour contribuer à des projets concrets et innovants.\n\n\n\nCe que vous trouverez ici\n\nMon parcours – formation, expériences, compétences techniques et atouts (page « À propos »).\nMes travaux de recherche – deux projets encadrés en apprentissage statistique parcimonieux et en combinatoire probabiliste (page « Travaux de recherche »).\nMes projets – analyses de données, modélisations, visualisations (page « Projets »).\n\n\n\n\nÀ propos de ce portfolio\nLe site est construit avec Quarto et hébergé sur GitHub Pages.\n\nMerci de votre visite ! N’hésitez pas à explorer les différentes sections et à me contacter pour échanger sur une opportunité d’alternance."
   },
   {
-    "objectID": "projects/enron-discovery.html#contexte-et-objectif",
-    "href": "projects/enron-discovery.html#contexte-et-objectif",
-    "title": "Enron Discovery – Plateforme d’investigation numérique",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Curriculum Vitae",
     "section": "",
-    "text": "Dans le cadre de l’UE Structuration des données, nous avons développé une application web d’e‑Discovery (investigation numérique) permettant d’explorer le célèbre corpus Enron. Ce jeu de données contient plus de 500 000 emails authentiques issus d’une entreprise américaine impliquée dans un scandale financier.\nL’objectif était de concevoir un outil fonctionnel pour des journalistes ou auditeurs, capable de : - naviguer dans les échanges, - identifier les acteurs clés, - reconstruire des fils de discussion, - effectuer des recherches avancées."
+    "text": "Coordonnées\n\nTéléphone : +33 6 52 43 33 42\nEmail : danisanana@gmail.com\n\nGitHub : github.com/Daniele-Nana\n\n\n\n\nFormation\nMaster Data Science – Université d’Angers (2025 – présent)\nMatières principales :\n- Analyse numérique & optimisation : analyse numérique matricielle, optimisation non linéaire, modélisation stochastique\n- Statistique & apprentissage : statistiques, modèles de régression, data mining et classification, statistique en grande dimension, séries chronologiques\n- IA avancée : apprentissage par renforcement des modèles génératifs, traitement d’images\n- Programmation & data : programmation orientée objet, traitement des données en Python, structuration des données, informatique pour le Big Data\n- Économétrie & applications : datamining et économie, économétrie de l’évaluation\n- Transversal : droit et données numériques, communication scientifique, analyse du signal\nLicence Mathématiques Appliquées – Université d’Angers (2022 – 2025)\nMatières principales : algèbre linéaire, probabilités, statistiques inférentielles, calcul différentiel, optimisation, programmation Python, algorithmique, économétrie\n\n\n\nExpériences\n\nAssistante en Analyse et Gestion de Données\nSOCAPRES – Cameroun (juillet 2025 – août 2025)\n- Traitement et analyse de données logistiques et commerciales (+15 000 enregistrements) pour optimiser les flux et réduire les ruptures de stock.\n- Automatisation des rapports de suivi sous Python (pandas, openpyxl) et Excel, permettant un gain de temps de 30 % pour l’équipe.\n- Création de tableaux de bord dynamiques pour visualiser les plannings de production et les indicateurs clés.\n\n\nAssistante de vente\nCarrefour Angers Grand Maine (2023 – 2025)\n- Gestion des opérations en magasin : encaissement, étiquetage, mise en rayon et préparation des commandes.\n- Suivi rigoureux des stocks et inventaires, garantissant une disponibilité des produits supérieure à 95 %.\n- Contribution à l’amélioration de la qualité de service client (enquêtes de satisfaction internes).\n\n\n\n\nCompétences techniques\n\n\n\n\n\n\n\nCatégorie\nDétails\n\n\n\n\nProgrammation\nPython (Pandas, NumPy, Scikit-learn, TensorFlow), R, SQL, SAS, VBA\n\n\nBases de données\nPostgreSQL, MariaDB, SQLAlchemy, JSON/XML, Hadoop/MapReduce\n\n\nMachine Learning\nApprentissage supervisé et non supervisé, régressions, classification, clustering, feature engineering, validation croisée, évaluation de modèles, deep learning\n\n\nStatistiques\nModélisation probabiliste, chaînes de Markov, simulation de processus stochastiques\n\n\nIA générative\nModèles de langage (LLM), prompt engineering, fine-tuning, frameworks, API et intégration, développement d’applications\n\n\nVisualisation\nMatplotlib, Seaborn, Tableau, Excel avancé, dashboards, LaTeX/Markdown, Power BI, Qlik\n\n\nOutillage\nGit, Unix/Linux, analyse exploratoire des données (EDA), datamining, génie logiciel, développement web (Django), Docker\n\n\n\n\n\nAtouts\nRigueur analytique, esprit d’équipe et autonomie, organisation, gestion des priorités et initiative, communication technique, veille technologique et conformité RGPD.\n\n\n\nCentres d’intérêt\nCinéma, lecture, musique, voyages, cuisine, énigmes, humanisme et écologie.\n\n\n\nLangues\n\nFrançais : langue maternelle\n\nAnglais : niveau C1 (VTest)\n\n\nMerci de votre intérêt ! N’hésitez pas à me contacter pour échanger sur une opportunité d’alternance."
   },
   {
-    "objectID": "projects/enron-discovery.html#données-utilisées",
-    "href": "projects/enron-discovery.html#données-utilisées",
-    "title": "Enron Discovery – Plateforme d’investigation numérique",
-    "section": "Données utilisées",
-    "text": "Données utilisées\n\nSource : Enron Email Dataset\nFormat : fichiers .eml organisés par utilisateur et dossier\nVolume : plus de 500 000 messages bruts\nStructure : arborescence complexe avec en‑têtes (expéditeur, destinataires, date, objet, In‑Reply‑To) et corps de message"
+    "objectID": "projects/chi2-de.html",
+    "href": "projects/chi2-de.html",
+    "title": "Test du chi‑2 d’adéquation : le dé est‑il équilibré ?",
+    "section": "",
+    "text": "Lorsqu’on lance un dé, on s’attend à ce que chaque face sorte avec une probabilité de 1/6.\nNous disposons d’observations sur 726 lancers. L’objectif est de déterminer si le dé utilisé est équilibré (i.e. suit une loi uniforme) ou non.\nDonnées :\n\n\n\nFace\n1\n2\n3\n4\n5\n6\n\n\n\n\nEffectif\n127\n108\n123\n118\n115\n135"
   },
   {
-    "objectID": "projects/enron-discovery.html#méthodologie",
-    "href": "projects/enron-discovery.html#méthodologie",
-    "title": "Enron Discovery – Plateforme d’investigation numérique",
+    "objectID": "projects/chi2-de.html#contexte",
+    "href": "projects/chi2-de.html#contexte",
+    "title": "Test du chi‑2 d’adéquation : le dé est‑il équilibré ?",
+    "section": "",
+    "text": "Lorsqu’on lance un dé, on s’attend à ce que chaque face sorte avec une probabilité de 1/6.\nNous disposons d’observations sur 726 lancers. L’objectif est de déterminer si le dé utilisé est équilibré (i.e. suit une loi uniforme) ou non.\nDonnées :\n\n\n\nFace\n1\n2\n3\n4\n5\n6\n\n\n\n\nEffectif\n127\n108\n123\n118\n115\n135"
+  },
+  {
+    "objectID": "projects/chi2-de.html#méthodologie",
+    "href": "projects/chi2-de.html#méthodologie",
+    "title": "Test du chi‑2 d’adéquation : le dé est‑il équilibré ?",
     "section": "Méthodologie",
-    "text": "Méthodologie\n\nIngestion et parsing\n\nParcours récursif de l’arborescence avec pathlib\nDécodage MIME via le module email.parser de Python\nNettoyage avancé avec expressions régulières (normalisation des adresses, suppression des signatures)\nValidation intermédiaire avec pandas (distribution des dates, détection de doublons)\n\n\n\nModélisation SQL\n\nSchéma relationnel normalisé (3NF) : Collaborateur, Message, Folder, tables de liaison ManyToMany\nContraintes d’intégrité référentielle, clés primaires auto‑incrémentées\nOptimisation : index B-tree sur les colonnes fréquemment interrogées (expéditeur, date)\nRecherche plein texte : champ search_vector (SearchVectorField) alimenté par trigger PostgreSQL, index GIN pour des performances élevées\n\n\n\nBackend Django\n\nModèles ORM personnalisés avec managers dédiés pour centraliser la logique de recherche\nRequêtes avancées : Count, TruncMonth, ExtractHour, annotate, Q objects\nSQL brut : utilisation de WITH RECURSIVE pour reconstruire les fils de discussion complets en une seule requête\nTransactions atomiques et insertion en masse (bulk_create) pour l’import\n\n\n\nInterface web\n\nDashboard : cartes KPI, évolution mensuelle (Chart.js), top 10 expéditeurs/destinataires, mots fréquents, horaires d’activité\nRecherche avancée : combinaison de la recherche plein texte avec filtres date/expéditeur/destinataire, surbrillance des mots‑clés\nExplorateur de threads : deux modes (récursif Python et CTE SQL) pour afficher les conversations sous forme d’arborescence\nGraphe d’influence : visualisation interactive (vis.js) des connexions entre collaborateurs, avec paramétrage du seuil et du nombre de nœuds\nNavigation contextuelle : URLs paramétrées (folder_id, thread_id) pour un retour fluide entre les pages\n\n\n\nOptimisation et déploiement\n\nCache Django (1h) pour les données lourdes (dashboard, JSON du graphe)\nselect_related / prefetch_related pour éviter les requêtes N+1\nPagination (20 éléments par page) sur toutes les listes\nConteneurisation avec Docker (PostgreSQL 15) et fichier docker-compose.yml\nGestion de versions avec Git (commits atomiques, README détaillé, migrations versionnées)"
+    "text": "Méthodologie\nLe test du χ² d’adéquation (ou test du χ² de conformité) compare les effectifs observés aux effectifs théoriques attendus sous l’hypothèse nulle.\n\nHypothèses\n\nH₀ : le dé est équilibré (p₁ = p₂ = … = p₆ = 1/6)\nH₁ : le dé n’est pas équilibré\n\n\n\nFonction Python implémentée\nLa fonction chi2_ad(x, p) :\n\nVérifie que p est un vecteur de probabilités (somme = 1, valeurs entre 0 et 1)\nVérifie que les effectifs observés sont suffisants (&gt;5) – condition d’application du test\nCalcule la statistique de test χ², les degrés de liberté et la p‑valeur\nRetourne ces trois valeurs dans une liste\n\nimport numpy as np\nfrom scipy.stats import chi2\n\ndef chi2_ad(x, p):\n    # Vérification des probabilités\n    if not np.isclose(sum(p), 1) or any(pi &lt; 0 for pi in p):\n        raise ValueError(\"p doit être un vecteur de probabilités (somme = 1, valeurs &gt;= 0).\")\n    # Vérification des effectifs\n    if any(obs &lt;= 5 for obs in x):\n        raise ValueError(\"Les effectifs observés doivent tous être &gt; 5.\")\n    \n    n = sum(x)\n    ef = n * np.array(p)               # effectifs théoriques\n    stat = sum((x - ef)**2 / ef)       # statistique du chi2\n    ddl = len(x) - 1\n    p_val = 1 - chi2.cdf(stat, ddl)\n    return [stat, ddl, p_val]\n\n\nApplication\nobs = [127, 108, 123, 118, 115, 135]\np_unif = [1/6] * 6\n\nstat, ddl, p_val = chi2_ad(obs, p_unif)\nprint(f\"Statistique χ² = {stat:.3f}\")\nprint(f\"Degrés de liberté = {ddl}\")\nprint(f\"p‑valeur = {p_val:.4f}\")\nRésultat :\n\nStatistique χ² = 4,284\nd.d.l. = 5\np‑valeur = 0,509"
   },
   {
-    "objectID": "projects/enron-discovery.html#résultats-et-visualisations",
-    "href": "projects/enron-discovery.html#résultats-et-visualisations",
-    "title": "Enron Discovery – Plateforme d’investigation numérique",
-    "section": "Résultats et visualisations",
-    "text": "Résultats et visualisations\n\nInterface fonctionnelle : démonstration en ligne (ou locale via Docker)\nDashboard : visualisation des volumes d’échanges, des périodes d’activité et des acteurs majeurs\nMoteur de recherche : réponse en quelques secondes sur 500 000 messages\nGraphe d’influence : identification des liaisons fortes entre collaborateurs"
+    "objectID": "projects/chi2-de.html#interprétation",
+    "href": "projects/chi2-de.html#interprétation",
+    "title": "Test du chi‑2 d’adéquation : le dé est‑il équilibré ?",
+    "section": "Interprétation",
+    "text": "Interprétation\nLa p‑valeur (0,509) est très supérieure au seuil usuel de 5 % (0,05). On ne rejette donc pas H₀ : au seuil de signification 5 %, on considère que le dé est équilibré. Les écarts entre les effectifs observés et les effectifs théoriques peuvent être attribués au hasard."
   },
   {
-    "objectID": "projects/enron-discovery.html#compétences-mises-en-œuvre",
-    "href": "projects/enron-discovery.html#compétences-mises-en-œuvre",
-    "title": "Enron Discovery – Plateforme d’investigation numérique",
+    "objectID": "projects/chi2-de.html#compétences-mises-en-œuvre",
+    "href": "projects/chi2-de.html#compétences-mises-en-œuvre",
+    "title": "Test du chi‑2 d’adéquation : le dé est‑il équilibré ?",
     "section": "Compétences mises en œuvre",
-    "text": "Compétences mises en œuvre\n\nIngestion de données massives : parsing, nettoyage, validation avec pandas\nModélisation SQL avancée : normalisation, index, recherche plein texte, CTE récursives\nDjango : ORM, managers, requêtes complexes, templates, intégration front‑end (Bootstrap, Chart.js, vis.js)\nOptimisation des performances : cache, select_related, pagination, index\nDocker & déploiement : environnement reproductible avec docker‑compose\nGestion de projet : binôme, versionnage Git, documentation (README, schéma MLD)"
+    "text": "Compétences mises en œuvre\n\nTest statistique : mise en œuvre du χ² d’adéquation, interprétation de la p‑valeur\nProgrammation Python : gestion des exceptions, manipulation de listes, utilisation de numpy et scipy.stats\nValidation des données : contrôle des prérequis du test (effectifs &gt;5, vecteur de probabilités)\nRédaction scientifique : description claire du problème, des hypothèses et de la conclusion"
   },
   {
-    "objectID": "projects/enron-discovery.html#lien-vers-le-code",
-    "href": "projects/enron-discovery.html#lien-vers-le-code",
-    "title": "Enron Discovery – Plateforme d’investigation numérique",
-    "section": "Lien vers le code",
-    "text": "Lien vers le code\nDépôt GitHub – enron-discovery"
-  },
-  {
-    "objectID": "projects/enron-discovery.html#améliorations-possibles",
-    "href": "projects/enron-discovery.html#améliorations-possibles",
-    "title": "Enron Discovery – Plateforme d’investigation numérique",
+    "objectID": "projects/chi2-de.html#améliorations-possibles",
+    "href": "projects/chi2-de.html#améliorations-possibles",
+    "title": "Test du chi‑2 d’adéquation : le dé est‑il équilibré ?",
     "section": "Améliorations possibles",
-    "text": "Améliorations possibles\n\nIntégration d’une API REST (Django REST Framework) pour alimenter des clients externes\nAjout de la gestion des pièces jointes\nVisualisation du graphe d’influence en temps réel avec filtres interactifs\n\n\nCe projet a été réalisé en binôme dans le cadre du Master Data Science (Université d’Angers)."
+    "text": "Améliorations possibles\n\nAjouter un graphique comparant les effectifs observés et théoriques (barplot)\nGénéraliser la fonction pour accepter des probabilités non uniformes\nCréer une version interactive avec Streamlit\n\n\nCe projet illustre ma capacité à appliquer des méthodes statistiques rigoureuses et à les implémenter en Python."
+  },
+  {
+    "objectID": "projects/deep-sea-adventure.html",
+    "href": "projects/deep-sea-adventure.html",
+    "title": "Deep Sea Adventure – Implémentation complète du jeu de société en Python",
+    "section": "",
+    "text": "Dans le cadre de l’UE Programmation Orientée Objet, j’ai développé en groupe une implémentation complète du jeu de société Deep Sea Adventure (Oink Games). Le jeu oppose 2 à 6 explorateurs qui plongent pour ramasser des trésors sous-marins, mais doivent gérer leur réserve d’air commune. Le projet devait respecter les règles officielles, proposer une interface (console et graphique), des intelligences artificielles, ainsi que des fonctionnalités avancées (sauvegarde/chargement, recommencer, etc.)."
+  },
+  {
+    "objectID": "projects/deep-sea-adventure.html#contexte-et-objectif",
+    "href": "projects/deep-sea-adventure.html#contexte-et-objectif",
+    "title": "Deep Sea Adventure – Implémentation complète du jeu de société en Python",
+    "section": "",
+    "text": "Dans le cadre de l’UE Programmation Orientée Objet, j’ai développé en groupe une implémentation complète du jeu de société Deep Sea Adventure (Oink Games). Le jeu oppose 2 à 6 explorateurs qui plongent pour ramasser des trésors sous-marins, mais doivent gérer leur réserve d’air commune. Le projet devait respecter les règles officielles, proposer une interface (console et graphique), des intelligences artificielles, ainsi que des fonctionnalités avancées (sauvegarde/chargement, recommencer, etc.)."
+  },
+  {
+    "objectID": "projects/deep-sea-adventure.html#fonctionnalités-implémentées",
+    "href": "projects/deep-sea-adventure.html#fonctionnalités-implémentées",
+    "title": "Deep Sea Adventure – Implémentation complète du jeu de société en Python",
+    "section": "Fonctionnalités implémentées",
+    "text": "Fonctionnalités implémentées\n\nMoteur de jeu complet\n\nPlateau de 32 jetons répartis en 4 niveaux (valeurs de 0 à 15, deux de chaque valeur).\nRègles officielles respectées :\n\nRéduction de l’air en fonction du nombre de jetons tenus.\nDéplacement : lancer de deux dés, soustraction du nombre de jetons tenus, saut des cases occupées.\nActions possibles : ramasser un trésor, poser un trésor (sur une case blanche), ne rien faire.\nFin de manche : les joueurs rentrés marquent la somme des valeurs de leurs jetons ; les autres laissent tomber leurs jetons, qui s’empilent (3 jetons empilés valent 3 points mais comptent comme un seul jeton pour le déplacement).\nTrois manches, détermination du vainqueur.\n\n\n\n\nInterfaces utilisateur\n\nConsole : affichage ASCII avec indices, valeurs des jetons, pions, air et scores.\nGraphique (Tkinter) : fenêtre redimensionnable, fond marin, cases colorées selon le niveau, pions représentés par des cercles avec l’initiale du joueur, barre de menu pour sauvegarder/recommencer/quitter.\n\n\n\nIntelligences artificielles\nTrois stratégies (héritage d’une classe abstraite) :\n\nAléatoire : choix aléatoire de rentrer et d’action.\nPrudente : rentre quand elle a au moins 2 jetons ou que l’air est bas (&lt; 10), ramasse si elle a moins de 3 jetons.\nCourageuse : rentre tard (≥ 5 jetons ou air &lt; 5), ramasse systématiquement.\n\n\n\nSauvegarde / Chargement\n\nPlusieurs sauvegardes nommées (fichiers .pkl), stockées dans un dossier saves/.\nMenu principal (console ou graphique) pour créer, charger ou supprimer une sauvegarde.\nSauvegarde possible en cours de partie via le menu.\n\n\n\nAutres fonctionnalités\n\nRecommencer : relance une nouvelle partie avec les mêmes joueurs.\nAffichage des scores : scores finaux et somme temporaire des jetons tenus.\nRobustesse : gestion de l’interruption (Ctrl+C) avec sauvegarde optionnelle, suppression automatique des sauvegardes après fin de partie.\nTests unitaires : 14 tests couvrant les classes principales (jeton, plateau, joueur, jeu)."
+  },
+  {
+    "objectID": "projects/deep-sea-adventure.html#structure-du-code",
+    "href": "projects/deep-sea-adventure.html#structure-du-code",
+    "title": "Deep Sea Adventure – Implémentation complète du jeu de société en Python",
+    "section": "Structure du code",
+    "text": "Structure du code\nLe projet est organisé en modules séparés (un fichier par classe) :\n\n\n\n\n\n\n\nFichier\nRôle\n\n\n\n\nmain.py\nPoint d’entrée, menu principal (console/graphique)\n\n\njeu.py\nClasse Jeu : orchestration des manches, tours, fin de partie\n\n\nplateau.py\nGestion du plateau (32 cases, initialisation, tassement)\n\n\njoueur.py\nClasse Joueur (position, jetons tenus, direction, score)\n\n\njeton.py\nClasse Jeton (ruine/blanc, piles)\n\n\nia.py\nClasses IA (aléatoire, prudente, courageuse)\n\n\nde.py\nSimulateur de deux dés\n\n\naffichage_console.py\nAffichage en mode console\n\n\naffichage_graphique.py\nInterface Tkinter, configuration des joueurs\n\n\ntests/\nTests unitaires\n\n\n\nL’architecture sépare clairement le moteur de jeu (indépendant de l’affichage) des interfaces. Les IA utilisent un design pattern Strategy (héritage polymorphique). La persistance est gérée via pickle avec une adaptation (__getstate__ / __setstate__) pour exclure les objets non sérialisables (fenêtre graphique)."
+  },
+  {
+    "objectID": "projects/deep-sea-adventure.html#résultats",
+    "href": "projects/deep-sea-adventure.html#résultats",
+    "title": "Deep Sea Adventure – Implémentation complète du jeu de société en Python",
+    "section": "Résultats",
+    "text": "Résultats\nLe jeu est entièrement jouable en mode console ou graphique.\nLes deux affichages sont fonctionnels et permettent de suivre l’évolution de la partie."
+  },
+  {
+    "objectID": "projects/deep-sea-adventure.html#compétences-mises-en-œuvre",
+    "href": "projects/deep-sea-adventure.html#compétences-mises-en-œuvre",
+    "title": "Deep Sea Adventure – Implémentation complète du jeu de société en Python",
+    "section": "Compétences mises en œuvre",
+    "text": "Compétences mises en œuvre\n\nProgrammation orientée objet : héritage, polymorphisme, encapsulation, séparation des responsabilités.\nDéveloppement logiciel : architecture modulaire, gestion des exceptions, tests unitaires.\nInterfaces utilisateur : développement d’une interface graphique avec Tkinter (personnalisation, redimensionnement, menus).\nPersistance des données : sérialisation avec pickle pour sauvegarder l’état du jeu.\nAlgorithmique : simulation de déplacements, gestion des piles de jetons.\nGestion de projet : développement itératif, travail en binôme, versionnage Git."
+  },
+  {
+    "objectID": "projects/deep-sea-adventure.html#lien-vers-le-code",
+    "href": "projects/deep-sea-adventure.html#lien-vers-le-code",
+    "title": "Deep Sea Adventure – Implémentation complète du jeu de société en Python",
+    "section": "Lien vers le code",
+    "text": "Lien vers le code\nLe code source complet est disponible sur GitHub :\nGitHub – Deep Sea Adventure"
+  },
+  {
+    "objectID": "projects/deep-sea-adventure.html#améliorations-possibles",
+    "href": "projects/deep-sea-adventure.html#améliorations-possibles",
+    "title": "Deep Sea Adventure – Implémentation complète du jeu de société en Python",
+    "section": "Améliorations possibles",
+    "text": "Améliorations possibles\n\nAjouter des IA plus stratégiques (prise en compte du positionnement, blocage des adversaires).\nAnimer les déplacements des pions dans l’interface graphique.\nPermettre un mode multijoueur en réseau.\nAjouter des jetons spéciaux ou des règles optionnelles.\n\n\nCe projet illustre ma capacité à concevoir une application logicielle complète, modulaire et testable, en Python, avec une approche orientée objet et une attention particulière à l’expérience utilisateur."
+  },
+  {
+    "objectID": "projects/marketing-campaign-eda.html",
+    "href": "projects/marketing-campaign-eda.html",
+    "title": "Prédiction de réponse à une campagne marketing – Analyse exploratoire",
+    "section": "",
+    "text": "L’entreprise souhaite améliorer l’efficacité de ses campagnes marketing en ciblant les clients les plus susceptibles de répondre à une offre. Le jeu de données contient 2 240 clients avec des informations démographiques, d’achat et d’historique de campagnes. La variable cible Response indique si le client a accepté la dernière campagne."
+  },
+  {
+    "objectID": "projects/marketing-campaign-eda.html#contexte",
+    "href": "projects/marketing-campaign-eda.html#contexte",
+    "title": "Prédiction de réponse à une campagne marketing – Analyse exploratoire",
+    "section": "",
+    "text": "L’entreprise souhaite améliorer l’efficacité de ses campagnes marketing en ciblant les clients les plus susceptibles de répondre à une offre. Le jeu de données contient 2 240 clients avec des informations démographiques, d’achat et d’historique de campagnes. La variable cible Response indique si le client a accepté la dernière campagne."
+  },
+  {
+    "objectID": "projects/marketing-campaign-eda.html#objectifs",
+    "href": "projects/marketing-campaign-eda.html#objectifs",
+    "title": "Prédiction de réponse à une campagne marketing – Analyse exploratoire",
+    "section": "Objectifs",
+    "text": "Objectifs\n\nComprendre le profil des répondants.\nIdentifier les variables discriminantes.\nProposer des pistes pour la modélisation prédictive."
+  },
+  {
+    "objectID": "projects/marketing-campaign-eda.html#problématique",
+    "href": "projects/marketing-campaign-eda.html#problématique",
+    "title": "Prédiction de réponse à une campagne marketing – Analyse exploratoire",
+    "section": "Problématique",
+    "text": "Problématique\nComment prédire quels clients répondront à une campagne marketing à partir de leurs caractéristiques et de leur historique ?"
+  },
+  {
+    "objectID": "projects/marketing-campaign-eda.html#analyse-exploratoire-des-données-eda",
+    "href": "projects/marketing-campaign-eda.html#analyse-exploratoire-des-données-eda",
+    "title": "Prédiction de réponse à une campagne marketing – Analyse exploratoire",
+    "section": "Analyse exploratoire des données (EDA)",
+    "text": "Analyse exploratoire des données (EDA)\n\n1. Structure et qualité des données\n\n2 240 clients, 29 colonnes.\n24 valeurs manquantes dans la colonne Income (imputées par la médiane).\nColonnes constantes sans intérêt (Z_CostContact, Z_Revenue) supprimées.\nVariables catégorielles : Education (5 niveaux), Marital_Status (8 niveaux, catégories rares regroupées dans « Other »).\nVariable cible : Response (1 = acceptation, 0 = refus).\n\n\n\n2. Distribution de la cible\n\nTaux de réponse : 14,9 % (déséquilibre modéré).\nMétriques adaptées : précision, rappel, F1-score, AUC‑ROC.\n\n\n\n3. Profil comparatif des répondants (classe 1) et non‑répondants (classe 0)\n\n\n\n\n\n\n\n\n\nVariable\nNon‑répondants\nRépondants\nInterprétation\n\n\n\n\nRevenu moyen\n50 846 €\n60 183 €\n+18 %\n\n\nDépenses totales (6 catégories)\n539 €\n987 €\n+83 %\n\n\nRécence (jours depuis dernier achat)\n51,5 j\n35,4 j\nplus récents\n\n\nAchats web (nombre)\n3,9\n5,1\n+31 %\n\n\nAchats catalogue\n2,4\n4,2\n+75 %\n\n\nAchats magasin\n5,7\n6,1\n+7 %\n\n\n\nConclusion : les répondants sont plus aisés, dépensent davantage, sont plus actifs sur les canaux web et catalogue, et ont acheté plus récemment.\n\n\n4. Variables catégorielles\n\nÉducation : les titulaires d’un PhD ou d’un Master répondent mieux.\nÉtat civil : les clients en couple (Together) ou mariés présentent un taux de réponse plus élevé.\n\n\n\n5. Dépenses par catégorie\nLes plus fortes différences entre répondants et non‑répondants concernent : - MntWines (vins) - MntMeatProducts (viande) - MntGoldProds (produits en or)\n\n\n6. Segmentation revenu × dépenses\nTableau des taux de réponse selon les quartiles de revenu et de dépenses totales :\n\n\n\nRevenu  Dépenses\nFaible\nMoyen\nÉlevé\nTrès élevé\n\n\n\n\nFaible\n6,8 %\n17,3 %\n16,7 %\n0,0 %\n\n\nMoyen\n3,5 %\n13,0 %\n21,4 %\n36,4 %\n\n\nÉlevé\n0,0 %\n2,0 %\n8,3 %\n22,7 %\n\n\nTrès élevé\n0,0 %\n0,0 %\n11,4 %\n32,2 %\n\n\n\nLes meilleurs taux de réponse se situent dans les segments « revenu moyen – dépenses très élevées » (36,4 %) et « revenu très élevé – dépenses très élevées » (32,2 %).\n\n\n7. Historique des campagnes précédentes\nLe nombre de campagnes acceptées parmi les cinq premières est fortement corrélé à la réponse. Les clients ayant déjà accepté une campagne ont un taux de réponse supérieur à 50 %."
+  },
+  {
+    "objectID": "projects/marketing-campaign-eda.html#hypothèses-exploitables",
+    "href": "projects/marketing-campaign-eda.html#hypothèses-exploitables",
+    "title": "Prédiction de réponse à une campagne marketing – Analyse exploratoire",
+    "section": "Hypothèses exploitables",
+    "text": "Hypothèses exploitables\n\nDépenses et récence : les dépenses totales et la récence sont des prédicteurs majeurs.\nCanaux : les achats web et catalogue distinguent fortement les répondants.\nHistorique des campagnes : le nombre d’acceptations passées est un excellent indicateur de réponse future.\nSegmentation revenu × dépenses : cibler les segments à fort taux de réponse (revenu moyen/élevé + dépenses élevées) maximise le retour sur investissement."
+  },
+  {
+    "objectID": "projects/marketing-campaign-eda.html#recommandations-pour-la-modélisation",
+    "href": "projects/marketing-campaign-eda.html#recommandations-pour-la-modélisation",
+    "title": "Prédiction de réponse à une campagne marketing – Analyse exploratoire",
+    "section": "Recommandations pour la modélisation",
+    "text": "Recommandations pour la modélisation\n\nPrétraitement\n\nEncoder les variables catégorielles (OneHotEncoder).\nNormaliser les variables numériques (StandardScaler) sauf les indicateurs binaires.\nCréer des variables composées :\n\nnum_accepted_cmp : somme des campagnes acceptées\ntotal_spending : somme des 6 catégories de produits\nomnichannel_score : moyenne des achats par canal\n\n\n\n\nGestion du déséquilibre\n\nUtiliser des métriques adaptées : précision, rappel, F1‑score, AUC‑ROC.\nEnvisager SMOTE ou class_weight='balanced' si le déséquilibre est marqué.\n\n\n\nModèles à tester\n\nRégression logistique (baseline)\nRandom Forest\nXGBoost / LightGBM\n\n\n\nÉvaluation\n\nValidation croisée stratifiée (5 folds)\nComparaison des modèles sur le F1‑score et l’AUC‑ROC"
+  },
+  {
+    "objectID": "projects/marketing-campaign-eda.html#compétences-et-technologies",
+    "href": "projects/marketing-campaign-eda.html#compétences-et-technologies",
+    "title": "Prédiction de réponse à une campagne marketing – Analyse exploratoire",
+    "section": "Compétences et technologies",
+    "text": "Compétences et technologies\n\nPython : Pandas, NumPy, Matplotlib, Seaborn, Scikit‑learn.\nVisualisation interactive : Streamlit.\nModélisation : régression logistique, Random Forest, XGBoost.\nDéploiement : Streamlit Cloud, Docker."
+  },
+  {
+    "objectID": "projects/marketing-campaign-eda.html#lien-vers-le-code",
+    "href": "projects/marketing-campaign-eda.html#lien-vers-le-code",
+    "title": "Prédiction de réponse à une campagne marketing – Analyse exploratoire",
+    "section": "Lien vers le code",
+    "text": "Lien vers le code\nGitHub – marketing-campaign-response"
   },
   {
     "objectID": "projects/moyennes-etudiants.html",
@@ -438,6 +501,6 @@
     "href": "projects.html",
     "title": "Mes projets",
     "section": "",
-    "text": "Enron Discovery – Plateforme d’investigation numérique\nApplication web d’e‑Discovery sur plus de 500 000 emails. Dashboard interactif, recherche plein texte, graphe d’influence, reconstruction des fils de discussion.\nTechnologies : Django, PostgreSQL, pandas, Docker, Bootstrap, Chart.js, vis.js\n\n\n\nDeep Sea Adventure – Implémentation du jeu de société\nSimulation complète du jeu avec moteur de jeu, interface graphique (Tkinter) et console, intelligences artificielles (3 stratégies), sauvegarde/chargement, tests unitaires.\nTechnologies : Python, POO, Tkinter, pickle, unittest\n\n\n\nDétection de fraude bancaire – Analyse exploratoire des transactions\nAnalyse exploratoire d’un jeu de données bancaires extrêmement déséquilibré, avec recommandations de modélisation et déploiement d’un tableau de bord Streamlit.\nTechnologies : Python, pandas, scikit-learn, XGBoost, Streamlit, Docker\n\n\nAnalyse des déterminants de la moyenne générale des étudiants\nModélisation prédictive de la performance académique à partir de 100 000 observations. Régression linéaire, sélection de variables, ACP, PCR, PLS, bootstrap.\nOutils & méthodes : R (tidyverse, caret, pls, leaps), validation croisée, bootstrap, réduction de dimension\n\n\n\nTest du chi‑2 d’adéquation : le dé est‑il équilibré ?\nMise en œuvre d’un test statistique complet en Python, avec validation des conditions d’application et interprétation des résultats.\nTechnologies : Python (scipy, numpy), test statistique, gestion d’erreurs\n\n\n\nChaîne de Markov : le jeu du ballon\nSimulation et analyse d’une chaîne de Markov à 3 états, calcul de la distribution stationnaire, visualisation.\nTechnologies : Python, numpy, matplotlib, simulation stochastique\n\n\n\nContrôle qualité des pommes : respect du cahier des charges ?\nAnalyse statistique complète (descriptive, test de normalité, test t) pour vérifier si le diamètre moyen d’un lot est conforme à la norme de 10 cm.\nOutils : Python (scipy, matplotlib), tests d’hypothèses, visualisation"
+    "text": "Enron Discovery – Plateforme d’investigation numérique\nApplication web d’e‑Discovery sur plus de 500 000 emails. Dashboard interactif, recherche plein texte, graphe d’influence, reconstruction des fils de discussion.\nTechnologies : Django, PostgreSQL, pandas, Docker, Bootstrap, Chart.js, vis.js\n\n\n\nDeep Sea Adventure – Implémentation du jeu de société\nSimulation complète du jeu avec moteur de jeu, interface graphique (Tkinter) et console, intelligences artificielles (3 stratégies), sauvegarde/chargement, tests unitaires.\nTechnologies : Python, POO, Tkinter, pickle, unittest\n\n\n\nDétection de fraude bancaire – Analyse exploratoire des transactions\nAnalyse exploratoire d’un jeu de données bancaires extrêmement déséquilibré, avec recommandations de modélisation et déploiement d’un tableau de bord Streamlit.\nTechnologies : Python, pandas, scikit-learn, XGBoost, Streamlit, Docker\n\n\n\nPrédiction de réponse à une campagne marketing – Analyse exploratoire\nAnalyse du profil des répondants, segmentation revenu/dépenses, identification des variables clés et recommandations pour la modélisation prédictive.\nTechnologies : Python, pandas, scikit-learn, Streamlit\n\n\n\nAnalyse des déterminants de la moyenne générale des étudiants\nModélisation prédictive de la performance académique à partir de 100 000 observations. Régression linéaire, sélection de variables, ACP, PCR, PLS, bootstrap.\nOutils & méthodes : R (tidyverse, caret, pls, leaps), validation croisée, bootstrap, réduction de dimension\n\n\n\nTest du chi‑2 d’adéquation : le dé est‑il équilibré ?\nMise en œuvre d’un test statistique complet en Python, avec validation des conditions d’application et interprétation des résultats.\nTechnologies : Python (scipy, numpy), test statistique, gestion d’erreurs\n\n\n\nChaîne de Markov : le jeu du ballon\nSimulation et analyse d’une chaîne de Markov à 3 états, calcul de la distribution stationnaire, visualisation.\nTechnologies : Python, numpy, matplotlib, simulation stochastique\n\n\n\nContrôle qualité des pommes : respect du cahier des charges ?\nAnalyse statistique complète (descriptive, test de normalité, test t) pour vérifier si le diamètre moyen d’un lot est conforme à la norme de 10 cm.\nOutils : Python (scipy, matplotlib), tests d’hypothèses, visualisation"
   }
 ]
