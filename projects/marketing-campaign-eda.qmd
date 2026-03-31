@@ -112,4 +112,4 @@ Le nombre de campagnes acceptées parmi les cinq premières est fortement corré
 
 ## Lien vers le code
 
-[GitHub – marketing-campaign-response](https://github.com/Daniele-Nana/marketing-campaign-eda)
+[GitHub – marketing-campaign-eda](https://github.com/Daniele-Nana/marketing-campaign-eda)
