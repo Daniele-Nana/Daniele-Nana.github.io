@@ -38,7 +38,7 @@ title: "Mes projets"
 ---
 
 ### [Test du chi‑2 d’adéquation : le dé est‑il équilibré ?](projects/chi2-de.qmd)
-*Mise en œuvre d’un test statistique complet en Python, avec validation des conditions d’application et interprétation des résultats.*
+*Mise en œuvre d’un test statistique complet en Python, avec validation des conditions d’application et interprétation des résultats. Application à un échantillon de lancers de dé.*
 
 **Technologies** : Python (scipy, numpy), test statistique, gestion d’erreurs
 

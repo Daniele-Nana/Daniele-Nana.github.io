@@ -284,42 +284,63 @@
     "href": "projects/chi2-de.html",
     "title": "Test du chi‑2 d’adéquation : le dé est‑il équilibré ?",
     "section": "",
-    "text": "Lorsqu’on lance un dé, on s’attend à ce que chaque face sorte avec une probabilité de 1/6.\nNous disposons d’observations sur 726 lancers. L’objectif est de déterminer si le dé utilisé est équilibré (i.e. suit une loi uniforme) ou non.\nDonnées :\n\n\n\nFace\n1\n2\n3\n4\n5\n6\n\n\n\n\nEffectif\n127\n108\n123\n118\n115\n135"
+    "text": "Le test du χ² d’adéquation (goodness‑of‑fit) est un outil statistique fondamental permettant de comparer une distribution observée à une distribution théorique. Dans ce projet, nous avons implémenté une fonction robuste en R qui réalise ce test, puis nous l’avons appliquée à un cas concret : déterminer si un dé à six faces est équilibré à partir d’un échantillon de lancers."
   },
   {
     "objectID": "projects/chi2-de.html#contexte",
     "href": "projects/chi2-de.html#contexte",
     "title": "Test du chi‑2 d’adéquation : le dé est‑il équilibré ?",
     "section": "",
-    "text": "Lorsqu’on lance un dé, on s’attend à ce que chaque face sorte avec une probabilité de 1/6.\nNous disposons d’observations sur 726 lancers. L’objectif est de déterminer si le dé utilisé est équilibré (i.e. suit une loi uniforme) ou non.\nDonnées :\n\n\n\nFace\n1\n2\n3\n4\n5\n6\n\n\n\n\nEffectif\n127\n108\n123\n118\n115\n135"
+    "text": "Le test du χ² d’adéquation (goodness‑of‑fit) est un outil statistique fondamental permettant de comparer une distribution observée à une distribution théorique. Dans ce projet, nous avons implémenté une fonction robuste en R qui réalise ce test, puis nous l’avons appliquée à un cas concret : déterminer si un dé à six faces est équilibré à partir d’un échantillon de lancers."
+  },
+  {
+    "objectID": "projects/chi2-de.html#objectifs",
+    "href": "projects/chi2-de.html#objectifs",
+    "title": "Test du chi‑2 d’adéquation : le dé est‑il équilibré ?",
+    "section": "Objectifs",
+    "text": "Objectifs\n\nDévelopper une fonction chi.ad(x, p) qui :\n\nVérifie que le vecteur de probabilités théoriques p est valide (somme = 1, valeurs ∈ [0,1]) ;\nVérifie que tous les effectifs observés x sont ≥ 5 (condition d’application du test) ;\nCalcule la statistique du χ², les degrés de liberté et la p‑valeur ;\nRetourne ces trois éléments dans une liste.\n\nAppliquer cette fonction aux données d’un lancer de dé pour déterminer si celui‑ci est équilibré."
+  },
+  {
+    "objectID": "projects/chi2-de.html#données",
+    "href": "projects/chi2-de.html#données",
+    "title": "Test du chi‑2 d’adéquation : le dé est‑il équilibré ?",
+    "section": "Données",
+    "text": "Données\nL’étude porte sur un dé lancé un certain nombre de fois. Les effectifs observés pour chaque face sont :\n\n\n\nFace\n1\n2\n3\n4\n5\n6\n\n\n\n\nEffectif\n127\n108\n123\n118\n115\n135\n\n\n\nHypothèses :\n- H₀ : le dé est équilibré (p₁ = p₂ = … = p₆ = 1/6)\n- H₁ : le dé n’est pas équilibré (au moins une face a une probabilité différente)"
   },
   {
     "objectID": "projects/chi2-de.html#méthodologie",
     "href": "projects/chi2-de.html#méthodologie",
     "title": "Test du chi‑2 d’adéquation : le dé est‑il équilibré ?",
     "section": "Méthodologie",
-    "text": "Méthodologie\nLe test du χ² d’adéquation (ou test du χ² de conformité) compare les effectifs observés aux effectifs théoriques attendus sous l’hypothèse nulle.\n\nHypothèses\n\nH₀ : le dé est équilibré (p₁ = p₂ = … = p₆ = 1/6)\nH₁ : le dé n’est pas équilibré\n\n\n\nFonction Python implémentée\nLa fonction chi2_ad(x, p) :\n\nVérifie que p est un vecteur de probabilités (somme = 1, valeurs entre 0 et 1)\nVérifie que les effectifs observés sont suffisants (&gt;5) – condition d’application du test\nCalcule la statistique de test χ², les degrés de liberté et la p‑valeur\nRetourne ces trois valeurs dans une liste\n\nimport numpy as np\nfrom scipy.stats import chi2\n\ndef chi2_ad(x, p):\n    # Vérification des probabilités\n    if not np.isclose(sum(p), 1) or any(pi &lt; 0 for pi in p):\n        raise ValueError(\"p doit être un vecteur de probabilités (somme = 1, valeurs &gt;= 0).\")\n    # Vérification des effectifs\n    if any(obs &lt;= 5 for obs in x):\n        raise ValueError(\"Les effectifs observés doivent tous être &gt; 5.\")\n    \n    n = sum(x)\n    ef = n * np.array(p)               # effectifs théoriques\n    stat = sum((x - ef)**2 / ef)       # statistique du chi2\n    ddl = len(x) - 1\n    p_val = 1 - chi2.cdf(stat, ddl)\n    return [stat, ddl, p_val]\n\n\nApplication\nobs = [127, 108, 123, 118, 115, 135]\np_unif = [1/6] * 6\n\nstat, ddl, p_val = chi2_ad(obs, p_unif)\nprint(f\"Statistique χ² = {stat:.3f}\")\nprint(f\"Degrés de liberté = {ddl}\")\nprint(f\"p‑valeur = {p_val:.4f}\")\nRésultat :\n\nStatistique χ² = 4,284\nd.d.l. = 5\np‑valeur = 0,509"
+    "text": "Méthodologie\n\n1. Implémentation de la fonction chi.ad\nLa fonction a été écrite en R avec les contrôles suivants :\n\nValidation de p : sum(p) == 1 et tous les p ≥ 0.\nVérification des effectifs : all(x &gt;= 5).\nCalcul de la statistique :\n[ ^2 = _{i=1}^{k} ]\nDegrés de liberté : k - 1.\np‑valeur : 1 - pchisq(stat, ddl).\n\n\n\n2. Application au dé\n\nEffectif total : n = 127+108+123+118+115+135 = 726\nEffectifs théoriques sous H₀ : n × 1/6 = 121 par face.\nStatistique calculée : χ² = 3,719\nDegrés de liberté : 6 - 1 = 5\np‑valeur : 0,5905"
+  },
+  {
+    "objectID": "projects/chi2-de.html#résultats",
+    "href": "projects/chi2-de.html#résultats",
+    "title": "Test du chi‑2 d’adéquation : le dé est‑il équilibré ?",
+    "section": "Résultats",
+    "text": "Résultats\n\n\n\nStatistique χ²\nddl\np‑valeur\n\n\n\n\n3,719\n5\n0,5905"
   },
   {
     "objectID": "projects/chi2-de.html#interprétation",
     "href": "projects/chi2-de.html#interprétation",
     "title": "Test du chi‑2 d’adéquation : le dé est‑il équilibré ?",
     "section": "Interprétation",
-    "text": "Interprétation\nLa p‑valeur (0,509) est très supérieure au seuil usuel de 5 % (0,05). On ne rejette donc pas H₀ : au seuil de signification 5 %, on considère que le dé est équilibré. Les écarts entre les effectifs observés et les effectifs théoriques peuvent être attribués au hasard."
+    "text": "Interprétation\nLa p‑valeur (0,5905) est très supérieure au seuil usuel de 5 % (α = 0,05).\nOn ne rejette donc pas H₀ : les écarts observés entre les effectifs empiriques et les effectifs théoriques sont compatibles avec la variabilité aléatoire d’un échantillon. Il n’y a pas de preuve statistique suffisante pour affirmer que le dé est déséquilibré."
   },
   {
-    "objectID": "projects/chi2-de.html#compétences-mises-en-œuvre",
-    "href": "projects/chi2-de.html#compétences-mises-en-œuvre",
+    "objectID": "projects/chi2-de.html#compétences-et-technologies",
+    "href": "projects/chi2-de.html#compétences-et-technologies",
     "title": "Test du chi‑2 d’adéquation : le dé est‑il équilibré ?",
-    "section": "Compétences mises en œuvre",
-    "text": "Compétences mises en œuvre\n\nTest statistique : mise en œuvre du χ² d’adéquation, interprétation de la p‑valeur\nProgrammation Python : gestion des exceptions, manipulation de listes, utilisation de numpy et scipy.stats\nValidation des données : contrôle des prérequis du test (effectifs &gt;5, vecteur de probabilités)\nRédaction scientifique : description claire du problème, des hypothèses et de la conclusion"
+    "section": "Compétences et technologies",
+    "text": "Compétences et technologies\n\nLangage : R (ou Python)\n\nBibliothèques : stats (fonction pchisq)\n\nProgrammation : gestion des erreurs, modularité\n\nStatistiques : test du χ² d’adéquation, validation des conditions d’application, interprétation de la p‑valeur\n\nContrôle qualité : application à un problème concret d’équilibre d’un dé"
   },
   {
-    "objectID": "projects/chi2-de.html#améliorations-possibles",
-    "href": "projects/chi2-de.html#améliorations-possibles",
+    "objectID": "projects/chi2-de.html#lien-vers-le-code",
+    "href": "projects/chi2-de.html#lien-vers-le-code",
     "title": "Test du chi‑2 d’adéquation : le dé est‑il équilibré ?",
-    "section": "Améliorations possibles",
-    "text": "Améliorations possibles\n\nAjouter un graphique comparant les effectifs observés et théoriques (barplot)\nGénéraliser la fonction pour accepter des probabilités non uniformes\nCréer une version interactive avec Streamlit\n\n\nCe projet illustre ma capacité à appliquer des méthodes statistiques rigoureuses et à les implémenter en Python."
+    "section": "Lien vers le code",
+    "text": "Lien vers le code\nGitHub – test-chi2-de"
   },
   {
     "objectID": "projects/deep-sea-adventure.html",
@@ -501,6 +522,6 @@
     "href": "projects.html",
     "title": "Mes projets",
     "section": "",
-    "text": "Enron Discovery – Plateforme d’investigation numérique\nApplication web d’e‑Discovery sur plus de 500 000 emails. Dashboard interactif, recherche plein texte, graphe d’influence, reconstruction des fils de discussion.\nTechnologies : Django, PostgreSQL, pandas, Docker, Bootstrap, Chart.js, vis.js\n\n\n\nDeep Sea Adventure – Implémentation du jeu de société\nSimulation complète du jeu avec moteur de jeu, interface graphique (Tkinter) et console, intelligences artificielles (3 stratégies), sauvegarde/chargement, tests unitaires.\nTechnologies : Python, POO, Tkinter, pickle, unittest\n\n\n\nDétection de fraude bancaire – Analyse exploratoire des transactions\nAnalyse exploratoire d’un jeu de données bancaires extrêmement déséquilibré, avec recommandations de modélisation et déploiement d’un tableau de bord Streamlit.\nTechnologies : Python, pandas, scikit-learn, XGBoost, Streamlit, Docker\n\n\n\nPrédiction de réponse à une campagne marketing – Analyse exploratoire\nAnalyse du profil des répondants, segmentation revenu/dépenses, identification des variables clés et recommandations pour la modélisation prédictive.\nTechnologies : Python, pandas, scikit-learn, Streamlit\n\n\n\nAnalyse des déterminants de la moyenne générale des étudiants\nModélisation prédictive de la performance académique à partir de 100 000 observations. Régression linéaire, sélection de variables, ACP, PCR, PLS, bootstrap.\nOutils & méthodes : R (tidyverse, caret, pls, leaps), validation croisée, bootstrap, réduction de dimension\n\n\n\nTest du chi‑2 d’adéquation : le dé est‑il équilibré ?\nMise en œuvre d’un test statistique complet en Python, avec validation des conditions d’application et interprétation des résultats.\nTechnologies : Python (scipy, numpy), test statistique, gestion d’erreurs\n\n\n\nChaîne de Markov : le jeu du ballon\nSimulation et analyse d’une chaîne de Markov à 3 états, calcul de la distribution stationnaire, visualisation.\nTechnologies : Python, numpy, matplotlib, simulation stochastique\n\n\n\nContrôle qualité des pommes : respect du cahier des charges ?\nAnalyse statistique complète (descriptive, test de normalité, test t) pour vérifier si le diamètre moyen d’un lot est conforme à la norme de 10 cm.\nOutils : Python (scipy, matplotlib), tests d’hypothèses, visualisation"
+    "text": "Enron Discovery – Plateforme d’investigation numérique\nApplication web d’e‑Discovery sur plus de 500 000 emails. Dashboard interactif, recherche plein texte, graphe d’influence, reconstruction des fils de discussion.\nTechnologies : Django, PostgreSQL, pandas, Docker, Bootstrap, Chart.js, vis.js\n\n\n\nDeep Sea Adventure – Implémentation du jeu de société\nSimulation complète du jeu avec moteur de jeu, interface graphique (Tkinter) et console, intelligences artificielles (3 stratégies), sauvegarde/chargement, tests unitaires.\nTechnologies : Python, POO, Tkinter, pickle, unittest\n\n\n\nDétection de fraude bancaire – Analyse exploratoire des transactions\nAnalyse exploratoire d’un jeu de données bancaires extrêmement déséquilibré, avec recommandations de modélisation et déploiement d’un tableau de bord Streamlit.\nTechnologies : Python, pandas, scikit-learn, XGBoost, Streamlit, Docker\n\n\n\nPrédiction de réponse à une campagne marketing – Analyse exploratoire\nAnalyse du profil des répondants, segmentation revenu/dépenses, identification des variables clés et recommandations pour la modélisation prédictive.\nTechnologies : Python, pandas, scikit-learn, Streamlit\n\n\n\nAnalyse des déterminants de la moyenne générale des étudiants\nModélisation prédictive de la performance académique à partir de 100 000 observations. Régression linéaire, sélection de variables, ACP, PCR, PLS, bootstrap.\nOutils & méthodes : R (tidyverse, caret, pls, leaps), validation croisée, bootstrap, réduction de dimension\n\n\n\nTest du chi‑2 d’adéquation : le dé est‑il équilibré ?\nMise en œuvre d’un test statistique complet en Python, avec validation des conditions d’application et interprétation des résultats. Application à un échantillon de lancers de dé.\nTechnologies : Python (scipy, numpy), test statistique, gestion d’erreurs\n\n\n\nChaîne de Markov : le jeu du ballon\nSimulation et analyse d’une chaîne de Markov à 3 états, calcul de la distribution stationnaire, visualisation.\nTechnologies : Python, numpy, matplotlib, simulation stochastique\n\n\n\nContrôle qualité des pommes : respect du cahier des charges ?\nAnalyse statistique complète (descriptive, test de normalité, test t) pour vérifier si le diamètre moyen d’un lot est conforme à la norme de 10 cm.\nOutils : Python (scipy, matplotlib), tests d’hypothèses, visualisation"
   }
 ]

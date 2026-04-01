@@ -1,0 +1,6 @@
+{
+    "r.useRenvLibPath": true,
+    "r.lsp.multiServer": true,
+    "r.session.useWebServer": true,
+    "r.lsp.debug": true
+}

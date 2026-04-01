@@ -23,41 +23,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -167,15 +132,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#contexte" id="toc-contexte" class="nav-link active" data-scroll-target="#contexte">Contexte</a></li>
+  <li><a href="#objectifs" id="toc-objectifs" class="nav-link" data-scroll-target="#objectifs">Objectifs</a></li>
+  <li><a href="#données" id="toc-données" class="nav-link" data-scroll-target="#données">Données</a></li>
   <li><a href="#méthodologie" id="toc-méthodologie" class="nav-link" data-scroll-target="#méthodologie">Méthodologie</a>
   <ul class="collapse">
-  <li><a href="#hypothèses" id="toc-hypothèses" class="nav-link" data-scroll-target="#hypothèses">Hypothèses</a></li>
-  <li><a href="#fonction-python-implémentée" id="toc-fonction-python-implémentée" class="nav-link" data-scroll-target="#fonction-python-implémentée">Fonction Python implémentée</a></li>
-  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application">Application</a></li>
+  <li><a href="#implémentation-de-la-fonction-chi.ad" id="toc-implémentation-de-la-fonction-chi.ad" class="nav-link" data-scroll-target="#implémentation-de-la-fonction-chi.ad">1. Implémentation de la fonction <code>chi.ad</code></a></li>
+  <li><a href="#application-au-dé" id="toc-application-au-dé" class="nav-link" data-scroll-target="#application-au-dé">2. Application au dé</a></li>
   </ul></li>
+  <li><a href="#résultats" id="toc-résultats" class="nav-link" data-scroll-target="#résultats">Résultats</a></li>
   <li><a href="#interprétation" id="toc-interprétation" class="nav-link" data-scroll-target="#interprétation">Interprétation</a></li>
-  <li><a href="#compétences-mises-en-œuvre" id="toc-compétences-mises-en-œuvre" class="nav-link" data-scroll-target="#compétences-mises-en-œuvre">Compétences mises en œuvre</a></li>
-  <li><a href="#améliorations-possibles" id="toc-améliorations-possibles" class="nav-link" data-scroll-target="#améliorations-possibles">Améliorations possibles</a></li>
+  <li><a href="#compétences-et-technologies" id="toc-compétences-et-technologies" class="nav-link" data-scroll-target="#compétences-et-technologies">Compétences et technologies</a></li>
+  <li><a href="#lien-vers-le-code" id="toc-lien-vers-le-code" class="nav-link" data-scroll-target="#lien-vers-le-code">Lien vers le code</a></li>
   </ul>
 </nav>
     </div>
@@ -203,9 +170,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="contexte" class="level2">
 <h2 class="anchored" data-anchor-id="contexte">Contexte</h2>
-<p>Lorsqu’on lance un dé, on s’attend à ce que chaque face sorte avec une probabilité de 1/6.<br>
-Nous disposons d’observations sur 726 lancers. L’objectif est de déterminer si le dé utilisé est <strong>équilibré</strong> (i.e.&nbsp;suit une loi uniforme) ou non.</p>
-<p><strong>Données</strong> :</p>
+<p>Le test du χ² d’adéquation (goodness‑of‑fit) est un outil statistique fondamental permettant de comparer une distribution observée à une distribution théorique. Dans ce projet, nous avons implémenté une fonction robuste en R qui réalise ce test, puis nous l’avons appliquée à un cas concret : déterminer si un dé à six faces est équilibré à partir d’un échantillon de lancers.</p>
+</section>
+<section id="objectifs" class="level2">
+<h2 class="anchored" data-anchor-id="objectifs">Objectifs</h2>
+<ol type="1">
+<li><strong>Développer une fonction <code>chi.ad(x, p)</code></strong> qui :
+<ul>
+<li>Vérifie que le vecteur de probabilités théoriques <code>p</code> est valide (somme = 1, valeurs ∈ [0,1]) ;</li>
+<li>Vérifie que tous les effectifs observés <code>x</code> sont ≥ 5 (condition d’application du test) ;</li>
+<li>Calcule la statistique du χ², les degrés de liberté et la p‑valeur ;</li>
+<li>Retourne ces trois éléments dans une liste.</li>
+</ul></li>
+<li><strong>Appliquer cette fonction</strong> aux données d’un lancer de dé pour déterminer si celui‑ci est équilibré.</li>
+</ol>
+</section>
+<section id="données" class="level2">
+<h2 class="anchored" data-anchor-id="données">Données</h2>
+<p>L’étude porte sur un dé lancé un certain nombre de fois. Les effectifs observés pour chaque face sont :</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -230,86 +212,76 @@ Nous disposons d’observations sur 726 lancers. L’objectif est de déterminer
 </tr>
 </tbody>
 </table>
+<p><strong>Hypothèses :</strong><br>
+- H₀ : le dé est équilibré (p₁ = p₂ = … = p₆ = 1/6)<br>
+- H₁ : le dé n’est pas équilibré (au moins une face a une probabilité différente)</p>
 </section>
 <section id="méthodologie" class="level2">
 <h2 class="anchored" data-anchor-id="méthodologie">Méthodologie</h2>
-<p>Le test du <strong>χ² d’adéquation</strong> (ou test du χ² de conformité) compare les effectifs observés aux effectifs théoriques attendus sous l’hypothèse nulle.</p>
-<section id="hypothèses" class="level3">
-<h3 class="anchored" data-anchor-id="hypothèses">Hypothèses</h3>
+<section id="implémentation-de-la-fonction-chi.ad" class="level3">
+<h3 class="anchored" data-anchor-id="implémentation-de-la-fonction-chi.ad">1. Implémentation de la fonction <code>chi.ad</code></h3>
+<p>La fonction a été écrite en R avec les contrôles suivants :</p>
 <ul>
-<li><strong>H₀</strong> : le dé est équilibré (p₁ = p₂ = … = p₆ = 1/6)</li>
-<li><strong>H₁</strong> : le dé n’est pas équilibré</li>
+<li>Validation de <code>p</code> : <code>sum(p) == 1</code> et tous les <code>p</code> ≥ 0.</li>
+<li>Vérification des effectifs : <code>all(x &gt;= 5)</code>.</li>
+<li>Calcul de la statistique :<br>
+[ ^2 = _{i=1}^{k} ]</li>
+<li>Degrés de liberté : <code>k - 1</code>.</li>
+<li>p‑valeur : <code>1 - pchisq(stat, ddl)</code>.</li>
 </ul>
 </section>
-<section id="fonction-python-implémentée" class="level3">
-<h3 class="anchored" data-anchor-id="fonction-python-implémentée">Fonction Python implémentée</h3>
-<p>La fonction <code>chi2_ad(x, p)</code> :</p>
+<section id="application-au-dé" class="level3">
+<h3 class="anchored" data-anchor-id="application-au-dé">2. Application au dé</h3>
 <ul>
-<li>Vérifie que <code>p</code> est un vecteur de probabilités (somme = 1, valeurs entre 0 et 1)</li>
-<li>Vérifie que les effectifs observés sont suffisants (&gt;5) – condition d’application du test</li>
-<li>Calcule la statistique de test χ², les degrés de liberté et la p‑valeur</li>
-<li>Retourne ces trois valeurs dans une liste</li>
+<li>Effectif total : <code>n = 127+108+123+118+115+135 = 726</code></li>
+<li>Effectifs théoriques sous H₀ : <code>n × 1/6 = 121</code> par face.</li>
+<li>Statistique calculée : χ² = 3,719</li>
+<li>Degrés de liberté : <code>6 - 1 = 5</code></li>
+<li>p‑valeur : 0,5905</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> chi2</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> chi2_ad(x, p):</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Vérification des probabilités</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> np.isclose(<span class="bu">sum</span>(p), <span class="dv">1</span>) <span class="kw">or</span> <span class="bu">any</span>(pi <span class="op">&lt;</span> <span class="dv">0</span> <span class="cf">for</span> pi <span class="kw">in</span> p):</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"p doit être un vecteur de probabilités (somme = 1, valeurs &gt;= 0)."</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Vérification des effectifs</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">any</span>(obs <span class="op">&lt;=</span> <span class="dv">5</span> <span class="cf">for</span> obs <span class="kw">in</span> x):</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Les effectifs observés doivent tous être &gt; 5."</span>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="bu">sum</span>(x)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    ef <span class="op">=</span> n <span class="op">*</span> np.array(p)               <span class="co"># effectifs théoriques</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    stat <span class="op">=</span> <span class="bu">sum</span>((x <span class="op">-</span> ef)<span class="op">**</span><span class="dv">2</span> <span class="op">/</span> ef)       <span class="co"># statistique du chi2</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    ddl <span class="op">=</span> <span class="bu">len</span>(x) <span class="op">-</span> <span class="dv">1</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    p_val <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> chi2.cdf(stat, ddl)</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [stat, ddl, p_val]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="application" class="level3">
-<h3 class="anchored" data-anchor-id="application">Application</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>obs <span class="op">=</span> [<span class="dv">127</span>, <span class="dv">108</span>, <span class="dv">123</span>, <span class="dv">118</span>, <span class="dv">115</span>, <span class="dv">135</span>]</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>p_unif <span class="op">=</span> [<span class="dv">1</span><span class="op">/</span><span class="dv">6</span>] <span class="op">*</span> <span class="dv">6</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>stat, ddl, p_val <span class="op">=</span> chi2_ad(obs, p_unif)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Statistique χ² = </span><span class="sc">{</span>stat<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Degrés de liberté = </span><span class="sc">{</span>ddl<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"p‑valeur = </span><span class="sc">{</span>p_val<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Résultat :</strong></p>
-<ul>
-<li>Statistique χ² = 4,284</li>
-<li>d.d.l. = 5</li>
-<li>p‑valeur = 0,509</li>
-</ul>
-<hr>
 </section>
+<section id="résultats" class="level2">
+<h2 class="anchored" data-anchor-id="résultats">Résultats</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Statistique χ²</th>
+<th>ddl</th>
+<th>p‑valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>3,719</td>
+<td>5</td>
+<td>0,5905</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="interprétation" class="level2">
 <h2 class="anchored" data-anchor-id="interprétation">Interprétation</h2>
-<p>La p‑valeur (0,509) est très supérieure au seuil usuel de 5 % (0,05). On ne rejette donc pas H₀ : au seuil de signification 5 %, on considère que le dé est équilibré. Les écarts entre les effectifs observés et les effectifs théoriques peuvent être attribués au hasard.</p>
-<hr>
+<p>La p‑valeur (0,5905) est très supérieure au seuil usuel de 5 % (α = 0,05).<br>
+On ne rejette donc pas H₀ : les écarts observés entre les effectifs empiriques et les effectifs théoriques sont compatibles avec la variabilité aléatoire d’un échantillon. Il n’y a pas de preuve statistique suffisante pour affirmer que le dé est déséquilibré.</p>
 </section>
-<section id="compétences-mises-en-œuvre" class="level2">
-<h2 class="anchored" data-anchor-id="compétences-mises-en-œuvre">Compétences mises en œuvre</h2>
+<section id="compétences-et-technologies" class="level2">
+<h2 class="anchored" data-anchor-id="compétences-et-technologies">Compétences et technologies</h2>
 <ul>
-<li><strong>Test statistique</strong> : mise en œuvre du χ² d’adéquation, interprétation de la p‑valeur</li>
-<li><strong>Programmation Python</strong> : gestion des exceptions, manipulation de listes, utilisation de <code>numpy</code> et <code>scipy.stats</code></li>
-<li><strong>Validation des données</strong> : contrôle des prérequis du test (effectifs &gt;5, vecteur de probabilités)</li>
-<li><strong>Rédaction scientifique</strong> : description claire du problème, des hypothèses et de la conclusion</li>
+<li><strong>Langage</strong> : R (ou Python)<br>
+</li>
+<li><strong>Bibliothèques</strong> : <code>stats</code> (fonction <code>pchisq</code>)<br>
+</li>
+<li><strong>Programmation</strong> : gestion des erreurs, modularité<br>
+</li>
+<li><strong>Statistiques</strong> : test du χ² d’adéquation, validation des conditions d’application, interprétation de la p‑valeur<br>
+</li>
+<li><strong>Contrôle qualité</strong> : application à un problème concret d’équilibre d’un dé</li>
 </ul>
-<hr>
 </section>
-<section id="améliorations-possibles" class="level2">
-<h2 class="anchored" data-anchor-id="améliorations-possibles">Améliorations possibles</h2>
-<ul>
-<li>Ajouter un graphique comparant les effectifs observés et théoriques (barplot)</li>
-<li>Généraliser la fonction pour accepter des probabilités non uniformes</li>
-<li>Créer une version interactive avec Streamlit</li>
-</ul>
-<hr>
-<p>Ce projet illustre ma capacité à appliquer des méthodes statistiques rigoureuses et à les implémenter en Python.</p>
+<section id="lien-vers-le-code" class="level2">
+<h2 class="anchored" data-anchor-id="lien-vers-le-code">Lien vers le code</h2>
+<p><a href="https://github.com/Daniele-Nana/test-chi2-de">GitHub – test-chi2-de</a></p>
 
 
 </section>
