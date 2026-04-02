@@ -25,126 +25,126 @@
     "href": "projects/pommes.html",
     "title": "Respect du cahier des charges : les pommes ont‑elles un diamètre moyen de 10 cm ?",
     "section": "",
-    "text": "Un producteur de pommes doit garantir que le diamètre moyen des pommes de chaque lot est de 10 cm. Un contrôleur prélève 8 pommes dans un lot et mesure leur diamètre (en cm) :\n9.35, 10.14, 11.31, 8.97, 8.51, 9.92, 9.43, 10.81\nL’objectif est de déterminer, au seuil de risque de 1 %, si le lot respecte la clause du cahier des charges."
+    "text": "Dans l’industrie agroalimentaire, le contrôle qualité des lots est une étape cruciale pour garantir la conformité aux spécifications contractuelles. Un producteur de pommes est soumis à une clause exigeant que le diamètre moyen des pommes de chaque lot soit égal à 10 cm. Un contrôleur prélève 8 pommes au hasard dans un lot. L’objectif est de déterminer, par une démarche inférentielle rigoureuse, si ce lot respecte l’exigence contractuelle."
   },
   {
     "objectID": "projects/pommes.html#contexte",
     "href": "projects/pommes.html#contexte",
     "title": "Respect du cahier des charges : les pommes ont‑elles un diamètre moyen de 10 cm ?",
     "section": "",
-    "text": "Un producteur de pommes doit garantir que le diamètre moyen des pommes de chaque lot est de 10 cm. Un contrôleur prélève 8 pommes dans un lot et mesure leur diamètre (en cm) :\n9.35, 10.14, 11.31, 8.97, 8.51, 9.92, 9.43, 10.81\nL’objectif est de déterminer, au seuil de risque de 1 %, si le lot respecte la clause du cahier des charges."
+    "text": "Dans l’industrie agroalimentaire, le contrôle qualité des lots est une étape cruciale pour garantir la conformité aux spécifications contractuelles. Un producteur de pommes est soumis à une clause exigeant que le diamètre moyen des pommes de chaque lot soit égal à 10 cm. Un contrôleur prélève 8 pommes au hasard dans un lot. L’objectif est de déterminer, par une démarche inférentielle rigoureuse, si ce lot respecte l’exigence contractuelle."
   },
   {
     "objectID": "projects/pommes.html#données",
     "href": "projects/pommes.html#données",
     "title": "Respect du cahier des charges : les pommes ont‑elles un diamètre moyen de 10 cm ?",
     "section": "Données",
-    "text": "Données\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy import stats\n\ndiametres = np.array([9.35, 10.14, 11.31, 8.97, 8.51, 9.92, 9.43, 10.81])\nn = len(diametres)\nprint(\"Échantillon :\", diametres)"
+    "text": "Données\nLes diamètres mesurés (en cm) sur les 8 pommes :\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPomme\n1\n2\n3\n4\n5\n6\n7\n8\n\n\n\n\nDiamètre\n9,35\n10,14\n11,31\n8,97\n8,51\n9,92\n9,43\n10,81"
   },
   {
-    "objectID": "projects/pommes.html#statistiques-descriptives",
-    "href": "projects/pommes.html#statistiques-descriptives",
+    "objectID": "projects/pommes.html#analyse-exploratoire",
+    "href": "projects/pommes.html#analyse-exploratoire",
     "title": "Respect du cahier des charges : les pommes ont‑elles un diamètre moyen de 10 cm ?",
-    "section": "1. Statistiques descriptives",
-    "text": "1. Statistiques descriptives\nmoyenne = np.mean(diametres)\necart_type = np.std(diametres, ddof=1)   # écart-type corrigé (ddof=1)\nprint(f\"Moyenne = {moyenne:.3f} cm\")\nprint(f\"Écart-type (corrigé) = {ecart_type:.3f} cm\")\nprint(f\"Effectif = {n}\")\nRésultats :\n\nMoyenne : ≈ 9.93 cm\nÉcart-type : ≈ 0.97 cm\nEffectif : 8\n\n\nGraphiques\nfig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 4))\n\n# Boîte à moustaches\nax1.boxplot(diametres)\nax1.set_title(\"Boîte à moustaches\")\nax1.set_ylabel(\"Diamètre (cm)\")\n\n# Histogramme avec densité normale\nax2.hist(diametres, bins=5, density=True, alpha=0.6, color='g', edgecolor='black')\nx = np.linspace(min(diametres), max(diametres), 100)\nax2.plot(x, stats.norm.pdf(x, moyenne, ecart_type), 'r-', label='Loi normale ajustée')\nax2.set_title(\"Histogramme + densité normale\")\nax2.legend()\nplt.show()"
+    "section": "Analyse exploratoire",
+    "text": "Analyse exploratoire\n\nStatistiques descriptives\n\n\n\nStatistique\nValeur\n\n\n\n\nMinimum\n8,51\n\n\n1er quartile\n9,255\n\n\nMédiane\n9,675\n\n\nMoyenne\n9,805\n\n\n3e quartile\n10,307\n\n\nMaximum\n11,31\n\n\nÉcart-type\n0,935\n\n\nÉtendue\n2,80\n\n\n\nLa moyenne observée (9,805 cm) est légèrement inférieure à la cible de 10 cm.\n\n\nVisualisations\n\nBoxplot : montre une dispersion modérée sans valeur aberrante.\nHistogramme : distribution approximativement symétrique.\nQQ-plot : les points suivent globalement la droite de Henry, suggérant la normalité."
   },
   {
-    "objectID": "projects/pommes.html#test-de-normalité-shapirowilk",
-    "href": "projects/pommes.html#test-de-normalité-shapirowilk",
+    "objectID": "projects/pommes.html#vérification-de-la-normalité",
+    "href": "projects/pommes.html#vérification-de-la-normalité",
     "title": "Respect du cahier des charges : les pommes ont‑elles un diamètre moyen de 10 cm ?",
-    "section": "2. Test de normalité (Shapiro‑Wilk)",
-    "text": "2. Test de normalité (Shapiro‑Wilk)\nAvant d’utiliser un test paramétrique (t de Student), on vérifie si l’échantillon peut être considéré comme issu d’une loi normale (hypothèse requise pour le test t).\nstat, p_norm = stats.shapiro(diametres)\nprint(f\"Statistique de Shapiro-Wilk = {stat:.4f}\")\nprint(f\"p-valeur = {p_norm:.4f}\")\nInterprétation :\n\nSi p‑valeur &gt; 0.05, on ne rejette pas l’hypothèse de normalité.\nIci p‑valeur ≈ … (généralement &gt; 0.05 pour cet échantillon) → la loi normale est plausible."
+    "section": "Vérification de la normalité",
+    "text": "Vérification de la normalité\nAvant d’utiliser un test paramétrique, on vérifie que l’échantillon peut être considéré comme issu d’une loi normale.\n\nTest de Shapiro-Wilk\n\nStatistique W = 0,974\n\np‑valeur = 0,9286\n\n\nAu seuil α = 0,05, on ne rejette pas l’hypothèse de normalité. L’utilisation du test de Student est donc justifiée."
   },
   {
-    "objectID": "projects/pommes.html#test-t-de-student-pour-une-moyenne-test-bilatéral",
-    "href": "projects/pommes.html#test-t-de-student-pour-une-moyenne-test-bilatéral",
+    "objectID": "projects/pommes.html#test-de-student-bilatéral",
+    "href": "projects/pommes.html#test-de-student-bilatéral",
     "title": "Respect du cahier des charges : les pommes ont‑elles un diamètre moyen de 10 cm ?",
-    "section": "3. Test t de Student pour une moyenne (test bilatéral)",
-    "text": "3. Test t de Student pour une moyenne (test bilatéral)\nOn teste si la moyenne de la population est égale à 10 cm.\n\nH₀ : μ = 10\nH₁ : μ ≠ 10\nSeuil de risque : α = 0.01\n\nt_stat, p_val = stats.ttest_1samp(diametres, 10)\nprint(f\"Statistique t = {t_stat:.4f}\")\nprint(f\"p-valeur = {p_val:.6f}\")\nRésultat :\n\nt ≈ −0.214\np‑valeur ≈ 0.836"
+    "section": "Test de Student bilatéral",
+    "text": "Test de Student bilatéral\nOn teste si la moyenne de la population est égale à 10 cm.\nHypothèses :\n- H₀ : μ = 10 cm (le cahier des charges est respecté)\n- H₁ : μ ≠ 10 cm (le cahier des charges n’est pas respecté)\nSeuil de risque : α = 1 % (0,01)\nRésultats :\n- Statistique t = –0,590\n- Degrés de liberté = 7\n- p‑valeur = 0,5739\n- Intervalle de confiance à 99 % pour μ : [8,65 cm ; 10,96 cm]"
   },
   {
-    "objectID": "projects/pommes.html#décision-et-conclusion",
-    "href": "projects/pommes.html#décision-et-conclusion",
+    "objectID": "projects/pommes.html#interprétation",
+    "href": "projects/pommes.html#interprétation",
     "title": "Respect du cahier des charges : les pommes ont‑elles un diamètre moyen de 10 cm ?",
-    "section": "4. Décision et conclusion",
-    "text": "4. Décision et conclusion\nAu seuil α = 0.01, la p‑valeur (0.836) est très supérieure à 0.01. On ne rejette donc pas H₀ : les données ne fournissent pas de preuve suffisante pour affirmer que le diamètre moyen du lot est différent de 10 cm.\n\nConclusion : le cahier des charges est respecté (au risque de 1 %)."
+    "section": "Interprétation",
+    "text": "Interprétation\nLa p‑valeur (0,5739) est largement supérieure au seuil de 1 %. On ne rejette donc pas H₀. L’intervalle de confiance à 99 % contient la valeur 10 cm. Ainsi, l’échantillon ne fournit pas de preuve statistique d’un écart significatif entre le diamètre moyen observé (9,805 cm) et la valeur contractuelle de 10 cm."
   },
   {
-    "objectID": "projects/pommes.html#compétences-mises-en-œuvre",
-    "href": "projects/pommes.html#compétences-mises-en-œuvre",
+    "objectID": "projects/pommes.html#conclusion",
+    "href": "projects/pommes.html#conclusion",
     "title": "Respect du cahier des charges : les pommes ont‑elles un diamètre moyen de 10 cm ?",
-    "section": "Compétences mises en œuvre",
-    "text": "Compétences mises en œuvre\n\nStatistiques descriptives : calcul de moyenne, écart‑type, représentation graphique (boxplot, histogramme)\nTest de normalité : mise en œuvre du test de Shapiro‑Wilk et interprétation\nTest d’hypothèse : test t de Student pour une moyenne, choix du seuil de signification\nProgrammation Python : utilisation de numpy, scipy.stats, matplotlib\nRédaction scientifique : présentation claire des hypothèses, résultats et conclusion"
+    "section": "Conclusion",
+    "text": "Conclusion\nAu risque de 1 %, le lot est déclaré conforme au cahier des charges. Ce projet illustre une démarche typique de contrôle statistique de processus (SPC) : exploration des données, vérification des conditions d’application (normalité), test d’hypothèse paramétrique, et prise de décision."
   },
   {
-    "objectID": "projects/pommes.html#améliorations-possibles",
-    "href": "projects/pommes.html#améliorations-possibles",
+    "objectID": "projects/pommes.html#compétences-et-technologies",
+    "href": "projects/pommes.html#compétences-et-technologies",
     "title": "Respect du cahier des charges : les pommes ont‑elles un diamètre moyen de 10 cm ?",
-    "section": "Améliorations possibles",
-    "text": "Améliorations possibles\n\nCalculer un intervalle de confiance à 99 % pour la moyenne\nAjouter un test non paramétrique (Wilcoxon) en cas de doute sur la normalité\nAutomatiser la vérification des conditions d’application du test t\n\n\nCe projet illustre ma capacité à réaliser une analyse statistique complète, de l’exploration des données à la prise de décision."
+    "section": "Compétences et technologies",
+    "text": "Compétences et technologies\n\nLangage : Python\n\nBibliothèques : SciPy (test de Shapiro‑Wilk, test t), NumPy, Matplotlib, Seaborn\n\nConcepts : statistiques descriptives, visualisation (boxplot, histogramme, QQ‑plot), test de normalité, test t de Student, intervalle de confiance, interprétation de p‑valeur\n\nDomaine d’application : contrôle qualité, industrie agroalimentaire, inférence statistique"
+  },
+  {
+    "objectID": "projects/pommes.html#lien-vers-le-code",
+    "href": "projects/pommes.html#lien-vers-le-code",
+    "title": "Respect du cahier des charges : les pommes ont‑elles un diamètre moyen de 10 cm ?",
+    "section": "Lien vers le code",
+    "text": "Lien vers le code\nGitHub – analyse-diametres-pommes"
   },
   {
     "objectID": "projects/markov-ballon.html",
     "href": "projects/markov-ballon.html",
     "title": "Chaîne de Markov : le jeu du ballon",
     "section": "",
-    "text": "Alice, Bob et Clara se passent un ballon selon des probabilités fixes. Ce système est une chaîne de Markov homogène à trois états (1 = Alice, 2 = Bob, 3 = Clara). Aucun enfant ne garde la balle (pas de boucle). L’objectif est d’étudier la distribution des détenteurs après un grand nombre de passes, par simulation et par calcul matriciel.\n\n\n\n\n\n\n\n\n\n\n\nDe \\ À\nAlice (1)\nBob (2)\nClara (3)\n\n\n\n\nAlice\n0\n1/3\n2/3\n\n\nBob\n1/2\n0\n1/2\n\n\nClara\n1/4\n3/4\n0\n\n\n\nSoit :\n\\[\nP = \\begin{pmatrix} 0 & 1/3 & 2/3 \\\\ 1/2 & 0 & 1/2 \\\\ 1/4 & 3/4 & 0 \\end{pmatrix}\n\\]"
+    "text": "Trois enfants – Alice, Bob et Clara – se passent un ballon selon des probabilités fixes qui ne dépendent que du détenteur actuel. Ce processus peut être modélisé par une chaîne de Markov homogène à trois états (1 = Alice, 2 = Bob, 3 = Clara). Les probabilités de transition sont données par la matrice suivante (lignes = état courant, colonnes = état suivant) :\n\n\n\nDe  Vers\nAlice\nBob\nClara\n\n\n\n\nAlice\n0\n1/3\n2/3\n\n\nBob\n1/2\n0\n1/2\n\n\nClara\n1/4\n3/4\n0"
   },
   {
     "objectID": "projects/markov-ballon.html#contexte",
     "href": "projects/markov-ballon.html#contexte",
     "title": "Chaîne de Markov : le jeu du ballon",
     "section": "",
-    "text": "Alice, Bob et Clara se passent un ballon selon des probabilités fixes. Ce système est une chaîne de Markov homogène à trois états (1 = Alice, 2 = Bob, 3 = Clara). Aucun enfant ne garde la balle (pas de boucle). L’objectif est d’étudier la distribution des détenteurs après un grand nombre de passes, par simulation et par calcul matriciel.\n\n\n\n\n\n\n\n\n\n\n\nDe \\ À\nAlice (1)\nBob (2)\nClara (3)\n\n\n\n\nAlice\n0\n1/3\n2/3\n\n\nBob\n1/2\n0\n1/2\n\n\nClara\n1/4\n3/4\n0\n\n\n\nSoit :\n\\[\nP = \\begin{pmatrix} 0 & 1/3 & 2/3 \\\\ 1/2 & 0 & 1/2 \\\\ 1/4 & 3/4 & 0 \\end{pmatrix}\n\\]"
+    "text": "Trois enfants – Alice, Bob et Clara – se passent un ballon selon des probabilités fixes qui ne dépendent que du détenteur actuel. Ce processus peut être modélisé par une chaîne de Markov homogène à trois états (1 = Alice, 2 = Bob, 3 = Clara). Les probabilités de transition sont données par la matrice suivante (lignes = état courant, colonnes = état suivant) :\n\n\n\nDe  Vers\nAlice\nBob\nClara\n\n\n\n\nAlice\n0\n1/3\n2/3\n\n\nBob\n1/2\n0\n1/2\n\n\nClara\n1/4\n3/4\n0"
   },
   {
-    "objectID": "projects/markov-ballon.html#simulation-dune-marche-aléatoire",
-    "href": "projects/markov-ballon.html#simulation-dune-marche-aléatoire",
+    "objectID": "projects/markov-ballon.html#objectifs",
+    "href": "projects/markov-ballon.html#objectifs",
     "title": "Chaîne de Markov : le jeu du ballon",
-    "section": "1. Simulation d’une marche aléatoire",
-    "text": "1. Simulation d’une marche aléatoire\nFonction marche(n, X0) : génère une séquence de n états (détenteurs) à partir de l’état initial X0 (1, 2 ou 3).\nimport numpy as np\nimport matplotlib.pyplot as plt\n\ndef marche(n, X0, P):\n    \"\"\"\n    Simule une marche de longueur n sur la chaîne de Markov définie par P.\n    Retourne la liste des états [X0, X1, ..., Xn].\n    \"\"\"\n    etats = [X0]\n    for _ in range(n):\n        etat_courant = etats[-1]\n        prochain = np.random.choice([1, 2, 3], p=P[etat_courant-1])\n        etats.append(prochain)\n    return etats\nExemple d’utilisation :\nP = [[0, 1/3, 2/3],\n     [1/2, 0, 1/2],\n     [1/4, 3/4, 0]]\n\ntrajectoire = marche(50, 1, P)\nprint(trajectoire[:10])  # premiers états"
+    "section": "Objectifs",
+    "text": "Objectifs\n\nImplémenter une fonction simulant une trajectoire de la chaîne sur n pas.\nVisualiser une trajectoire depuis un état initial.\nEstimer la distribution empirique de l’état après 50 pas, depuis chaque état initial (100 simulations).\nCalculer la matrice de transition P.\nCalculer P^50 et interpréter chaque ligne.\nDéterminer la distribution stationnaire exacte et comparer avec les estimations."
   },
   {
-    "objectID": "projects/markov-ballon.html#visualisation-dune-marche",
-    "href": "projects/markov-ballon.html#visualisation-dune-marche",
+    "objectID": "projects/markov-ballon.html#méthodologie",
+    "href": "projects/markov-ballon.html#méthodologie",
     "title": "Chaîne de Markov : le jeu du ballon",
-    "section": "2. Visualisation d’une marche",
-    "text": "2. Visualisation d’une marche\nOn représente les états (1, 2, 3) en fonction du temps.\nplt.figure(figsize=(10, 4))\nplt.plot(trajectoire, marker='o', linestyle='-')\nplt.yticks([1, 2, 3], ['Alice', 'Bob', 'Clara'])\nplt.xlabel('Numéro de passe')\nplt.ylabel('Détenteur')\nplt.title('Trajectoire du ballon (50 passes)')\nplt.grid(True)\nplt.show()"
+    "section": "Méthodologie",
+    "text": "Méthodologie\n\n1. Simulation d’une trajectoire\nUne fonction marche(n, X0) a été écrite (en Python). Elle génère une séquence d’états en utilisant la matrice P et la fonction random.choices() pour tirer l’état suivant selon les probabilités conditionnelles.\n\n\n2. Distribution empirique de X50\nPour chaque état initial (Alice, Bob, Clara), 100 trajectoires indépendantes de longueur 50 ont été simulées. La distribution empirique de l’état à l’instant 50 a été obtenue en comptant les fréquences d’apparition des trois états.\n\n\n3. Puissance matricielle et distribution stationnaire\n\nP^50 a été calculée par multiplication itérée de la matrice (50 produits).\nLa distribution stationnaire π a été obtenue en résolvant le système πP = π (vecteur propre associé à la valeur propre 1, normalisé)."
   },
   {
-    "objectID": "projects/markov-ballon.html#distribution-après-50-passes-à-partir-de-différents-états-initiaux",
-    "href": "projects/markov-ballon.html#distribution-après-50-passes-à-partir-de-différents-états-initiaux",
+    "objectID": "projects/markov-ballon.html#résultats",
+    "href": "projects/markov-ballon.html#résultats",
     "title": "Chaîne de Markov : le jeu du ballon",
-    "section": "3. Distribution après 50 passes à partir de différents états initiaux",
-    "text": "3. Distribution après 50 passes à partir de différents états initiaux\nOn simule 100 marches de longueur 50 à partir de chaque état initial, et on observe la fréquence de l’état final (\\(X_{50}\\)).\ndef distribution_finale(n, X0, P, n_sim=100):\n    finales = []\n    for _ in range(n_sim):\n        traj = marche(n, X0, P)\n        finales.append(traj[-1])\n    unique, counts = np.unique(finales, return_counts=True)\n    return dict(zip(unique, counts / n_sim))\n\ndist1 = distribution_finale(50, 1, P)\ndist2 = distribution_finale(50, 2, P)\ndist3 = distribution_finale(50, 3, P)\n\nprint(\"Distribution après 50 passes depuis Alice :\", dist1)\nprint(\"Distribution depuis Bob :\", dist2)\nprint(\"Distribution depuis Clara :\", dist3)\nRésultats typiques (avec 100 simulations) :\n\nDepuis Alice : {1: ~0.32, 2: ~0.34, 3: ~0.34}\nDepuis Bob : {1: ~0.34, 2: ~0.32, 3: ~0.34}\nDepuis Clara : {1: ~0.33, 2: ~0.33, 3: ~0.34}\n\n\nConclusion : quelle que soit la condition initiale, après 50 passes, la distribution est proche de l’équilibre (1/3 chacun). La chaîne semble converger vers la distribution stationnaire."
+    "section": "Résultats",
+    "text": "Résultats\n\nVisualisation d’une trajectoire\nLe graphique (courbe en escalier) montre une alternance typique entre les trois états selon les probabilités.\n\n\nDistributions empiriques de X50 (100 simulations)\n\n\n\nÉtat initial\nProportion Alice\nProportion Bob\nProportion Clara\n\n\n\n\nAlice\n0,24\n0,34\n0,42\n\n\nBob\n0,28\n0,38\n0,34\n\n\nClara\n0,27\n0,35\n0,38\n\n\n\nLes trois distributions sont très proches.\n\n\nMatrice de transition P\nP = [[0, 1/3, 2/3],\n     [1/2, 0, 1/2],\n     [1/4, 3/4, 0]]\nChaque ligne somme bien à 1.\n\n\nPuissance P^50\nAprès 50 pas, toutes les lignes de P^50 sont identiques (à 4 décimales) :\nAlice : 0,2727   0,3636   0,3636\nBob   : 0,2727   0,3636   0,3636\nClara : 0,2727   0,3636   0,3636\n\n\nDistribution stationnaire exacte\nLa solution du système πP = π donne :\nπ = (0,2727 ; 0,3636 ; 0,3636)"
   },
   {
-    "objectID": "projects/markov-ballon.html#calcul-de-la-distribution-stationnaire-par-le-calcul-matriciel",
-    "href": "projects/markov-ballon.html#calcul-de-la-distribution-stationnaire-par-le-calcul-matriciel",
+    "objectID": "projects/markov-ballon.html#interprétation",
+    "href": "projects/markov-ballon.html#interprétation",
     "title": "Chaîne de Markov : le jeu du ballon",
-    "section": "4. Calcul de la distribution stationnaire par le calcul matriciel",
-    "text": "4. Calcul de la distribution stationnaire par le calcul matriciel\nLa matrice de transition \\(P\\) étant irréductible et apériodique, elle admet une distribution stationnaire unique \\(\\pi\\) vérifiant \\(\\pi P = \\pi\\).\ndef puissance_matrice(P, n):\n    \"\"\"Calcule P^n par multiplication matricielle (pour n entier).\"\"\"\n    Pn = np.array(P)\n    for _ in range(1, n):\n        Pn = Pn @ P\n    return Pn\n\nP50 = puissance_matrice(P, 50)\nprint(\"P^50 :\")\nprint(P50)\n\n# La distribution stationnaire est une ligne de P^50 (toutes identiques)\npi = P50[0]\nprint(\"Distribution stationnaire :\", pi)\nRésultat : chaque ligne de \\(P^{50}\\) converge vers \\([1/3,\\ 1/3,\\ 1/3]\\). Cela confirme les simulations : après un grand nombre de passes, chaque enfant a une chance sur trois d’avoir la balle."
+    "section": "Interprétation",
+    "text": "Interprétation\n\nConvergence : les distributions empiriques après 50 pas sont proches de la distribution stationnaire théorique, quel que soit l’état initial. Les écarts observés sont compatibles avec la variabilité d’échantillonnage (100 simulations).\nIndépendance de l’état initial : la chaîne est irréductible (tous les états communiquent) et apériodique (on peut revenir à un état en un nombre variable de pas). Elle admet donc une distribution stationnaire unique, vers laquelle elle converge.\nInterprétation pratique : à long terme, la probabilité que le ballon soit chez Alice est d’environ 27,3 %, chez Bob 36,4 %, chez Clara 36,4 %. Ceci reflète la structure des probabilités de transition : Clara a plus de chances de recevoir le ballon d’Alice, et Bob transmet équitablement vers Alice et Clara."
   },
   {
-    "objectID": "projects/markov-ballon.html#interprétation-et-conclusion",
-    "href": "projects/markov-ballon.html#interprétation-et-conclusion",
+    "objectID": "projects/markov-ballon.html#compétences-et-technologies",
+    "href": "projects/markov-ballon.html#compétences-et-technologies",
     "title": "Chaîne de Markov : le jeu du ballon",
-    "section": "5. Interprétation et conclusion",
-    "text": "5. Interprétation et conclusion\n\nLa chaîne de Markov modélise un processus aléatoire sans mémoire.\nLes simulations montrent que l’état initial est vite oublié.\nLe calcul matriciel confirme l’existence d’une distribution stationnaire uniforme.\nCe modèle a des applications en file d’attente, propagation de rumeurs, etc."
+    "section": "Compétences et technologies",
+    "text": "Compétences et technologies\n\nLangage : Python\nBibliothèques : NumPy, Matplotlib, random\nConcepts : chaînes de Markov, simulation stochastique, matrices de transition, distribution stationnaire, convergence\nProgrammation : fonctions, simulation de processus aléatoires, calcul matriciel\nVisualisation : courbe en escalier, diagrammes en barres"
   },
   {
-    "objectID": "projects/markov-ballon.html#compétences-mises-en-œuvre",
-    "href": "projects/markov-ballon.html#compétences-mises-en-œuvre",
+    "objectID": "projects/markov-ballon.html#lien-vers-le-code",
+    "href": "projects/markov-ballon.html#lien-vers-le-code",
     "title": "Chaîne de Markov : le jeu du ballon",
-    "section": "Compétences mises en œuvre",
-    "text": "Compétences mises en œuvre\n\nModélisation stochastique : chaînes de Markov, matrices de transition\nSimulation : génération de trajectoires aléatoires avec numpy.random.choice\nAnalyse statistique : estimation de distributions par Monte Carlo\nCalcul matriciel : multiplication, puissance, convergence vers la distribution stationnaire\nVisualisation : tracé de trajectoires\nInterprétation : convergence, oubli de l’état initial"
-  },
-  {
-    "objectID": "projects/markov-ballon.html#améliorations-possibles",
-    "href": "projects/markov-ballon.html#améliorations-possibles",
-    "title": "Chaîne de Markov : le jeu du ballon",
-    "section": "Améliorations possibles",
-    "text": "Améliorations possibles\n\nAjouter une animation de la propagation du ballon\nCalculer le temps de mélange (mixage)\nComparer avec un modèle théorique de chaîne de Markov à 3 états\n\n\nCe projet illustre ma capacité à implémenter et analyser des chaînes de Markov en Python, une compétence clé en modélisation stochastique et en simulation."
+    "section": "Lien vers le code",
+    "text": "Lien vers le code\nGitHub – markov-ballon"
   },
   {
     "objectID": "projects/enron-discovery.html",
@@ -522,6 +522,6 @@
     "href": "projects.html",
     "title": "Mes projets",
     "section": "",
-    "text": "Enron Discovery – Plateforme d’investigation numérique\nApplication web d’e‑Discovery sur plus de 500 000 emails. Dashboard interactif, recherche plein texte, graphe d’influence, reconstruction des fils de discussion.\nTechnologies : Django, PostgreSQL, pandas, Docker, Bootstrap, Chart.js, vis.js\n\n\n\nDeep Sea Adventure – Implémentation du jeu de société\nSimulation complète du jeu avec moteur de jeu, interface graphique (Tkinter) et console, intelligences artificielles (3 stratégies), sauvegarde/chargement, tests unitaires.\nTechnologies : Python, POO, Tkinter, pickle, unittest\n\n\n\nDétection de fraude bancaire – Analyse exploratoire des transactions\nAnalyse exploratoire d’un jeu de données bancaires extrêmement déséquilibré, avec recommandations de modélisation et déploiement d’un tableau de bord Streamlit.\nTechnologies : Python, pandas, scikit-learn, XGBoost, Streamlit, Docker\n\n\n\nPrédiction de réponse à une campagne marketing – Analyse exploratoire\nAnalyse du profil des répondants, segmentation revenu/dépenses, identification des variables clés et recommandations pour la modélisation prédictive.\nTechnologies : Python, pandas, scikit-learn, Streamlit\n\n\n\nAnalyse des déterminants de la moyenne générale des étudiants\nModélisation prédictive de la performance académique à partir de 100 000 observations. Régression linéaire, sélection de variables, ACP, PCR, PLS, bootstrap.\nOutils & méthodes : R (tidyverse, caret, pls, leaps), validation croisée, bootstrap, réduction de dimension\n\n\n\nTest du chi‑2 d’adéquation : le dé est‑il équilibré ?\nMise en œuvre d’un test statistique complet en Python, avec validation des conditions d’application et interprétation des résultats. Application à un échantillon de lancers de dé.\nTechnologies : Python (scipy, numpy), test statistique, gestion d’erreurs\n\n\n\nChaîne de Markov : le jeu du ballon\nSimulation et analyse d’une chaîne de Markov à 3 états, calcul de la distribution stationnaire, visualisation.\nTechnologies : Python, numpy, matplotlib, simulation stochastique\n\n\n\nContrôle qualité des pommes : respect du cahier des charges ?\nAnalyse statistique complète (descriptive, test de normalité, test t) pour vérifier si le diamètre moyen d’un lot est conforme à la norme de 10 cm.\nOutils : Python (scipy, matplotlib), tests d’hypothèses, visualisation"
+    "text": "Enron Discovery – Plateforme d’investigation numérique\nApplication web d’e‑Discovery sur plus de 500 000 emails. Dashboard interactif, recherche plein texte, graphe d’influence, reconstruction des fils de discussion.\nTechnologies : Django, PostgreSQL, pandas, Docker, Bootstrap, Chart.js, vis.js\n\n\n\nDeep Sea Adventure – Implémentation du jeu de société\nSimulation complète du jeu avec moteur de jeu, interface graphique (Tkinter) et console, intelligences artificielles (3 stratégies), sauvegarde/chargement, tests unitaires.\nTechnologies : Python, POO, Tkinter, pickle, unittest\n\n\n\nDétection de fraude bancaire – Analyse exploratoire des transactions\nAnalyse exploratoire d’un jeu de données bancaires extrêmement déséquilibré, avec recommandations de modélisation et déploiement d’un tableau de bord Streamlit.\nTechnologies : Python, pandas, scikit-learn, XGBoost, Streamlit, Docker\n\n\n\nPrédiction de réponse à une campagne marketing – Analyse exploratoire\nAnalyse du profil des répondants, segmentation revenu/dépenses, identification des variables clés et recommandations pour la modélisation prédictive.\nTechnologies : Python, pandas, scikit-learn, Streamlit\n\n\n\nAnalyse des déterminants de la moyenne générale des étudiants\nModélisation prédictive de la performance académique à partir de 100 000 observations. Régression linéaire, sélection de variables, ACP, PCR, PLS, bootstrap.\nOutils & méthodes : R (tidyverse, caret, pls, leaps), validation croisée, bootstrap, réduction de dimension\n\n\n\nTest du chi‑2 d’adéquation : le dé est‑il équilibré ?\nMise en œuvre d’un test statistique complet en Python, avec validation des conditions d’application et interprétation des résultats. Application à un échantillon de lancers de dé.\nTechnologies : Python (scipy, numpy), test statistique, gestion d’erreurs\n\n\n\nChaîne de Markov : le jeu du ballon\nSimulation et analyse d’une chaîne de Markov à 3 états, calcul de la distribution stationnaire, visualisation d’une trajectoire et estimation de la distribution empirique après 50 pas.\nTechnologies : Python, numpy, matplotlib, simulation stochastique\n\n\n\nContrôle qualité des pommes : respect du cahier des charges ?\nAnalyse statistique complète (descriptive, test de normalité, test t) pour vérifier si le diamètre moyen d’un lot est conforme à la norme de 10 cm.\nOutils : Python (scipy, matplotlib), tests d’hypothèses, visualisation"
   }
 ]

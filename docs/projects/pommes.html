@@ -23,41 +23,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -168,15 +133,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#contexte" id="toc-contexte" class="nav-link active" data-scroll-target="#contexte">Contexte</a></li>
   <li><a href="#données" id="toc-données" class="nav-link" data-scroll-target="#données">Données</a></li>
-  <li><a href="#statistiques-descriptives" id="toc-statistiques-descriptives" class="nav-link" data-scroll-target="#statistiques-descriptives">1. Statistiques descriptives</a>
+  <li><a href="#analyse-exploratoire" id="toc-analyse-exploratoire" class="nav-link" data-scroll-target="#analyse-exploratoire">Analyse exploratoire</a>
   <ul class="collapse">
-  <li><a href="#graphiques" id="toc-graphiques" class="nav-link" data-scroll-target="#graphiques">Graphiques</a></li>
+  <li><a href="#statistiques-descriptives" id="toc-statistiques-descriptives" class="nav-link" data-scroll-target="#statistiques-descriptives">Statistiques descriptives</a></li>
+  <li><a href="#visualisations" id="toc-visualisations" class="nav-link" data-scroll-target="#visualisations">Visualisations</a></li>
   </ul></li>
-  <li><a href="#test-de-normalité-shapirowilk" id="toc-test-de-normalité-shapirowilk" class="nav-link" data-scroll-target="#test-de-normalité-shapirowilk">2. Test de normalité (Shapiro‑Wilk)</a></li>
-  <li><a href="#test-t-de-student-pour-une-moyenne-test-bilatéral" id="toc-test-t-de-student-pour-une-moyenne-test-bilatéral" class="nav-link" data-scroll-target="#test-t-de-student-pour-une-moyenne-test-bilatéral">3. Test t de Student pour une moyenne (test bilatéral)</a></li>
-  <li><a href="#décision-et-conclusion" id="toc-décision-et-conclusion" class="nav-link" data-scroll-target="#décision-et-conclusion">4. Décision et conclusion</a></li>
-  <li><a href="#compétences-mises-en-œuvre" id="toc-compétences-mises-en-œuvre" class="nav-link" data-scroll-target="#compétences-mises-en-œuvre">Compétences mises en œuvre</a></li>
-  <li><a href="#améliorations-possibles" id="toc-améliorations-possibles" class="nav-link" data-scroll-target="#améliorations-possibles">Améliorations possibles</a></li>
+  <li><a href="#vérification-de-la-normalité" id="toc-vérification-de-la-normalité" class="nav-link" data-scroll-target="#vérification-de-la-normalité">Vérification de la normalité</a></li>
+  <li><a href="#test-de-student-bilatéral" id="toc-test-de-student-bilatéral" class="nav-link" data-scroll-target="#test-de-student-bilatéral">Test de Student bilatéral</a></li>
+  <li><a href="#interprétation" id="toc-interprétation" class="nav-link" data-scroll-target="#interprétation">Interprétation</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#compétences-et-technologies" id="toc-compétences-et-technologies" class="nav-link" data-scroll-target="#compétences-et-technologies">Compétences et technologies</a></li>
+  <li><a href="#lien-vers-le-code" id="toc-lien-vers-le-code" class="nav-link" data-scroll-target="#lien-vers-le-code">Lien vers le code</a></li>
   </ul>
 </nav>
     </div>
@@ -204,113 +171,157 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="contexte" class="level2">
 <h2 class="anchored" data-anchor-id="contexte">Contexte</h2>
-<p>Un producteur de pommes doit garantir que le diamètre moyen des pommes de chaque lot est de <strong>10 cm</strong>. Un contrôleur prélève 8 pommes dans un lot et mesure leur diamètre (en cm) :</p>
-<pre><code>9.35, 10.14, 11.31, 8.97, 8.51, 9.92, 9.43, 10.81</code></pre>
-<p>L’objectif est de déterminer, au seuil de risque de 1 %, si le lot respecte la clause du cahier des charges.</p>
-<hr>
+<p>Dans l’industrie agroalimentaire, le contrôle qualité des lots est une étape cruciale pour garantir la conformité aux spécifications contractuelles. Un producteur de pommes est soumis à une clause exigeant que le <strong>diamètre moyen</strong> des pommes de chaque lot soit égal à <strong>10 cm</strong>. Un contrôleur prélève 8 pommes au hasard dans un lot. L’objectif est de déterminer, par une démarche inférentielle rigoureuse, si ce lot respecte l’exigence contractuelle.</p>
 </section>
 <section id="données" class="level2">
 <h2 class="anchored" data-anchor-id="données">Données</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>diametres <span class="op">=</span> np.array([<span class="fl">9.35</span>, <span class="fl">10.14</span>, <span class="fl">11.31</span>, <span class="fl">8.97</span>, <span class="fl">8.51</span>, <span class="fl">9.92</span>, <span class="fl">9.43</span>, <span class="fl">10.81</span>])</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="bu">len</span>(diametres)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Échantillon :"</span>, diametres)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<hr>
+<p>Les diamètres mesurés (en cm) sur les 8 pommes :</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pomme</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Diamètre</td>
+<td>9,35</td>
+<td>10,14</td>
+<td>11,31</td>
+<td>8,97</td>
+<td>8,51</td>
+<td>9,92</td>
+<td>9,43</td>
+<td>10,81</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="statistiques-descriptives" class="level2">
-<h2 class="anchored" data-anchor-id="statistiques-descriptives">1. Statistiques descriptives</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>moyenne <span class="op">=</span> np.mean(diametres)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>ecart_type <span class="op">=</span> np.std(diametres, ddof<span class="op">=</span><span class="dv">1</span>)   <span class="co"># écart-type corrigé (ddof=1)</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Moyenne = </span><span class="sc">{</span>moyenne<span class="sc">:.3f}</span><span class="ss"> cm"</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Écart-type (corrigé) = </span><span class="sc">{</span>ecart_type<span class="sc">:.3f}</span><span class="ss"> cm"</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Effectif = </span><span class="sc">{</span>n<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Résultats :</strong></p>
+<section id="analyse-exploratoire" class="level2">
+<h2 class="anchored" data-anchor-id="analyse-exploratoire">Analyse exploratoire</h2>
+<section id="statistiques-descriptives" class="level3">
+<h3 class="anchored" data-anchor-id="statistiques-descriptives">Statistiques descriptives</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Statistique</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Minimum</td>
+<td>8,51</td>
+</tr>
+<tr class="even">
+<td>1er quartile</td>
+<td>9,255</td>
+</tr>
+<tr class="odd">
+<td>Médiane</td>
+<td>9,675</td>
+</tr>
+<tr class="even">
+<td>Moyenne</td>
+<td>9,805</td>
+</tr>
+<tr class="odd">
+<td>3e quartile</td>
+<td>10,307</td>
+</tr>
+<tr class="even">
+<td>Maximum</td>
+<td>11,31</td>
+</tr>
+<tr class="odd">
+<td>Écart-type</td>
+<td>0,935</td>
+</tr>
+<tr class="even">
+<td>Étendue</td>
+<td>2,80</td>
+</tr>
+</tbody>
+</table>
+<p>La moyenne observée (9,805 cm) est légèrement inférieure à la cible de 10 cm.</p>
+</section>
+<section id="visualisations" class="level3">
+<h3 class="anchored" data-anchor-id="visualisations">Visualisations</h3>
 <ul>
-<li>Moyenne : ≈ 9.93 cm</li>
-<li>Écart-type : ≈ 0.97 cm</li>
-<li>Effectif : 8</li>
+<li><strong>Boxplot</strong> : montre une dispersion modérée sans valeur aberrante.</li>
+<li><strong>Histogramme</strong> : distribution approximativement symétrique.</li>
+<li><strong>QQ-plot</strong> : les points suivent globalement la droite de Henry, suggérant la normalité.</li>
 </ul>
-<section id="graphiques" class="level3">
-<h3 class="anchored" data-anchor-id="graphiques">Graphiques</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">4</span>))</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Boîte à moustaches</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>ax1.boxplot(diametres)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="st">"Boîte à moustaches"</span>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="st">"Diamètre (cm)"</span>)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Histogramme avec densité normale</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>ax2.hist(diametres, bins<span class="op">=</span><span class="dv">5</span>, density<span class="op">=</span><span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.6</span>, color<span class="op">=</span><span class="st">'g'</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="bu">min</span>(diametres), <span class="bu">max</span>(diametres), <span class="dv">100</span>)</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>ax2.plot(x, stats.norm.pdf(x, moyenne, ecart_type), <span class="st">'r-'</span>, label<span class="op">=</span><span class="st">'Loi normale ajustée'</span>)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="st">"Histogramme + densité normale"</span>)</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>ax2.legend()</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<hr>
 </section>
 </section>
-<section id="test-de-normalité-shapirowilk" class="level2">
-<h2 class="anchored" data-anchor-id="test-de-normalité-shapirowilk">2. Test de normalité (Shapiro‑Wilk)</h2>
-<p>Avant d’utiliser un test paramétrique (t de Student), on vérifie si l’échantillon peut être considéré comme issu d’une loi normale (hypothèse requise pour le test t).</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>stat, p_norm <span class="op">=</span> stats.shapiro(diametres)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Statistique de Shapiro-Wilk = </span><span class="sc">{</span>stat<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"p-valeur = </span><span class="sc">{</span>p_norm<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Interprétation :</strong></p>
+<section id="vérification-de-la-normalité" class="level2">
+<h2 class="anchored" data-anchor-id="vérification-de-la-normalité">Vérification de la normalité</h2>
+<p>Avant d’utiliser un test paramétrique, on vérifie que l’échantillon peut être considéré comme issu d’une loi normale.</p>
 <ul>
-<li>Si p‑valeur &gt; 0.05, on ne rejette pas l’hypothèse de normalité.</li>
-<li>Ici p‑valeur ≈ … (généralement &gt; 0.05 pour cet échantillon) → la loi normale est plausible.</li>
+<li><strong>Test de Shapiro-Wilk</strong>
+<ul>
+<li>Statistique W = 0,974<br>
+</li>
+<li>p‑valeur = 0,9286</li>
+</ul></li>
 </ul>
-<hr>
+<p>Au seuil α = 0,05, on ne rejette pas l’hypothèse de normalité. L’utilisation du test de Student est donc justifiée.</p>
 </section>
-<section id="test-t-de-student-pour-une-moyenne-test-bilatéral" class="level2">
-<h2 class="anchored" data-anchor-id="test-t-de-student-pour-une-moyenne-test-bilatéral">3. Test t de Student pour une moyenne (test bilatéral)</h2>
+<section id="test-de-student-bilatéral" class="level2">
+<h2 class="anchored" data-anchor-id="test-de-student-bilatéral">Test de Student bilatéral</h2>
 <p>On teste si la moyenne de la population est égale à 10 cm.</p>
-<ul>
-<li><strong>H₀</strong> : μ = 10</li>
-<li><strong>H₁</strong> : μ ≠ 10</li>
-<li><strong>Seuil de risque</strong> : α = 0.01</li>
-</ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>t_stat, p_val <span class="op">=</span> stats.ttest_1samp(diametres, <span class="dv">10</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Statistique t = </span><span class="sc">{</span>t_stat<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"p-valeur = </span><span class="sc">{</span>p_val<span class="sc">:.6f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Résultat :</strong></p>
-<ul>
-<li>t ≈ −0.214</li>
-<li>p‑valeur ≈ 0.836</li>
-</ul>
-<hr>
+<p><strong>Hypothèses</strong> :<br>
+- H₀ : μ = 10 cm (le cahier des charges est respecté)<br>
+- H₁ : μ ≠ 10 cm (le cahier des charges n’est pas respecté)</p>
+<p><strong>Seuil de risque</strong> : α = 1 % (0,01)</p>
+<p><strong>Résultats</strong> :<br>
+- Statistique t = –0,590<br>
+- Degrés de liberté = 7<br>
+- p‑valeur = 0,5739<br>
+- Intervalle de confiance à 99 % pour μ : [8,65 cm ; 10,96 cm]</p>
 </section>
-<section id="décision-et-conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="décision-et-conclusion">4. Décision et conclusion</h2>
-<p>Au seuil α = 0.01, la p‑valeur (0.836) est très supérieure à 0.01. On ne rejette donc pas H₀ : les données ne fournissent pas de preuve suffisante pour affirmer que le diamètre moyen du lot est différent de 10 cm.</p>
-<blockquote class="blockquote">
-<p><strong>Conclusion :</strong> le cahier des charges est respecté (au risque de 1 %).</p>
-</blockquote>
-<hr>
+<section id="interprétation" class="level2">
+<h2 class="anchored" data-anchor-id="interprétation">Interprétation</h2>
+<p>La p‑valeur (0,5739) est largement supérieure au seuil de 1 %. On ne rejette donc pas H₀. L’intervalle de confiance à 99 % contient la valeur 10 cm. Ainsi, l’échantillon ne fournit pas de preuve statistique d’un écart significatif entre le diamètre moyen observé (9,805 cm) et la valeur contractuelle de 10 cm.</p>
 </section>
-<section id="compétences-mises-en-œuvre" class="level2">
-<h2 class="anchored" data-anchor-id="compétences-mises-en-œuvre">Compétences mises en œuvre</h2>
-<ul>
-<li><strong>Statistiques descriptives</strong> : calcul de moyenne, écart‑type, représentation graphique (boxplot, histogramme)</li>
-<li><strong>Test de normalité</strong> : mise en œuvre du test de Shapiro‑Wilk et interprétation</li>
-<li><strong>Test d’hypothèse</strong> : test t de Student pour une moyenne, choix du seuil de signification</li>
-<li><strong>Programmation Python</strong> : utilisation de <code>numpy</code>, <code>scipy.stats</code>, <code>matplotlib</code></li>
-<li><strong>Rédaction scientifique</strong> : présentation claire des hypothèses, résultats et conclusion</li>
-</ul>
-<hr>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Au risque de 1 %, le lot est déclaré <strong>conforme</strong> au cahier des charges. Ce projet illustre une démarche typique de contrôle statistique de processus (SPC) : exploration des données, vérification des conditions d’application (normalité), test d’hypothèse paramétrique, et prise de décision.</p>
 </section>
-<section id="améliorations-possibles" class="level2">
-<h2 class="anchored" data-anchor-id="améliorations-possibles">Améliorations possibles</h2>
+<section id="compétences-et-technologies" class="level2">
+<h2 class="anchored" data-anchor-id="compétences-et-technologies">Compétences et technologies</h2>
 <ul>
-<li>Calculer un intervalle de confiance à 99 % pour la moyenne</li>
-<li>Ajouter un test non paramétrique (Wilcoxon) en cas de doute sur la normalité</li>
-<li>Automatiser la vérification des conditions d’application du test t</li>
+<li><strong>Langage</strong> : Python<br>
+</li>
+<li><strong>Bibliothèques</strong> : SciPy (test de Shapiro‑Wilk, test t), NumPy, Matplotlib, Seaborn<br>
+</li>
+<li><strong>Concepts</strong> : statistiques descriptives, visualisation (boxplot, histogramme, QQ‑plot), test de normalité, test t de Student, intervalle de confiance, interprétation de p‑valeur<br>
+</li>
+<li><strong>Domaine d’application</strong> : contrôle qualité, industrie agroalimentaire, inférence statistique</li>
 </ul>
-<hr>
-<p>Ce projet illustre ma capacité à réaliser une analyse statistique complète, de l’exploration des données à la prise de décision.</p>
+</section>
+<section id="lien-vers-le-code" class="level2">
+<h2 class="anchored" data-anchor-id="lien-vers-le-code">Lien vers le code</h2>
+<p><a href="https://github.com/Daniele-Nana/analyse-diametres-pommes">GitHub – analyse-diametres-pommes</a></p>
 
 
 </section>

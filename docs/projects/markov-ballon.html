@@ -106,35 +106,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -195,17 +166,25 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#contexte" id="toc-contexte" class="nav-link active" data-scroll-target="#contexte">Contexte</a>
+  <li><a href="#contexte" id="toc-contexte" class="nav-link active" data-scroll-target="#contexte">Contexte</a></li>
+  <li><a href="#objectifs" id="toc-objectifs" class="nav-link" data-scroll-target="#objectifs">Objectifs</a></li>
+  <li><a href="#méthodologie" id="toc-méthodologie" class="nav-link" data-scroll-target="#méthodologie">Méthodologie</a>
   <ul class="collapse">
-  <li><a href="#matrice-de-transition" id="toc-matrice-de-transition" class="nav-link" data-scroll-target="#matrice-de-transition">Matrice de transition</a></li>
+  <li><a href="#simulation-dune-trajectoire" id="toc-simulation-dune-trajectoire" class="nav-link" data-scroll-target="#simulation-dune-trajectoire">1. Simulation d’une trajectoire</a></li>
+  <li><a href="#distribution-empirique-de-x50" id="toc-distribution-empirique-de-x50" class="nav-link" data-scroll-target="#distribution-empirique-de-x50">2. Distribution empirique de X50</a></li>
+  <li><a href="#puissance-matricielle-et-distribution-stationnaire" id="toc-puissance-matricielle-et-distribution-stationnaire" class="nav-link" data-scroll-target="#puissance-matricielle-et-distribution-stationnaire">3. Puissance matricielle et distribution stationnaire</a></li>
   </ul></li>
-  <li><a href="#simulation-dune-marche-aléatoire" id="toc-simulation-dune-marche-aléatoire" class="nav-link" data-scroll-target="#simulation-dune-marche-aléatoire">1. Simulation d’une marche aléatoire</a></li>
-  <li><a href="#visualisation-dune-marche" id="toc-visualisation-dune-marche" class="nav-link" data-scroll-target="#visualisation-dune-marche">2. Visualisation d’une marche</a></li>
-  <li><a href="#distribution-après-50-passes-à-partir-de-différents-états-initiaux" id="toc-distribution-après-50-passes-à-partir-de-différents-états-initiaux" class="nav-link" data-scroll-target="#distribution-après-50-passes-à-partir-de-différents-états-initiaux">3. Distribution après 50 passes à partir de différents états initiaux</a></li>
-  <li><a href="#calcul-de-la-distribution-stationnaire-par-le-calcul-matriciel" id="toc-calcul-de-la-distribution-stationnaire-par-le-calcul-matriciel" class="nav-link" data-scroll-target="#calcul-de-la-distribution-stationnaire-par-le-calcul-matriciel">4. Calcul de la distribution stationnaire par le calcul matriciel</a></li>
-  <li><a href="#interprétation-et-conclusion" id="toc-interprétation-et-conclusion" class="nav-link" data-scroll-target="#interprétation-et-conclusion">5. Interprétation et conclusion</a></li>
-  <li><a href="#compétences-mises-en-œuvre" id="toc-compétences-mises-en-œuvre" class="nav-link" data-scroll-target="#compétences-mises-en-œuvre">Compétences mises en œuvre</a></li>
-  <li><a href="#améliorations-possibles" id="toc-améliorations-possibles" class="nav-link" data-scroll-target="#améliorations-possibles">Améliorations possibles</a></li>
+  <li><a href="#résultats" id="toc-résultats" class="nav-link" data-scroll-target="#résultats">Résultats</a>
+  <ul class="collapse">
+  <li><a href="#visualisation-dune-trajectoire" id="toc-visualisation-dune-trajectoire" class="nav-link" data-scroll-target="#visualisation-dune-trajectoire">Visualisation d’une trajectoire</a></li>
+  <li><a href="#distributions-empiriques-de-x50-100-simulations" id="toc-distributions-empiriques-de-x50-100-simulations" class="nav-link" data-scroll-target="#distributions-empiriques-de-x50-100-simulations">Distributions empiriques de X50 (100 simulations)</a></li>
+  <li><a href="#matrice-de-transition-p" id="toc-matrice-de-transition-p" class="nav-link" data-scroll-target="#matrice-de-transition-p">Matrice de transition <code>P</code></a></li>
+  <li><a href="#puissance-p50" id="toc-puissance-p50" class="nav-link" data-scroll-target="#puissance-p50">Puissance <code>P^50</code></a></li>
+  <li><a href="#distribution-stationnaire-exacte" id="toc-distribution-stationnaire-exacte" class="nav-link" data-scroll-target="#distribution-stationnaire-exacte">Distribution stationnaire exacte</a></li>
+  </ul></li>
+  <li><a href="#interprétation" id="toc-interprétation" class="nav-link" data-scroll-target="#interprétation">Interprétation</a></li>
+  <li><a href="#compétences-et-technologies" id="toc-compétences-et-technologies" class="nav-link" data-scroll-target="#compétences-et-technologies">Compétences et technologies</a></li>
+  <li><a href="#lien-vers-le-code" id="toc-lien-vers-le-code" class="nav-link" data-scroll-target="#lien-vers-le-code">Lien vers le code</a></li>
   </ul>
 </nav>
     </div>
@@ -233,22 +212,14 @@ window.Quarto = {
 
 <section id="contexte" class="level2">
 <h2 class="anchored" data-anchor-id="contexte">Contexte</h2>
-<p>Alice, Bob et Clara se passent un ballon selon des probabilités fixes. Ce système est une <strong>chaîne de Markov homogène</strong> à trois états (1 = Alice, 2 = Bob, 3 = Clara). Aucun enfant ne garde la balle (pas de boucle). L’objectif est d’étudier la distribution des détenteurs après un grand nombre de passes, par simulation et par calcul matriciel.</p>
-<section id="matrice-de-transition" class="level3">
-<h3 class="anchored" data-anchor-id="matrice-de-transition">Matrice de transition</h3>
+<p>Trois enfants – Alice, Bob et Clara – se passent un ballon selon des probabilités fixes qui ne dépendent que du détenteur actuel. Ce processus peut être modélisé par une <strong>chaîne de Markov homogène</strong> à trois états (1 = Alice, 2 = Bob, 3 = Clara). Les probabilités de transition sont données par la matrice suivante (lignes = état courant, colonnes = état suivant) :</p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 15%">
-<col style="width: 16%">
-<col style="width: 13%">
-<col style="width: 16%">
-</colgroup>
 <thead>
 <tr class="header">
-<th>De \ À</th>
-<th>Alice (1)</th>
-<th>Bob (2)</th>
-<th>Clara (3)</th>
+<th>De &nbsp;Vers</th>
+<th>Alice</th>
+<th>Bob</th>
+<th>Clara</th>
 </tr>
 </thead>
 <tbody>
@@ -272,132 +243,117 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p>Soit :</p>
-<p><span class="math display">\[
-P = \begin{pmatrix} 0 &amp; 1/3 &amp; 2/3 \\ 1/2 &amp; 0 &amp; 1/2 \\ 1/4 &amp; 3/4 &amp; 0 \end{pmatrix}
-\]</span></p>
-<hr>
 </section>
+<section id="objectifs" class="level2">
+<h2 class="anchored" data-anchor-id="objectifs">Objectifs</h2>
+<ol type="1">
+<li>Implémenter une fonction simulant une trajectoire de la chaîne sur <code>n</code> pas.</li>
+<li>Visualiser une trajectoire depuis un état initial.</li>
+<li>Estimer la distribution empirique de l’état après 50 pas, depuis chaque état initial (100 simulations).</li>
+<li>Calculer la matrice de transition <code>P</code>.</li>
+<li>Calculer <code>P^50</code> et interpréter chaque ligne.</li>
+<li>Déterminer la distribution stationnaire exacte et comparer avec les estimations.</li>
+</ol>
 </section>
-<section id="simulation-dune-marche-aléatoire" class="level2">
-<h2 class="anchored" data-anchor-id="simulation-dune-marche-aléatoire">1. Simulation d’une marche aléatoire</h2>
-<p><strong>Fonction <code>marche(n, X0)</code></strong> : génère une séquence de <code>n</code> états (détenteurs) à partir de l’état initial <code>X0</code> (1, 2 ou 3).</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> marche(n, X0, P):</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    Simule une marche de longueur n sur la chaîne de Markov définie par P.</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    Retourne la liste des états [X0, X1, ..., Xn].</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    etats <span class="op">=</span> [X0]</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(n):</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        etat_courant <span class="op">=</span> etats[<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        prochain <span class="op">=</span> np.random.choice([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], p<span class="op">=</span>P[etat_courant<span class="op">-</span><span class="dv">1</span>])</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        etats.append(prochain)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> etats</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Exemple d’utilisation :</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>P <span class="op">=</span> [[<span class="dv">0</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">3</span>, <span class="dv">2</span><span class="op">/</span><span class="dv">3</span>],</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>     [<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>],</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>     [<span class="dv">1</span><span class="op">/</span><span class="dv">4</span>, <span class="dv">3</span><span class="op">/</span><span class="dv">4</span>, <span class="dv">0</span>]]</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>trajectoire <span class="op">=</span> marche(<span class="dv">50</span>, <span class="dv">1</span>, P)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(trajectoire[:<span class="dv">10</span>])  <span class="co"># premiers états</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<hr>
+<section id="méthodologie" class="level2">
+<h2 class="anchored" data-anchor-id="méthodologie">Méthodologie</h2>
+<section id="simulation-dune-trajectoire" class="level3">
+<h3 class="anchored" data-anchor-id="simulation-dune-trajectoire">1. Simulation d’une trajectoire</h3>
+<p>Une fonction <code>marche(n, X0)</code> a été écrite (en Python). Elle génère une séquence d’états en utilisant la matrice <code>P</code> et la fonction <code>random.choices()</code> pour tirer l’état suivant selon les probabilités conditionnelles.</p>
 </section>
-<section id="visualisation-dune-marche" class="level2">
-<h2 class="anchored" data-anchor-id="visualisation-dune-marche">2. Visualisation d’une marche</h2>
-<p>On représente les états (1, 2, 3) en fonction du temps.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">4</span>))</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>plt.plot(trajectoire, marker<span class="op">=</span><span class="st">'o'</span>, linestyle<span class="op">=</span><span class="st">'-'</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.yticks([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="st">'Alice'</span>, <span class="st">'Bob'</span>, <span class="st">'Clara'</span>])</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Numéro de passe'</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Détenteur'</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Trajectoire du ballon (50 passes)'</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<hr>
+<section id="distribution-empirique-de-x50" class="level3">
+<h3 class="anchored" data-anchor-id="distribution-empirique-de-x50">2. Distribution empirique de X50</h3>
+<p>Pour chaque état initial (Alice, Bob, Clara), 100 trajectoires indépendantes de longueur 50 ont été simulées. La distribution empirique de l’état à l’instant 50 a été obtenue en comptant les fréquences d’apparition des trois états.</p>
 </section>
-<section id="distribution-après-50-passes-à-partir-de-différents-états-initiaux" class="level2">
-<h2 class="anchored" data-anchor-id="distribution-après-50-passes-à-partir-de-différents-états-initiaux">3. Distribution après 50 passes à partir de différents états initiaux</h2>
-<p>On simule 100 marches de longueur 50 à partir de chaque état initial, et on observe la fréquence de l’état final (<span class="math inline">\(X_{50}\)</span>).</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> distribution_finale(n, X0, P, n_sim<span class="op">=</span><span class="dv">100</span>):</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    finales <span class="op">=</span> []</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(n_sim):</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        traj <span class="op">=</span> marche(n, X0, P)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        finales.append(traj[<span class="op">-</span><span class="dv">1</span>])</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    unique, counts <span class="op">=</span> np.unique(finales, return_counts<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">dict</span>(<span class="bu">zip</span>(unique, counts <span class="op">/</span> n_sim))</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>dist1 <span class="op">=</span> distribution_finale(<span class="dv">50</span>, <span class="dv">1</span>, P)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>dist2 <span class="op">=</span> distribution_finale(<span class="dv">50</span>, <span class="dv">2</span>, P)</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>dist3 <span class="op">=</span> distribution_finale(<span class="dv">50</span>, <span class="dv">3</span>, P)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Distribution après 50 passes depuis Alice :"</span>, dist1)</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Distribution depuis Bob :"</span>, dist2)</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Distribution depuis Clara :"</span>, dist3)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Résultats typiques (avec 100 simulations) :</strong></p>
+<section id="puissance-matricielle-et-distribution-stationnaire" class="level3">
+<h3 class="anchored" data-anchor-id="puissance-matricielle-et-distribution-stationnaire">3. Puissance matricielle et distribution stationnaire</h3>
 <ul>
-<li>Depuis Alice : <code>{1: ~0.32, 2: ~0.34, 3: ~0.34}</code></li>
-<li>Depuis Bob : <code>{1: ~0.34, 2: ~0.32, 3: ~0.34}</code></li>
-<li>Depuis Clara : <code>{1: ~0.33, 2: ~0.33, 3: ~0.34}</code></li>
+<li><code>P^50</code> a été calculée par multiplication itérée de la matrice (50 produits).</li>
+<li>La distribution stationnaire <code>π</code> a été obtenue en résolvant le système <code>πP = π</code> (vecteur propre associé à la valeur propre 1, normalisé).</li>
 </ul>
-<blockquote class="blockquote">
-<p><strong>Conclusion :</strong> quelle que soit la condition initiale, après 50 passes, la distribution est proche de l’équilibre (1/3 chacun). La chaîne semble converger vers la distribution stationnaire.</p>
-</blockquote>
-<hr>
 </section>
-<section id="calcul-de-la-distribution-stationnaire-par-le-calcul-matriciel" class="level2">
-<h2 class="anchored" data-anchor-id="calcul-de-la-distribution-stationnaire-par-le-calcul-matriciel">4. Calcul de la distribution stationnaire par le calcul matriciel</h2>
-<p>La matrice de transition <span class="math inline">\(P\)</span> étant irréductible et apériodique, elle admet une distribution stationnaire unique <span class="math inline">\(\pi\)</span> vérifiant <span class="math inline">\(\pi P = \pi\)</span>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> puissance_matrice(P, n):</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Calcule P^n par multiplication matricielle (pour n entier)."""</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    Pn <span class="op">=</span> np.array(P)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, n):</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        Pn <span class="op">=</span> Pn <span class="op">@</span> P</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Pn</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>P50 <span class="op">=</span> puissance_matrice(P, <span class="dv">50</span>)</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"P^50 :"</span>)</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(P50)</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># La distribution stationnaire est une ligne de P^50 (toutes identiques)</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>pi <span class="op">=</span> P50[<span class="dv">0</span>]</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Distribution stationnaire :"</span>, pi)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Résultat :</strong> chaque ligne de <span class="math inline">\(P^{50}\)</span> converge vers <span class="math inline">\([1/3,\ 1/3,\ 1/3]\)</span>. Cela confirme les simulations : après un grand nombre de passes, chaque enfant a une chance sur trois d’avoir la balle.</p>
-<hr>
 </section>
-<section id="interprétation-et-conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="interprétation-et-conclusion">5. Interprétation et conclusion</h2>
+<section id="résultats" class="level2">
+<h2 class="anchored" data-anchor-id="résultats">Résultats</h2>
+<section id="visualisation-dune-trajectoire" class="level3">
+<h3 class="anchored" data-anchor-id="visualisation-dune-trajectoire">Visualisation d’une trajectoire</h3>
+<p>Le graphique (courbe en escalier) montre une alternance typique entre les trois états selon les probabilités.</p>
+</section>
+<section id="distributions-empiriques-de-x50-100-simulations" class="level3">
+<h3 class="anchored" data-anchor-id="distributions-empiriques-de-x50-100-simulations">Distributions empiriques de X50 (100 simulations)</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>État initial</th>
+<th>Proportion Alice</th>
+<th>Proportion Bob</th>
+<th>Proportion Clara</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Alice</td>
+<td>0,24</td>
+<td>0,34</td>
+<td>0,42</td>
+</tr>
+<tr class="even">
+<td>Bob</td>
+<td>0,28</td>
+<td>0,38</td>
+<td>0,34</td>
+</tr>
+<tr class="odd">
+<td>Clara</td>
+<td>0,27</td>
+<td>0,35</td>
+<td>0,38</td>
+</tr>
+</tbody>
+</table>
+<p>Les trois distributions sont très proches.</p>
+</section>
+<section id="matrice-de-transition-p" class="level3">
+<h3 class="anchored" data-anchor-id="matrice-de-transition-p">Matrice de transition <code>P</code></h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>P <span class="op">=</span> [[<span class="dv">0</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">3</span>, <span class="dv">2</span><span class="op">/</span><span class="dv">3</span>],</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>     [<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>],</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>     [<span class="dv">1</span><span class="op">/</span><span class="dv">4</span>, <span class="dv">3</span><span class="op">/</span><span class="dv">4</span>, <span class="dv">0</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Chaque ligne somme bien à 1.</p>
+</section>
+<section id="puissance-p50" class="level3">
+<h3 class="anchored" data-anchor-id="puissance-p50">Puissance <code>P^50</code></h3>
+<p>Après 50 pas, toutes les lignes de <code>P^50</code> sont identiques (à 4 décimales) :</p>
+<pre class="text"><code>Alice : 0,2727   0,3636   0,3636
+Bob   : 0,2727   0,3636   0,3636
+Clara : 0,2727   0,3636   0,3636</code></pre>
+</section>
+<section id="distribution-stationnaire-exacte" class="level3">
+<h3 class="anchored" data-anchor-id="distribution-stationnaire-exacte">Distribution stationnaire exacte</h3>
+<p>La solution du système <code>πP = π</code> donne :</p>
+<pre class="text"><code>π = (0,2727 ; 0,3636 ; 0,3636)</code></pre>
+</section>
+</section>
+<section id="interprétation" class="level2">
+<h2 class="anchored" data-anchor-id="interprétation">Interprétation</h2>
 <ul>
-<li>La chaîne de Markov modélise un processus aléatoire <strong>sans mémoire</strong>.</li>
-<li>Les simulations montrent que l’état initial est vite oublié.</li>
-<li>Le calcul matriciel confirme l’existence d’une <strong>distribution stationnaire uniforme</strong>.</li>
-<li>Ce modèle a des applications en file d’attente, propagation de rumeurs, etc.</li>
+<li><strong>Convergence</strong> : les distributions empiriques après 50 pas sont proches de la distribution stationnaire théorique, quel que soit l’état initial. Les écarts observés sont compatibles avec la variabilité d’échantillonnage (100 simulations).</li>
+<li><strong>Indépendance de l’état initial</strong> : la chaîne est irréductible (tous les états communiquent) et apériodique (on peut revenir à un état en un nombre variable de pas). Elle admet donc une distribution stationnaire unique, vers laquelle elle converge.</li>
+<li><strong>Interprétation pratique</strong> : à long terme, la probabilité que le ballon soit chez Alice est d’environ 27,3 %, chez Bob 36,4 %, chez Clara 36,4 %. Ceci reflète la structure des probabilités de transition : Clara a plus de chances de recevoir le ballon d’Alice, et Bob transmet équitablement vers Alice et Clara.</li>
 </ul>
-<hr>
 </section>
-<section id="compétences-mises-en-œuvre" class="level2">
-<h2 class="anchored" data-anchor-id="compétences-mises-en-œuvre">Compétences mises en œuvre</h2>
+<section id="compétences-et-technologies" class="level2">
+<h2 class="anchored" data-anchor-id="compétences-et-technologies">Compétences et technologies</h2>
 <ul>
-<li><strong>Modélisation stochastique</strong> : chaînes de Markov, matrices de transition</li>
-<li><strong>Simulation</strong> : génération de trajectoires aléatoires avec <code>numpy.random.choice</code></li>
-<li><strong>Analyse statistique</strong> : estimation de distributions par Monte Carlo</li>
-<li><strong>Calcul matriciel</strong> : multiplication, puissance, convergence vers la distribution stationnaire</li>
-<li><strong>Visualisation</strong> : tracé de trajectoires</li>
-<li><strong>Interprétation</strong> : convergence, oubli de l’état initial</li>
+<li><strong>Langage</strong> : Python</li>
+<li><strong>Bibliothèques</strong> : NumPy, Matplotlib, <code>random</code></li>
+<li><strong>Concepts</strong> : chaînes de Markov, simulation stochastique, matrices de transition, distribution stationnaire, convergence</li>
+<li><strong>Programmation</strong> : fonctions, simulation de processus aléatoires, calcul matriciel</li>
+<li><strong>Visualisation</strong> : courbe en escalier, diagrammes en barres</li>
 </ul>
-<hr>
 </section>
-<section id="améliorations-possibles" class="level2">
-<h2 class="anchored" data-anchor-id="améliorations-possibles">Améliorations possibles</h2>
-<ul>
-<li>Ajouter une animation de la propagation du ballon</li>
-<li>Calculer le temps de mélange (mixage)</li>
-<li>Comparer avec un modèle théorique de chaîne de Markov à 3 états</li>
-</ul>
-<hr>
-<p>Ce projet illustre ma capacité à implémenter et analyser des chaînes de Markov en Python, une compétence clé en modélisation stochastique et en simulation.</p>
+<section id="lien-vers-le-code" class="level2">
+<h2 class="anchored" data-anchor-id="lien-vers-le-code">Lien vers le code</h2>
+<p><a href="https://github.com/Daniele-Nana/marche_aleatoire_balle">GitHub – markov-ballon</a></p>
 
 
 </section>

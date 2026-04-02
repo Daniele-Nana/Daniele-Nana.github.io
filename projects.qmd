@@ -45,7 +45,7 @@ title: "Mes projets"
 ---
 
 ### [Chaîne de Markov : le jeu du ballon](projects/markov-ballon.qmd)
-*Simulation et analyse d’une chaîne de Markov à 3 états, calcul de la distribution stationnaire, visualisation.*
+*Simulation et analyse d’une chaîne de Markov à 3 états, calcul de la distribution stationnaire, visualisation d’une trajectoire et estimation de la distribution empirique après 50 pas.*
 
 **Technologies** : Python, numpy, matplotlib, simulation stochastique
 
